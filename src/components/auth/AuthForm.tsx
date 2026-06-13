@@ -15,7 +15,7 @@ interface AuthFormProps {
 export function AuthForm({ initialMode }: AuthFormProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get('callbackUrl') || '/account/dashboard';
+  const callbackUrl = '/account/dashboard';
 
   const [mode, setMode] = useState<'login' | 'signup' | 'forgot-password' | 'verify-otp'>(initialMode);
   
@@ -32,7 +32,7 @@ export function AuthForm({ initialMode }: AuthFormProps) {
   const [successMsg, setSuccessMsg] = useState('');
 
   const handleGoogleSignIn = () => {
-    signIn('google', { callbackUrl });
+    signIn('google', { callbackUrl: '/account/dashboard' });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
