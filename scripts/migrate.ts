@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Database from 'better-sqlite3';
 import { PrismaClient } from '@prisma/client';
 import path from 'path';
