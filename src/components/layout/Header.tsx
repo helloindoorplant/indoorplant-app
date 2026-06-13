@@ -60,9 +60,9 @@ export function Header() {
             <Link href="/care" className="text-[15px] font-bold text-foreground/80 hover:text-primary transition-colors">Plant Care</Link>
           </nav>
 
-          {/* Icons */}
-          <div className="hidden md:flex items-center gap-4 relative">
-            <div className="relative flex items-center">
+          {/* Icons & Actions */}
+          <div className="flex items-center gap-1 sm:gap-4 relative">
+            <div className="hidden md:flex relative items-center">
               {isSearchOpen && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setIsSearchOpen(false)} />
@@ -95,7 +95,7 @@ export function Header() {
               </Button>
             </Link>
 
-            <Link href="/account/wishlist">
+            <Link href="/account/wishlist" className="hidden md:block">
               <Button variant="ghost" size="icon" className="rounded-full hover:bg-secondary/50 transition-colors relative">
                 <Heart className="h-5 w-5" />
                 {mounted && wishlist.length > 0 && (
@@ -113,12 +113,13 @@ export function Header() {
                 </span>
               )}
             </Button>
-          </div>
+            </Button>
 
-          {/* Mobile Menu Toggle */}
-          <Button variant="ghost" size="icon" className="md:hidden z-50" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+            {/* Mobile Menu Toggle */}
+            <Button variant="ghost" size="icon" className="md:hidden z-50 ml-1" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
 
         </div>
 

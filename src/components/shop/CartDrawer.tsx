@@ -19,7 +19,7 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-[100vw] sm:max-w-md p-0 flex flex-col bg-[#F8FFF9] border-l-0 shadow-2xl">
+      <SheetContent side="right" className="!w-full sm:!w-[400px] sm:max-w-md p-0 flex flex-col bg-[#F8FFF9] border-l-0 shadow-2xl">
         <SheetHeader className="p-6 border-b border-border/40 bg-white shadow-sm z-10 relative">
           <SheetTitle className="text-2xl font-extrabold text-[#1B4332] flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-xl">
