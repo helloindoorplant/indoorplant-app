@@ -1,0 +1,119 @@
+export const plants2 = [
+  // PRODUCT 5
+  {
+    name: "Golden Money Plant",
+    slug: "golden-money-plant",
+    description: "India's most beloved good-luck plant — its heart-shaped golden-green leaves thrive even when you forget to water it. Perfect for shelves, tabletops, or trailing from a hanging pot. Brings life and a little luck to every corner of your home.",
+    categoryName: "Low Maintenance Plants",
+    categorySlug: "low-maintenance",
+    price: 680,
+    salePrice: 309,
+    stock: 50,
+    isFeatured: true,
+    careLevel: "EASY",
+    lightReq: "LOW",
+    waterReq: "Water once every 7-10 days in summer, 12-15 days in winter. Extremely drought-tolerant. Can also grow permanently in a glass of water.",
+    petFriendly: false,
+    airPurifier: true,
+    images: JSON.stringify([
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-1.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-3.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-4.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-5.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-6.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-7.webp"
+    ]),
+    faqs: JSON.stringify([
+      { q: "What is a Golden Money Plant?", a: "The Golden Money Plant (Epipremnum aureum, also called Golden Pothos) is a tropical vine native to Southeast Asia, characterised by its heart-shaped golden-green leaves. In India, it is one of the most popular indoor plants, traditionally associated with prosperity, good luck, and positive Vastu energy. It is also one of the most forgiving plants for beginners." },
+      { q: "Is the Golden Money Plant good for indoors?", a: "The Golden Money Plant is arguably India's most versatile indoor plant. It thrives in low light, tolerates irregular watering, adapts to AC rooms and humid bathrooms alike, and grows in both soil and water. It is the single best starter plant for anyone new to indoor gardening." },
+      { q: "How often should I water my Golden Money Plant?", a: "Water once every 7-10 days in summer and every 12-15 days in winter. It is extremely drought-tolerant and will forgive a missed watering far more readily than overwatering. Yellow leaves signal too much water; drooping leaves signal too little." },
+      { q: "Does the Golden Money Plant need sunlight?", a: "It grows in almost any light condition — from deep shade to bright indirect light. The golden variegation is most vivid in brighter light. In very low light, leaves revert to solid green. It cannot survive harsh direct afternoon sun, which scorches the leaves." },
+      { q: "Can the Golden Money Plant grow in water?", a: "Yes — simply place a cutting with 2-3 nodes in a glass vase filled with water and change the water every 7-10 days. Add a few drops of liquid fertiliser monthly. It can live in water indefinitely, making it one of the most versatile indoor plants available." },
+      { q: "Is the Golden Money Plant good for Vastu?", a: "Yes — the Money Plant is one of the most Vastu-positive plants you can keep indoors. It attracts wealth, prosperity, and positive energy. According to Vastu Shastra, place it in the south-east corner of your home or office for maximum benefit." },
+      { q: "Does the Golden Money Plant purify air?", a: "Yes. NASA's Clean Air Study lists Golden Pothos among its most effective air-purifying plants. It removes carbon monoxide, formaldehyde, benzene, and xylene from indoor air — particularly valuable in Indian cities with high pollution and new construction." },
+      { q: "Can I keep the Golden Money Plant in my bedroom?", a: "Yes — it is an excellent bedroom plant that improves overnight air quality. Keep it on a high shelf or in a hanging planter to ensure pets and small children cannot reach it, as it is mildly toxic if ingested." },
+      { q: "Is the Golden Money Plant toxic to pets?", a: "Yes — it contains calcium oxalate crystals that cause oral irritation and digestive discomfort in cats and dogs if chewed. It is not lethal but should be placed out of reach of pets for their comfort and safety." },
+      { q: "How do I make my Golden Money Plant bushier?", a: "Pinch off the growing tips regularly to encourage branching. Every time you pinch a tip, the stem produces 2-3 new side shoots, creating a fuller, bushier plant. Use the pinched cuttings to propagate new plants in water." },
+      { q: "Why are the leaves of my Money Plant turning yellow?", a: "Yellow leaves almost always indicate overwatering. Ensure the soil is not waterlogged and that the pot has good drainage. Other causes include too little light (move closer to a window) or nutrient deficiency (feed with diluted liquid fertiliser monthly)." },
+      { q: "Can I gift a Golden Money Plant to someone?", a: "It is India's most gifted plant for a reason. The Golden Money Plant is associated with luck, prosperity, and positive Vastu energy. Beautiful, easy to care for, and deeply meaningful — perfect for housewarmings, Diwali gifts, birthdays, and new business openings." }
+    ])
+  },
+  // PRODUCT 6
+  {
+    name: "Money Plant Variegated",
+    slug: "money-plant-variegated",
+    description: "Its heart-shaped leaves splashed in creamy white, pale yellow, and green look hand-painted — like nature went with all three colours at once. It trails, it climbs, it thrives where most plants give up. The most effortlessly beautiful plant you can own at this price.",
+    categoryName: "Low Maintenance Plants",
+    categorySlug: "low-maintenance",
+    price: 657,
+    salePrice: 299,
+    stock: 50,
+    isFeatured: true,
+    careLevel: "EASY",
+    lightReq: "BRIGHT_INDIRECT",
+    waterReq: "Water once every 7-10 days in summer, 12-15 days in winter. Allow top 1 inch to dry between waterings. Can also grow in water.",
+    petFriendly: false,
+    airPurifier: true,
+    images: JSON.stringify([
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-2.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-3.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-4.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-5.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-6.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-7.webp"
+    ]),
+    faqs: JSON.stringify([
+      { q: "What is a Variegated Money Plant?", a: "The Variegated Money Plant (Epipremnum aureum variegated) is a more ornamental variety of the classic Money Plant. Its heart-shaped leaves are splashed with cream, white, and pale yellow — giving each leaf a unique, painterly pattern. More visually dramatic than the standard golden-green variety, it is one of the most decorative indoor plants in India." },
+      { q: "What is the difference between a Golden and a Variegated Money Plant?", a: "The Golden Money Plant has solid golden-green leaves. The Variegated Money Plant has leaves splashed with white, cream, and pale yellow, making it visually richer and more decorative. The variegated variety requires slightly more light to maintain its colour contrast and grows slightly slower than the solid-green variety." },
+      { q: "Is the Variegated Money Plant good for Indian homes?", a: "Yes — it thrives in India's warm climate and adapts well to the filtered light of most Indian homes. Its trailing form looks stunning on shelves, windowsills, and in hanging pots. It also carries the same Vastu significance as the regular Money Plant, attracting prosperity and positive energy." },
+      { q: "How much light does a Variegated Money Plant need?", a: "Bright indirect light is essential for maintaining the white and cream variegation. Place it near an east or north-facing window. In low light, the leaves gradually revert to solid green. Do not place in direct afternoon sun, which scorches the leaves." },
+      { q: "How often should I water the Variegated Money Plant?", a: "Water every 7-10 days in summer and every 12-15 days in winter. Allow the top inch of soil to dry between waterings. Overwatering is the most common mistake — it causes root rot and yellow leaves. The self-watering pot in your kit regulates moisture automatically." },
+      { q: "Can I grow a Variegated Money Plant in water?", a: "Yes — place a stem cutting with 2-3 nodes in a clear glass vase filled with water. Roots develop in 2-3 weeks. Change the water weekly and add a few drops of liquid fertiliser monthly. The white variegation may be slightly less vivid in water culture compared to soil." },
+      { q: "Is the Variegated Money Plant good for Vastu?", a: "Yes. Like all Money Plants, it carries positive Vastu significance. It is associated with wealth, prosperity, and positive energy. Place it in the south-east corner of your home or office for maximum Vastu benefit according to Shastra principles." },
+      { q: "Why is my Variegated Money Plant losing its white colour?", a: "Fading variegation is caused by insufficient light. Move the plant to a brighter spot with bright indirect light near a window. Also avoid over-fertilising with nitrogen-heavy products, which cause reversion to solid green. The variegation will gradually return with more light." },
+      { q: "Does the Variegated Money Plant purify air?", a: "Yes. Like all Pothos varieties, it filters formaldehyde, benzene, carbon monoxide, and xylene from indoor air — pollutants common in Indian urban homes with new furniture, paints, and vehicle emissions nearby." },
+      { q: "How do I make my Variegated Money Plant fuller?", a: "Regularly pinch off the growing tips (the newest small leaf at the end of each vine). This encourages the plant to produce lateral branches, creating a fuller appearance. Use the pinched tips as cuttings to propagate new plants in water." },
+      { q: "Is the Variegated Money Plant toxic to pets?", a: "Yes — it contains calcium oxalate crystals that cause mild oral irritation and digestive discomfort in cats and dogs if ingested. Keep it on elevated surfaces or in rooms your pets do not access. Not lethal but best kept out of reach." },
+      { q: "Is the Variegated Money Plant a good gift?", a: "Absolutely. It is visually more striking and premium than the standard Money Plant, making it feel like a thoughtful, upscale gift. Its association with luck, prosperity, and Vastu positivity makes it perfect for Diwali, housewarmings, birthdays, and new business occasions." }
+    ])
+  },
+  // PRODUCT 7
+  {
+    name: "Monstera Broken Heart",
+    slug: "monstera-broken-heart",
+    description: "The compact, climbing cousin of the iconic Monstera family — its small heart-shaped leaves are naturally split and fenestrated in a way that looks deliberate, architectural, and quietly extraordinary. The plant that makes people lean in for a closer look and immediately ask where you got it.",
+    categoryName: "Rare & Exotic Plants",
+    categorySlug: "rare-plants",
+    price: 768,
+    salePrice: 349,
+    stock: 50,
+    isFeatured: true,
+    careLevel: "MEDIUM",
+    lightReq: "BRIGHT_INDIRECT",
+    waterReq: "Water every 7-10 days in summer, 12-14 days in winter. Allow top 2 inches to dry between waterings. Never let roots sit in standing water.",
+    petFriendly: false,
+    airPurifier: true,
+    images: JSON.stringify([
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-2.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-3.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-4.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-5.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-6.webp",
+      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-7.webp"
+    ]),
+    faqs: JSON.stringify([
+      { q: "What is a Monstera Broken Heart plant?", a: "The Monstera Broken Heart is a compact climbing plant from the Araceae family with small, heart-shaped leaves featuring natural splits (fenestrations). It is currently one of the most searched and desired rare indoor plants in India for its architectural, sculptural appearance that sets it apart from common foliage plants." },
+      { q: "Is the Monstera Broken Heart the same as a Mini Monstera?", a: "They are often confused but are different plants. The Mini Monstera (Rhaphidophora tetrasperma) and the Broken Heart Monstera are both compact climbers with fenestrated leaves, but the Broken Heart has rounder, more distinctly heart-shaped leaves. Neither is a true Monstera — both belong to related genera in the Araceae family." },
+      { q: "Is the Monstera Broken Heart good for Indian homes?", a: "Yes. It thrives in India's warm climate and adapts well to the bright-indirect light conditions of most Indian flats. Its compact size — unlike the large Monstera deliciosa — makes it ideal for small apartments, office desks, and shelves." },
+      { q: "How much light does the Monstera Broken Heart need?", a: "Bright indirect light is essential. Place it near an east-facing window or 1-2 metres from a south or west window. Light is critical for developing the leaf splits — in low light, new leaves emerge without fenestrations, remaining solid and heart-shaped." },
+      { q: "How often should I water the Monstera Broken Heart?", a: "Water every 7-10 days in summer and every 12-14 days in winter. Allow the top 2 inches of soil to dry between waterings. The self-watering pot included in your kit maintains optimal moisture levels automatically and prevents overwatering." },
+      { q: "Why doesn't my Monstera Broken Heart have splits in its leaves?", a: "New leaves emerge without splits and develop fenestrations as they mature over 2-4 weeks. If mature leaves remain unsplit, it signals insufficient light. Move the plant to a brighter spot and provide a moss pole or coir stick for it to climb — both encourage more dramatic leaf splits." },
+      { q: "Does the Monstera Broken Heart need a moss pole?", a: "It benefits greatly from a moss pole or coir stick. When given vertical support to climb, leaves grow larger with more prominent splits (fenestrations). Without support it trails with smaller leaves. A 30-45 cm moss pole is ideal for the pot size included with your order." },
+      { q: "What soil is best for the Monstera Broken Heart?", a: "Use a chunky, airy, well-draining mix: 30% coco peat + 30% perlite + 20% bark chips + 20% compost. Monstera roots need oxygen — dense, compacted soil causes root rot rapidly. The included soil media provides the ideal drainage and aeration for this plant." },
+      { q: "Is the Monstera Broken Heart toxic to pets?", a: "Yes — like all Araceae family plants, it contains calcium oxalate crystals that cause oral irritation, drooling, and gastrointestinal discomfort in cats and dogs if ingested. Keep it on high shelves well out of reach of pets and small children." },
+      { q: "How fast does the Monstera Broken Heart grow?", a: "In good conditions — bright indirect light, high humidity, monthly fertilising, and a moss pole — it produces 1-2 new leaves every 2-3 weeks during the growing season (March-October). Growth slows significantly in winter and in low-light conditions." },
+      { q: "How do I propagate the Monstera Broken Heart?", a: "Take a stem cutting with at least one node and one leaf. Place it in water or moist sphagnum moss in a warm, humid spot. Roots develop in 3-5 weeks. Once roots are 2-3 cm long, transfer to soil. Best done in spring or early summer for fastest rooting." },
+      { q: "Is the Monstera Broken Heart a good gift plant?", a: "It is one of the most desirable gift plants among plant enthusiasts in India right now. Its architectural, unique fenestrated leaf shape sets it apart from common plants, making it feel like a premium, thoughtful gift. Perfect for plant lovers, interior design enthusiasts, and housewarming presents." }
+    ])
+  }
+];

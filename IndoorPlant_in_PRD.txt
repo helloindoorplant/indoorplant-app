@@ -1,0 +1,1959 @@
+================================================================================
+         PRODUCT REQUIREMENTS DOCUMENT (PRD)
+         IndoorPlant.in — AI-Powered Indoor Plant E-Commerce Platform
+         Version: 1.0
+         Date: June 2026
+         Status: Draft
+================================================================================
+
+TABLE OF CONTENTS
+-----------------
+1.  Executive Summary
+2.  Product Vision & Goals
+3.  Target Audience & User Personas
+4.  Design System & Brand Guidelines
+5.  Site Architecture & Navigation
+6.  Public-Facing Pages & Features
+    6.1  Homepage
+    6.2  Product Listing Page (PLP)
+    6.3  Product Detail Page (PDP)
+    6.4  AI Plant Advisor (AI Agent)
+    6.5  Search & Filtering
+    6.6  Wishlist
+    6.7  Shopping Cart
+    6.8  Checkout Flow
+    6.9  Payment Integration (Razorpay)
+    6.10 Order Confirmation & Tracking
+    6.11 Blog / Plant Care Content
+    6.12 About Us Page
+    6.13 Contact Us Page
+    6.14 FAQ Page
+7.  User Authentication & Account System
+    7.1  Registration & Login
+    7.2  User Dashboard
+8.  Admin Dashboard
+9.  Notification System
+10. SEO & Performance Requirements
+11. Mobile Responsiveness
+12. Security Requirements
+13. Third-Party Integrations
+14. Analytics & Reporting
+15. Accessibility Standards
+16. Non-Functional Requirements
+17. Future Roadmap (Phase 2)
+
+
+================================================================================
+1. EXECUTIVE SUMMARY
+================================================================================
+
+IndoorPlant.in is a premium, AI-powered e-commerce platform exclusively dedicated
+to indoor plants. The platform combines a clean, modern shopping experience with
+an intelligent AI Plant Advisor that helps users discover the perfect plants for
+their specific environment, lifestyle, and care capacity.
+
+The platform is designed for the Indian market with Razorpay as the payment
+gateway, INR pricing, and pan-India delivery coverage. The primary differentiator
+is the conversational AI agent that gives personalized, expert-level plant
+recommendations — making plant shopping accessible even for complete beginners.
+
+Platform URL: https://www.indoorplant.in
+Primary Language: English
+Currency: Indian Rupee (INR ₹)
+Target Launch: Q3 2026
+
+
+================================================================================
+2. PRODUCT VISION & GOALS
+================================================================================
+
+VISION
+------
+To become India's most trusted and loved destination for indoor plants — where
+every customer, from a first-time plant parent to an experienced collector, can
+discover, learn about, and purchase the perfect plants with confidence.
+
+PRIMARY GOALS
+-------------
+G1. Provide an intuitive, premium shopping experience for indoor plants.
+G2. Use AI to remove the guesswork from plant selection.
+G3. Build a loyal customer base through personalization and education.
+G4. Enable smooth, trustworthy transactions via a secure checkout.
+G5. Empower admins with full control over products, orders, and customers.
+
+SUCCESS METRICS
+---------------
+- Monthly Active Users (MAU)
+- AI Advisor interaction rate (% of visitors who use the AI agent)
+- Cart-to-purchase conversion rate (target: >3%)
+- Average Order Value (AOV)
+- Customer Retention Rate (repeat purchases within 90 days)
+- Net Promoter Score (NPS)
+- Page Load Speed (<2.5 seconds on mobile)
+
+
+================================================================================
+3. TARGET AUDIENCE & USER PERSONAS
+================================================================================
+
+PERSONA 1: THE BEGINNER PLANT PARENT
+--------------------------------------
+Name: Priya, 27, Software Engineer, Bangalore
+Goals: Wants to add greenery to her apartment. Has no plant experience.
+Pain Points: Does not know which plants survive indoors, fears killing plants.
+How IndoorPlant.in helps: AI Advisor guides her to low-maintenance plants
+suited to her apartment lighting and busy schedule.
+
+PERSONA 2: THE HOME DECOR ENTHUSIAST
+--------------------------------------
+Name: Rohan, 34, Interior Designer, Mumbai
+Goals: Selects plants that complement interior aesthetics and client projects.
+Pain Points: Needs variety, clear plant images, and reliable delivery.
+How IndoorPlant.in helps: Rich product imagery, curated collections, fast delivery.
+
+PERSONA 3: THE WELLNESS SEEKER
+--------------------------------
+Name: Ananya, 42, Corporate Professional, Delhi
+Goals: Improve air quality and reduce stress at home and office.
+Pain Points: Needs proof of plant benefits, wants pet-safe options.
+How IndoorPlant.in helps: Detailed benefits section, filters for pet-safe and
+air-purifying plants.
+
+PERSONA 4: THE EXPERIENCED COLLECTOR
+--------------------------------------
+Name: Suresh, 55, Retired, Hyderabad
+Goals: Expand his rare plant collection.
+Pain Points: Hard to find rare species locally. Wants expert care info.
+How IndoorPlant.in helps: Rare/exotic plant category, detailed care guides.
+
+
+================================================================================
+4. DESIGN SYSTEM & BRAND GUIDELINES
+================================================================================
+
+BRAND IDENTITY
+--------------
+Brand Name: IndoorPlant.in
+Tagline: "Bring Nature Inside"
+Personality: Fresh, Natural, Premium, Trustworthy, Friendly, Expert
+
+COLOR PALETTE
+-------------
+Primary Green (Brand):        #2D6A4F  (Deep Forest Green)
+Secondary Green (Accent):     #52B788  (Medium Leaf Green)
+Light Green (Backgrounds):    #D8F3DC  (Soft Mint)
+Pale Green (Cards/Hover):     #B7E4C7  (Light Sage)
+Dark Text:                    #1B4332  (Deep Dark Green)
+White:                        #FFFFFF
+Off-White (Page BG):          #F8FFF9
+Warning/Error:                #E63946
+Success:                      #40916C
+Neutral Gray:                 #6C757D
+Light Gray (Borders):         #DEE2E6
+
+TYPOGRAPHY
+----------
+Primary Font: "Playfair Display" (Headings — Premium, Elegant)
+Secondary Font: "Inter" or "Poppins" (Body — Clean, Readable)
+Accent Font: "Lato" (Labels, Badges, Small Text)
+
+Font Sizes:
+- H1: 48px / 3rem
+- H2: 36px / 2.25rem
+- H3: 28px / 1.75rem
+- H4: 22px / 1.375rem
+- Body: 16px / 1rem
+- Small: 14px / 0.875rem
+- Caption: 12px / 0.75rem
+
+SPACING & LAYOUT
+----------------
+Base Grid: 8px grid system
+Container Max-Width: 1280px
+Section Padding: 80px top/bottom (desktop), 40px (mobile)
+Card Border Radius: 12px
+Button Border Radius: 8px
+
+ICONS
+-----
+Use: Lucide Icons or Heroicons (consistent outline style)
+Size Standard: 20px (inline), 24px (standalone), 32px (feature icons)
+
+IMAGERY GUIDELINES
+------------------
+- All product images: white or light background, minimum 800x800px, JPG/WebP
+- Lifestyle images: Warm natural light, home settings, plants styled in rooms
+- No watermarks on product images
+- Lazy loading on all images
+- WebP format preferred for performance
+
+SHADOWS & ELEVATION
+-------------------
+Card Default Shadow: 0 2px 8px rgba(0,0,0,0.08)
+Card Hover Shadow:   0 8px 24px rgba(45,106,79,0.15)
+Modal Shadow:        0 20px 60px rgba(0,0,0,0.2)
+
+
+================================================================================
+5. SITE ARCHITECTURE & NAVIGATION
+================================================================================
+
+MAIN NAVIGATION (Desktop)
+--------------------------
+Logo (IndoorPlant.in) | Shop | Collections | AI Plant Advisor | Blog | About
+                                            [Search Bar]  [Wishlist] [Cart] [Account]
+
+NAVIGATION ITEMS
+----------------
+1. Shop
+   - All Plants
+   - Air Purifying Plants
+   - Low Maintenance Plants
+   - Pet-Friendly Plants
+   - Flowering Plants
+   - Succulents & Cacti
+   - Rare & Exotic Plants
+   - Plant Combos & Gifts
+   - Pots & Planters (accessories)
+   - Plant Care Products
+
+2. Collections
+   - Best Sellers
+   - New Arrivals
+   - Under ₹499
+   - Office Plants
+   - Bedroom Plants
+   - Living Room Plants
+   - Balcony & Outdoor-Tolerant Plants
+   - Seasonal Picks
+
+3. AI Plant Advisor (highlighted CTA in nav)
+4. Blog
+5. About
+6. Contact
+
+FOOTER STRUCTURE
+----------------
+Column 1: Logo + Tagline + Social Media Links (Instagram, Facebook, Pinterest,
+          YouTube)
+Column 2: Quick Links (Home, Shop, AI Advisor, Blog, About, Contact)
+Column 3: Customer Service (My Account, Order Tracking, Returns Policy,
+          Shipping Info, FAQ)
+Column 4: Contact Info (Email, Phone, WhatsApp link, Address)
+           + Newsletter Signup form
+
+Bottom Bar: Copyright | Privacy Policy | Terms & Conditions | Sitemap
+            Payment Icons: Razorpay, UPI, Visa, Mastercard, RuPay
+
+URL STRUCTURE
+-------------
+/                          → Homepage
+/shop                      → All Products
+/shop/[category-slug]      → Category Page
+/product/[product-slug]    → Product Detail Page
+/ai-advisor                → AI Plant Advisor
+/collections/[slug]        → Curated Collections
+/blog                      → Blog Listing
+/blog/[post-slug]          → Blog Post
+/about                     → About Us
+/contact                   → Contact Us
+/faq                       → FAQ
+/cart                      → Shopping Cart
+/checkout                  → Checkout
+/order-confirmation/[id]   → Order Confirmation
+/account/login             → Login
+/account/register          → Register
+/account/dashboard         → User Dashboard
+/account/orders            → My Orders
+/account/wishlist          → My Wishlist
+/account/profile           → Edit Profile
+/admin                     → Admin Dashboard (protected)
+
+
+================================================================================
+6. PUBLIC-FACING PAGES & FEATURES
+================================================================================
+
+--------------------------------------------------------------------------------
+6.1 HOMEPAGE
+--------------------------------------------------------------------------------
+
+SECTIONS (top to bottom):
+
+[A] HERO SECTION
+- Full-width banner with a stunning indoor plant lifestyle image
+- Headline: "Find Your Perfect Plant" (Playfair Display, large)
+- Sub-headline: "AI-powered recommendations. Expert care guides. Delivered to
+  your door."
+- Primary CTA Button: "Talk to AI Advisor" → /ai-advisor
+- Secondary CTA Button: "Shop All Plants" → /shop
+- Optional: animated leaf/nature elements
+
+[B] AI ADVISOR TEASER STRIP
+- Compact full-width section in #D8F3DC
+- Icon + Text: "Not sure which plant to get? Our AI Plant Advisor will help you
+  find the perfect match in minutes."
+- CTA: "Try It Free →"
+
+[C] FEATURED CATEGORIES
+- 6-8 Category cards in a horizontal scroll or grid
+- Each card: Category image + Name + Plant count
+- Examples: Air Purifying, Low Maintenance, Pet Safe, Bedroom Plants, etc.
+
+[D] BESTSELLERS / TRENDING
+- Section heading: "Our Bestsellers"
+- Horizontal scroll of 8-12 product cards
+- Each card: Image, Name, Price, Star Rating, Add to Cart (quick add)
+- "View All" link → /shop
+
+[E] WHY INDOORPLANT.IN (USP SECTION)
+- 4 icon + text blocks in a row:
+  1. AI-Powered Recommendations
+  2. Expert Care Guides Included
+  3. Healthy Plants Guaranteed
+  4. Pan-India Delivery
+
+[F] AI ADVISOR FEATURED SECTION
+- Split layout: Left = conversation mockup/illustration, Right = description
+- Description: "Tell our AI what kind of space you have, how much light comes
+  in, and how busy your schedule is — and it will recommend the perfect plants
+  just for you."
+- CTA: "Chat with Plant Advisor"
+
+[G] NEW ARRIVALS
+- 4-6 product cards in a grid
+- "Explore New Arrivals →" link
+
+[H] CURATED COLLECTION BANNERS
+- 2-3 large visual banners (side by side or stacked)
+- Examples: "Office Plants Collection", "Gifts Under ₹999", "Rare Finds"
+
+[I] PLANT CARE BLOG PREVIEW
+- 3 recent blog posts as cards
+- Each card: Thumbnail, Category Tag, Title, Date, Read More link
+
+[J] CUSTOMER REVIEWS / TESTIMONIALS
+- 3-4 customer review cards
+- Name, location, star rating, review text, plant purchased
+
+[K] INSTAGRAM FEED / SOCIAL PROOF
+- Grid of 6-9 photos from @indoorplant.in Instagram
+- Heading: "Tag us @indoorplant.in"
+
+[L] NEWSLETTER SIGNUP
+- Background: #2D6A4F (dark green)
+- Heading: "Get Plant Care Tips & Exclusive Offers"
+- Email input + "Subscribe" button
+- Note: "No spam. Unsubscribe anytime."
+
+[M] TRUST BADGES
+- 100% Secure Payments | Easy 7-Day Returns | Expert Plant Support | Free
+  Shipping above ₹999
+
+
+--------------------------------------------------------------------------------
+6.2 PRODUCT LISTING PAGE (PLP)
+--------------------------------------------------------------------------------
+
+LAYOUT
+------
+- Left sidebar: Filters (desktop) / Collapsible drawer (mobile)
+- Right: Product grid (3 columns desktop, 2 columns tablet, 1 column mobile)
+- Top bar: Breadcrumb + Result count + Sort dropdown
+
+FILTER PANEL
+------------
+Filter Categories:
+1. Price Range (slider: ₹0 – ₹5000+)
+2. Plant Category (checkboxes)
+3. Sunlight Requirement
+   - Low light
+   - Medium light
+   - Bright indirect light
+   - Direct sunlight
+4. Maintenance Level
+   - Easy (Beginner-friendly)
+   - Moderate
+   - Expert
+5. Plant Size
+   - Small (<30 cm)
+   - Medium (30–60 cm)
+   - Large (>60 cm)
+6. Special Properties (checkboxes)
+   - Air Purifying
+   - Pet Safe
+   - Pet Toxic (warning)
+   - Flowering
+   - Fragrant
+   - Fast Growing
+7. Pot Included (Yes / No)
+8. Average Rating (4★ and above, etc.)
+9. Availability (In Stock / Pre-Order)
+
+SORT OPTIONS
+------------
+- Relevance (default)
+- Price: Low to High
+- Price: High to Low
+- Newest Arrivals
+- Best Sellers
+- Highest Rated
+- Most Reviewed
+
+PRODUCT CARD DESIGN
+-------------------
+Each product card contains:
+- Product image (square, hover shows second image)
+- Wishlist icon (top-right corner, toggle)
+- Badge(s): "Bestseller", "New", "Sale", "Low Stock", "Pet Safe", etc.
+- Plant Name
+- Short Tagline (e.g., "Great for beginners")
+- Star Rating + Review count
+- Price (with strike-through original price if on sale)
+- Add to Cart button (quick add, shows quantity selector on click)
+- "View Details" on card click
+
+PAGINATION / INFINITE SCROLL
+-----------------------------
+- Option A: Load More button
+- Option B: Infinite scroll
+- Display total count: "Showing 1–24 of 87 plants"
+
+BREADCRUMBS
+-----------
+Home > Shop > Air Purifying Plants
+
+
+--------------------------------------------------------------------------------
+6.3 PRODUCT DETAIL PAGE (PDP)
+--------------------------------------------------------------------------------
+
+LAYOUT: Two-column above the fold (Images left, Info right)
+
+LEFT COLUMN — MEDIA GALLERY
+----------------------------
+- Primary large image (zoom on hover/click)
+- Thumbnail strip below (3-5 images: plant close-up, in pot, room setting,
+  care info, size comparison)
+- 360° view button (if available)
+- Video embed button (optional — care guide video)
+
+RIGHT COLUMN — PRODUCT INFORMATION
+-----------------------------------
+
+[Header Info]
+- Breadcrumb: Home > Shop > Air Purifying > Monstera Deliciosa
+- Product Name (H1, Playfair Display)
+- Scientific Name (italic, smaller)
+- Short Description (2-3 sentences)
+- Star Rating widget + Number of reviews (links to reviews section)
+- SKU / Product ID
+
+[Pricing]
+- Current Price (large, #2D6A4F)
+- Original Price (struck through, gray) if discounted
+- Discount badge ("Save ₹200 — 20% Off")
+- Inclusive of taxes note
+
+[Options/Variants]
+- Pot Size selector (Small / Medium / Large with price difference)
+- Pot Style selector (Basic Nursery Pot / Self-watering Pot / Ceramic Pot)
+  with image swatches
+- Quantity selector (−/+)
+
+[Key Highlights — Icon Grid]
+- Sunlight: [Icon] Medium Indirect Light
+- Watering: [Icon] Once a week
+- Difficulty: [Icon] Easy — Beginner Friendly
+- Growth Rate: [Icon] Moderate
+- Pet Safe: [Icon] Yes / No (red if toxic)
+- Air Purifying: [Icon] Yes
+
+[Action Buttons]
+- "Add to Cart" (primary, full-width, #2D6A4F)
+- "Buy Now" (secondary, outline green)
+- "Add to Wishlist" (icon + text)
+- "Ask AI About This Plant" (link to AI Advisor with plant pre-filled)
+
+[Delivery & Trust]
+- Pincode check: "Enter PIN code to check delivery date"
+- Free shipping: "Free delivery on orders above ₹999"
+- Guarantee: "7-Day Healthy Plant Guarantee"
+- Return policy summary
+
+PRODUCT DETAILS TABS (below fold)
+----------------------------------
+
+Tab 1: CARE INSTRUCTIONS
+- Watering: Frequency, amount, tips (e.g., "Water every 7 days, allow topsoil
+  to dry between watering")
+- Sunlight: Optimal placement, window direction
+- Soil: Recommended soil mix
+- Fertilizing: Type, frequency, season-specific notes
+- Humidity & Temperature: Preferred range
+- Repotting: When and how to repot
+- Common Problems: Yellowing leaves, root rot, pests — with solutions
+- Seasonal care tips
+
+Tab 2: PLANT DETAILS
+- Family / Species
+- Origin / Native Region
+- Mature Size (height x spread)
+- Growth Rate
+- Lifespan
+- Toxicity information (pets, children)
+- USDA Hardiness Zone (for reference)
+
+Tab 3: BENEFITS
+- Detailed list of benefits:
+  - Air purification capability (NASA study reference if applicable)
+  - Stress reduction / mood improvement
+  - Humidity regulation
+  - Feng Shui / Vastu benefits
+  - Aesthetic / decor value
+  - Workspace productivity improvement
+
+Tab 4: WHAT'S IN THE BOX
+- Plant (size details)
+- Pot (if included — type, material, size)
+- Soil / potting mix
+- Care card / instruction booklet
+- Welcome note from IndoorPlant.in
+
+Tab 5: REVIEWS & RATINGS
+- Overall rating (large number + 5-star breakdown bar chart)
+- Filter reviews: Most Recent, Most Helpful, 5★ Only, etc.
+- Individual review cards:
+  - Reviewer name (first name + last initial)
+  - Verified Purchase badge
+  - Star rating
+  - Review title
+  - Review text
+  - Photos (if uploaded)
+  - Date
+  - Helpful votes ("Was this helpful? Yes / No")
+- Write a Review form (for logged-in, purchased customers only)
+- Pagination for reviews
+
+BELOW TABS SECTIONS
+-------------------
+
+[Plant Care Quick Guide — Visual Infographic Strip]
+- Icons with values for all key care metrics side by side
+
+[AI Advisor Prompt]
+- "Need help deciding? Ask our AI Advisor about this plant →"
+
+[Frequently Bought Together]
+- 2-3 recommended accessories or complementary plants
+- "Add all to cart" option
+
+[You May Also Like]
+- 4-6 related product cards
+- Based on same category, same care level, or same benefits
+
+[Recently Viewed]
+- 4 recently viewed product cards
+
+
+--------------------------------------------------------------------------------
+6.4 AI PLANT ADVISOR (AI AGENT)
+--------------------------------------------------------------------------------
+
+PAGE: /ai-advisor
+
+CONCEPT
+-------
+A conversational AI assistant embedded on a dedicated page and also available
+as a floating chat widget across the entire site. The AI helps users discover
+plants suited to their unique situation.
+
+PAGE LAYOUT
+-----------
+Left Panel (40%): Introduction + How It Works steps + Sample questions
+Right Panel (60%): Chat Interface
+
+CHAT INTERFACE
+--------------
+- Chat window with conversation bubbles (user = right, AI = left)
+- AI avatar: friendly plant leaf icon with "PlantBot" label
+- Input field at bottom + Send button
+- Optional: Voice input button (microphone)
+- Quick Reply chips below AI messages for common responses
+
+CONVERSATION FLOW — AI ADVISOR LOGIC
+--------------------------------------
+
+Step 1: GREETING
+- AI: "Hi! I'm PlantBot, your personal plant advisor. I'll help you find the
+  perfect plant. Let's start with a few quick questions! 🌿"
+
+Step 2: ROOM TYPE
+- AI: "Which room are you looking for a plant for?"
+- Options (chips): Living Room / Bedroom / Kitchen / Bathroom / Home Office /
+  Balcony / Workspace
+
+Step 3: SUNLIGHT AVAILABILITY
+- AI: "How much natural light does that room get?"
+- Options: No natural light (only artificial) / Low light (north-facing) /
+  Medium indirect (east/west) / Bright indirect / Direct sunlight (south-facing)
+
+Step 4: MAINTENANCE PREFERENCE
+- AI: "How much time can you give to plant care?"
+- Options: Minimal (I often forget!) / Low (once a week check) /
+  Moderate (regular care) / High (I love detailed care routines)
+
+Step 5: LIFESTYLE QUESTIONS
+- AI: "Do you have pets at home?"
+- Options: Yes, cats / Yes, dogs / Yes, both / No pets
+- AI: "Do you have young children at home?"
+- Options: Yes / No
+- AI: "What's the primary goal for this plant?"
+- Options: Air purification / Aesthetic & decor / Stress relief / Gifting /
+  Vastu / Feng Shui / All of the above
+
+Step 6: ADDITIONAL PREFERENCES (optional)
+- AI: "Any size preference?"
+- Options: Small (tabletop) / Medium (floor plant) / Large (statement piece) /
+  No preference
+- AI: "What's your budget?"
+- Options: Under ₹299 / ₹300–₹699 / ₹700–₹1499 / ₹1500+
+
+Step 7: RECOMMENDATIONS
+- AI presents 3-5 personalized plant recommendations
+- Each recommendation card shows:
+  - Plant image (thumbnail)
+  - Plant name
+  - Match score / "Why this plant for you" explanation
+  - Key stats (light, water, difficulty)
+  - Price
+  - "View Plant" button → PDP
+  - "Add to Cart" quick button
+
+Step 8: FOLLOW-UP
+- AI: "Would you like me to refine these suggestions or tell you more about
+  any specific plant?"
+- Users can ask follow-up questions in natural language
+- AI can answer: "How often do I water a Monstera?", "Is this plant safe for
+  cats?", "What pot size should I get?"
+
+AI CAPABILITIES SUMMARY
+-----------------------
+- Personalized plant recommendations (based on room, light, lifestyle)
+- Plant care Q&A (watering, fertilizing, repotting, pests)
+- Pet/child safety information
+- Comparison between plants
+- "Which is better for me: X or Y?"
+- Gift recommendations ("Plant gift for someone who travels a lot")
+- Seasonal recommendations
+- Pot and accessory suggestions
+
+FLOATING AI CHAT WIDGET
+------------------------
+- Appears on all pages as a floating button (bottom-right)
+- Icon: Leaf + "Plant Advisor" label
+- Click: Expands into a compact chat panel
+- Minimizes back to button
+- Persists conversation context during session
+
+
+--------------------------------------------------------------------------------
+6.5 SEARCH & FILTERING
+--------------------------------------------------------------------------------
+
+SEARCH BAR BEHAVIOR
+-------------------
+- Prominent placement in header (desktop: center or right side)
+- Placeholder text: "Search plants, collections, care tips..."
+- Auto-suggest dropdown appears after 2+ characters typed
+- Suggestions grouped into:
+  - Plants (product results with thumbnail + price)
+  - Categories
+  - Blog articles
+  - Care guides
+- Recent searches (stored locally)
+- Popular searches (curated by admin)
+- "Press Enter or click Search" for full results page
+
+SEARCH RESULTS PAGE
+-------------------
+- URL: /search?q=[query]
+- Shows matching products in same grid as PLP
+- All PLP filters apply
+- "Did you mean: [corrected query]?" for typos
+- "No results found" state with:
+  - Suggested categories
+  - "Ask AI Advisor" prompt
+
+VOICE SEARCH (optional, Phase 2)
+---------------------------------
+- Microphone icon in search bar
+- Web Speech API integration
+
+
+--------------------------------------------------------------------------------
+6.6 WISHLIST
+--------------------------------------------------------------------------------
+
+- Available to logged-in users
+- Wishlist icon in header shows count badge
+- Toggle heart icon on all product cards + PDP
+- Page at /account/wishlist shows all saved items
+- Each wishlist item shows: image, name, price, stock status, "Add to Cart",
+  "Remove" option
+- Share wishlist (via link) — useful for gifting
+- "Move All to Cart" button
+- Out-of-stock items show "Notify Me" instead of "Add to Cart"
+- Guest wishlist: stored in localStorage, prompts login to save permanently
+
+
+--------------------------------------------------------------------------------
+6.7 SHOPPING CART
+--------------------------------------------------------------------------------
+
+CART DRAWER (Side panel)
+------------------------
+- Slides in from right on "Add to Cart"
+- Does NOT navigate away from current page
+- Shows: Cart icon with count in header
+- Drawer contents:
+  - Cart item list (image, name, variant, quantity, price, remove)
+  - Quantity adjuster per item (− / +)
+  - Subtotal
+  - Estimated savings (if discounts applied)
+  - Free shipping progress bar ("Add ₹X more for free shipping!")
+  - Coupon code input
+  - "View Full Cart" → /cart
+  - "Proceed to Checkout" button
+
+FULL CART PAGE (/cart)
+-----------------------
+- Left: Detailed item list
+- Right: Order summary sidebar (sticky on scroll)
+- Item list columns: Image | Product | Price | Quantity | Total | Remove
+- Order Summary:
+  - Subtotal
+  - Discount (if coupon applied)
+  - Shipping estimate
+  - Taxes (GST breakdown)
+  - Grand Total
+- Coupon code field with "Apply" button
+- Trust elements: Secure checkout badge, returns policy reminder
+- CTA: "Proceed to Secure Checkout"
+- "Continue Shopping" link
+- Recommended / "You may also like" products at bottom
+- Empty cart state: Illustration + "Your cart is empty" + "Start Shopping" CTA
+
+
+--------------------------------------------------------------------------------
+6.8 CHECKOUT FLOW
+--------------------------------------------------------------------------------
+
+DESIGN PRINCIPLE: Minimal steps, maximum clarity, no distractions.
+
+CHECKOUT PAGES (Step Indicator shown at top: 1 → 2 → 3)
+
+STEP 1: CONTACT & DELIVERY INFORMATION
+---------------------------------------
+Fields:
+- Full Name *
+- Mobile Number * (Indian format, 10 digits with +91)
+- Email Address *
+- Delivery Address Line 1 *
+- Delivery Address Line 2
+- City *
+- State * (dropdown)
+- PIN Code * (auto-fetch city/state)
+- Delivery instructions (optional text field)
+- Save address checkbox (for logged-in users)
+- Saved addresses dropdown (for returning users)
+
+Step 1 Options:
+- Login prompt for guests ("Already have an account? Login to autofill details")
+- Guest checkout (no account required)
+
+STEP 2: ORDER REVIEW & COUPON
+-------------------------------
+- Full order summary with item thumbnails
+- Editable quantities
+- Coupon code entry (if not applied already)
+- Delivery method selection:
+  - Standard Delivery (3–5 days) — Free above ₹999, else ₹79
+  - Express Delivery (1–2 days) — ₹149 flat
+- Price breakdown:
+  - Items subtotal
+  - Discount
+  - Shipping
+  - GST (5% on plants — confirm applicable rate)
+  - Grand Total (large, prominent)
+
+STEP 3: PAYMENT
+----------------
+- Order summary (compact) on right side (sticky)
+- Payment options:
+  1. UPI (Google Pay, PhonePe, Paytm, BHIM, etc.)
+  2. Credit / Debit Card
+  3. Net Banking
+  4. EMI (for orders above ₹3000)
+  5. Cash on Delivery (COD) — limited to select pincodes
+  6. Pay Later / BNPL (Simpl, LazyPay via Razorpay)
+- All powered by Razorpay SDK
+- "Place Order" CTA button (disabled until payment method selected)
+- SSL / secure payment note
+
+CHECKOUT GUARDRAILS
+-------------------
+- Auto-save form progress
+- Real-time PIN code validation
+- Phone number OTP verification (optional)
+- Mobile-optimized large tap targets
+- No account required for checkout (guest checkout)
+- Show trust badges throughout: SSL lock, Razorpay Secure, 7-Day Returns
+
+
+--------------------------------------------------------------------------------
+6.9 PAYMENT INTEGRATION — RAZORPAY
+--------------------------------------------------------------------------------
+
+INTEGRATION TYPE: Razorpay Standard Checkout (JavaScript SDK)
+
+SUPPORTED PAYMENT METHODS
+--------------------------
+- UPI (All apps + QR code)
+- Credit Cards (Visa, Mastercard, Amex, Diners)
+- Debit Cards (All major banks including RuPay)
+- Net Banking (50+ banks)
+- EMI (credit card + cardless EMI via Razorpay)
+- Wallets (Paytm, Mobikwik, Freecharge, Ola Money)
+- Buy Now Pay Later (Simpl, LazyPay, ZestMoney)
+- Cash on Delivery (handled separately, not via Razorpay)
+
+RAZORPAY FEATURES TO ENABLE
+----------------------------
+- Razorpay Order API (for server-side order creation)
+- Razorpay Payment Links (for support team / COD replacement)
+- Webhooks for payment success / failure notifications
+- Razorpay Dashboard for finance team
+- Automatic retry for failed payments
+- Partial refund support
+- Route / Smart Routing for success rate optimization
+
+PAYMENT FLOW
+------------
+1. User clicks "Place Order"
+2. Backend creates Razorpay Order (via server-side API)
+3. Razorpay Checkout modal opens (pre-filled with name, email, phone)
+4. User completes payment
+5. Razorpay sends payment_id, order_id, signature to frontend
+6. Backend verifies signature (HMAC SHA256)
+7. On success: Order created in DB, confirmation email sent
+8. On failure: Error shown, retry option provided
+
+REFUND FLOW
+-----------
+- Admin can initiate partial or full refunds from Admin Dashboard
+- Refund via Razorpay Refund API
+- Customer notified via email
+- Refund reflects in 5-7 business days (standard banking timeline)
+
+GST / TAX HANDLING
+------------------
+- Tax calculated server-side before Razorpay order creation
+- Tax amounts displayed clearly in order summary
+- GSTIN collection for business orders (optional field in checkout)
+
+
+--------------------------------------------------------------------------------
+6.10 ORDER CONFIRMATION & TRACKING
+--------------------------------------------------------------------------------
+
+ORDER CONFIRMATION PAGE (/order-confirmation/[order-id])
+---------------------------------------------------------
+- Large success checkmark (animated, green)
+- "Thank you, [First Name]! Your order is confirmed 🌿"
+- Order ID (prominent, copyable)
+- Order summary (items, quantities, prices)
+- Delivery address
+- Estimated delivery date
+- Payment method used + Amount charged
+- "Track My Order" button
+- "Continue Shopping" button
+- Share on WhatsApp button ("I just ordered from IndoorPlant.in!")
+- AI Advisor prompt: "Need care tips for your new plant? Ask PlantBot →"
+
+ORDER CONFIRMATION EMAIL
+------------------------
+Sent immediately to customer's email:
+- Subject: "Your IndoorPlant.in order #[ID] is confirmed! 🌱"
+- Order details, items, delivery address, estimated delivery
+- Care quick-tip for ordered plant(s)
+- Track Order button
+- WhatsApp support link
+- Social media follow links
+
+ORDER TRACKING PAGE (/account/orders/[order-id])
+-------------------------------------------------
+- Visual timeline / stepper:
+  1. Order Placed ✓
+  2. Payment Confirmed ✓
+  3. Being Packed
+  4. Shipped (with tracking number + courier link)
+  5. Out for Delivery
+  6. Delivered
+- Courier partner name + tracking number + external tracking link
+- Expected delivery date
+- "Need Help?" → Contact Support button
+- "Download Invoice" button (PDF)
+
+NOTIFICATIONS AT EACH ORDER STATUS
+------------------------------------
+- Order Placed: Email + SMS
+- Payment Confirmed: Email
+- Order Shipped: Email + SMS + WhatsApp (with tracking link)
+- Out for Delivery: SMS + WhatsApp push
+- Delivered: Email + SMS
+- Delivery failed / delay: Email + SMS notification
+
+
+--------------------------------------------------------------------------------
+6.11 BLOG / PLANT CARE CONTENT
+--------------------------------------------------------------------------------
+
+PURPOSE: SEO content, customer education, brand authority
+
+BLOG LISTING PAGE (/blog)
+--------------------------
+- Featured post (hero banner)
+- Category filter tabs: All / Plant Care / Plant Guides / Home Decor /
+  Plant Benefits / Gift Ideas / Seasonal Tips
+- Post grid (3 columns): thumbnail, category tag, title, excerpt, date,
+  read time, author
+- Pagination
+
+BLOG POST PAGE (/blog/[slug])
+------------------------------
+- Hero image
+- Category + Read time + Date + Author
+- H1 title
+- Table of Contents (for long posts)
+- Body content with inline images, pull quotes, plant care tip boxes
+- Related products (inline CTAs: "Shop Monstera →")
+- "Ask AI" sidebar widget
+- Author bio section
+- Related posts (3 cards)
+- Comments section (optional)
+- Social share (WhatsApp, Facebook, Pinterest, Twitter/X)
+
+SAMPLE BLOG TOPICS
+------------------
+- "10 Best Plants for Bedrooms That Help You Sleep Better"
+- "How to Care for Your Monstera Deliciosa: Complete Guide"
+- "Pet-Safe Indoor Plants: A Guide for Dog & Cat Owners"
+- "5 Air-Purifying Plants for Your Home Office"
+- "Watering 101: The Most Common Mistake Plant Parents Make"
+
+
+--------------------------------------------------------------------------------
+6.12 ABOUT US PAGE
+--------------------------------------------------------------------------------
+- Brand story (who we are, why we started IndoorPlant.in)
+- Our mission statement
+- Team section (optional: founder photos + bios)
+- "How It Works" visual steps (Browse → Consult AI → Order → We Deliver → You Thrive)
+- Sourcing & sustainability commitment
+- Plant quality guarantee
+- Stats: "X happy customers | Y plant varieties | Z cities delivered"
+- Press mentions / media logos (if available)
+- CTA: "Start Your Plant Journey"
+
+
+--------------------------------------------------------------------------------
+6.13 CONTACT US PAGE
+--------------------------------------------------------------------------------
+- Contact form: Name, Email, Phone, Order ID (optional), Subject dropdown,
+  Message, Submit
+- WhatsApp Chat button (prominent)
+- Email address: support@indoorplant.in
+- Phone/WhatsApp number: +91-XXXXXXXXXX
+- Business hours: Mon–Sat, 10 AM – 7 PM IST
+- Response time note: "We respond within 24 hours"
+- Map embed (optional: warehouse/office location)
+- FAQ quick links
+
+
+--------------------------------------------------------------------------------
+6.14 FAQ PAGE
+--------------------------------------------------------------------------------
+Accordion-style Q&A organized in sections:
+
+ORDERING
+- How do I place an order?
+- Can I modify or cancel my order?
+- Do you offer cash on delivery?
+
+DELIVERY
+- Where do you deliver?
+- How long does delivery take?
+- What if my plant arrives damaged?
+
+PLANTS & CARE
+- Do the plants come with pots?
+- How do I care for my new plant after delivery?
+- What if my plant starts dying after a few days?
+
+PAYMENTS & REFUNDS
+- What payment methods do you accept?
+- How do I request a refund?
+- How long does a refund take?
+
+AI ADVISOR
+- How does the AI Plant Advisor work?
+- Is the AI advisor free to use?
+- Can the AI advisor help me after I purchase a plant?
+
+
+================================================================================
+7. USER AUTHENTICATION & ACCOUNT SYSTEM
+================================================================================
+
+--------------------------------------------------------------------------------
+7.1 REGISTRATION & LOGIN
+--------------------------------------------------------------------------------
+
+REGISTRATION
+------------
+Methods:
+- Email + Password (with email verification OTP)
+- Google OAuth (Sign in with Google)
+- Mobile Number + OTP (via Razorpay/Firebase/Msg91)
+
+Registration Fields:
+- Full Name *
+- Email Address *
+- Mobile Number *
+- Password * (min 8 characters, 1 uppercase, 1 number)
+- Confirm Password *
+- Accept Terms & Privacy Policy checkbox *
+
+Post-registration:
+- Email verification sent automatically
+- Welcome email with care tip for first plant
+- 10% discount coupon on first order (optional)
+
+LOGIN
+-----
+Methods:
+- Email + Password
+- Mobile OTP
+- Google OAuth
+
+Additional:
+- "Remember Me" checkbox
+- "Forgot Password" → sends reset link to email
+- Login required to: checkout (optional), wishlist save, write reviews
+- Guest checkout always available (no forced account creation)
+
+SESSION MANAGEMENT
+------------------
+- JWT tokens with 30-day expiry (or per-device sessions)
+- "Stay signed in" option
+- Auto-logout after 90 days of inactivity
+- Active session management in account settings
+
+
+--------------------------------------------------------------------------------
+7.2 USER DASHBOARD
+--------------------------------------------------------------------------------
+
+URL: /account/dashboard
+
+DASHBOARD OVERVIEW
+------------------
+- Welcome banner: "Welcome back, [First Name]! 🌿"
+- Quick stats: Orders placed | Plants in collection | Wishlist items
+- Quick links: Track Order | My Plants | AI Advisor | Support
+
+DASHBOARD SECTIONS (Sidebar Navigation)
+-----------------------------------------
+
+[1] MY PROFILE (/account/profile)
+- Edit: Full Name, Email, Phone, Date of Birth, Profile Photo
+- Change password
+- Notification preferences (Email / SMS / WhatsApp toggles)
+- Delete account option (GDPR/compliance)
+
+[2] MY ORDERS (/account/orders)
+- Table: Order ID | Date | Items | Total | Status | Actions
+- Status badges: Processing / Confirmed / Shipped / Delivered / Cancelled /
+  Returned
+- "View Order" → full order detail page
+- "Track Order" → tracking timeline
+- "Download Invoice" → PDF download
+- "Reorder" → adds same items to cart
+- "Request Return / Replacement" → return form
+- "Write a Review" → links to review form for that product
+- Order history filter: All / Last 30 days / Last 6 months / Last 1 year
+
+[3] MY PLANTS (Plant Journal — unique feature)
+- User's personal plant collection log
+- Each entry: Plant name, photo, purchase date, notes
+- Quick care reminder: "Time to water your Monstera!"
+- Add plants manually (even plants not bought on IndoorPlant.in)
+- Watering reminder scheduler (email/push notification)
+
+[4] MY WISHLIST (/account/wishlist)
+- See Section 6.6
+
+[5] MY ADDRESSES (/account/addresses)
+- Saved delivery addresses (up to 5)
+- Add / Edit / Delete address
+- Set default address
+
+[6] MY WALLET / STORE CREDIT (optional)
+- Balance from refunds, referral rewards, loyalty points
+- Transaction history
+- "Use Store Credit at Checkout" option
+
+[7] REWARDS & LOYALTY POINTS (/account/rewards)
+- Current points balance
+- Points history (earned / redeemed)
+- How to earn: Purchase (1 point per ₹10), Review (+50 pts), Referral (+200 pts)
+- Redeem: 100 points = ₹10 discount
+- Tier system: Seedling / Sprout / Bloom / Blossom (based on lifetime spend)
+
+[8] REFERRAL PROGRAM (/account/refer)
+- Unique referral link / code
+- Share via WhatsApp, email, copy link
+- Rewards: ₹150 credit when referred friend places first order
+- Referral leaderboard (optional fun feature)
+
+[9] NOTIFICATIONS (/account/notifications)
+- Notification feed: Order updates, promotions, care reminders, new arrivals
+- Mark as read / Clear all
+- Notification preferences toggle (email, SMS, push)
+
+[10] REVIEWS & RATINGS (/account/reviews)
+- List of submitted reviews with status (published / pending moderation)
+- Edit or delete own reviews
+- Prompt to review recent purchases (if not yet reviewed)
+
+[11] SUPPORT & TICKETS (/account/support)
+- Submit support ticket
+- View open/closed tickets
+- Chat history
+- "Contact us" quick options: WhatsApp / Email
+
+[12] SETTINGS (/account/settings)
+- Language preference (English by default)
+- Currency (INR default, locked)
+- Communication preferences
+- Connected accounts (Google login)
+- Two-factor authentication toggle
+- Delete account
+
+
+================================================================================
+8. ADMIN DASHBOARD
+================================================================================
+
+URL: /admin (completely separate, protected route)
+Access: Role-based (Super Admin, Manager, Support, Inventory, Finance)
+
+LOGIN
+-----
+- Admin-specific login URL (/admin/login)
+- Email + Password + OTP 2FA (mandatory for admin)
+- IP whitelist option for extra security
+- Failed login attempt lockout (5 attempts = 15-min lockout)
+
+ADMIN NAVIGATION SIDEBAR
+-------------------------
+Dashboard | Products | Categories | Orders | Customers | AI Advisor Config |
+Inventory | Promotions & Coupons | Content | Delivery | Reviews | Reports |
+Finance | Settings | Staff
+
+--------------------------------------------------------------------------------
+8.1 ADMIN OVERVIEW / DASHBOARD
+--------------------------------------------------------------------------------
+KPI Cards (real-time):
+- Today's Revenue (₹)
+- Today's Orders
+- New Customers (today / this week)
+- Pending Orders count
+- Low Stock Alerts count
+- Avg. Order Value (last 30 days)
+- AI Advisor interactions today
+
+Charts:
+- Revenue over time (line chart — daily/weekly/monthly toggle)
+- Orders by status (pie/donut chart)
+- Top 10 selling products (bar chart)
+- Traffic sources (pie)
+- Conversion funnel (Sessions → Product Views → Add to Cart → Checkout → Order)
+
+Recent Activity Feed:
+- Last 10 orders (Order ID, customer, amount, status)
+- Recent reviews pending approval
+- Low stock alerts
+
+Quick Actions:
+- Add New Product
+- Process Pending Orders
+- Send Newsletter
+- View Today's Reports
+
+--------------------------------------------------------------------------------
+8.2 PRODUCT MANAGEMENT
+--------------------------------------------------------------------------------
+
+PRODUCT LIST PAGE
+-----------------
+- Table: Thumbnail | Name | SKU | Category | Price | Stock | Status | Actions
+- Bulk actions: Delete, Change Status, Export to CSV
+- Search and filter: by category, status, stock level, price range
+- Sort: by name, price, stock, date created
+
+ADD / EDIT PRODUCT FORM
+------------------------
+General Tab:
+- Product Name *
+- Scientific Name
+- SKU * (auto-generated or manual)
+- Short Description * (shown on listing cards)
+- Long Description * (rich text editor — full HTML support)
+- Product Status: Draft / Active / Archived
+
+Media Tab:
+- Image uploader (drag & drop, multiple images, reorder)
+- Primary image selector
+- Alt text for each image (for SEO & accessibility)
+- Video URL (YouTube/Vimeo embed)
+
+Pricing Tab:
+- Regular Price *
+- Sale Price (optional, with date range scheduling)
+- Tax class (GST rate selector)
+- Price per variant
+
+Inventory Tab:
+- Stock Quantity *
+- Low Stock Threshold (triggers alert)
+- Allow Backorders: Yes / No
+- Sold individually checkbox
+
+Shipping Tab:
+- Weight (grams)
+- Dimensions (L x W x H in cm)
+- Fragile: Yes / No (custom packaging flag)
+- Shipping class (standard / oversized)
+
+Categories & Tags Tab:
+- Category (primary — dropdown)
+- Sub-category
+- Tags (multi-select, free text)
+- Collections membership
+
+Plant Attributes Tab:
+- Sunlight Requirement (dropdown)
+- Watering Frequency
+- Maintenance Level
+- Pet Safety (Safe / Toxic)
+- Air Purifying (Yes / No)
+- Mature Height
+- Growth Rate
+- Difficulty Level
+- Care Instructions (rich text)
+- Benefits (rich text)
+- What's in the Box (rich text)
+
+Variants Tab:
+- Add variants (Pot Size, Pot Style, etc.)
+- Variant-specific: price, stock, images, SKU
+
+SEO Tab:
+- SEO Title
+- Meta Description
+- URL Slug (auto-generated, editable)
+- Focus Keyword
+- OG Image
+
+--------------------------------------------------------------------------------
+8.3 CATEGORY MANAGEMENT
+--------------------------------------------------------------------------------
+- Category tree view (parent + children)
+- Add/Edit/Delete category
+- Category fields: Name, Slug, Description, Image, Parent category
+- Sort order (drag and drop)
+- Status: Active / Inactive
+- SEO fields per category
+
+--------------------------------------------------------------------------------
+8.4 ORDER MANAGEMENT
+--------------------------------------------------------------------------------
+
+ORDER LIST PAGE
+---------------
+- Filters: Status, Date Range, Payment Method, Delivery Method, Amount range
+- Columns: Order ID | Customer | Date | Items | Total | Payment | Status |
+  Actions
+- Bulk status update
+- Export orders (CSV / Excel)
+- Quick search by Order ID or customer name
+
+ORDER DETAIL PAGE (Admin)
+--------------------------
+- Full order summary (items, quantities, amounts, taxes, discounts)
+- Customer details + order delivery address
+- Payment details (method, transaction ID, Razorpay payment ID)
+- Order status history (timestamped log)
+- Status update dropdown + "Update" button
+- Notes field (internal notes visible only to admin)
+- Edit / Add item (for support adjustments)
+- Generate / Print Invoice PDF
+- Initiate Refund (partial or full, via Razorpay API)
+- Send notification to customer (email/SMS)
+- Mark as Fraud / Flag for review
+
+ORDER STATUS WORKFLOW
+---------------------
+Pending Payment → Payment Confirmed → Processing → Packed → Shipped →
+Out for Delivery → Delivered → Completed
+                                            ↘ Cancelled (at any point before Shipped)
+                                            ↘ Return Requested → Return Received → Refunded
+
+--------------------------------------------------------------------------------
+8.5 CUSTOMER MANAGEMENT
+--------------------------------------------------------------------------------
+
+CUSTOMER LIST PAGE
+------------------
+- Search by name, email, phone
+- Filters: registration date, order count, spend range, last order
+- Columns: Name | Email | Phone | Orders | Total Spent | Registered | Status
+
+CUSTOMER DETAIL PAGE
+--------------------
+- Personal info (view + edit by support admin)
+- Address book
+- Order history
+- Reviews history
+- Wishlist (admin view)
+- Notes field (internal)
+- Points/Wallet balance
+- Login history
+- "Send Email" direct action
+- "Suspend Account" / "Reactivate" option
+
+--------------------------------------------------------------------------------
+8.6 AI ADVISOR CONFIGURATION
+--------------------------------------------------------------------------------
+
+- Edit AI greeting message
+- Customize recommendation logic weights
+- Set FAQ / quick reply chips content
+- View AI conversation logs (anonymized)
+- Analytics: Total conversations, avg conversation length, top questions asked,
+  products most recommended, conversion rate from AI sessions
+- Train AI on new plant data (if using custom AI model)
+- API key management (if using OpenAI / Anthropic API)
+- Fallback message configuration (when AI cannot answer)
+
+--------------------------------------------------------------------------------
+8.7 INVENTORY MANAGEMENT
+--------------------------------------------------------------------------------
+
+- Stock overview: All products with current stock levels
+- Color-coded levels: Green (in stock) / Yellow (low stock) / Red (out of stock)
+- Low stock alerts configuration (set thresholds per product)
+- Stock update form (bulk or individual)
+- Stock history log (when updated, by whom, by how much)
+- Stock import via CSV
+- Pre-order management (allow orders for out-of-stock items with expected restock date shown)
+- Restock notification list (customers who requested "Notify Me")
+- Trigger restock emails to waiting customers
+
+--------------------------------------------------------------------------------
+8.8 PROMOTIONS & COUPONS
+--------------------------------------------------------------------------------
+
+COUPON MANAGEMENT
+-----------------
+Create coupon:
+- Coupon Code (auto-generate or custom)
+- Discount Type: Percentage / Fixed Amount / Free Shipping
+- Discount Value
+- Minimum Order Amount
+- Maximum Discount Cap (for % coupons)
+- Usage Limit (total / per customer)
+- Validity: Start Date + End Date
+- Applicable to: All products / Specific categories / Specific products
+- Stackable with other coupons: Yes / No
+- First order only: Yes / No
+
+Coupon List:
+- Code | Type | Value | Usage | Validity | Status | Actions
+
+SALE / DISCOUNT MANAGEMENT
+----------------------------
+- Bulk price discount: Apply X% discount to selected products or categories
+  for a scheduled time range
+- Flash sale creator: Set start time, end time, products included, discount %
+- Flash sale countdown timer shown on product pages and homepage
+- "Sale" badge automatically applied
+
+CAMPAIGNS
+---------
+- Email marketing campaigns (or integrate Mailchimp / SendGrid)
+- Push notification campaigns (via Firebase FCM)
+- SMS campaigns (via Msg91 / Twilio)
+
+--------------------------------------------------------------------------------
+8.9 CONTENT MANAGEMENT (CMS)
+--------------------------------------------------------------------------------
+
+PAGES
+-----
+- Edit: Homepage sections (banner text, featured categories order, hero image)
+- Edit: About Us content
+- Edit: FAQ content (WYSIWYG editor)
+- Edit: Terms & Conditions
+- Edit: Privacy Policy
+- Edit: Shipping Policy
+- Edit: Return Policy
+
+BLOG MANAGEMENT
+---------------
+- Create/Edit/Delete blog posts
+- Rich text editor (with image upload, YouTube embed)
+- Categories and tags
+- Author assignment
+- Publish / Draft / Schedule (publish at a future date/time)
+- Featured image
+- SEO fields
+- Comments management (approve / reject / delete)
+
+BANNERS
+-------
+- Homepage hero banner: upload image, set CTA text, link, start/end dates
+- Category page banners
+- Promotional banners (popups, announcement bar)
+
+ANNOUNCEMENT BAR
+----------------
+- Editable top bar text (e.g., "Free shipping on orders above ₹999 | Use code
+  PLANT10 for 10% off")
+- Link option
+- Show/hide toggle
+- Background color
+
+NAVIGATION
+----------
+- Edit main nav items and dropdown structure
+- Add/remove footer links
+
+--------------------------------------------------------------------------------
+8.10 DELIVERY & SHIPPING MANAGEMENT
+--------------------------------------------------------------------------------
+
+SHIPPING ZONES
+--------------
+- Define delivery zones (by state, city, PIN code range)
+- Set delivery charges per zone
+- Free shipping threshold per zone
+- Delivery time estimates per zone
+
+COURIER INTEGRATION
+-------------------
+- Support for Shiprocket / Delhivery / Blue Dart / DTDC API
+- Auto-create shipment on order status change to "Packed"
+- Print shipping labels (bulk or individual)
+- Auto-fetch tracking number from courier
+- Real-time tracking sync
+
+DELIVERY SETTINGS
+-----------------
+- Enable / Disable Cash on Delivery by PIN code
+- Express delivery toggle (enable/disable globally or by zone)
+- Holiday / non-delivery date management
+- Weight-based shipping calculator
+
+--------------------------------------------------------------------------------
+8.11 REVIEWS & MODERATION
+--------------------------------------------------------------------------------
+
+- All reviews list: Product | Reviewer | Rating | Status | Date
+- Status: Pending / Approved / Rejected / Flagged
+- Moderation queue (reviews awaiting approval shown prominently)
+- Filter: by rating, product, date, status
+- Admin can reply to reviews (reply shown publicly below review)
+- Bulk approve / reject
+- Spam detection flags
+- Edit review (for formatting only — not content change)
+
+--------------------------------------------------------------------------------
+8.12 REPORTS & ANALYTICS
+--------------------------------------------------------------------------------
+
+SALES REPORTS
+-------------
+- Revenue by period (day / week / month / custom date range)
+- Orders by period
+- Average order value trend
+- Revenue by category
+- Revenue by product (top N)
+- Revenue by coupon code
+- Refund rate and amounts
+
+CUSTOMER REPORTS
+----------------
+- New vs returning customers
+- Customer lifetime value (CLV) distribution
+- Top customers by spend
+- Customer acquisition by source
+- Churn analysis
+
+INVENTORY REPORTS
+-----------------
+- Current stock levels
+- Low stock report
+- Out-of-stock report
+- Stock movement history
+- Slow-moving products (no sale in X days)
+
+AI ADVISOR REPORTS
+------------------
+- Total sessions
+- Questions by category (care / recommendation / comparison)
+- Conversion rate: AI sessions → orders
+- Top recommended plants
+- Plants users ask most about
+
+MARKETING REPORTS
+-----------------
+- Coupon redemption rates
+- Campaign performance (email opens, clicks)
+- Traffic sources (Google Analytics integration)
+
+EXPORT
+------
+- All reports exportable as CSV / Excel / PDF
+
+--------------------------------------------------------------------------------
+8.13 FINANCE MANAGEMENT
+--------------------------------------------------------------------------------
+
+- Razorpay transaction log (payment ID, order ID, amount, status, method)
+- Settlement reports (Razorpay payout summary)
+- Pending payouts
+- Refund log
+- GST report (for filing GSTR-1/GSTR-3B)
+- Invoice management
+- Manual payment recording (for COD orders)
+
+--------------------------------------------------------------------------------
+8.14 STAFF / ROLES MANAGEMENT
+--------------------------------------------------------------------------------
+
+ROLES
+-----
+- Super Admin: Full access
+- Manager: All except finance and role management
+- Support Agent: Orders, customers, reviews
+- Inventory Manager: Products, inventory, categories only
+- Finance: Reports, finance, refunds only
+- Content Editor: Blog, CMS pages only
+
+STAFF MANAGEMENT
+----------------
+- Invite staff via email
+- Assign role
+- View activity log (who did what + timestamp)
+- Suspend / Remove staff access
+
+
+================================================================================
+9. NOTIFICATION SYSTEM
+================================================================================
+
+USER NOTIFICATIONS
+------------------
+Email:
+- Welcome email (on registration)
+- Email verification OTP
+- Password reset link
+- Order placed confirmation
+- Payment confirmed
+- Order shipped (with tracking link)
+- Out for delivery (if available from courier)
+- Order delivered
+- Review request (3 days post-delivery)
+- Wishlist item back in stock
+- Price drop on wishlist item
+- Weekly plant care tips (newsletter)
+- Promotional emails (opt-in)
+- Refund processed confirmation
+
+SMS (via Msg91 / Twilio):
+- OTP for login / registration
+- Order confirmed (short text + link)
+- Order shipped (tracking link)
+- Out for delivery
+- Delivered
+
+WhatsApp (via WhatsApp Business API):
+- Order confirmation (rich message with image)
+- Shipping update with tracking
+- Delivery confirmation
+- Care tip for purchased plant (value-add)
+
+Push Notifications (web/mobile via Firebase FCM):
+- Flash sales
+- New arrivals in your preferred category
+- AI care reminders (if plant journal used)
+- Order status updates
+
+ADMIN NOTIFICATIONS
+-------------------
+- New order placed (email + dashboard notification)
+- New low stock alert
+- New review pending moderation
+- New support ticket opened
+- Failed payment alert
+- Large order alert (above configurable threshold)
+
+
+================================================================================
+10. SEO & PERFORMANCE REQUIREMENTS
+================================================================================
+
+ON-PAGE SEO
+-----------
+- Unique H1 per page
+- Meta title (50-60 chars) + meta description (150-160 chars) for every page
+- Canonical URLs
+- Clean URL structure (/product/[slug], no IDs in URL)
+- Structured data (JSON-LD) for:
+  - Products (name, price, availability, rating, image)
+  - Breadcrumbs
+  - FAQPage
+  - Organization
+  - BlogPosting
+  - WebSite (sitelinks search box)
+- Image alt text on all product images
+- Sitemap.xml (auto-generated, submitted to Google Search Console)
+- Robots.txt (properly configured)
+- Hreflang (if multilingual version planned)
+- Open Graph and Twitter Card meta tags for social sharing
+
+TECHNICAL SEO
+-------------
+- Server-Side Rendering (SSR) or Static Site Generation (SSG) for product pages
+- Core Web Vitals compliance:
+  - LCP < 2.5 seconds
+  - FID / INP < 100ms
+  - CLS < 0.1
+- Mobile-first indexing readiness
+- HTTPS (SSL certificate)
+- 301 redirects for any changed URLs
+- No broken links (automated monitoring)
+- Pagination (rel=prev/next or "Load More" approach)
+
+PERFORMANCE
+-----------
+- Image compression and WebP format
+- Lazy loading for below-fold images
+- CDN for static assets (Cloudflare / AWS CloudFront)
+- Code splitting and lazy loading for JS bundles
+- Caching strategy (browser cache + CDN cache)
+- Page load target: < 2 seconds on 4G mobile
+
+
+================================================================================
+11. MOBILE RESPONSIVENESS
+================================================================================
+
+BREAKPOINTS
+-----------
+Mobile:   320px – 767px
+Tablet:   768px – 1023px
+Desktop:  1024px and above
+
+MOBILE-SPECIFIC DESIGN DECISIONS
+---------------------------------
+- Hamburger menu with slide-out navigation
+- Sticky bottom navigation bar (Home | Search | AI Advisor | Cart | Account)
+- Full-screen search overlay
+- Product grid: 2 columns on mobile, 1 column on small mobiles
+- Filters as a bottom drawer (not sidebar)
+- Touch-friendly quantity selectors (large tap targets)
+- Swipeable product image gallery
+- Floating AI Advisor button (FAB)
+- Checkout forms: single column, large text inputs, native mobile keyboard types
+- Native share functionality on product pages (Web Share API)
+- WhatsApp chat integration (auto-opens WhatsApp)
+
+PERFORMANCE ON MOBILE
+---------------------
+- < 80KB critical CSS
+- Images served at appropriate resolution via srcset
+- Avoid layout shifts (reserve space for images)
+- Test on: iOS Safari, Chrome Android, Samsung Internet
+
+
+================================================================================
+12. SECURITY REQUIREMENTS
+================================================================================
+
+AUTHENTICATION & AUTHORIZATION
+-------------------------------
+- Passwords hashed with bcrypt (min 12 rounds)
+- JWT tokens with short expiry (15 min access token, 30 day refresh)
+- CSRF protection on all form submissions
+- Rate limiting on login, registration, OTP requests
+- SQL injection prevention (parameterized queries / ORM)
+- XSS protection (sanitize all user inputs, CSP headers)
+- Admin routes fully protected, separate auth flow
+
+PAYMENT SECURITY
+----------------
+- PCI DSS compliance via Razorpay (no card data stored on IndoorPlant.in servers)
+- Razorpay signature verification on every payment (server-side HMAC SHA256)
+- HTTPS only (HTTP → HTTPS redirect)
+- Secure cookies (HttpOnly, SameSite=Strict)
+
+DATA PROTECTION
+---------------
+- No storage of payment card data
+- Sensitive user data encrypted at rest (PII: email, phone, address)
+- GDPR-compliant data handling (even for India — good practice)
+- Privacy Policy published and linked
+- Cookie consent banner
+- Users can request data export or deletion
+
+INFRASTRUCTURE
+--------------
+- Environment variables for all secrets (no keys in codebase)
+- Regular security dependency updates
+- Server access logs
+- DDoS protection via CDN (Cloudflare)
+- Regular automated backups (daily, 30-day retention)
+- Vulnerability scanning (monthly)
+
+
+================================================================================
+13. THIRD-PARTY INTEGRATIONS
+================================================================================
+
+Payment:          Razorpay (payments, refunds, webhooks)
+SMS:              Msg91 or Twilio (OTP, order updates)
+Email:            SendGrid or AWS SES (transactional + marketing emails)
+WhatsApp:         WhatsApp Business API (via official BSP partner)
+Shipping:         Shiprocket (multi-courier integration, label print, tracking)
+Analytics:        Google Analytics 4 + Google Tag Manager
+Search Console:   Google Search Console
+Maps:             Google Maps API (address autocomplete, PIN code lookup)
+AI/ML:            OpenAI API or Anthropic Claude API (AI Plant Advisor)
+Auth:             Firebase Authentication or Auth0 (social login, OTP)
+Push:             Firebase Cloud Messaging (FCM) for web push
+CDN:              Cloudflare or AWS CloudFront
+Storage:          AWS S3 or Cloudflare R2 (product images, documents)
+Monitoring:       Sentry (error tracking) + Uptime Robot (availability)
+Newsletter:       Mailchimp or Klaviyo (email marketing automation)
+Chat:             Optional — Intercom or Freshchat for live support chat
+Reviews:          Native (custom) or Judge.me / Yotpo (third-party)
+
+
+================================================================================
+14. ANALYTICS & REPORTING
+================================================================================
+
+TRACKING EVENTS
+---------------
+Page Views, Sessions, Bounce Rate (Google Analytics 4)
+
+E-commerce Events:
+- view_item (product page viewed)
+- add_to_cart
+- remove_from_cart
+- begin_checkout
+- add_payment_info
+- purchase (with revenue, items, coupon used)
+- refund
+
+Custom Events:
+- ai_advisor_started
+- ai_advisor_recommendation_clicked
+- wishlist_add
+- coupon_applied
+- search_query (with query term)
+- plant_care_guide_viewed
+
+DASHBOARDS
+----------
+- Google Analytics 4 E-commerce Dashboard
+- Admin Dashboard (custom, see Section 8.1)
+- Google Search Console (organic traffic, queries, Core Web Vitals)
+- Razorpay Dashboard (payments, settlements)
+- Shiprocket Dashboard (logistics)
+
+A/B TESTING (Phase 2)
+---------------------
+- Hero banner CTA variants
+- Product card design variants
+- Checkout flow variants
+- AI Advisor opening message variants
+
+
+================================================================================
+15. ACCESSIBILITY STANDARDS
+================================================================================
+
+Target: WCAG 2.1 Level AA compliance
+
+REQUIREMENTS
+------------
+- Color contrast ratio ≥ 4.5:1 for body text
+- All images have descriptive alt text
+- All interactive elements accessible via keyboard (Tab + Enter)
+- Focus indicators clearly visible
+- ARIA labels on icon-only buttons (cart icon, wishlist icon, etc.)
+- Skip-to-content link (for screen reader users)
+- Form labels explicitly associated with inputs
+- Error messages clearly state the problem and how to fix it
+- No content flashes more than 3 times per second (epilepsy safety)
+- Font size min 16px for body text
+- Touch targets minimum 44x44px on mobile
+- Semantic HTML (h1–h6 hierarchy, nav, main, section, footer, etc.)
+
+
+================================================================================
+16. NON-FUNCTIONAL REQUIREMENTS
+================================================================================
+
+AVAILABILITY
+------------
+- Uptime SLA: 99.9% (max ~8.7 hours downtime/year)
+- Maintenance window: Sunday 2–4 AM IST with advance notice to users
+
+PERFORMANCE
+-----------
+- Homepage LCP < 2.5s on mobile (4G)
+- Product page LCP < 2.5s
+- Checkout page interaction < 100ms
+- API response time < 200ms (p95)
+- Concurrent users supported: 5,000 (scalable to 50,000 during sales)
+
+SCALABILITY
+-----------
+- Horizontally scalable backend (containerized — Docker + Kubernetes or AWS ECS)
+- Database: Managed PostgreSQL or MongoDB (with read replicas for scale)
+- Redis for session management, caching, rate limiting
+
+RELIABILITY
+-----------
+- Auto-retry for failed Razorpay webhook deliveries
+- Queue-based email/SMS sending (no dropped notifications)
+- Graceful degradation if AI Advisor API is unavailable (show static suggestions)
+- Database automated backups (daily, point-in-time recovery)
+
+BROWSER SUPPORT
+---------------
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+- Mobile: iOS Safari 14+, Chrome for Android 90+
+
+TECHNOLOGY STACK RECOMMENDATIONS
+---------------------------------
+Frontend:     Next.js (React) — SSR/SSG for SEO, great performance
+Backend:      Node.js (Express) or Python (FastAPI)
+Database:     PostgreSQL (primary) + Redis (cache/sessions)
+CMS Fields:   Headless CMS — Sanity or Strapi (for blog + content management)
+Search:       Algolia (advanced product search, typo-tolerance, facets)
+AI Layer:     OpenAI GPT-4o or Anthropic Claude API
+Hosting:      AWS / Vercel (frontend) + Railway / Render / AWS ECS (backend)
+CI/CD:        GitHub Actions
+
+
+================================================================================
+17. FUTURE ROADMAP (PHASE 2)
+================================================================================
+
+PHASE 2 FEATURES (Post-Launch, within 6–12 months)
+----------------------------------------------------
+
+1. PLANT SUBSCRIPTION BOX
+   - Monthly plant delivery subscription (₹499–₹1999/month)
+   - Curated by AI based on user preferences and current collection
+   - Subscription management in user dashboard
+
+2. PLANT DOCTOR (AI-POWERED DIAGNOSIS)
+   - User uploads photo of sick plant
+   - AI identifies problem (yellowing, root rot, pests, etc.)
+   - Provides treatment plan + shop for solutions
+
+3. AUGMENTED REALITY (AR) PLANT PREVIEW
+   - "See this plant in your room" via phone camera
+   - WebAR or native app feature
+
+4. COMMUNITY FORUM / PLANT PARENT COMMUNITY
+   - User posts, questions, plant photos
+   - Expert answers + AI-assisted responses
+   - Badges and gamification
+
+5. CORPORATE / GIFTING MODULE
+   - Bulk orders for offices
+   - Gifting with custom cards and packaging
+   - Corporate account with GST invoice
+   - B2B pricing
+
+6. MULTI-LANGUAGE SUPPORT
+   - Hindi + major regional languages
+   - Language auto-detect
+
+7. NATIVE MOBILE APP
+   - iOS + Android (React Native)
+   - Push notifications
+   - Plant care reminders
+   - AR plant preview
+
+8. LOYALTY PROGRAM EXPANSION
+   - Tiered rewards with exclusive benefits
+   - Early access to new arrivals for top tier
+
+9. LIVE VIDEO PLANT CARE SESSIONS
+   - Weekly live streams on plant care
+   - Expert Q&A
+   - Integration with website (watch + shop simultaneously)
+
+10. INTERNATIONAL SHIPPING
+    - UAE, Singapore, UK (Indian diaspora markets)
+    - Multi-currency support
+
+11. PLANT RENTAL / LEASE SERVICE
+    - For offices and events
+    - Subscription-based plant rental with maintenance service
+
+12. PLANT INSURANCE
+    - 30/60-day plant health guarantee + replacement coverage
+    - "Plant Protection Plan" upsell at checkout
+
+
+================================================================================
+END OF DOCUMENT
+================================================================================
+
+Document Title:     IndoorPlant.in — Product Requirements Document (PRD)
+Version:            1.0
+Prepared by:        Product Team
+Date Created:       June 2026
+Status:             Ready for Review
+Next Review Date:   July 2026
+
+REVISION HISTORY
+----------------
+v1.0 — June 2026 — Initial draft created
+--------------------------------------------------------------------------------
+For questions regarding this PRD, contact: product@indoorplant.in
+================================================================================
