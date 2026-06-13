@@ -12,7 +12,7 @@ import {
   Row,
   Column,
   Link,
-} from "@react-email/components";
+} from "react-email";
 
 interface OrderItem {
   name: string;
