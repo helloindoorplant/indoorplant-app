@@ -7,7 +7,7 @@ import * as z from 'zod';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useCartStore } from '@/store/useCartStore';
-import { ShieldCheck, ArrowLeft, Truck, CreditCard, ChevronRight, Check, MapPin, User, Plus } from 'lucide-react';
+import { ShieldCheck, ArrowLeft, Truck, CreditCard, ChevronRight, Check, MapPin, User, Plus, Eye, EyeOff } from 'lucide-react';
 import Link from 'next/link';
 import { FALLBACK_PLANT_IMAGE } from '@/lib/utils';
 
@@ -41,6 +41,7 @@ export default function CheckoutPage() {
   const [isGiftPackaging, setIsGiftPackaging] = useState(false);
   const [couponCode, setCouponCode] = useState('');
   const [appliedCoupon, setAppliedCoupon] = useState<{code: string, discount: number} | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
 
   const [savedAddresses, setSavedAddresses] = useState<any[]>([]);
   const [selectedAddressId, setSelectedAddressId] = useState<string | null>(null);
@@ -334,7 +335,21 @@ export default function CheckoutPage() {
                       <div className="bg-primary/5 border border-primary/20 p-4 rounded-xl mt-4 animate-in fade-in duration-300 md:col-span-2">
                         <label className="text-sm font-bold text-[#1B4332]">Create an Account (Optional)</label>
                         <p className="text-xs font-medium text-muted-foreground mb-3">Enter a password to easily track this order and save your details for next time.</p>
-                        <Input type="password" {...register('password')} className="h-12 rounded-xl bg-white" placeholder="Choose a secure password" />
+                        <div className="relative">
+                          <Input 
+                            type={showPassword ? 'text' : 'password'} 
+                            {...register('password')} 
+                            className="h-12 rounded-xl bg-white pr-12" 
+                            placeholder="Choose a secure password" 
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors p-1"
+                          >
+                            {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                          </button>
+                        </div>
                       </div>
                     )}
 
