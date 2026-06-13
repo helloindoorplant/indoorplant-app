@@ -23,7 +23,7 @@ export function ProductDetailsClient({ product, initialImages }: ProductDetailsC
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-24 items-start">
-      <div className="sticky top-24">
+      <div className="lg:sticky lg:top-24">
         <ImageGallery images={activeImages} />
       </div>
       <ProductInfo product={product} onPotColorChange={handlePotColorChange} />

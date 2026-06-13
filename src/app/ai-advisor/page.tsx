@@ -57,10 +57,10 @@ export default function AiAdvisorPage() {
       </div>
 
       {/* Chat Area */}
-      <div className="flex-1 container mx-auto max-w-4xl px-4 py-8 flex flex-col h-full relative">
+      <div className="flex-1 container mx-auto max-w-4xl px-0 sm:px-4 py-4 sm:py-8 flex flex-col h-full relative">
         
         {/* Messages List */}
-        <div className="flex-1 overflow-y-auto hide-scrollbar space-y-6 pb-24">
+        <div className="flex-1 overflow-y-auto hide-scrollbar space-y-6 pb-6 px-4 sm:px-0">
           {messages.length === 0 && (
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="h-full flex flex-col items-center justify-center text-center max-w-lg mx-auto mt-12">
               <div className="bg-primary/10 p-6 rounded-full mb-6">
@@ -97,7 +97,7 @@ export default function AiAdvisorPage() {
                   </div>
                 )}
                 
-                <div className="flex flex-col gap-3 max-w-[85%]">
+                <div className="flex flex-col gap-3 max-w-[90%] md:max-w-[85%]">
                   {/* Unified Bubble Container */}
                   {(() => {
                     const messageText = (m as any).content || ((m as any).parts || []).map((p: any) => p.text || '').join('');
@@ -138,7 +138,7 @@ export default function AiAdvisorPage() {
                                 </div>
                               )}
                               {outputData.products && outputData.products.length > 0 && (
-                                <div className="flex gap-4 overflow-x-auto hide-scrollbar py-2 -mx-2 px-2 snap-x">
+                                <div className="flex gap-4 overflow-x-auto hide-scrollbar py-3 -mx-4 px-4 sm:-mx-2 sm:px-2 snap-x">
                                   {outputData.products.map((product: any) => (
                                     <div key={product.id} className="snap-start shrink-0">
                                       <ChatProductCard product={product} />
@@ -169,7 +169,7 @@ export default function AiAdvisorPage() {
                     if (!messageText && renderedTools.length === 0) return null;
 
                     return (
-                      <div className={`p-6 rounded-[24px] shadow-sm ${m.role === 'user' ? 'bg-primary text-white rounded-tr-sm' : 'bg-white border border-border/60 text-foreground rounded-tl-sm flex flex-col gap-4'}`}>
+                      <div className={`p-5 md:p-6 rounded-[24px] shadow-sm ${m.role === 'user' ? 'bg-primary text-white rounded-tr-sm' : 'bg-white border border-border/60 text-foreground rounded-tl-sm flex flex-col gap-4'}`}>
                         {messageText && (
                           <div className={`prose prose-sm md:prose-base max-w-none font-medium leading-relaxed ${m.role === 'user' ? 'text-white' : 'text-muted-foreground'} prose-p:my-2 prose-ul:my-2 prose-li:my-0`}>
                             <span className="whitespace-pre-wrap">{messageText}</span>
@@ -229,7 +229,7 @@ export default function AiAdvisorPage() {
         </div>
 
         {/* Input Area */}
-        <div className="absolute bottom-6 left-4 right-4 md:left-0 md:right-0">
+        <div className="shrink-0 sticky bottom-0 bg-[#F8FFF9]/95 backdrop-blur-md pb-4 pt-3 px-4 sm:px-0 z-20 border-t border-primary/5 sm:border-none sm:bg-transparent">
           {speechError && (
             <div className="max-w-3xl mx-auto mb-2 bg-red-50 text-red-600 p-3 rounded-xl flex items-center gap-2 border border-red-100 text-sm font-medium shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
               <AlertCircle className="h-5 w-5 shrink-0" />
@@ -257,7 +257,7 @@ export default function AiAdvisorPage() {
               <Button 
                 type="submit" 
                 disabled={isLoading || !input.trim()} 
-                className="h-14 w-14 rounded-full shrink-0 shadow-md transition-transform hover:scale-105 bg-primary hover:bg-primary/90 disabled:opacity-50"
+                className="h-12 w-12 sm:h-14 sm:w-14 rounded-full shrink-0 shadow-md transition-transform hover:scale-105 bg-primary hover:bg-primary/90 disabled:opacity-50"
               >
                 <Send className="h-5 w-5 text-white" />
               </Button>
