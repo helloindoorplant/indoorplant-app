@@ -18,6 +18,7 @@ import { Input } from '@/components/ui/input';
 const checkoutSchema = z.object({
   fullName: z.string().min(2, 'Full name is required'),
   email: z.string().email('Valid email is required'),
+  password: z.string().optional(),
   phone: z.string().regex(/^[0-9]{10}$/, 'Must be a valid 10-digit Indian mobile number'),
   address1: z.string().min(5, 'Address is required'),
   address2: z.string().optional(),
@@ -153,6 +154,18 @@ export default function CheckoutPage() {
     const formData = getValues();
     
     try {
+      if (!session?.user && formData.password) {
+        try {
+          await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: formData.fullName, email: formData.email, password: formData.password })
+          });
+        } catch(e) {
+          console.error('Auto account creation failed', e);
+        }
+      }
+
       const res = await loadRazorpay();
       if (!res) {
         alert('Razorpay SDK failed to load. Are you online?');
@@ -316,6 +329,14 @@ export default function CheckoutPage() {
                         {errors.email && <p className="text-red-500 text-xs font-bold">{errors.email.message}</p>}
                       </div>
                     </div>
+
+                    {!session?.user && (
+                      <div className="bg-primary/5 border border-primary/20 p-4 rounded-xl mt-4 animate-in fade-in duration-300 md:col-span-2">
+                        <label className="text-sm font-bold text-[#1B4332]">Create an Account (Optional)</label>
+                        <p className="text-xs font-medium text-muted-foreground mb-3">Enter a password to easily track this order and save your details for next time.</p>
+                        <Input type="password" {...register('password')} className="h-12 rounded-xl bg-white" placeholder="Choose a secure password" />
+                      </div>
+                    )}
 
                     <div className="space-y-2">
                       <label className="text-sm font-bold text-slate-700">Mobile Number *</label>
