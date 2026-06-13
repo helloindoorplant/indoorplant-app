@@ -113,7 +113,6 @@ export function Header() {
                 </span>
               )}
             </Button>
-            </Button>
 
             {/* Mobile Menu Toggle */}
             <Button variant="ghost" size="icon" className="md:hidden z-50 ml-1" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
