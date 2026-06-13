@@ -155,10 +155,11 @@ export function FloatingAiWidget() {
       </div>
 
       {/* Chat Window */}
-      <div className={`fixed bottom-6 right-6 w-[calc(100vw-48px)] sm:w-[400px] h-[600px] max-h-[calc(100vh-48px)] bg-white rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border border-border/50 flex flex-col z-[60] transition-all duration-300 origin-bottom-right ${isOpen ? 'scale-100 opacity-100 pointer-events-auto translate-y-0' : 'scale-90 opacity-0 pointer-events-none translate-y-8'}`}>
+      {/* Chat Window */}
+      <div className={`fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 w-full sm:w-[400px] h-[100dvh] sm:h-[600px] sm:max-h-[calc(100vh-48px)] bg-white sm:rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border-0 sm:border border-border/50 flex flex-col z-[60] transition-all duration-300 sm:origin-bottom-right ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0 sm:scale-100' : 'opacity-0 pointer-events-none translate-y-full sm:translate-y-8 sm:scale-90'}`}>
         
         {/* Header */}
-        <div className="bg-primary text-white p-5 rounded-t-3xl flex items-center justify-between shrink-0 relative overflow-hidden">
+        <div className="bg-primary text-white p-5 sm:rounded-t-3xl flex items-center justify-between shrink-0 relative overflow-hidden pt-[max(20px,env(safe-area-inset-top))]">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl pointer-events-none" />
           <div className="flex items-center gap-3 relative z-10">
             <div className="bg-white/20 p-2 rounded-xl shadow-sm">
@@ -205,31 +206,31 @@ export function FloatingAiWidget() {
         </div>
 
         {/* Input */}
-        <div className="p-4 bg-white rounded-b-3xl border-t border-border/40 shrink-0">
+        <div className="p-4 bg-white rounded-none sm:rounded-b-3xl border-t border-border/40 shrink-0 pb-[max(16px,env(safe-area-inset-bottom))] sm:pb-4">
            {(error || speechError) && (
             <div className="mb-3 bg-red-50 text-red-600 p-3 rounded-xl flex items-center gap-2 border border-red-100 text-sm font-medium">
               <AlertCircle className="h-5 w-5 shrink-0" />
               <span>{speechError || 'Connection error. Please try again.'}</span>
             </div>
           )}
-          <form onSubmit={handleCustomSubmit} className="flex gap-2 relative">
+          <form onSubmit={handleCustomSubmit} className="flex gap-2 relative w-full items-center">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder={isListening ? "Listening..." : "Ask a plant question..."}
-              className={`flex-1 bg-secondary/30 border ${isListening ? 'border-red-300 bg-red-50' : 'border-border/60'} rounded-2xl pl-5 pr-12 py-3 text-[15px] font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground/60 transition-all`}
+              className={`flex-1 min-w-0 bg-secondary/30 border ${isListening ? 'border-red-300 bg-red-50' : 'border-border/60'} rounded-2xl pl-5 pr-12 py-3 text-[15px] font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 placeholder:text-muted-foreground/60 transition-all`}
             />
             {isSupported && (
               <button
                 type="button"
                 onClick={toggleListening}
-                className={`absolute right-14 top-1/2 -translate-y-1/2 p-2 rounded-full transition-colors ${isListening ? 'text-red-500 animate-pulse' : 'text-slate-400 hover:text-primary hover:bg-primary/5'}`}
+                className={`absolute right-[56px] top-1/2 -translate-y-1/2 p-2 rounded-full transition-colors ${isListening ? 'text-red-500 animate-pulse' : 'text-slate-400 hover:text-primary hover:bg-primary/5'}`}
                 title="Use Voice Input"
               >
                 {isListening ? <Mic className="h-5 w-5" /> : <MicOff className="h-5 w-5" />}
               </button>
             )}
-            <Button type="submit" disabled={isLoading || !input.trim()} size="icon" className="h-[46px] w-[46px] rounded-2xl shrink-0 bg-primary hover:bg-primary/90 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
+            <Button type="submit" disabled={isLoading || !input.trim()} size="icon" className="h-[46px] w-[46px] shrink-0 rounded-2xl bg-primary hover:bg-primary/90 shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5">
               <Send className="h-5 w-5" />
             </Button>
           </form>
