@@ -237,27 +237,29 @@ export default function AiAdvisorPage() {
             </div>
           )}
           <div className="bg-white p-2 sm:p-3 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-border/50 max-w-3xl mx-auto">
-            <form onSubmit={handleCustomSubmit} className="flex gap-2 relative">
-              <input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder={isListening ? "Listening..." : "Ask me anything about plants..."}
-                className={`flex-1 bg-transparent border-none focus:outline-none px-6 pr-14 text-[16px] font-medium transition-colors ${isListening ? 'text-red-600 placeholder:text-red-400' : 'placeholder:text-muted-foreground/60'}`}
-              />
-              {isSupported && (
-                <button
-                  type="button"
-                  onClick={toggleListening}
-                  className={`absolute right-20 top-1/2 -translate-y-1/2 p-3 rounded-full transition-colors ${isListening ? 'text-red-500 animate-pulse bg-red-50' : 'text-slate-400 hover:text-primary hover:bg-primary/5'}`}
-                  title="Use Voice Input"
-                >
-                  {isListening ? <Mic className="h-6 w-6" /> : <MicOff className="h-6 w-6" />}
-                </button>
-              )}
+            <form onSubmit={handleCustomSubmit} className="flex gap-1 sm:gap-2 relative items-center w-full">
+              <div className="flex-1 relative flex items-center">
+                <input
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder={isListening ? "Listening..." : "Ask me anything..."}
+                  className={`w-full bg-transparent border-none focus:outline-none pl-4 sm:pl-6 pr-[48px] text-[16px] font-medium transition-colors ${isListening ? 'text-red-600 placeholder:text-red-400' : 'placeholder:text-muted-foreground/60'}`}
+                />
+                {isSupported && (
+                  <button
+                    type="button"
+                    onClick={toggleListening}
+                    className={`absolute right-1 p-2 sm:p-3 rounded-full transition-colors ${isListening ? 'text-red-500 animate-pulse bg-red-50' : 'text-slate-400 hover:text-primary hover:bg-primary/5'}`}
+                    title="Use Voice Input"
+                  >
+                    {isListening ? <Mic className="h-5 w-5 sm:h-6 sm:w-6" /> : <MicOff className="h-5 w-5 sm:h-6 sm:w-6" />}
+                  </button>
+                )}
+              </div>
               <Button 
                 type="submit" 
                 disabled={isLoading || !input.trim()} 
-                className="h-12 w-12 sm:h-14 sm:w-14 rounded-full shrink-0 shadow-md transition-transform hover:scale-105 bg-primary hover:bg-primary/90 disabled:opacity-50"
+                className="h-12 w-12 sm:h-14 sm:w-14 rounded-full shrink-0 shadow-md transition-transform hover:scale-105 bg-primary hover:bg-primary/90 disabled:opacity-50 p-0 flex items-center justify-center"
               >
                 <Send className="h-5 w-5 text-white" />
               </Button>
