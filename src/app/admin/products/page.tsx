@@ -1,11 +1,11 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from '@/lib/prisma';
 import Image from "next/image";
 import Link from "next/link";
 import { Plus, Search, Edit } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DeleteProductButton } from "@/components/admin/DeleteProductButton";
 
-const prisma = new PrismaClient();
+
 
 export const dynamic = 'force-dynamic';
 

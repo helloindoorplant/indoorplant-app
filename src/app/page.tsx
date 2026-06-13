@@ -1,5 +1,5 @@
+import prisma from '@/lib/prisma';
 import Link from 'next/link';
-import { PrismaClient } from '@prisma/client';
 import { ArrowRight, Leaf, ShieldCheck, Truck, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ProductCard } from '@/components/shared/ProductCard';
@@ -12,7 +12,7 @@ import { UspSection } from '@/components/home/UspSection';
 import { TestimonialSlider } from '@/components/home/TestimonialSlider';
 import { BlogSection } from '@/components/home/BlogSection';
 
-const prisma = new PrismaClient();
+
 
 export const dynamic = 'force-dynamic';
 

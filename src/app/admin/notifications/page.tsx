@@ -1,7 +1,7 @@
-import { PrismaClient } from '@prisma/client';
+import prisma from '@/lib/prisma';
 import { Mail, Smartphone, Bell, CheckCircle2, XCircle } from 'lucide-react';
 
-const prisma = new PrismaClient();
+
 
 export const dynamic = 'force-dynamic';
 

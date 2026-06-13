@@ -1,3 +1,4 @@
+import prisma from '@/lib/prisma';
 import Link from 'next/link';
 import { Filter, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -5,9 +6,8 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from '@/co
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { ProductCard } from '@/components/shared/ProductCard';
 import { FilterSidebar } from '@/components/shop/FilterSidebar';
-import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+
 
 export const dynamic = 'force-dynamic';
 

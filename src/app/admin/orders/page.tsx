@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from '@/lib/prisma';
 import { OrdersTable } from "@/components/admin/OrdersTable";
 
-const prisma = new PrismaClient();
+
 
 export const dynamic = 'force-dynamic';
 

@@ -1,9 +1,9 @@
 "use server";
+import prisma from '@/lib/prisma';
 
-import { PrismaClient } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 
-const prisma = new PrismaClient();
+
 
 export async function updateOrderStatus(orderId: string, status: string) {
   await prisma.order.update({

@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from '@/lib/prisma';
 import { 
   TrendingUp, 
   Package, 
@@ -8,7 +8,7 @@ import {
   Leaf
 } from "lucide-react";
 
-const prisma = new PrismaClient();
+
 export const dynamic = 'force-dynamic';
 
 export default async function AdminOverview() {

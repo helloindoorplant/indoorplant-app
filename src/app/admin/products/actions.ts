@@ -1,10 +1,10 @@
 "use server";
+import prisma from '@/lib/prisma';
 
-import { PrismaClient } from "@prisma/client";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-const prisma = new PrismaClient();
+
 
 export async function saveProduct(formData: FormData) {
   const id = formData.get("id") as string;

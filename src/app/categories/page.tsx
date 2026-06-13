@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from '@/lib/prisma';
 import { CategoryCard } from "@/components/shared/CategoryCard";
 
-const prisma = new PrismaClient();
+
 
 export const metadata = {
   title: "Collections | Indoorplant",

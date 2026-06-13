@@ -1,8 +1,8 @@
+import prisma from '@/lib/prisma';
 import { ProductForm } from "@/components/admin/ProductForm";
-import { PrismaClient } from "@prisma/client";
 import { notFound } from "next/navigation";
 
-const prisma = new PrismaClient();
+
 
 export default async function EditProductPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;

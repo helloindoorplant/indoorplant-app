@@ -1,3 +1,4 @@
+import prisma from '@/lib/prisma';
 import { notFound } from 'next/navigation';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { ProductCard } from '@/components/shared/ProductCard';
@@ -5,9 +6,8 @@ import { ProductDetailsClient } from '@/components/product/ProductDetailsClient'
 import { ProductReviews } from '@/components/product/ProductReviews';
 import { FaqSection } from '@/components/shared/FaqSection';
 import { RecentlyViewedTracker } from '@/components/product/RecentlyViewedTracker';
-import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;

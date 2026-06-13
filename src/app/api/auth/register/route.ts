@@ -1,10 +1,10 @@
+import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcryptjs';
 import { Resend } from 'resend';
 import WelcomeTemplate from '@/emails/WelcomeTemplate';
 
-const prisma = new PrismaClient();
+
 // We use a safe fallback so the server doesn't crash if RESEND_API_KEY is missing
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
 

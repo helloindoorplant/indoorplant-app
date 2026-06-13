@@ -1,9 +1,9 @@
+import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
 import { Resend } from 'resend';
 import OtpEmailTemplate from '@/emails/OtpEmailTemplate';
 
-const prisma = new PrismaClient();
+
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
 
 export async function POST(req: Request) {

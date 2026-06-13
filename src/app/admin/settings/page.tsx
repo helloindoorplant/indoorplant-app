@@ -1,7 +1,7 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from '@/lib/prisma';
 import { GeneralSettingsForm } from "@/components/admin/GeneralSettingsForm";
 
-const prisma = new PrismaClient();
+
 export const dynamic = 'force-dynamic';
 
 export default async function AdminSettingsPage() {

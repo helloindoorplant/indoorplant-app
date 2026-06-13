@@ -1,14 +1,14 @@
+import prisma from '@/lib/prisma';
 import { Resend } from 'resend';
 import { WelcomeTemplate } from '@/emails/WelcomeTemplate';
 import { OrderPlacedTemplate } from '@/emails/OrderPlacedTemplate';
-import { PrismaClient } from '@prisma/client';
 
 // Initialize Resend
 // In a real app, you would use process.env.RESEND_API_KEY
 // Fallback is provided to prevent crashes during local dev without an API key
 const resend = new Resend(process.env.RESEND_API_KEY || 're_123456789');
 
-const prisma = new PrismaClient();
+
 
 /**
  * Helper to log notifications to the database

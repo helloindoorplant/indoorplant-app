@@ -1,8 +1,8 @@
+import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/dist/server/web/spec-extension/response';
 import { sendWelcomeNotification, sendOrderConfirmation } from '@/lib/notifications';
-import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+
 
 export async function POST(request: Request) {
   try {

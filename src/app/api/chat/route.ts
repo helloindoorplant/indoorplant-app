@@ -1,7 +1,7 @@
+import prisma from '@/lib/prisma';
 import { createGroq } from '@ai-sdk/groq';
 import { streamText, tool, convertToModelMessages } from 'ai';
 import { z } from 'zod';
-import { PrismaClient } from '@prisma/client';
 import { AGENTS_SYSTEM_PROMPT } from '@/lib/agents-prompt';
 
 export const maxDuration = 30;
@@ -122,14 +122,14 @@ export async function POST(req: Request) {
         const extracted = JSON.parse(extractData.choices[0].message.content);
         
         if (extracted.name && extracted.phone) {
-          const prisma = new PrismaClient();
+          
           await prisma.chatLead.create({
             data: {
               name: extracted.name,
               phone: String(extracted.phone)
             }
           });
-          await prisma.$disconnect();
+          
           coreMessages.push({
             role: 'system',
             content: 'SYSTEM NOTE: The user has provided their name and phone number, and it has been successfully saved to the database! You MUST thank them warmly and tell them we are ready to assist them further.'
@@ -161,7 +161,7 @@ export async function POST(req: Request) {
         }),
         // @ts-ignore
         execute: async (args: any) => {
-          const prisma = new PrismaClient();
+          
           let searchText = 'all';
           try {
             const extractRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
@@ -193,7 +193,7 @@ export async function POST(req: Request) {
               take: 4,
               select: { id: true, name: true, slug: true, price: true, salePrice: true, images: true, petFriendly: true, careLevel: true }
             });
-            await prisma.$disconnect();
+            
             return { success: true, products, explanation: "Here are some of our best plants!" };
           }
 
@@ -215,9 +215,9 @@ export async function POST(req: Request) {
 
           const keywordConditions = keywords.map((kw: string) => ({
             OR: [
-              { name: { contains: kw } },
-              { description: { contains: kw } },
-              { category: { name: { contains: kw } } }
+              { name: { contains: kw, mode: 'insensitive' } },
+              { description: { contains: kw, mode: 'insensitive' } },
+              { categories: { some: { name: { contains: kw, mode: 'insensitive' } } } }
             ]
           }));
           
@@ -280,7 +280,7 @@ export async function POST(req: Request) {
 
             return { success: true, products, explanation };
           } catch (error: any) {
-            await prisma.$disconnect();
+            
             return { success: false, error: error.message };
           }
         }

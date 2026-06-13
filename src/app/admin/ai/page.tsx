@@ -1,8 +1,8 @@
-import { PrismaClient } from "@prisma/client";
+import prisma from '@/lib/prisma';
 import { AiSettingsForm } from "@/components/admin/AiSettingsForm";
 import { MessageSquare, Zap, Activity, Bot } from "lucide-react";
 
-const prisma = new PrismaClient();
+
 export const dynamic = 'force-dynamic';
 
 export default async function AdminAiConfig() {
