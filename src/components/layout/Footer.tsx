@@ -20,8 +20,8 @@ export function Footer() {
               Bring Nature Inside. AI-powered recommendations. Expert care guides. Delivered fresh to your door.
             </p>
             <div className="flex gap-4 pt-2">
-              <Link href="#" className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition-colors"><FaInstagram className="h-4 w-4" /></Link>
-              <Link href="#" className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition-colors"><FaFacebook className="h-4 w-4" /></Link>
+              <Link href="https://www.instagram.com/indoorplant_in" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition-colors"><FaInstagram className="h-4 w-4" /></Link>
+              <Link href="https://www.facebook.com/share/18t44yTz3L/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition-colors"><FaFacebook className="h-4 w-4" /></Link>
             </div>
           </div>
 
