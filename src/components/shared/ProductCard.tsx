@@ -122,20 +122,21 @@ export function ProductCard({ id, name, tagline, price, originalPrice, rating, r
         </Link>
         <p className="text-[15px] text-muted-foreground mb-5 line-clamp-2 leading-relaxed">{tagline}</p>
         
-        <div className="mt-auto flex items-end justify-between pt-2 border-t border-border/30">
+        <div 
+          onClick={handleAddToCart}
+          className="mt-auto flex items-end justify-between pt-3 pb-1 border-t border-border/30 cursor-pointer group/cart"
+        >
           <div className="flex flex-col gap-0.5">
             {originalPrice && (
               <span className="text-xs font-medium text-muted-foreground line-through decoration-muted-foreground/40">₹{originalPrice}</span>
             )}
             <span className="text-[22px] font-bold text-primary tracking-tight">₹{price}</span>
           </div>
-          <Button 
-            size="icon" 
-            onClick={handleAddToCart}
-            className="h-11 w-11 rounded-full shadow-sm hover:shadow-md transition-all group-hover:scale-105 bg-primary hover:bg-primary/90 text-white z-10"
+          <div 
+            className="flex items-center justify-center h-11 w-11 rounded-full shadow-sm hover:shadow-md transition-all group-hover:scale-105 group-hover/cart:bg-primary/90 bg-primary text-white z-10"
           >
             <Plus className="h-5 w-5" />
-          </Button>
+          </div>
         </div>
       </div>
     </div>
