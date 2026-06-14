@@ -45,7 +45,7 @@ export function Footer() {
             <ul className="space-y-4 text-[15px] text-primary-foreground/80">
               <li><Link href="/account" className="hover:text-white hover:translate-x-1 inline-block transition-transform">My Account</Link></li>
               <li><Link href="/track-order" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Order Tracking</Link></li>
-              <li><Link href="/returns" className="hover:text-white hover:translate-x-1 inline-block transition-transform">7-Day Returns Policy</Link></li>
+              <li><Link href="/returns" className="hover:text-white hover:translate-x-1 inline-block transition-transform">12-Hour Returns Policy (Damaged Plants Only)</Link></li>
               <li><Link href="/shipping" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Shipping Information</Link></li>
               <li><Link href="/faq" className="hover:text-white hover:translate-x-1 inline-block transition-transform">FAQ & Support</Link></li>
             </ul>

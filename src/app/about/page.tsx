@@ -106,8 +106,8 @@ export default function AboutPage() {
               <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
                 <ShieldCheck className="w-6 h-6 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">7-Day Health Guarantee</h3>
-              <p className="text-gray-600">If your plant arrives damaged or unhealthy, we'll replace it for free within the first 7 days. No questions asked.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">12-Hour Return Policy</h3>
+              <p className="text-gray-600">Returns are allowed only for damaged plants. If your plant arrives damaged or spoiled, we will replace or refund it if reported within 12 hours of delivery.</p>
             </div>
             
             <div className="bg-white p-8 rounded-2xl shadow-sm">

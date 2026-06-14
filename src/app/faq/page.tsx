@@ -35,7 +35,7 @@ const FAQS = [
       },
       {
         q: "What if my plant arrives damaged?",
-        a: "We have a 7-Day Health Guarantee. If your plant arrives damaged due to transit, simply take a photo within 24 hours of delivery and send it to our support team. We will issue a free replacement immediately."
+        a: "We offer a 12-Hour Return Policy for damaged plants. If your plant arrives damaged or spoiled, simply take a photo within 12 hours of delivery and send it to our support team. We will issue a return or replacement immediately. Please note that returns are allowed only for damaged plants."
       }
     ]
   },

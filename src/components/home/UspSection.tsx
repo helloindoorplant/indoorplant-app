@@ -14,8 +14,8 @@ export function UspSection() {
     },
     {
       icon: <ShieldCheck className="h-8 w-8" />,
-      title: "Healthy Guarantee",
-      desc: "7-day replacement guarantee if your plant isn't absolutely perfect."
+      title: "12-Hour Return Policy",
+      desc: "Returns allowed within 12 hours of delivery, only for damaged plants."
     },
     {
       icon: <Truck className="h-8 w-8" />,

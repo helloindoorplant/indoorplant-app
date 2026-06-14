@@ -258,6 +258,7 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
           <AccordionTrigger className="hover:no-underline font-extrabold text-xl py-6 tracking-tight">Shipping & Returns</AccordionTrigger>
           <AccordionContent className="text-[15px] leading-relaxed text-muted-foreground pb-8 font-medium">
             <p className="mb-4"><strong className="text-foreground">Free Standard Shipping:</strong> 3-5 business days across all of India. Plants are packaged in custom-engineered boxes to ensure they arrive in perfect condition.</p>
+            <p><strong className="text-foreground">12-Hour Return Policy:</strong> Returns are accepted only for damaged plants. If your plant arrives damaged or spoiled, please contact us with photos within 12 hours of delivery for a replacement or return.</p>
           </AccordionContent>
         </AccordionItem>
       </Accordion>
