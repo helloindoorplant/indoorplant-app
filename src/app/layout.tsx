@@ -4,11 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import dynamic from "next/dynamic";
 import { Footer } from "@/components/layout/Footer";
-
-const FloatingAiWidget = dynamic(
-  () => import("@/components/shared/FloatingAiWidget").then((mod) => mod.FloatingAiWidget),
-  { ssr: false }
-);
+import { FloatingAiWidgetWrapper } from "@/components/shared/FloatingAiWidgetWrapper";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 
 const poppins = Poppins({
@@ -77,7 +73,7 @@ export default function RootLayout({
           <main className="flex-1 flex flex-col">
             {children}
           </main>
-          <FloatingAiWidget />
+          <FloatingAiWidgetWrapper />
           <Footer />
         </AuthProvider>
       </body>
