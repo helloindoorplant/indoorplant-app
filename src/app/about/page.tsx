@@ -61,7 +61,7 @@ export default function AboutPage() {
               <h2 className="text-3xl font-bold text-gray-900 font-playfair mb-6">Our Story</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 2026, IndoorPlant.in was born out of a frustration with traditional nurseries. Finding the right plant for specific lighting conditions was a guessing game, and getting them home safely was a hassle.
+                  Founded in 2024, IndoorPlant.in was born out of a frustration with traditional nurseries. Finding the right plant for specific lighting conditions was a guessing game, and getting them home safely was a hassle.
                 </p>
                 <p>
                   We realized that being a "plant parent" shouldn't require a botany degree. That's why we combined premium, nursery-fresh plants with our cutting-edge AI Plant Advisor. 
