@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Leaf, Send } from 'lucide-react';
-import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
 
 export function Footer() {
@@ -22,8 +22,6 @@ export function Footer() {
             <div className="flex gap-4 pt-2">
               <Link href="#" className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition-colors"><FaInstagram className="h-4 w-4" /></Link>
               <Link href="#" className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition-colors"><FaFacebook className="h-4 w-4" /></Link>
-              <Link href="#" className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition-colors"><FaTwitter className="h-4 w-4" /></Link>
-              <Link href="#" className="bg-white/10 p-2.5 rounded-full hover:bg-white/20 transition-colors"><FaYoutube className="h-4 w-4" /></Link>
             </div>
           </div>
 
@@ -45,7 +43,7 @@ export function Footer() {
             <ul className="space-y-4 text-[15px] text-primary-foreground/80">
               <li><Link href="/account" className="hover:text-white hover:translate-x-1 inline-block transition-transform">My Account</Link></li>
               <li><Link href="/track-order" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Order Tracking</Link></li>
-              <li><Link href="/returns" className="hover:text-white hover:translate-x-1 inline-block transition-transform">12-Hour Returns Policy (Damaged Plants Only)</Link></li>
+              <li><Link href="/returns" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Return Policy</Link></li>
               <li><Link href="/shipping" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Shipping Information</Link></li>
               <li><Link href="/faq" className="hover:text-white hover:translate-x-1 inline-block transition-transform">FAQ & Support</Link></li>
             </ul>
@@ -55,8 +53,8 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6 tracking-wide">Contact & Newsletter</h3>
             <address className="not-italic text-[15px] text-primary-foreground/80 space-y-4">
-              <p className="flex items-center gap-3"><span className="text-white">Email:</span> support@indoorplant.in</p>
-              <p className="flex items-center gap-3"><span className="text-white">Phone:</span> +91-800-123-4567</p>
+              <p className="flex items-center gap-3"><span className="text-white">Email:</span> helloindoorplant@gmail.com</p>
+              <p className="flex items-center gap-3"><span className="text-white">Phone:</span> +91 70035 87996</p>
               <div className="pt-4 space-y-3">
                 <p className="text-white font-medium">Get Plant Care Tips & Offers</p>
                 <form className="flex group" action="/api/newsletter" method="POST">
