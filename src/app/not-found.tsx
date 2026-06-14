@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center bg-white px-4 py-24 md:py-32 relative overflow-hidden">
+    <div suppressHydrationWarning className="min-h-[80vh] flex flex-col items-center justify-center bg-white px-4 py-24 md:py-32 relative overflow-hidden">
       {/* Background Decorative Leaves */}
       <motion.div 
         className="absolute top-10 left-10 text-primary/5 hidden md:block"
