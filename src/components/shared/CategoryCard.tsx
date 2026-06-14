@@ -23,7 +23,7 @@ export function CategoryCard({ name, count, slug, image, colorClass = "bg-[#D8F3
             src={image} 
             alt={name} 
             fill 
-            className="object-cover opacity-80 mix-blend-multiply transition-transform duration-[2s] group-hover:scale-110 ease-out" 
+            className="object-cover transition-transform duration-[2s] group-hover:scale-110 ease-out" 
           />
         </div>
       )}
