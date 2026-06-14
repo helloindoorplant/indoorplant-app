@@ -326,7 +326,7 @@ export const BLOG_POSTS: BlogPost[] = [
       Do you have pets or small children at home?
     </h3>
     <p class="text-gray-700 leading-relaxed mb-4">
-      Several of the most popular decorative plants are toxic if chewed or ingested. This includes money plants and monstera. If you have cats, dogs, or young children who put things in their mouths, check the pet safety column in the comparison table below before buying.
+      Several of the most popular decorative plants are toxic if chewed or ingested. This includes money plants and monstera. If you have cats, dogs, or young children who put things in their mouths, check the pet safety details for each plant below before buying.
     </p>
     <p class="text-gray-700 leading-relaxed font-semibold text-emerald-800 mb-0">
       The two aglaonemas in this guide (Red Lipstick and Snow White) are pet safe. The Lucky Jade Plant and Bamboo Palm are also pet safe. These four are your options if this is a concern.
@@ -781,91 +781,6 @@ export const BLOG_POSTS: BlogPost[] = [
       The nursery pot this arrives in is functional, not attractive. The plant is worth it, but add Rs 400-600 to your budget for a proper terracotta or ceramic floor planter. The combination is what looks good.
     </div>
   </div>
-</div>
-
-<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
-  📊 Comparison — All 8 Plants at a Glance
-</h2>
-
-<div class="overflow-x-auto my-8 border border-gray-200 rounded-2xl shadow-sm">
-  <table class="w-full text-left border-collapse text-sm text-stone-600 m-0">
-    <thead>
-      <tr class="bg-emerald-50/40 border-b border-gray-200 text-[#1B4332] font-bold">
-        <th class="p-4">Plant</th>
-        <th class="p-4">Price</th>
-        <th class="p-4">Light Needed</th>
-        <th class="p-4">Water</th>
-        <th class="p-4">Pet Safe</th>
-        <th class="p-4">Best For</th>
-      </tr>
-    </thead>
-    <tbody class="divide-y divide-gray-100 bg-white font-medium">
-      <tr class="hover:bg-gray-50/50 transition-colors">
-        <td class="p-4 font-bold text-stone-900"><a href="/product/njoy-money-plant" class="hover:underline text-emerald-800">N'Joy Money Plant</a></td>
-        <td class="p-4 text-emerald-700 font-extrabold">Rs 299</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-emerald-50 text-emerald-800 border border-emerald-100">Bright indirect</span></td>
-        <td class="p-4">Once a week</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-red-50 text-red-700 border border-red-150">No</span></td>
-        <td class="p-4 text-xs font-normal">Desk, shelf, pale walls</td>
-      </tr>
-      <tr class="hover:bg-gray-50/50 transition-colors">
-        <td class="p-4 font-bold text-stone-900"><a href="/product/golden-money-plant" class="hover:underline text-emerald-800">Golden Money Plant</a></td>
-        <td class="p-4 text-emerald-700 font-extrabold">Rs 309</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to bright</span></td>
-        <td class="p-4">Every 7-10d</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-red-50 text-red-700 border border-red-150">No</span></td>
-        <td class="p-4 text-xs font-normal">Any room, any light</td>
-      </tr>
-      <tr class="hover:bg-gray-50/50 transition-colors">
-        <td class="p-4 font-bold text-stone-900"><a href="/product/money-plant-variegated" class="hover:underline text-emerald-800">Money Plant Variegated</a></td>
-        <td class="p-4 text-emerald-700 font-extrabold">Rs 299</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to medium</span></td>
-        <td class="p-4">Once a week</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-red-50 text-red-700 border border-red-150">No</span></td>
-        <td class="p-4 text-xs font-normal">Kitchen, bathroom, trailing shelf</td>
-      </tr>
-      <tr class="hover:bg-gray-50/50 transition-colors">
-        <td class="p-4 font-bold text-stone-900"><a href="/product/aglaonema-red-lipstick-plant" class="hover:underline text-emerald-800">Aglaonema Red Lipstick</a></td>
-        <td class="p-4 text-emerald-700 font-extrabold">Rs 399</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to medium</span></td>
-        <td class="p-4">Once a week</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-green-50 text-green-700 border border-green-200">Yes</span></td>
-        <td class="p-4 text-xs font-normal">Dim corners, north-facing rooms</td>
-      </tr>
-      <tr class="hover:bg-gray-50/50 transition-colors">
-        <td class="p-4 font-bold text-stone-900"><a href="/product/aglaonema-snow-white-plant" class="hover:underline text-emerald-800">Aglaonema Snow White</a></td>
-        <td class="p-4 text-emerald-700 font-extrabold">Rs 349</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to medium</span></td>
-        <td class="p-4">Once a week</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-green-50 text-green-700 border border-green-200">Yes</span></td>
-        <td class="p-4 text-xs font-normal">Bedroom, home office, minimal decor</td>
-      </tr>
-      <tr class="hover:bg-gray-50/50 transition-colors">
-        <td class="p-4 font-bold text-stone-900"><a href="/product/monstera-broken-heart" class="hover:underline text-emerald-800">Monstera Broken Heart</a></td>
-        <td class="p-4 text-emerald-700 font-extrabold">Rs 349</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-emerald-50 text-emerald-800 border border-emerald-100">Bright indirect</span></td>
-        <td class="p-4">Every 5-7d</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-red-50 text-red-700 border border-red-150">No</span></td>
-        <td class="p-4 text-xs font-normal">Bright corners, balcony doors</td>
-      </tr>
-      <tr class="hover:bg-gray-50/50 transition-colors">
-        <td class="p-4 font-bold text-stone-900"><a href="/product/lucky-jade-plant" class="hover:underline text-emerald-800">Lucky Jade Plant</a></td>
-        <td class="p-4 text-emerald-700 font-extrabold">Rs 299</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-amber-50 text-amber-800 border border-amber-100">Direct or bright</span></td>
-        <td class="p-4">Every 2-3w</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-green-50 text-green-700 border border-green-200">Yes</span></td>
-        <td class="p-4 text-xs font-normal">Sunny windowsill, balcony, travel homes</td>
-      </tr>
-      <tr class="hover:bg-gray-50/50 transition-colors">
-        <td class="p-4 font-bold text-stone-900"><a href="/product/bamboo-palm-plant" class="hover:underline text-emerald-800">Bamboo Palm</a></td>
-        <td class="p-4 text-emerald-700 font-extrabold">Rs 389</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to bright</span></td>
-        <td class="p-4">Every 7-10d</td>
-        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-green-50 text-green-700 border border-green-200">Yes</span></td>
-        <td class="p-4 text-xs font-normal">Large floor corner, entryway</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
 
 <h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">

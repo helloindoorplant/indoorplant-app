@@ -46,11 +46,13 @@ export default function BlogPage() {
         {/* Featured Post */}
         {featuredPost && (
           <Link href={`/blog/${featuredPost.slug}`} className="group block">
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col md:flex-row">
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-150 flex flex-col md:flex-row hover:shadow-md transition-shadow duration-300">
               <div className="md:w-3/5 h-64 md:h-[400px] relative overflow-hidden bg-gray-100">
-                {/* Fallback image if URL fails */}
-                <div className="absolute inset-0 bg-primary/10"></div>
-                {/* Real image would go here in production */}
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="md:w-2/5 p-8 md:p-12 flex flex-col justify-center">
                 <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-full w-max mb-4">
@@ -75,9 +77,13 @@ export default function BlogPage() {
         {/* Post Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {regularPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-full flex flex-col hover:shadow-md transition-shadow">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group block bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-150 h-full flex flex-col hover:shadow-md transition-shadow duration-300">
               <div className="h-48 relative overflow-hidden bg-gray-100">
-                 <div className="absolute inset-0 bg-primary/5 group-hover:scale-105 transition-transform duration-500"></div>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <span className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
