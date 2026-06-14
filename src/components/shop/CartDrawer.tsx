@@ -83,6 +83,27 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
         </div>
 
         <div className="p-6 bg-white border-t border-border/40 shrink-0 shadow-[0_-10px_30px_rgba(0,0,0,0.03)] z-10 relative">
+          {items.length > 0 && (
+            <div className="mb-5 bg-[#F8FFF9] p-3.5 rounded-xl border border-primary/20 shadow-sm">
+              <div className="flex justify-between items-center text-[13px] sm:text-sm font-bold mb-2.5">
+                {subtotal() >= 499 ? (
+                  <span className="text-primary flex items-center gap-1.5">
+                    <span className="text-base">🎉</span> You've unlocked FREE shipping!
+                  </span>
+                ) : (
+                  <span className="text-muted-foreground">
+                    Add <span className="text-primary font-extrabold">₹{499 - subtotal()}</span> more for <span className="text-primary font-extrabold">FREE</span> shipping
+                  </span>
+                )}
+              </div>
+              <div className="h-2 w-full bg-primary/10 rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-primary transition-all duration-500 rounded-full"
+                  style={{ width: `${Math.min((subtotal() / 499) * 100, 100)}%` }}
+                />
+              </div>
+            </div>
+          )}
           <div className="flex items-center justify-between mb-2">
             <span className="text-lg font-bold text-muted-foreground">Subtotal</span>
             <span className="text-3xl font-extrabold text-[#1B4332]">₹{subtotal()}</span>
