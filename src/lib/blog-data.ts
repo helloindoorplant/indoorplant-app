@@ -220,20 +220,20 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "decorative-plants-for-home-online-india",
     title: "The Ultimate Guide to Buying Decorative Plants for Your Home Online",
-    excerpt: "How to choose decorative plants for your Indian home and buy them online without getting it wrong. Real plants, honest care needs.",
-    category: "Home Decor + Plant Selection",
+    excerpt: "Eight decorative plants you can buy online for Indian homes right now. Real prices, honest care notes, and only plants that actually survive Indian apartments.",
+    category: "Home Decor + Plant Buying",
     date: "June 15, 2026",
-    readTime: "8 min read",
+    readTime: "9 min read",
     image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/decorative-plants-for-home-online-india.webp",
-    metaTitle: "Decorative Plants for Home Online India — Buyer's Guide 2026",
-    metaDescription: "How to choose decorative plants for your Indian home and buy them online without getting it wrong. Real plants, honest care needs, and what actually looks good in Indian spaces.",
+    metaTitle: "Decorative Plants for Indian Homes — Buy Online Guide 2026",
+    metaDescription: "Eight decorative plants you can buy online for Indian homes right now. Real prices, honest care notes, and only plants that actually survive Indian apartments. From Rs 299.",
     keywords: [
       "decorative plants for home online India",
       "buy decorative plants online India",
       "indoor decorative plants India",
       "best plants for home decor India",
-      "plants for Indian home interiors",
-      "decorative indoor plants online"
+      "decorative indoor plants for Indian homes",
+      "indoor plants buy online India"
     ],
     author: {
       name: "Dr. Anjali Desai",
@@ -241,321 +241,800 @@ export const BLOG_POSTS: BlogPost[] = [
       avatar: "AD"
     },
     content: `
-<p class="lead text-xl text-gray-600 mb-8">
-  Most people buy a plant because it looked beautiful in a photo. Two months later it is sitting in a dark corner, leaves yellowing, slowly dying in a pot that was the wrong size for it from day one.
+<p class="lead text-xl text-gray-650 mb-8 leading-relaxed font-light">
+  Most people buy a plant because it looks beautiful in a photo. Six weeks later it is dropping leaves in a corner, the nursery pot is cracking, and the soil has gone bone dry because nobody told them this particular plant needs watering twice a week in peak Indian summer.
 </p>
-<p class="mb-6">
-  This guide is not about making plants sound magical. It is about helping you pick one that actually works in your specific home — your light, your schedule, your floor space — so it still looks good in December.
+<p class="mb-6 text-gray-700 leading-relaxed">
+  This guide exists to stop that from happening.
 </p>
-<p class="mb-8">
-  All the plants mentioned below are available at <a href="/shop" class="text-primary hover:underline font-bold">IndoorPlant.in</a> and have been chosen because they are realistic options for Indian homes, not aspirational ones.
-</p>
-
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">What "Decorative" Actually Means for an Indoor Plant</h2>
-<p class="mb-6">
-  A decorative plant is not a specific category. It just means a plant you are choosing for how it looks, not to eat or use medicinally. That covers most houseplants.
-</p>
-<p class="mb-6">
-  The difference between a plant that decorates a space and one that sits there looking sad comes down to three things: the right light, the right spot, and picking a size and shape that matches what you are trying to do with the room.
-</p>
-<p class="mb-8">
-  A <a href="/product/bamboo-palm-plant" class="text-primary hover:underline font-bold">Bamboo Palm</a> placed near a balcony door looks like it belongs there. The same plant stuffed into a windowless bedroom corner just sits there sulking.
+<p class="mb-8 text-gray-700 leading-relaxed">
+  Every plant mentioned below is available right now on <a href="/shop" class="text-[#2D6A4F] hover:text-[#1B4332] underline font-bold">indoorplant.in/shop</a>, with the current price verified today. The care notes are honest. The "not ideal for" sections are real. No plant is described as perfect because no plant is perfect for every home.
 </p>
 
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">The 4 Questions to Answer Before You Buy</h2>
-<p class="mb-6 font-semibold text-stone-850">These are the only things that actually matter when choosing a decorative plant for your home.</p>
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2 flex items-center gap-2">
+  <span>💡</span> Before You Buy — The 4 Questions That Actually Matter
+</h2>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">1. How much natural light does that spot get?</h3>
-<p class="mb-4">Not how much light you think it gets — how much it actually gets.</p>
-<ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-  <li><strong>Low light</strong> means a room with a north-facing window, or more than 3 metres from the nearest window. Most Indian apartments have at least one room like this.</li>
-  <li><strong>Bright indirect light</strong> means within a metre or two of a window that gets some sun, but the plant itself is not sitting in a direct sunbeam.</li>
-  <li><strong>Direct light</strong> means the plant would sit in a patch of sunlight for several hours a day. Rare indoors unless you have a sunny south or west-facing window or a balcony.</li>
-</ul>
-<p class="mb-6">
-  <strong>Why this matters:</strong> most decorative plants sold online are described as "low light tolerant" when they actually need bright indirect light to look their best. Buy the wrong one for a dim corner and you will have a surviving plant, not a decorative one.
+<div class="grid grid-cols-1 gap-6 my-8">
+  <!-- Question 1 -->
+  <div class="bg-emerald-50/20 border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-xl font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">1</span>
+      Which room, and exactly where in it?
+    </h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      The biggest mistake people make is buying a plant for a room rather than a specific spot. A Monstera Broken Heart near a bright south-facing window and a Monstera Broken Heart in a dim north-facing corner are two completely different plants in practice. One looks like the photos. One does not.
+    </p>
+    <p class="text-gray-700 leading-relaxed font-semibold text-emerald-800 mb-0">
+      Before ordering anything, go stand in the spot you have in mind. Note whether direct sunlight hits that spot at any point during the day, or whether it only gets ambient room light. That answer determines everything.
+    </p>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="bg-emerald-50/20 border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-xl font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">2</span>
+      How much light does that spot actually get?
+    </h3>
+    <div class="space-y-3 text-gray-700">
+      <p class="leading-relaxed">
+        <strong class="text-[#2D6A4F]">Low light:</strong> No direct sun ever reaches the spot. North-facing rooms in Indian apartments are typically low light. So are spots more than 3 metres from any window. Low-light plants survive here but rarely look their best. The right low-light plants — both aglaonemas in this guide — actually look good here.
+      </p>
+      <p class="leading-relaxed">
+        <strong class="text-[#2D6A4F]">Bright indirect light:</strong> The spot is near a window but the plant itself is not sitting in a sunbeam. This is what most plants need and what most Indian living rooms near east or south-facing windows can offer.
+      </p>
+      <p class="leading-relaxed">
+        <strong class="text-[#2D6A4F]">Direct light:</strong> The sun actually falls on the plant for some hours. This is what the Lucky Jade Plant needs to look its best. Most Indian balconies provide this.
+      </p>
+    </div>
+
+    <!-- City Specific Note -->
+    <div class="mt-4 bg-amber-50/30 border border-amber-100 rounded-xl p-4 text-xs text-gray-700 leading-relaxed">
+      <strong class="text-amber-800 font-bold">🏙️ Indian City Context:</strong> Air pollution in Delhi, Mumbai, and parts of Bangalore reduces indoor light noticeably compared to the same spot in a cleaner-air city. Plants described as "bright indirect light" may need to be placed closer to windows than you expect.
+    </div>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="bg-emerald-50/20 border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-xl font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">3</span>
+      How often will you actually water it?
+    </h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      This is the question to answer honestly, not optimistically.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-gray-700">
+      <div class="bg-white border border-gray-150 rounded-xl p-4 shadow-xs">
+        <strong class="block text-[#2D6A4F] mb-1 font-bold">Once a Week</strong>
+        Golden money plants, variegated money plants, aglaonemas, and monstera.
+      </div>
+      <div class="bg-white border border-gray-150 rounded-xl p-4 shadow-xs">
+        <strong class="block text-[#2D6A4F] mb-1 font-bold">Every 2-3 Weeks</strong>
+        Lucky Jade Plant is succulent-built. Stores water and survives forgetful weeks.
+      </div>
+      <div class="bg-white border border-gray-150 rounded-xl p-4 shadow-xs">
+        <strong class="block text-[#2D6A4F] mb-1 font-bold">Irregular/Flexible</strong>
+        Bamboo palm and golden money plant tolerate some irregularity well.
+      </div>
+    </div>
+  </div>
+
+  <!-- Question 4 -->
+  <div class="bg-emerald-50/20 border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-xl font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">4</span>
+      Do you have pets or small children at home?
+    </h3>
+    <p class="text-gray-700 leading-relaxed mb-4">
+      Several of the most popular decorative plants are toxic if chewed or ingested. This includes money plants and monstera. If you have cats, dogs, or young children who put things in their mouths, check the pet safety column in the comparison table below before buying.
+    </p>
+    <p class="text-gray-700 leading-relaxed font-semibold text-emerald-800 mb-0">
+      The two aglaonemas in this guide (Red Lipstick and Snow White) are pet safe. The Lucky Jade Plant and Bamboo Palm are also pet safe. These four are your options if this is a concern.
+    </p>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  🌿 The 8 Decorative Plants Available Now at IndoorPlant.in
+</h2>
+<p class="mb-8 text-gray-750 leading-relaxed">
+  These are all the plants currently in stock, with live prices verified as of June 2026 and honest notes on each one.
 </p>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">2. How often will you actually water it?</h3>
-<p class="mb-6">
-  Be honest here. "I will water it twice a week" sounds fine until you are travelling for work or it is peak summer and you keep forgetting.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-  <li>If you can commit to weekly watering: money plants, aglaonemas, and the <a href="/product/monstera-broken-heart" class="text-primary hover:underline font-bold">Monstera Broken Heart</a> are fine choices.</li>
-  <li>If you genuinely forget for 2-3 weeks at a stretch: the <a href="/product/lucky-jade-plant" class="text-primary hover:underline font-bold">Lucky Jade Plant</a> is built for exactly this. It is a succulent. It stores water in its trunk and leaves and will not punish you for forgetting.</li>
-</ul>
+<div class="space-y-8 my-8">
+  <!-- Plant 1: N'Joy Money Plant -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-100 px-2.5 py-1 rounded-full">Best Value Option</span>
+        <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">N'Joy Money Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 299</span>
+        <span class="text-sm text-gray-400 line-through">Rs 878</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.4</span>
+        <span class="text-gray-400">(21 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
+        ✗ NOT PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/njoy-money-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">3. What are you actually trying to do with the space?</h3>
-<p class="mb-4">This is more specific than it sounds.</p>
-<ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-  <li><strong>Filling an empty corner:</strong> you need something with height or spread. The <a href="/product/bamboo-palm-plant" class="text-primary hover:underline font-bold">Bamboo Palm</a> grows to 4-5 feet and does this better than most.</li>
-  <li><strong>Adding colour to a shelf or desk:</strong> you want something compact with interesting foliage. The <a href="/product/aglaonema-red-lipstick-plant" class="text-primary hover:underline font-bold">Aglaonema Red Lipstick</a> has dark green leaves edged in bold red and sits well in a small pot on any surface.</li>
-  <li><strong>Making a plain white wall look less bare:</strong> trailing plants work here. The <a href="/product/njoy-money-plant" class="text-primary hover:underline font-bold">N'Joy Money Plant</a> trails beautifully and the white-and-green variegation shows up well against a pale wall.</li>
-</ul>
+    <p class="text-gray-700 leading-relaxed mb-6">
+      This is the variegated version of the classic money plant. The leaves are compact and crisply divided between pure white and deep green in a pattern that looks nothing like a typical money plant. It is one of the more interesting-looking plants on the site at the lowest price point. Water once a week. Bright indirect light gives the best variegation — in low light the white patches will gradually reduce and you end up with a more ordinary-looking plant.
+    </p>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">4. Do you have pets or small children?</h3>
-<p class="mb-6">
-  A lot of popular decorative plants are toxic if chewed or ingested. Aglaonemas, money plants, and monsteras all cause irritation if eaten by cats or dogs. If you have pets or small children, this is a real constraint, not a minor footnote. Check the product page before you buy.
-</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For
+        </h4>
+        <p class="text-xs text-gray-600 m-0 leading-relaxed">
+          Desk corners, shelves, small tables. Works especially well against a white or pale wall because the white in the leaves picks up and reflects the background.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Not Ideal For
+        </h4>
+        <p class="text-xs text-gray-600 m-0 leading-relaxed">
+          Very dim rooms. The white variegation is the point of this plant. If the room cannot give it reasonable light, it will not look like the photos within a few months.
+        </p>
+      </div>
+    </div>
 
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">The Best Decorative Plants for Indian Homes — With Honest Notes</h2>
-<p class="mb-6">
-  These are the plants currently available at <a href="/shop" class="text-primary hover:underline font-bold">IndoorPlant.in</a> that are genuinely worth buying for home decor. Not a marketing list. Each one has a real note about when it is the right choice and when it is not.
-</p>
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-750">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      At Rs 299 this is the best-value option on the site right now. If you are unsure what to start with and your room gets decent indirect light, start here.
+    </div>
+  </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Golden Money Plant (Rs 680)</h3>
-<p class="text-xs text-primary font-bold uppercase tracking-wider mb-2"><a href="/product/golden-money-plant">View Product Details</a></p>
-<p class="mb-4">
-  The most forgiving decorative plant you can buy in India. Heart-shaped leaves in gold and green, grows in almost any light from dim to bright indirect, and handles irregular watering better than most. Water every 7-10 days.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700 text-sm">
-  <li><strong>Good for:</strong> living rooms, balcony shelves, trailing over a bookcase, any room where you are not confident about the light.</li>
-  <li><strong>Not ideal for:</strong> homes with cats or dogs. Mildly toxic if eaten.</li>
-  <li><strong>Honest note:</strong> This plant looks ordinary when small. Give it 6 months and it becomes the kind of plant people notice and ask about.</li>
-</ul>
+  <!-- Plant 2: Golden Money Plant -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Most Popular Vastu</span>
+        <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Golden Money Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 309</span>
+        <span class="text-sm text-gray-400 line-through">Rs 680</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.4</span>
+        <span class="text-gray-400">(25 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
+        ✗ NOT PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/golden-money-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">N'Joy Money Plant (Rs 299)</h3>
-<p class="text-xs text-primary font-bold uppercase tracking-wider mb-2"><a href="/product/njoy-money-plant">View Product Details</a></p>
-<p class="mb-4">
-  The variegated version of the above. Compact, with crisp white-and-green patterned leaves that look far more expensive than the price suggests. Water once a week.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700 text-sm">
-  <li><strong>Good for:</strong> desks, shelves, small tables, anywhere you want something that looks designed rather than default.</li>
-  <li><strong>Not ideal for:</strong> very low light rooms. The white variegation fades in poor light and you end up with a less interesting looking plant.</li>
-  <li><strong>Honest note:</strong> At Rs 299 this is the best-value decorative plant on the site. If you are unsure what to start with, start here.</li>
-</ul>
+    <p class="text-gray-700 leading-relaxed mb-6">
+      India's most-grown indoor plant for a reason. Heart-shaped golden-green leaves, grows in almost any light from low to bright indirect, and handles an irregular watering schedule better than most. Water every 7-10 days. Common Vastu plant in Indian homes, often placed near entrances or in living rooms.
+    </p>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Money Plant Variegated (Rs 657)</h3>
-<p class="text-xs text-primary font-bold uppercase tracking-wider mb-2"><a href="/product/money-plant-variegated">View Product Details</a></p>
-<p class="mb-4">
-  Heart-shaped leaves splashed in white, yellow, and green. Grows in water or soil, which makes it unusually versatile — you can keep it in a glass vase on a kitchen counter and it actually works.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700 text-sm">
-  <li><strong>Good for:</strong> kitchens, bathrooms, and anywhere you want something that grows in water without a pot.</li>
-  <li><strong>Honest note:</strong> Slower grower than the golden variety. More of a showpiece plant than a filler plant.</li>
-</ul>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For
+        </h4>
+        <p class="text-xs text-gray-600 m-0 leading-relaxed">
+          Any room with any light level. This is the plant you buy when you are not completely confident about your light conditions. It adjusts.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Not Ideal For
+        </h4>
+        <p class="text-xs text-gray-600 m-0 leading-relaxed">
+          Homes with cats or dogs. Mildly toxic if eaten.
+        </p>
+      </div>
+    </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Aglaonema Red Lipstick (Rs 878)</h3>
-<p class="text-xs text-primary font-bold uppercase tracking-wider mb-2"><a href="/product/aglaonema-red-lipstick-plant">View Product Details</a></p>
-<p class="mb-4">
-  Dark green leaves with a bold red border. This is one of the only truly colourful plants that genuinely tolerates low light. Most colourful plants need strong indirect light to keep their colour. This one does not.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700 text-sm">
-  <li><strong>Good for:</strong> north-facing rooms, corners away from windows, offices, anywhere you have tried other plants and watched them fade.</li>
-  <li><strong>Not ideal for:</strong> pet owners. Toxic to cats and dogs.</li>
-  <li><strong>Honest note:</strong> Slow growing, which means you are not going to wake up three weeks later and find it has taken over your shelf. It stays where you put it.</li>
-</ul>
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-750">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      This plant looks underwhelming when it is small. Give it 4-6 months and it becomes the plant in the room that people comment on.
+    </div>
+  </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Aglaonema Snow White (Rs 768)</h3>
-<p class="text-xs text-primary font-bold uppercase tracking-wider mb-2"><a href="/product/aglaonema-snow-white-plant">View Product Details</a></p>
-<p class="mb-4">
-  Broad leaves in cream and pale green. If the Red Lipstick is the bold version of the aglaonema range, the Snow White is the quiet one. Better in minimalist or white-on-white interior styles where you want contrast without drama.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700 text-sm">
-  <li><strong>Good for:</strong> bedrooms, modern flat interiors, workspaces where you want greenery without visual noise.</li>
-  <li><strong>Honest note:</strong> Takes indirect light well but genuinely looks better with a bit more light than the Red Lipstick does. If your room gets no natural light, the Red Lipstick is the stronger choice of the two.</li>
-</ul>
+  <!-- Plant 3: Money Plant Variegated -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#2D6A4F] bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Highly Versatile</span>
+        <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Money Plant Variegated</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 299</span>
+        <span class="text-sm text-gray-400 line-through">Rs 657</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.4</span>
+        <span class="text-gray-400">(20 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
+        ✗ NOT PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/money-plant-variegated" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Monstera Broken Heart (Rs 768)</h3>
-<p class="text-xs text-primary font-bold uppercase tracking-wider mb-2"><a href="/product/monstera-broken-heart">View Product Details</a></p>
-<p class="mb-4">
-  Split leaves, climbing habit, grows fast in Indian conditions particularly during monsoon. This is the compact version of the monstera deliciosa — same aesthetic, fraction of the space.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700 text-sm">
-  <li><strong>Good for:</strong> bright corners, near balcony doors, anywhere you want that tropical look without committing to a plant that eventually takes over the whole room.</li>
-  <li><strong>Not ideal for:</strong> low light corners. The splits in the leaves that make it decorative only develop in reasonable light. In poor light it produces plain, un-split leaves and looks nothing like the photos.</li>
-  <li><strong>Honest note:</strong> Grows faster than most people expect. In good light and Indian monsoon humidity it will need repotting within a year.</li>
-</ul>
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Heart-shaped leaves in creamy white, pale yellow, and green. More visually layered than the standard golden money plant. Grows in water or soil, which makes it unusually versatile — keep it in a glass vase on a kitchen counter and it actually looks intentional. Water once a week. Tolerates low to medium light.
+    </p>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Lucky Jade Plant (Rs 649)</h3>
-<p class="text-xs text-primary font-bold uppercase tracking-wider mb-2"><a href="/product/lucky-jade-plant">View Product Details</a></p>
-<p class="mb-4">
-  A succulent that grows slowly into a small tree shape over several years. The only plant on this list that you can genuinely forget to water for a month and come back to find unchanged.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700 text-sm">
-  <li><strong>Good for:</strong> sunny windowsills, south-facing balconies, and any home where the primary reason for dead plants has been forgetting to water them.</li>
-  <li><strong>Not ideal for:</strong> rooms without direct or strong indirect light. This plant needs more light than most on this list. Put it in a dim corner and it will survive but it will not look good.</li>
-  <li><strong>Honest note:</strong> This is the right plant if you have killed every other plant you have ever owned. It is also genuinely attractive in a minimal terracotta pot if you choose a good container for it.</li>
-</ul>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For
+        </h4>
+        <p class="text-xs text-gray-600 m-0 leading-relaxed">
+          Kitchens, bathrooms, shelves where you want something that looks styled rather than just placed. Can trail over a shelf edge attractively once it gets going.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Not Ideal For
+        </h4>
+        <p class="text-xs text-gray-600 m-0 leading-relaxed">
+          Homes with cats or dogs. Mildly toxic if eaten.
+        </p>
+      </div>
+    </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-2">Bamboo Palm (Rs 449)</h3>
-<p class="text-xs text-primary font-bold uppercase tracking-wider mb-2"><a href="/product/bamboo-palm-plant">View Product Details</a></p>
-<p class="mb-4">
-  Grows to 4-5 feet, handles low light, air purifying. This is the plant for a large corner that needs filling. Nothing else on this list does what this does for empty floor space.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-1 text-gray-700 text-sm">
-  <li><strong>Good for:</strong> living rooms, near balcony doors, any large corner that feels like it is missing something.</li>
-  <li><strong>Not ideal for:</strong> small spaces. This plant takes up real floor space. If your room is under 200 square feet do not start with this one.</li>
-  <li><strong>Honest note:</strong> At Rs 449 for a 4-5 foot plant this is genuinely underpriced. The nursery pot it comes in is not very attractive. Budget Rs 300-500 extra for a proper terracotta or ceramic planter and it transforms.</li>
-</ul>
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-750">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      Grows more slowly than the golden variety. More of a showpiece than a fast-filler.
+    </div>
+  </div>
 
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">A Comparison You Can Actually Use</h2>
-<div class="overflow-x-auto my-8">
-  <table class="w-full text-left border-collapse border border-gray-200 text-sm">
+  <!-- Plant 4: Aglaonema Red Lipstick -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Pet Safe & Colorful</span>
+        <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Aglaonema Red Lipstick</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 399</span>
+        <span class="text-sm text-gray-400 line-through">Rs 878</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.4</span>
+        <span class="text-gray-400">(23 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-green-700 bg-green-50 px-2.5 py-0.5 rounded text-xs font-semibold border border-green-200">
+        ✓ PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/aglaonema-red-lipstick-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Dark green leaves edged in bold cherry-red. One of the only genuinely colourful plants that tolerates low light — most plants with coloured foliage need strong indirect light to keep their colour and will fade in a dim corner. This one does not. Water once a week. Low to medium indirect light.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For
+        </h4>
+        <p class="text-xs text-gray-600 m-0 leading-relaxed">
+          North-facing rooms, dim hallways, corners far from windows, offices. If you have tried other colourful plants and watched them fade, this is the one that will not.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Not Ideal For
+        </h4>
+        <p class="text-xs text-gray-600 m-0 leading-relaxed">
+          Rapid growth. It is a slow grower and won't change the size of the room quickly.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-750">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      Slow grower. It will not dramatically change the room in the first few months. But it stays looking good for years without becoming difficult to manage, which is something few colourful plants can claim.
+    </div>
+  </div>
+
+  <!-- Plant 5: Aglaonema Snow White -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Pet Safe & Elegant</span>
+        <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Aglaonema Snow White</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 349</span>
+        <span class="text-sm text-gray-400 line-through">Rs 768</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.3</span>
+        <span class="text-gray-400">(29 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-green-700 bg-green-50 px-2.5 py-0.5 rounded text-xs font-semibold border border-green-200">
+        ✓ PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/aglaonema-snow-white-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Broad leaves in cream and pale green. Where the Red Lipstick is bold and graphic, the Snow White is quieter — better in minimalist or monochrome interiors where you want contrast without colour. Water once a week. Low to medium indirect light.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Bedrooms, home offices, modern flat interiors. Works particularly well on a white desk or pale shelf where the cream in the leaves ties the look together.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Not Ideal For
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Zero-light spots. It needs stable light to recover if it experiences shipping stress.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-750">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      One reviewer received leaves that were yellowing on arrival and was told to move the plant near a window — it recovered. This is worth knowing. Aglaonemas can yellow from transit stress and usually recover with stable light in a week.
+    </div>
+  </div>
+
+  <!-- Plant 6: Monstera Broken Heart -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Statement Climber</span>
+        <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Monstera Broken Heart</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 349</span>
+        <span class="text-sm text-gray-400 line-through">Rs 768</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.5</span>
+        <span class="text-gray-400">(22 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
+        ✗ NOT PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/monstera-broken-heart" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Compact climbing plant with split, fenestrated leaves. This is the smaller relative of Monstera deliciosa — the same aesthetic at a fraction of the space requirement. Grows fast in Indian conditions, especially during monsoon when the humidity suits it well. Water every 5-7 days. Bright indirect light.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Near balcony doors, bright living room corners, anywhere with good natural light and some vertical space for it to climb.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Not Ideal For
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Dim rooms. The fenestrations (splits) that make this plant worth having only develop in reasonable light. In low light it produces plain un-split leaves.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-750">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      Grows faster than most people expect. In Indian monsoon humidity with good light it will be asking for a moss pole or a trellis within 6-8 months. Factor that into whether the spot works long-term.
+    </div>
+  </div>
+
+  <!-- Plant 7: Lucky Jade Plant -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#2D6A4F] bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Top Rated & Hardy</span>
+        <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Lucky Jade Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 299</span>
+        <span class="text-sm text-gray-400 line-through">Rs 649</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-605">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.5</span>
+        <span class="text-gray-400">(62 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-green-700 bg-green-50 px-2.5 py-0.5 rounded text-xs font-semibold border border-green-200">
+        ✓ PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      A succulent that stores water in its thick trunk and fleshy leaves. The correct watering schedule is once every 2-3 weeks. This is not a plant that needs attention. It needs light. Common Vastu and good-luck plant in Indian homes. Grows slowly into a tree shape over several years.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Sunny south or west-facing windowsills, covered balconies with direct light, anywhere that gets 3-4 hours of sun. Also the right choice for anyone who has killed every plant they have ever owned.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Not Ideal For
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Dim rooms or corners with no direct light. More than any plant on this list, the jade plant needs light to look good. Give it a dim corner and it will stretch.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-750">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      This is the most forgiving plant on the list for people who forget to water. It is also the least forgiving for people who put it in the wrong light.
+    </div>
+  </div>
+
+  <!-- Plant 8: Bamboo Palm -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">NASA Clean Air Study</span>
+        <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Bamboo Palm</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 389</span>
+        <span class="text-sm text-gray-400 line-through">Rs 449</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.3</span>
+        <span class="text-gray-400">(20 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-green-700 bg-green-50 px-2.5 py-0.5 rounded text-xs font-semibold border border-green-200">
+        ✓ PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/bamboo-palm-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Grows to 4-5 feet. This is the only plant on this list that fills real floor space. It has tropical fronds that spread outward and add presence to a large corner or entryway in a way that nothing smaller can. Handles low to bright indirect light. Water every 7-10 days. Air purifying — identified in the NASA Clean Air Study.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Large living room corners, near balcony doors, entryways with decent height. If you have a corner that feels empty and nothing smaller seems to fix it, this plant will.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Not Ideal For
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Small rooms under 150 square feet. The spread of the fronds takes real space. In a cramped room it will make the space feel cluttered, not designed.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-750">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      The nursery pot this arrives in is functional, not attractive. The plant is worth it, but add Rs 400-600 to your budget for a proper terracotta or ceramic floor planter. The combination is what looks good.
+    </div>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  📊 Comparison — All 8 Plants at a Glance
+</h2>
+
+<div class="overflow-x-auto my-8 border border-gray-200 rounded-2xl shadow-sm">
+  <table class="w-full text-left border-collapse text-sm text-stone-600 m-0">
     <thead>
-      <tr class="bg-gray-50 border-b border-gray-200">
-        <th class="p-3 border border-gray-200 font-bold">Plant</th>
-        <th class="p-3 border border-gray-200 font-bold">Best Spot</th>
-        <th class="p-3 border border-gray-200 font-bold">Water Schedule</th>
-        <th class="p-3 border border-gray-200 font-bold">Light Needed</th>
-        <th class="p-3 border border-gray-200 font-bold">Pet Safe</th>
-        <th class="p-3 border border-gray-200 font-bold">Price</th>
+      <tr class="bg-emerald-50/40 border-b border-gray-200 text-[#1B4332] font-bold">
+        <th class="p-4">Plant</th>
+        <th class="p-4">Price</th>
+        <th class="p-4">Light Needed</th>
+        <th class="p-4">Water</th>
+        <th class="p-4">Pet Safe</th>
+        <th class="p-4">Best For</th>
       </tr>
     </thead>
-    <tbody>
-      <tr class="border-b border-gray-200">
-        <td class="p-3 border border-gray-200 font-medium">Golden Money Plant</td>
-        <td class="p-3 border border-gray-200">Any room</td>
-        <td class="p-3 border border-gray-200">Every 7-10 days</td>
-        <td class="p-3 border border-gray-200">Low to bright</td>
-        <td class="p-3 border border-gray-200 text-red-600">No</td>
-        <td class="p-3 border border-gray-200 font-bold">Rs 680</td>
+    <tbody class="divide-y divide-gray-100 bg-white font-medium">
+      <tr class="hover:bg-gray-50/50 transition-colors">
+        <td class="p-4 font-bold text-stone-900"><a href="/product/njoy-money-plant" class="hover:underline text-emerald-800">N'Joy Money Plant</a></td>
+        <td class="p-4 text-emerald-700 font-extrabold">Rs 299</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-emerald-50 text-emerald-800 border border-emerald-100">Bright indirect</span></td>
+        <td class="p-4">Once a week</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-red-50 text-red-700 border border-red-150">No</span></td>
+        <td class="p-4 text-xs font-normal">Desk, shelf, pale walls</td>
       </tr>
-      <tr class="border-b border-gray-200">
-        <td class="p-3 border border-gray-200 font-medium">N'Joy Money Plant</td>
-        <td class="p-3 border border-gray-200">Desk or shelf</td>
-        <td class="p-3 border border-gray-200">Once a week</td>
-        <td class="p-3 border border-gray-200">Bright indirect</td>
-        <td class="p-3 border border-gray-200 text-red-600">No</td>
-        <td class="p-3 border border-gray-200 font-bold">Rs 299</td>
+      <tr class="hover:bg-gray-50/50 transition-colors">
+        <td class="p-4 font-bold text-stone-900"><a href="/product/golden-money-plant" class="hover:underline text-emerald-800">Golden Money Plant</a></td>
+        <td class="p-4 text-emerald-700 font-extrabold">Rs 309</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to bright</span></td>
+        <td class="p-4">Every 7-10d</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-red-50 text-red-700 border border-red-150">No</span></td>
+        <td class="p-4 text-xs font-normal">Any room, any light</td>
       </tr>
-      <tr class="border-b border-gray-200">
-        <td class="p-3 border border-gray-200 font-medium">Money Plant Variegated</td>
-        <td class="p-3 border border-gray-200">Kitchen or vase</td>
-        <td class="p-3 border border-gray-200">Once a week</td>
-        <td class="p-3 border border-gray-200">Low to medium</td>
-        <td class="p-3 border border-gray-200 text-red-600">No</td>
-        <td class="p-3 border border-gray-200 font-bold">Rs 657</td>
+      <tr class="hover:bg-gray-50/50 transition-colors">
+        <td class="p-4 font-bold text-stone-900"><a href="/product/money-plant-variegated" class="hover:underline text-emerald-800">Money Plant Variegated</a></td>
+        <td class="p-4 text-emerald-700 font-extrabold">Rs 299</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to medium</span></td>
+        <td class="p-4">Once a week</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-red-50 text-red-700 border border-red-150">No</span></td>
+        <td class="p-4 text-xs font-normal">Kitchen, bathroom, trailing shelf</td>
       </tr>
-      <tr class="border-b border-gray-200">
-        <td class="p-3 border border-gray-200 font-medium">Aglaonema Red Lipstick</td>
-        <td class="p-3 border border-gray-200">Low light corner</td>
-        <td class="p-3 border border-gray-200">Once a week</td>
-        <td class="p-3 border border-gray-200">Low to medium</td>
-        <td class="p-3 border border-gray-200 text-red-600">No</td>
-        <td class="p-3 border border-gray-200 font-bold">Rs 878</td>
+      <tr class="hover:bg-gray-50/50 transition-colors">
+        <td class="p-4 font-bold text-stone-900"><a href="/product/aglaonema-red-lipstick-plant" class="hover:underline text-emerald-800">Aglaonema Red Lipstick</a></td>
+        <td class="p-4 text-emerald-700 font-extrabold">Rs 399</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to medium</span></td>
+        <td class="p-4">Once a week</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-green-50 text-green-700 border border-green-200">Yes</span></td>
+        <td class="p-4 text-xs font-normal">Dim corners, north-facing rooms</td>
       </tr>
-      <tr class="border-b border-gray-200">
-        <td class="p-3 border border-gray-200 font-medium">Aglaonema Snow White</td>
-        <td class="p-3 border border-gray-200">Bedroom or office</td>
-        <td class="p-3 border border-gray-200">Once a week</td>
-        <td class="p-3 border border-gray-200">Medium indirect</td>
-        <td class="p-3 border border-gray-200 text-red-600">No</td>
-        <td class="p-3 border border-gray-200 font-bold">Rs 768</td>
+      <tr class="hover:bg-gray-50/50 transition-colors">
+        <td class="p-4 font-bold text-stone-900"><a href="/product/aglaonema-snow-white-plant" class="hover:underline text-emerald-800">Aglaonema Snow White</a></td>
+        <td class="p-4 text-emerald-700 font-extrabold">Rs 349</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to medium</span></td>
+        <td class="p-4">Once a week</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-green-50 text-green-700 border border-green-200">Yes</span></td>
+        <td class="p-4 text-xs font-normal">Bedroom, home office, minimal decor</td>
       </tr>
-      <tr class="border-b border-gray-200">
-        <td class="p-3 border border-gray-200 font-medium">Monstera Broken Heart</td>
-        <td class="p-3 border border-gray-200">Bright corner</td>
-        <td class="p-3 border border-gray-200">Every 5-7 days</td>
-        <td class="p-3 border border-gray-200">Bright indirect</td>
-        <td class="p-3 border border-gray-200 text-red-600">No</td>
-        <td class="p-3 border border-gray-200 font-bold">Rs 768</td>
+      <tr class="hover:bg-gray-50/50 transition-colors">
+        <td class="p-4 font-bold text-stone-900"><a href="/product/monstera-broken-heart" class="hover:underline text-emerald-800">Monstera Broken Heart</a></td>
+        <td class="p-4 text-emerald-700 font-extrabold">Rs 349</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-emerald-50 text-emerald-800 border border-emerald-100">Bright indirect</span></td>
+        <td class="p-4">Every 5-7d</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-red-50 text-red-700 border border-red-150">No</span></td>
+        <td class="p-4 text-xs font-normal">Bright corners, balcony doors</td>
       </tr>
-      <tr class="border-b border-gray-200">
-        <td class="p-3 border border-gray-200 font-medium">Lucky Jade Plant</td>
-        <td class="p-3 border border-gray-200">Sunny windowsill</td>
-        <td class="p-3 border border-gray-200">Every 2-3 weeks</td>
-        <td class="p-3 border border-gray-200">Direct or bright</td>
-        <td class="p-3 border border-gray-200 text-green-600">Yes</td>
-        <td class="p-3 border border-gray-200 font-bold">Rs 649</td>
+      <tr class="hover:bg-gray-50/50 transition-colors">
+        <td class="p-4 font-bold text-stone-900"><a href="/product/lucky-jade-plant" class="hover:underline text-emerald-800">Lucky Jade Plant</a></td>
+        <td class="p-4 text-emerald-700 font-extrabold">Rs 299</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-amber-50 text-amber-800 border border-amber-100">Direct or bright</span></td>
+        <td class="p-4">Every 2-3w</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-green-50 text-green-700 border border-green-200">Yes</span></td>
+        <td class="p-4 text-xs font-normal">Sunny windowsill, balcony, travel homes</td>
       </tr>
-      <tr class="border-b border-gray-200">
-        <td class="p-3 border border-gray-200 font-medium">Bamboo Palm</td>
-        <td class="p-3 border border-gray-200">Large floor corner</td>
-        <td class="p-3 border border-gray-200">Every 7-10 days</td>
-        <td class="p-3 border border-gray-200">Low to bright</td>
-        <td class="p-3 border border-gray-200 text-green-600">Yes</td>
-        <td class="p-3 border border-gray-200 font-bold">Rs 449</td>
+      <tr class="hover:bg-gray-50/50 transition-colors">
+        <td class="p-4 font-bold text-stone-900"><a href="/product/bamboo-palm-plant" class="hover:underline text-emerald-800">Bamboo Palm</a></td>
+        <td class="p-4 text-emerald-700 font-extrabold">Rs 389</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-blue-50 text-blue-800 border border-blue-100">Low to bright</span></td>
+        <td class="p-4">Every 7-10d</td>
+        <td class="p-4"><span class="inline-block px-2 py-0.5 text-xs rounded bg-green-50 text-green-700 border border-green-200">Yes</span></td>
+        <td class="p-4 text-xs font-normal">Large floor corner, entryway</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">What Actually Goes Wrong When Buying Plants Online</h2>
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">The plant was fine. The location was not.</h3>
-<p class="mb-6">
-  This is the real reason most online plant purchases disappoint. The plant arrives healthy. You put it somewhere that looks good to you. Three weeks later it starts declining. You assume the plant was bad. It was not. Before ordering, go to the exact spot you want to put the plant and sit there for an hour at different times of day. Notice where the light actually comes from and how strong it is. That tells you what you need to buy.
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  ⚠️ What Goes Wrong When You Buy Plants Online — And Why
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2">Wrong Spot Chosen</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      This is the reason behind most failed plant purchases. The plant arrives healthy. You put it somewhere that looks good to you. Three weeks later it declines. You assume it was a bad plant.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2">Crude Nursery Pots</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      Almost every plant arrives in a plain plastic nursery pot. It is functional, not decorative. Budget for a terracotta or ceramic planter to make it look like a deliberate design choice.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2">Chose Photo, Not Plant</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      Every plant looks good in a product photo. The question is if it will thrive in your home's actual lighting. If unsure, use the AI Plant Advisor at <a href="/ai-advisor" class="text-primary hover:underline font-bold">indoorplant.in/ai-advisor</a>.
+    </p>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  📦 What to Do When Your Plant Arrives
+</h2>
+
+<p class="mb-6 text-gray-750 leading-relaxed">
+  The first 48 hours after delivery are not the time to judge the plant. It has been through packaging, transit, temperature changes, and darkness. Some drooping or slight wilting is normal and typically resolves within 3-5 days.
 </p>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">The pot that came with it looked terrible.</h3>
-<p class="mb-6">
-  Nursery pots are functional, not attractive. Almost every plant you buy online will arrive in a plain plastic or nursery pot that does nothing for your interior. Factor in a ceramic or terracotta planter when you are budgeting. A Bamboo Palm in a plain plastic pot looks like a nursery plant. The same palm in a terracotta planter looks like something from an interior design shoot.
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div class="border border-emerald-100 bg-emerald-50/10 rounded-2xl p-6">
+    <h3 class="text-lg font-bold text-emerald-900 mt-0 mb-2">📅 Day 1-2: Settling In</h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      Place the plant in its intended spot. Do not water immediately — check the soil first. If it arrived with moist soil, leave it. If it is bone dry, give it a moderate watering.
+    </p>
+  </div>
+  <div class="border border-emerald-100 bg-emerald-50/10 rounded-2xl p-6">
+    <h3 class="text-lg font-bold text-emerald-900 mt-0 mb-2">🌿 Day 3 Onwards</h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      Let it settle. Most plants that look sad on arrival look noticeably better by day 5 once they have had stable light and temperature.
+    </p>
+  </div>
+</div>
+
+<div class="bg-amber-50 border border-amber-200/80 rounded-2xl p-6 my-8">
+  <h4 class="font-bold text-amber-900 mt-0 mb-2 flex items-center gap-2">
+    ⚠️ Transit Damage Reporting Window: 12 Hours
+  </h4>
+  <p class="text-xs text-gray-700 m-0 leading-relaxed">
+    If your plant arrives visibly damaged — broken stems, root ball collapsed, severe physical damage from transit — photograph it and contact IndoorPlant.in at <a href="mailto:support@indoorplant.in" class="text-primary hover:underline font-bold">support@indoorplant.in</a> within 12 hours of delivery. This is the official window for reporting damage on arrival. Change-of-mind returns are not accepted.
+  </p>
+</div>
+
+<p class="mb-8 text-gray-750 leading-relaxed">
+  For ongoing care once your plant is settled in, the care guides at <a href="/care" class="text-primary hover:underline font-bold">indoorplant.in/care</a> cover seasonal watering schedules and light requirements written specifically for Indian conditions.
 </p>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-4">You chose based on photos, not care requirements.</h3>
-<p class="mb-6">
-  Every plant looks beautiful in the product photo. The question is whether it will look beautiful in your specific room, with your specific light, six months from now.
-</p>
-<p class="mb-6">
-  If you are not sure which plant suits your space, use the AI Plant Advisor at <a href="/ai-advisor" class="text-primary hover:underline font-bold">indoorplant.in/ai-advisor</a>. It asks you three questions about your room and recommends the right match. It takes less than a minute and it is free.
-</p>
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  ☀️ Light Conditions in Indian Apartments — Quick Reference
+</h2>
 
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">How Light Actually Works in Indian Apartments — A Quick Note</h2>
-<p class="mb-6">
-  Indian apartments are built with sun orientation in mind, but the interior light varies dramatically depending on floor height, surrounding buildings, and which direction your windows face.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-  <li><strong>North-facing rooms:</strong> consistently lower light year round. Best suited to aglaonemas (both the Red Lipstick and Snow White), bamboo palms, and golden money plants.</li>
-  <li><strong>South and west-facing rooms:</strong> strongest light, especially in summer. The Lucky Jade Plant, Monstera Broken Heart, and N'Joy Money Plant do well here.</li>
-  <li><strong>East-facing rooms:</strong> good morning light, dim afternoons. Most plants on this list work in east-facing rooms.</li>
+<ul class="list-none pl-0 mb-8 space-y-4">
+  <li class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">North-facing rooms</strong>
+    <span class="text-xs text-gray-650">Low light year-round. Best options from this list: Aglaonema Red Lipstick, Aglaonema Snow White, Golden Money Plant, Bamboo Palm.</span>
+  </li>
+  <li class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">South and west-facing rooms</strong>
+    <span class="text-xs text-gray-650">Strongest light in summer afternoons. Best options: Lucky Jade Plant, Monstera Broken Heart, N'Joy Money Plant.</span>
+  </li>
+  <li class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">East-facing rooms</strong>
+    <span class="text-xs text-gray-650">Good morning light, dim afternoons. Most plants on this list work well here.</span>
+  </li>
+  <li class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">High-rise apartments</strong>
+    <span class="text-xs text-gray-650">Typically better light than ground-floor units because surrounding buildings block less sky. The same plant variety will look better on the 12th floor than the 2nd in a dense urban area.</span>
+  </li>
+  <li class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">Rooms with ACs running most of the day</strong>
+    <span class="text-xs text-gray-650">Air conditioning reduces humidity which affects moisture-loving plants. The Monstera Broken Heart appreciates occasional misting during dry winter months if AC is on frequently.</span>
+  </li>
 </ul>
-<p class="mb-6">
-  If you are in a city with significant air pollution — Delhi, Mumbai, parts of Bangalore — your indoor light levels are lower than you might expect even near windows. Plants that are described as "bright indirect light" may need to be placed closer to windows than the same plant would in a less polluted city.
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  📌 Quick Recommendations By Need
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 text-xs">
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Forgot to water the last three plants owned?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Lucky Jade Plant (Rs 299)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Want something cheap that looks interesting?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">N'Joy Money Plant (Rs 299)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Dark north-facing room, need colour?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Aglaonema Red Lipstick (Rs 399)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Safe around cats or dogs?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Aglaonema Snow White (Rs 349) / Jade (Rs 299)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Large empty corner with decent light?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Bamboo Palm (Rs 389)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Statement plant on budget?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Monstera Broken Heart (Rs 349)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 md:col-span-2 flex justify-between items-center gap-2">
+    <span>Most adaptable plant for uncertain conditions?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Golden Money Plant (Rs 309)</strong>
+  </div>
+</div>
+
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold">
+  All of these are available now at <a href="/shop" class="text-primary hover:underline font-bold">indoorplant.in/shop</a> with free delivery across India.
 </p>
 
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">Caring for Your Plant Once It Arrives</h2>
-<p class="mb-6 font-semibold text-stone-850">
-  The first two weeks after a plant arrives are the hardest. It has gone through transit stress — temperature changes, darkness, vibration. Give it some time before you decide it was a bad plant.
-</p>
-<ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-  <li><strong>Day 1-3:</strong> Place it in its intended spot but do not water it immediately. Let it adjust to the light.</li>
-  <li><strong>Day 3-5:</strong> Check the soil. If it is bone dry, give it a moderate watering. If it is still moist from the nursery, leave it.</li>
-  <li><strong>Week 2 onwards:</strong> Start your regular watering schedule.</li>
-</ul>
-<p class="mb-6">
-  Most plants that droop or look sad on arrival recover within 5-7 days once they are in stable light and temperature.
-</p>
-<p class="mb-6">
-  If your plant arrives visibly damaged — broken stems, root ball fallen apart, severe bruising — photograph it and contact IndoorPlant.in within 12 hours of delivery at <a href="mailto:support@indoorplant.in" class="text-primary hover:underline font-bold">support@indoorplant.in</a>. That is the return window for damaged arrivals.
-</p>
-<p class="mb-6">
-  For ongoing care guides specific to each plant, the care hub at <a href="/care" class="text-primary hover:underline font-bold">indoorplant.in/care</a> has detailed seasonal guides written for Indian climates.
-</p>
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  ❓ FAQ
+</h2>
 
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">The Short Version</h2>
-<p class="mb-6 font-semibold text-stone-850">If you read nothing else, read this.</p>
-<ul class="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-  <li>For low light rooms: Golden Money Plant or Aglaonema Red Lipstick.</li>
-  <li>For the sunniest spot in your home: Lucky Jade Plant.</li>
-  <li>For a large empty corner: Bamboo Palm.</li>
-  <li>For something that looks expensive on a shelf: N'Joy Money Plant.</li>
-  <li>For a home with pets: Lucky Jade Plant or Bamboo Palm. (Most other plants on this list are not pet safe.)</li>
-  <li>For the most forgiving option overall: Golden Money Plant. It handles neglect, adjusts to most light levels, and looks good for years with minimal effort.</li>
-</ul>
-<p class="mb-6">
-  Browse all available plants at <a href="/shop" class="text-primary hover:underline font-bold">indoorplant.in/shop</a> or use the AI Plant Advisor at <a href="/ai-advisor" class="text-primary hover:underline font-bold">indoorplant.in/ai-advisor</a> to get a recommendation matched to your specific room.
-</p>
+<div class="space-y-6 my-8">
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Which plant from this list needs the least watering?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: The Lucky Jade Plant by a clear margin. It is a succulent that stores water in its own tissues and needs watering only once every 2-3 weeks. In winter or in an air-conditioned home you can stretch that to once a month and it will be fine. Every other plant on this list needs watering at least weekly.
+    </p>
+  </div>
 
-<h2 class="text-2xl font-bold text-gray-900 font-playfair mt-12 mb-6">FAQ — Questions People Actually Ask</h2>
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Are decorative plants safe for Indian homes with AC?</h3>
-<p class="mb-6">
-  Most of them, yes. Air conditioning lowers humidity, which affects moisture-loving plants like the Monstera Broken Heart more than drought-tolerant ones like the Lucky Jade Plant. If your home runs AC most of the day, water your plants slightly less frequently and mist the monstera leaves occasionally during dry months.
-</p>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: I have a north-facing room in a Delhi apartment that gets almost no direct light. What should I buy?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Either aglaonema. Both the Red Lipstick and Snow White are specifically suited to low-light conditions and will hold their colour in a north-facing Indian room. The Bamboo Palm and Golden Money Plant are also reasonable in low light, though they look better with more.
+    </p>
+  </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Can I keep these plants on a balcony?</h3>
-<p class="mb-6">
-  Some of them. The Lucky Jade Plant and Bamboo Palm both do well on covered balconies. Money plants can handle partial outdoor exposure. The aglaonemas and the Monstera Broken Heart prefer the more stable light and temperature of an indoor spot.
-</p>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Can I keep any of these plants on a covered balcony?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: The Lucky Jade Plant thrives on a covered balcony that gets some direct light. The Bamboo Palm also does well outdoors in a sheltered spot. The money plant varieties can handle partial outdoor exposure. The aglaonemas and Monstera Broken Heart prefer the stable temperature and indirect light of an indoor spot.
+    </p>
+  </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">How long do these plants typically live?</h3>
-<p class="mb-6">
-  Properly cared for, most of the plants on this list live for years. Golden money plants and aglaonemas can live a decade or more indoors. Lucky jade plants are known to live for 50-100 years in the right conditions.
-</p>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: These prices seem lower than what I see on other sites. Are they correct?</strong>
+    <p class="text-gray-750 leading-relaxed m-0 text-xs">
+      A: These prices are the current sale prices as shown on each IndoorPlant.in product page as of June 2026. The original prices are higher — the crossed-out price you see on the site. Whether these sale prices are permanent or limited-time is not stated on the site, so buy when you see the price you are happy with.
+    </p>
+  </div>
 
-<h3 class="text-xl font-bold text-gray-900 mt-8 mb-3">Do these plants grow bigger over time?</h3>
-<p class="mb-6">
-  Yes, gradually. The Bamboo Palm and Monstera Broken Heart grow the fastest, especially during Indian monsoon season. Aglaonemas grow slowly and stay manageable for years without repotting.
-</p>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: What is the return policy if my plant arrives damaged?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: IndoorPlant.in accepts returns for plants that arrive visibly damaged. You must report it within 12 hours of delivery with a photo. Email support@indoorplant.in with your order number and photos of the damage. Change-of-mind returns are not accepted.
+    </p>
+  </div>
+</div>
 `
   }
 ];
