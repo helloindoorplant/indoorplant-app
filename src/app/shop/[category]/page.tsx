@@ -7,10 +7,45 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from '@/co
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { ProductCard } from '@/components/shared/ProductCard';
 import { FilterSidebar } from '@/components/shop/FilterSidebar';
-
-
+import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const slug = resolvedParams.category;
+  
+  if (slug === 'air-purifying-plants') {
+    return {
+      title: "Air Purifying Plants Online India — Buy Fresh | IndoorPlant.in",
+      description: "Indoor plants that clean the air in Indian homes — snake plants, peace lilies, money plants. NASA-tested varieties. From Rs 299, free delivery across India.",
+      keywords: ["air purifying plants India", "air purifying indoor plants online", "best air purifying plants India", "nasa air purifying plants", "plants that clean air India", "oxygen plants for home India", "snake plant air purifier India", "air cleaning plants home India"]
+    };
+  } else if (slug === 'low-maintenance-plants') {
+    return {
+      title: "Hard to Kill Indoor Plants India — Low Maintenance | IndoorPlant.in",
+      description: "Indoor plants for people who travel, forget to water, or want greenery without stress. Jade plants, snake plants, pothos. Delivered across India from Rs 299.",
+      keywords: ["low maintenance indoor plants India", "easy care houseplants India", "plants for busy people India", "hard to kill plants India", "plants for beginners India", "low water plants India", "indoor plants for working professionals", "drought tolerant indoor plants India"]
+    };
+  } else if (slug === 'pet-friendly-plants') {
+    return {
+      title: "Pet Safe Indoor Plants India — Non-Toxic for Dogs and Cats | IndoorPlant.in",
+      description: "Indoor plants that are completely safe around dogs and cats. ASPCA-verified non-toxic varieties — spider plants, areca palms, Boston ferns. Free delivery across India.",
+      keywords: ["pet safe plants India", "non toxic plants for cats India", "non toxic plants for dogs India", "pet friendly indoor plants", "safe plants for pets India", "plants safe for dogs and cats India", "cat safe plants India", "dog safe houseplants India", "aspca safe plants India"]
+    };
+  } else if (slug === 'bedroom-plants') {
+    return {
+      title: "Bedroom Plants India — Oxygen at Night, Better Sleep | IndoorPlant.in",
+      description: "Indoor plants for bedrooms that release oxygen at night and reduce indoor CO2. Snake plants, aloe vera — chosen for Indian bedroom sizes and light conditions.",
+      keywords: ["bedroom plants India", "plants for bedroom India", "best plants for bedroom India", "plants that release oxygen at night", "plants for better sleep India", "indoor plants for bedroom low light", "night oxygen plants India", "snake plant bedroom India"]
+    };
+  }
+  
+  return {
+    title: "Shop Indoor Plants | IndoorPlant.in",
+    description: "Browse our collections of fresh indoor plants."
+  };
+}
 
 export default async function CategoryShopPage({ params }: { params: Promise<{ category: string }> }) {
   const resolvedParams = await params;
@@ -57,9 +92,69 @@ export default async function CategoryShopPage({ params }: { params: Promise<{ c
             </BreadcrumbList>
           </Breadcrumb>
           <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight text-[#1B4332] mb-3">{category.name}</h1>
-          <p className="text-muted-foreground text-lg lg:text-xl font-medium max-w-2xl">
+          <p className="text-muted-foreground text-lg lg:text-xl font-medium max-w-2xl mb-6">
             {category.description || `Discover our collection of ${products.length} premium ${category.name.toLowerCase()}. Handpicked and delivered fresh.`}
           </p>
+
+          {/* Dynamic GEO Content Tips */}
+          {resolvedParams.category === 'air-purifying-plants' && (
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 max-w-4xl text-[15px] leading-relaxed text-stone-700 font-medium">
+              <strong className="text-[#1B4332] block mb-2 text-base font-bold">🌿 NASA Clean Air Study Verified</strong>
+              Most of these air purifying varieties were tested in the famous 1989 NASA Clean Air Study. Plants like snake plants, peace lilies, and money plants are highly effective at filtering out common airborne toxins like formaldehyde, benzene, and trichloroethylene from indoor spaces.
+            </div>
+          )}
+
+          {resolvedParams.category === 'low-maintenance-plants' && (
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 max-w-4xl text-[15px] leading-relaxed text-stone-700 font-medium">
+              <strong className="text-[#1B4332] block mb-2 text-base font-bold">🌵 Built for Busy Schedules & Beginners</strong>
+              Low maintenance indoor plants are varieties that survive watering once every 2-3 weeks and tolerate indirect light. Jade plants, snake plants, and pothos are the most forgiving options for Indian homes and apartments.
+            </div>
+          )}
+
+          {resolvedParams.category === 'pet-friendly-plants' && (
+            <div className="bg-white border border-border/40 rounded-2xl p-6 max-w-4xl shadow-sm">
+              <strong className="text-[#1B4332] block mb-4 text-base font-bold">🐾 ASPCA Non-Toxic Safety Table</strong>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse text-sm text-stone-600">
+                  <thead>
+                    <tr className="bg-stone-50 border-b border-border/40 font-bold text-stone-800">
+                      <th className="p-3 border border-border/40">Plant Name</th>
+                      <th className="p-3 border border-border/40">Safe for Cats</th>
+                      <th className="p-3 border border-border/40">Safe for Dogs</th>
+                      <th className="p-3 border border-border/40">Toxicity Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-border/20">
+                      <td className="p-3 font-semibold text-stone-900">Areca Palm</td>
+                      <td className="p-3 text-green-600 font-bold">Yes</td>
+                      <td className="p-3 text-green-600 font-bold">Yes</td>
+                      <td className="p-3 text-stone-500">Non-Toxic</td>
+                    </tr>
+                    <tr className="border-b border-border/20">
+                      <td className="p-3 font-semibold text-stone-900">Spider Plant</td>
+                      <td className="p-3 text-green-600 font-bold">Yes</td>
+                      <td className="p-3 text-green-600 font-bold">Yes</td>
+                      <td className="p-3 text-stone-500">Non-Toxic</td>
+                    </tr>
+                    <tr className="border-b border-border/20">
+                      <td className="p-3 font-semibold text-stone-900">Boston Fern</td>
+                      <td className="p-3 text-green-600 font-bold">Yes</td>
+                      <td className="p-3 text-green-600 font-bold">Yes</td>
+                      <td className="p-3 text-stone-500">Non-Toxic</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
+          {resolvedParams.category === 'bedroom-plants' && (
+            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 max-w-4xl text-[15px] leading-relaxed text-stone-700 font-medium">
+              <strong className="text-[#1B4332] block mb-2 text-base font-bold">🌙 CAM Photosynthesis & Night Oxygen</strong>
+              Most plants only photosynthesize during daylight, which means they absorb CO2 after dark. Snake plants and aloe vera are exceptions — they use CAM photosynthesis and release oxygen continuously. In Indian bedrooms where air conditioning recirculates stale air, this matters more than in naturally ventilated rooms.
+            </div>
+          )}
         </div>
       </div>
 

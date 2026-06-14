@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 export const metadata = {
   title: "Contact Us | IndoorPlant.in",
   description: "Get in touch with IndoorPlant.in support. We're here to help with your orders, plant care, and general inquiries.",
+  keywords: ["contact IndoorPlant.in", "customer care IndoorPlant.in", "plant support India", "helloindoorplant"]
 };
 
 export default function ContactPage() {
@@ -37,7 +38,7 @@ export default function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">Phone & WhatsApp</p>
-                    <p className="text-sm text-gray-600 mt-1">+91 98765 43210</p>
+                    <p className="text-sm text-gray-600 mt-1">+91 9051939429</p>
                     <p className="text-xs text-gray-500 mt-0.5">Mon-Sat, 10 AM - 7 PM IST</p>
                   </div>
                 </div>
@@ -50,7 +51,7 @@ export default function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">Email Support</p>
-                    <p className="text-sm text-gray-600 mt-1">support@indoorplant.in</p>
+                    <p className="text-sm text-gray-600 mt-1">helloindoorplant@gmail.com</p>
                     <p className="text-xs text-gray-500 mt-0.5">We aim to reply within 24 hours</p>
                   </div>
                 </div>
@@ -110,7 +111,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="+91 98765 43210" />
+                    <input type="tel" id="phone" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="+91 9051939429" />
                   </div>
                 </div>
 

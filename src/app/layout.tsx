@@ -61,6 +61,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IndoorPlant.in",
+    "url": "https://www.indoorplant.in",
+    "logo": "https://www.indoorplant.in/Indoorplant-Logo.svg",
+    "description": "IndoorPlant.in is an online plant store that delivers fresh indoor plants across India with AI-powered plant recommendations and expert care guides.",
+    "foundingLocation": "India",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91 9051939429",
+      "email": "helloindoorplant@gmail.com",
+      "contactType": "customer service",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://www.instagram.com/indoorplant.in",
+      "https://www.facebook.com/indoorplant.in"
+    ]
+  };
+
   return (
     <html
       lang="en"
@@ -68,6 +89,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col selection:bg-primary/20 selection:text-primary">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <AuthProvider>
           <Header />
           <main className="flex-1 flex flex-col">

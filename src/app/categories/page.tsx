@@ -1,11 +1,23 @@
 import prisma from '@/lib/prisma';
 import { CategoryCard } from "@/components/shared/CategoryCard";
 
-
-
 export const metadata = {
-  title: "Collections | Indoorplant",
-  description: "Explore our carefully curated plant collections.",
+  title: "Indoor Plant Collections — Air Purifying, Pet Safe and Bedroom | IndoorPlant.in",
+  description: "Shop indoor plants by type: air purifying, low maintenance, pet-safe, and bedroom plants. Every collection is chosen for Indian homes and climates. Free delivery.",
+  keywords: [
+    "air purifying plants India",
+    "low maintenance indoor plants",
+    "pet safe plants India",
+    "bedroom plants India",
+    "indoor plant categories",
+    "types of indoor plants India",
+    "houseplant collections India"
+  ],
+  openGraph: {
+    title: "Indoor Plant Collections — By Care, Light and Pet Safety",
+    description: "Find your kind of plant. Filtered by care level, light needs, and whether your pets can be near it.",
+    url: "https://www.indoorplant.in/categories"
+  }
 };
 
 export default async function CategoriesPage() {
@@ -20,9 +32,9 @@ export default async function CategoriesPage() {
 
   // Explicitly requested categories
   const targetCategories = [
-    { name: "Air Purifying", slug: "air-purifying", colorClass: "bg-[#788c5d]" },
-    { name: "Low Maintenance", slug: "low-maintenance", colorClass: "bg-[#6a9bcc]" },
-    { name: "Pet Safe", slug: "pet-safe", colorClass: "bg-[#d97757]" },
+    { name: "Air Purifying", slug: "air-purifying-plants", colorClass: "bg-[#788c5d]" },
+    { name: "Low Maintenance", slug: "low-maintenance-plants", colorClass: "bg-[#6a9bcc]" },
+    { name: "Pet Safe", slug: "pet-friendly-plants", colorClass: "bg-[#d97757]" },
     { name: "Bedroom Plants", slug: "bedroom-plants", colorClass: "bg-[#141413]" },
   ];
 

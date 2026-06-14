@@ -80,6 +80,10 @@ export default function AiAdvisorPage() {
                   </button>
                 ))}
               </div>
+
+              <div className="bg-white border border-primary/10 p-6 rounded-2xl text-[14px] leading-relaxed text-stone-600 mt-8 text-center max-w-md shadow-sm font-medium">
+                IndoorPlant.in's AI Plant Advisor asks three questions: your room's natural light level, how often you remember to water, and whether you have pets at home. It then recommends the most suitable plant from a curated list of 24 varieties grown and delivered across India. The tool is free and takes under a minute.
+              </div>
             </motion.div>
           )}
 

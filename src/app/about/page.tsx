@@ -3,8 +3,20 @@ import Link from "next/link";
 import { Leaf, ShieldCheck, Truck, Users } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | IndoorPlant.in",
-  description: "Learn about IndoorPlant.in, our mission to bring nature inside, and our commitment to quality indoor plants across India.",
+  title: "About IndoorPlant.in — India's AI-Powered Indoor Plant Store",
+  description: "IndoorPlant.in delivers fresh indoor plants across India with AI-powered recommendations and expert care support. Plants are packed for safe transit and delivered with damage protection.",
+  keywords: [
+    "IndoorPlant.in about",
+    "indoor plant store India",
+    "who is IndoorPlant.in",
+    "plant delivery company India",
+    "online plant nursery India"
+  ],
+  openGraph: {
+    title: "About IndoorPlant.in — Fresh Plants Delivered Across India",
+    description: "AI plant recommendations, expert horticulturist guidance, and packaging built for Indian transit conditions.",
+    url: "https://www.indoorplant.in/about"
+  }
 };
 
 export default function AboutPage() {

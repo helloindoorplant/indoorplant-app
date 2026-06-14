@@ -1,73 +1,15 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Clock, ArrowRight } from "lucide-react";
+import { BLOG_POSTS } from "@/lib/blog-data";
 
 export const metadata = {
-  title: "Blog & Plant Care Guides | IndoorPlant.in",
-  description: "Read our latest articles on plant care, home decor, and the benefits of bringing nature inside.",
+  title: "Indoor Plant Care Guides for Indian Homes | IndoorPlant.in Journal",
+  description: "Plant care guides written for Indian homes — watering in hot climates, monsoon care, low-light apartment solutions, and pet-safe plant lists. Updated regularly.",
 };
 
-const MOCK_POSTS = [
-  {
-    slug: "10-best-plants-for-bedrooms",
-    title: "10 Best Plants for Bedrooms That Help You Sleep Better",
-    excerpt: "Discover which indoor plants are proven to purify the air and promote deeper, more restful sleep.",
-    category: "Plant Benefits",
-    date: "June 10, 2026",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=800&q=80",
-    featured: true
-  },
-  {
-    slug: "how-to-care-for-monstera",
-    title: "How to Care for Your Monstera Deliciosa: Complete Guide",
-    excerpt: "Everything you need to know about watering, light, and propagating the famous Swiss Cheese Plant.",
-    category: "Plant Care",
-    date: "June 08, 2026",
-    readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "pet-safe-indoor-plants",
-    title: "Pet-Safe Indoor Plants: A Guide for Dog & Cat Owners",
-    excerpt: "Love plants but worry about your furry friends? Here is a list of 100% non-toxic plants for your home.",
-    category: "Guides",
-    date: "June 05, 2026",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1545241047-6083a36cb15f?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "air-purifying-plants-office",
-    title: "5 Air-Purifying Plants for Your Home Office",
-    excerpt: "Boost your productivity and clear the air with these low-maintenance desk companions.",
-    category: "Home Decor",
-    date: "June 02, 2026",
-    readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "watering-mistakes",
-    title: "Watering 101: The Most Common Mistake Plant Parents Make",
-    excerpt: "Are you overwatering? Learn how to read your plant's signals and master the watering schedule.",
-    category: "Plant Care",
-    date: "May 28, 2026",
-    readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    slug: "decorating-with-large-plants",
-    title: "How to Style Large Statement Plants in Small Spaces",
-    excerpt: "You don't need a mansion to have a large indoor tree. Here are designer tips for small apartments.",
-    category: "Home Decor",
-    date: "May 20, 2026",
-    readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1502672260266-1c1c2f50ce3e?auto=format&fit=crop&w=800&q=80",
-  }
-];
-
 export default function BlogPage() {
-  const featuredPost = MOCK_POSTS.find(p => p.featured);
-  const regularPosts = MOCK_POSTS.filter(p => !p.featured);
+  const featuredPost = BLOG_POSTS.find(p => p.featured);
+  const regularPosts = BLOG_POSTS.filter(p => !p.featured);
 
   return (
     <div className="bg-gray-50 min-h-screen pb-20">

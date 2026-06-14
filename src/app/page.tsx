@@ -12,9 +12,29 @@ import { UspSection } from '@/components/home/UspSection';
 import { TestimonialSlider } from '@/components/home/TestimonialSlider';
 import { BlogSection } from '@/components/home/BlogSection';
 
-
-
 export const dynamic = 'force-dynamic';
+
+export const metadata = {
+  title: "Indoor Plants Online India — Buy Fresh, Delivered | IndoorPlant.in",
+  description: "Shop 24+ indoor plants online with free delivery across India. AI-powered plant recommendations and expert care guides. Damage-protected delivery. Starting Rs 299.",
+  keywords: [
+    "buy indoor plants online India",
+    "indoor plants for home",
+    "indoor plants delivery India",
+    "best indoor plants India",
+    "low maintenance indoor plants",
+    "air purifying plants India",
+    "money plant buy online",
+    "snake plant online India",
+    "indoor plant shop India",
+    "plants online free delivery India"
+  ],
+  openGraph: {
+    title: "Buy Indoor Plants Online India — Fresh Delivery | IndoorPlant.in",
+    description: "24+ indoor plants. AI advisor picks the right one for your space. Damage-protected delivery. Starting Rs 299.",
+    url: "https://www.indoorplant.in/"
+  }
+};
 
 export default async function Home() {
   const products = await prisma.product.findMany({

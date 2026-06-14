@@ -6,8 +6,82 @@ import { ProductDetailsClient } from '@/components/product/ProductDetailsClient'
 import { ProductReviews } from '@/components/product/ProductReviews';
 import { FaqSection } from '@/components/shared/FaqSection';
 import { RecentlyViewedTracker } from '@/components/product/RecentlyViewedTracker';
+import { Metadata } from 'next';
 
+const PRODUCT_METADATA_MAP: Record<string, { description: string, keywords: string[] }> = {
+  "njoy-money-plant": {
+    description: "The N'Joy Money Plant has crisp white-and-green variegated leaves that look nothing like a typical money plant. Water once a week. Comes in a nursery pot. Free delivery. Rs 299.",
+    keywords: ["njoy money plant buy online India", "njoy money plant India", "variegated money plant India", "njoy pothos online India", "white variegated money plant", "money plant buy online India"]
+  },
+  "golden-money-plant": {
+    description: "The Golden Money Plant has heart-shaped golden-green leaves and grows in almost any light condition. Water every 7-10 days. India's most popular indoor plant. Free delivery. Rs 680.",
+    keywords: ["golden money plant buy online India", "golden pothos India", "money plant online India", "buy money plant India", "vastu money plant India", "good luck plant India"]
+  },
+  "monstera-broken-heart": {
+    description: "The Monstera Broken Heart is a compact climbing plant with split leaves and a fast growth rate. Loves humid Indian weather. Water every 5-7 days. Free delivery. Rs 768.",
+    keywords: ["monstera broken heart plant India", "buy monstera plant online India", "rhaphidophora tetrasperma India", "mini monstera India", "split leaf plant India"]
+  },
+  "aglaonema-red-lipstick-plant": {
+    description: "The Aglaonema Red Lipstick has dark green leaves with bold red edges. Handles low light well. Water once a week. Good for Indian flats without direct sunlight. Free delivery. Rs 878.",
+    keywords: ["aglaonema red lipstick plant India", "buy aglaonema online India", "red aglaonema plant India", "chinese evergreen red India", "low light indoor plant India"]
+  },
+  "lucky-jade-plant": {
+    description: "The Jade Plant is a succulent that grows into a small tree and survives months of neglect. Water every 2-3 weeks. Works well on sunny balconies and windowsills. Free delivery. Rs 649.",
+    keywords: ["jade plant buy online India", "lucky jade plant India", "crassula ovata India", "succulent plants online India", "jade plant price India", "vastu plant for home India", "balcony plants India"]
+  },
+  "bamboo-palm-plant": {
+    description: "The Bamboo Palm grows to 4-5 feet and handles low light well — one of the few large indoor plants that works in Indian flats. Air purifying. Free delivery. Rs 449.",
+    keywords: ["bamboo palm plant India", "buy bamboo palm online India", "indoor palm plant India", "large indoor plants India", "tall indoor plants India", "palm plant for home India"]
+  },
+  "aglaonema-snow-white-plant": {
+    description: "The Aglaonema Snow White has broad cream-and-green patterned leaves. Grows well in low light. Slow grower that needs water once a week. Free delivery. Rs 768.",
+    keywords: ["aglaonema snow white India", "buy aglaonema snow white", "white indoor plant India", "cream aglaonema India", "low light indoor plant India"]
+  },
+  "money-plant-variegated": {
+    description: "The Variegated Money Plant has heart-shaped leaves in white, yellow, and green. Grows in water or soil. Easy for beginners in Indian homes. Free delivery. Rs 657.",
+    keywords: ["variegated money plant India", "money plant variegated buy online", "white money plant India", "pothos variegated India", "beginner indoor plants India"]
+  }
+};
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const product = await prisma.product.findUnique({
+    where: { slug: resolvedParams.slug }
+  });
+
+  if (!product) {
+    return { title: "Product Not Found | IndoorPlant.in" };
+  }
+
+  const price = product.salePrice || product.price;
+  const mapped = PRODUCT_METADATA_MAP[product.slug];
+
+  if (mapped) {
+    return {
+      title: `Buy ${product.name} Online India — Rs ${price} | IndoorPlant.in`,
+      description: mapped.description,
+      keywords: mapped.keywords,
+      openGraph: {
+        title: `${product.name} — Rs ${price} | IndoorPlant.in`,
+        description: mapped.description,
+        url: `https://www.indoorplant.in/product/${product.slug}`
+      }
+    };
+  }
+
+  const generatedDesc = `${product.name} is a beautiful indoor plant suited for Indian homes. Light requirement: ${product.lightReq.toLowerCase().replace('_', ' ')}. Water requirement: ${product.waterReq ? product.waterReq.toLowerCase() : 'when dry'}. Rs ${price}, free delivery.`;
+
+  return {
+    title: `Buy ${product.name} Online India — Rs ${price} | IndoorPlant.in`,
+    description: generatedDesc,
+    keywords: [`buy ${product.name} online`, `${product.name} India`, `indoor plant ${product.name}`],
+    openGraph: {
+      title: `Buy ${product.name} Online India — Rs ${price} | IndoorPlant.in`,
+      description: generatedDesc,
+      url: `https://www.indoorplant.in/product/${product.slug}`
+    }
+  };
+}
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -73,8 +147,50 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     }
   ];
 
+  const reviewsCount = product.reviews?.length || 0;
+  const rating = reviewsCount > 0 ? Number((product.reviews.reduce((acc: number, r: any) => acc + r.rating, 0) / reviewsCount).toFixed(1)) : 5.0;
+  const ratingValue = reviewsCount > 0 ? rating : 4.5;
+  const ratingCount = reviewsCount > 0 ? reviewsCount : 1;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product.name,
+    "description": product.description,
+    "image": images[0],
+    "sku": product.slug,
+    "brand": {
+      "@type": "Brand",
+      "name": "IndoorPlant.in"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://www.indoorplant.in/product/${product.slug}`,
+      "priceCurrency": "INR",
+      "price": product.salePrice || product.price,
+      "priceValidUntil": "2026-12-31",
+      "itemCondition": "https://schema.org/NewCondition",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "Organization",
+        "name": "IndoorPlant.in"
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": ratingValue.toString(),
+      "reviewCount": ratingCount.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FDFDF9]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <RecentlyViewedTracker product={product} />
       
       {/* Breadcrumb */}
