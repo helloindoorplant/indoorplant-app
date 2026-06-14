@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { saveProduct } from "@/app/admin/products/actions";
 import { Button } from "@/components/ui/button";
 import { Product } from "@prisma/client";
@@ -20,6 +21,29 @@ function SubmitButton() {
 export function ProductForm({ product, categories }: { product?: any | null, categories: any[] }) {
   const images = product ? JSON.parse(product.images as string) : [];
   const potColorImages = product?.potColorImages ? JSON.parse(product.potColorImages) : {};
+
+  const [selectedCategoryIds, setSelectedCategoryIds] = useState<string[]>(
+    product?.categories?.map((pc: any) => pc.id) || []
+  );
+
+  const handleCategoryChange = (categoryId: string) => {
+    setSelectedCategoryIds(prev => 
+      prev.includes(categoryId)
+        ? prev.filter(id => id !== categoryId)
+        : [...prev, categoryId]
+    );
+  };
+
+  const handleSelectAllChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
+      setSelectedCategoryIds(categories.map(c => c.id));
+    } else {
+      setSelectedCategoryIds([]);
+    }
+  };
+
+  const isAllSelected = categories.length > 0 && selectedCategoryIds.length === categories.length;
+  const isSomeSelected = selectedCategoryIds.length > 0 && selectedCategoryIds.length < categories.length;
 
   return (
     <div className="max-w-4xl mx-auto">
@@ -127,17 +151,36 @@ export function ProductForm({ product, categories }: { product?: any | null, cat
               
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Categories *</label>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-sm font-medium text-gray-700">Categories *</label>
+                    {categories.length > 0 && (
+                      <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-primary hover:text-primary/80 transition-colors">
+                        <input 
+                          type="checkbox" 
+                          checked={isAllSelected}
+                          ref={(el) => {
+                            if (el) {
+                              el.indeterminate = isSomeSelected;
+                            }
+                          }}
+                          onChange={handleSelectAllChange}
+                          className="rounded border-gray-300 text-primary focus:ring-primary w-3.5 h-3.5"
+                        />
+                        Select All
+                      </label>
+                    )}
+                  </div>
                   <div className="space-y-3 border border-gray-200 rounded-lg p-4 bg-gray-50 max-h-48 overflow-y-auto">
                     {categories.map(c => {
-                      const isSelected = product?.categories?.some((pc: any) => pc.id === c.id);
+                      const isSelected = selectedCategoryIds.includes(c.id);
                       return (
                         <label key={c.id} className="flex items-center gap-3 cursor-pointer">
                           <input 
                             type="checkbox" 
                             name="categoryIds" 
                             value={c.id} 
-                            defaultChecked={isSelected}
+                            checked={isSelected}
+                            onChange={() => handleCategoryChange(c.id)}
                             className="rounded border-gray-300 text-primary focus:ring-primary w-4 h-4"
                           />
                           <span className="text-sm text-gray-700 font-medium">{c.name}</span>
