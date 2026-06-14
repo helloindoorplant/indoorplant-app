@@ -39,6 +39,28 @@ export default function AddressesPage() {
     isDefault: false,
   });
 
+  const handlePincodeChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, '').slice(0, 6);
+    setFormData(prev => ({ ...prev, pincode: value }));
+
+    if (value.length === 6) {
+      try {
+        const res = await fetch(`https://api.postalpincode.in/pincode/${value}`);
+        const data = await res.json();
+        if (data && data[0] && data[0].Status === 'Success') {
+          const po = data[0].PostOffice[0];
+          setFormData(prev => ({
+            ...prev,
+            city: po.District || po.Block || prev.city,
+            state: po.State || prev.state
+          }));
+        }
+      } catch (err) {
+        console.error("Failed to fetch pincode details", err);
+      }
+    }
+  };
+
   const fetchAddresses = async () => {
     setIsLoading(true);
     try {
@@ -230,7 +252,7 @@ export default function AddressesPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">Pincode</label>
-                  <Input required placeholder="400001" value={formData.pincode} onChange={e => setFormData({...formData, pincode: e.target.value})} />
+                  <Input required placeholder="400001" value={formData.pincode} onChange={handlePincodeChange} />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-gray-700">Country</label>
