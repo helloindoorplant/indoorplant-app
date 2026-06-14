@@ -189,36 +189,36 @@ export default function CareClient({ products }: CareClientProps) {
                 <p className="text-xs text-slate-500">We couldn't find any products in database matching "{searchQuery}".</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                 {filteredPlants.map((plant) => (
                   <button 
                     key={plant.id}
                     onClick={() => selectPlant(plant)}
-                    className="group bg-white border border-slate-100 rounded-2xl p-4 text-left shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col h-full focus:outline-none"
+                    className="group bg-white border border-slate-100 rounded-2xl p-3 md:p-4 text-left shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col h-full focus:outline-none"
                   >
-                    <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-4 bg-slate-50 border border-slate-100">
+                    <div className="relative aspect-square w-full rounded-xl overflow-hidden mb-3 md:mb-4 bg-slate-50 border border-slate-100">
                       <img 
                         src={plant.imageUrl} 
                         alt={plant.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-350"
                       />
-                      <span className="absolute top-2 right-2 text-[9px] font-bold px-2 py-0.5 bg-white/95 rounded-full border border-slate-100 shadow-sm text-slate-600 uppercase">
+                      <span className="absolute top-2 right-2 text-[8px] md:text-[9px] font-bold px-2 py-0.5 bg-white/95 rounded-full border border-slate-100 shadow-sm text-slate-600 uppercase">
                         {plant.careLevel}
                       </span>
                     </div>
                     <div className="flex-1 flex flex-col justify-between">
                       <div>
-                        <h3 className="font-bold text-slate-900 group-hover:text-[#2D6A4F] text-lg leading-snug transition-colors">
+                        <h3 className="font-bold text-slate-900 group-hover:text-[#2D6A4F] text-sm md:text-lg leading-snug transition-colors line-clamp-1">
                           {plant.name}
                         </h3>
-                        <p className="text-xs text-slate-500 line-clamp-2 mt-1 leading-relaxed">
+                        <p className="text-[11px] md:text-xs text-slate-500 line-clamp-2 mt-1 leading-relaxed">
                           {plant.description}
                         </p>
                       </div>
-                      <div className="flex items-center justify-between border-t border-slate-50 pt-3 mt-4 text-[10px] text-slate-400 font-bold uppercase tracking-wide">
+                      <div className="flex flex-col xs:flex-row gap-1.5 xs:justify-between items-start xs:items-center border-t border-slate-50 pt-2.5 mt-3 text-[9px] md:text-[10px] text-slate-400 font-bold uppercase tracking-wide">
                         <span>{plant.lightReq} Light</span>
                         {plant.petFriendly && (
-                          <span className="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100">
+                          <span className="text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100 shrink-0">
                             Pet Safe
                           </span>
                         )}
@@ -360,23 +360,27 @@ export default function CareClient({ products }: CareClientProps) {
           <motion.div 
             initial={{ opacity: 0, scale: 0.98 }} 
             animate={{ opacity: 1, scale: 1 }}
-            className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start"
+            className="flex flex-col lg:grid lg:grid-cols-3 gap-6 lg:gap-8 items-start"
           >
             {/* Left side: Sticky Reference Card */}
-            <div className="lg:col-span-1 lg:sticky lg:top-24 space-y-6">
-              <div className="bg-white rounded-2xl border border-slate-150/60 p-5 shadow-sm">
-                <div className="relative aspect-video rounded-xl overflow-hidden mb-4 border border-slate-100">
-                  <img src={selectedPlant.imageUrl} alt={selectedPlant.name} className="w-full h-full object-cover" />
+            <div className="w-full lg:col-span-1 lg:sticky lg:top-24 space-y-6 order-2 lg:order-1">
+              <div className="bg-white rounded-2xl border border-slate-150/60 p-4 md:p-5 shadow-sm">
+                <div className="flex flex-col sm:flex-row lg:flex-col gap-4 sm:items-center lg:items-stretch">
+                  <div className="relative aspect-video w-full sm:w-1/3 lg:w-full rounded-xl overflow-hidden shrink-0 border border-slate-100">
+                    <img src={selectedPlant.imageUrl} alt={selectedPlant.name} className="w-full h-full object-cover" />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-slate-900 leading-tight mb-2">
+                      {selectedPlant.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 leading-relaxed mb-0 sm:mb-4 lg:mb-4">
+                      {selectedPlant.description}
+                    </p>
+                  </div>
                 </div>
-                
-                <h3 className="text-xl font-bold text-slate-900 leading-tight mb-2">
-                  {selectedPlant.name}
-                </h3>
-                <p className="text-xs text-slate-500 leading-relaxed mb-4">
-                  {selectedPlant.description}
-                </p>
 
-                <div className="space-y-2.5 pt-4 border-t border-slate-100 text-xs font-bold text-slate-700">
+                <div className="grid grid-cols-2 lg:grid-cols-1 gap-2 pt-4 border-t border-slate-100 text-xs font-bold text-slate-700 mt-4 sm:mt-0 lg:mt-4">
                   <div className="flex justify-between items-center p-2 bg-slate-50 rounded-lg">
                     <span className="text-slate-400">Care Level</span>
                     <span className="text-[#2D6A4F]">{selectedPlant.careLevel}</span>
@@ -401,16 +405,16 @@ export default function CareClient({ products }: CareClientProps) {
                   </div>
                 </div>
 
-                <div className="mt-6 flex flex-col gap-2">
+                <div className="mt-6 flex flex-row lg:flex-col gap-2 justify-center w-full">
                   <Link 
                     href={`/product/${selectedPlant.slug}`}
-                    className="w-full inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition-colors"
+                    className="flex-1 w-full inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition-colors"
                   >
                     View Product Page
                   </Link>
                   <button
                     onClick={resetAll}
-                    className="w-full inline-flex items-center justify-center gap-1.5 text-slate-450 hover:text-slate-600 py-2.5 text-xs font-bold transition-colors"
+                    className="flex-1 w-full inline-flex items-center justify-center gap-1.5 text-slate-440 hover:text-slate-600 py-2.5 text-xs font-bold transition-colors"
                   >
                     <RotateCcw className="w-3.5 h-3.5" /> Start Over
                   </button>
@@ -419,7 +423,7 @@ export default function CareClient({ products }: CareClientProps) {
             </div>
 
             {/* Right side: AI Guide Stream & Chat Dialog */}
-            <div className="lg:col-span-2 bg-white rounded-3xl shadow-sm border border-slate-150/60 overflow-hidden flex flex-col min-h-[600px] max-h-[800px]">
+            <div className="w-full lg:col-span-2 bg-white rounded-3xl shadow-sm border border-slate-150/60 overflow-hidden flex flex-col h-[75vh] md:h-[80vh] lg:h-[700px] order-1 lg:order-2">
               
               {/* Header */}
               <div className="bg-[#FAF9F6] border-b border-slate-150/60 p-5 shrink-0 flex items-center justify-between">

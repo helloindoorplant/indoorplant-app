@@ -8,6 +8,29 @@ export async function POST(req: Request) {
   try {
     const { messages, plantId, location, lightLevel, wateringHabit } = await req.json();
 
+    // Convert UI messages to clean CoreMessage objects for Vercel AI SDK streamText
+    const coreMessages: any[] = [];
+    if (Array.isArray(messages)) {
+      for (const msg of messages) {
+        if (msg.role === 'user' || msg.role === 'assistant') {
+          let textContent = '';
+          if (msg.content) {
+            textContent = msg.content;
+          } else if (msg.parts && Array.isArray(msg.parts)) {
+            textContent = msg.parts
+              .filter((p: any) => p.type === 'text')
+              .map((p: any) => p.text || '')
+              .join(' ');
+          }
+          if (!textContent) continue;
+          coreMessages.push({
+            role: msg.role,
+            content: textContent
+          });
+        }
+      }
+    }
+
     // Fetch the product care specifications from database if plantId is provided
     let plantDetails = null;
     if (plantId) {
@@ -56,11 +79,12 @@ Tailor your care guidelines exactly to this environment. If the light level is i
     }
 
     systemPrompt += `Instructions for writing the guide:
-1. Use clean markdown. Use bullet points, bold text, and clear headings.
-2. Provide specific watering, sunlight, and general maintenance instructions (fertilizer, soil, leaf cleaning).
-3. Include a "Warning Signs" section (e.g., what to do if leaves turn yellow, brown, or drop).
-4. Be friendly, encouraging, and authoritative yet simple (explain things clearly like an ELI5 guide).
-5. [!!! CRITICAL REQUIREMENT !!!] At the absolute end of your response, you MUST append the divider '---SUGGESTED_QUESTIONS---' on a new line, followed by exactly 3 suggested follow-up questions relevant to the current conversation that the user might want to click next.
+1. Use extremely simple, clear, and easy-to-read English. Avoid any complex botanical or horticultural terms, Latin names, or technical jargon. Write at an elementary school reading level so anyone can understand easily.
+2. Use clean markdown. Use bullet points, bold text, and clear headings.
+3. Provide specific watering, sunlight, and general maintenance instructions (fertilizer, soil, leaf cleaning).
+4. Include a "Warning Signs" section (e.g., what to do if leaves turn yellow, brown, or drop).
+5. Be friendly, encouraging, and authoritative yet simple (explain things clearly like an ELI5 guide).
+6. [!!! CRITICAL REQUIREMENT !!!] At the absolute end of your response, you MUST append the divider '---SUGGESTED_QUESTIONS---' on a new line, followed by exactly 3 suggested follow-up questions relevant to the current conversation that the user might want to click next.
 Format them exactly like this:
 ---SUGGESTED_QUESTIONS---
 1. [First question text]
@@ -71,12 +95,12 @@ DO NOT include suggested questions in the main body. Only at the very end after 
 `;
 
     // Ensure system prompt rules are enforced in HINGLISH/BANGLISH if user starts in those languages
-    systemPrompt += `\n\n[!!! CRITICAL LANGUAGE OVERRIDE !!!]\nAuto-detect the user's language. If the user speaks Hindi, write the response in HINGLISH (Hindi written using English alphabet). If Bengali, write in BANGLISH. DO NOT use Devanagari or Bengali scripts. Otherwise, respond in clear, beautiful English.`;
+    systemPrompt += `\n\n[!!! CRITICAL LANGUAGE OVERRIDE !!!]\nAuto-detect the user's language. If the user speaks Hindi, write the response in HINGLISH (Hindi written using English alphabet). If Bengali, write in BANGLISH. DO NOT use Devanagari or Bengali scripts. Otherwise, respond in clear, beautiful, and simple English.`;
 
     const result = streamText({
       model: groq('llama-3.1-8b-instant'),
       system: systemPrompt,
-      messages,
+      messages: coreMessages,
     });
 
     return result.toUIMessageStreamResponse();
