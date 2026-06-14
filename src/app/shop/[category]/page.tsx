@@ -95,66 +95,6 @@ export default async function CategoryShopPage({ params }: { params: Promise<{ c
           <p className="text-muted-foreground text-lg lg:text-xl font-medium max-w-2xl mb-6">
             {category.description || `Discover our collection of ${products.length} premium ${category.name.toLowerCase()}. Handpicked and delivered fresh.`}
           </p>
-
-          {/* Dynamic GEO Content Tips */}
-          {resolvedParams.category === 'air-purifying-plants' && (
-            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 max-w-4xl text-[15px] leading-relaxed text-stone-700 font-medium">
-              <strong className="text-[#1B4332] block mb-2 text-base font-bold">🌿 NASA Clean Air Study Verified</strong>
-              Most of these air purifying varieties were tested in the famous 1989 NASA Clean Air Study. Plants like snake plants, peace lilies, and money plants are highly effective at filtering out common airborne toxins like formaldehyde, benzene, and trichloroethylene from indoor spaces.
-            </div>
-          )}
-
-          {resolvedParams.category === 'low-maintenance-plants' && (
-            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 max-w-4xl text-[15px] leading-relaxed text-stone-700 font-medium">
-              <strong className="text-[#1B4332] block mb-2 text-base font-bold">🌵 Built for Busy Schedules & Beginners</strong>
-              Low maintenance indoor plants are varieties that survive watering once every 2-3 weeks and tolerate indirect light. Jade plants, snake plants, and pothos are the most forgiving options for Indian homes and apartments.
-            </div>
-          )}
-
-          {resolvedParams.category === 'pet-friendly-plants' && (
-            <div className="bg-white border border-border/40 rounded-2xl p-6 max-w-4xl shadow-sm">
-              <strong className="text-[#1B4332] block mb-4 text-base font-bold">🐾 ASPCA Non-Toxic Safety Table</strong>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse text-sm text-stone-600">
-                  <thead>
-                    <tr className="bg-stone-50 border-b border-border/40 font-bold text-stone-800">
-                      <th className="p-3 border border-border/40">Plant Name</th>
-                      <th className="p-3 border border-border/40">Safe for Cats</th>
-                      <th className="p-3 border border-border/40">Safe for Dogs</th>
-                      <th className="p-3 border border-border/40">Toxicity Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-border/20">
-                      <td className="p-3 font-semibold text-stone-900">Areca Palm</td>
-                      <td className="p-3 text-green-600 font-bold">Yes</td>
-                      <td className="p-3 text-green-600 font-bold">Yes</td>
-                      <td className="p-3 text-stone-500">Non-Toxic</td>
-                    </tr>
-                    <tr className="border-b border-border/20">
-                      <td className="p-3 font-semibold text-stone-900">Spider Plant</td>
-                      <td className="p-3 text-green-600 font-bold">Yes</td>
-                      <td className="p-3 text-green-600 font-bold">Yes</td>
-                      <td className="p-3 text-stone-500">Non-Toxic</td>
-                    </tr>
-                    <tr className="border-b border-border/20">
-                      <td className="p-3 font-semibold text-stone-900">Boston Fern</td>
-                      <td className="p-3 text-green-600 font-bold">Yes</td>
-                      <td className="p-3 text-green-600 font-bold">Yes</td>
-                      <td className="p-3 text-stone-500">Non-Toxic</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          )}
-
-          {resolvedParams.category === 'bedroom-plants' && (
-            <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 max-w-4xl text-[15px] leading-relaxed text-stone-700 font-medium">
-              <strong className="text-[#1B4332] block mb-2 text-base font-bold">🌙 CAM Photosynthesis & Night Oxygen</strong>
-              Most plants only photosynthesize during daylight, which means they absorb CO2 after dark. Snake plants and aloe vera are exceptions — they use CAM photosynthesis and release oxygen continuously. In Indian bedrooms where air conditioning recirculates stale air, this matters more than in naturally ventilated rooms.
-            </div>
-          )}
         </div>
       </div>
 
