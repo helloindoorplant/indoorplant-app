@@ -36,7 +36,11 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
                 <ShoppingBag className="w-12 h-12 text-primary/40" />
               </div>
               <p className="text-lg font-bold text-muted-foreground">Your cart is empty</p>
-              <Button onClick={() => { onOpenChange(false); window.location.href='/shop'; }}>Start Shopping</Button>
+              <Link href="/shop" onClick={() => onOpenChange(false)}>
+                <Button className="mt-2 px-8 h-12 rounded-full font-bold text-base shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">
+                  Start Shopping
+                </Button>
+              </Link>
             </div>
           ) : (
             items.map((item) => (
