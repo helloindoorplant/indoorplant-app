@@ -115,5 +115,49 @@ export const plants2 = [
       { q: "How do I propagate the Monstera Broken Heart?", a: "Take a stem cutting with at least one node and one leaf. Place it in water or moist sphagnum moss in a warm, humid spot. Roots develop in 3-5 weeks. Once roots are 2-3 cm long, transfer to soil. Best done in spring or early summer for fastest rooting." },
       { q: "Is the Monstera Broken Heart a good gift plant?", a: "It is one of the most desirable gift plants among plant enthusiasts in India right now. Its architectural, unique fenestrated leaf shape sets it apart from common plants, making it feel like a premium, thoughtful gift. Perfect for plant lovers, interior design enthusiasts, and housewarming presents." }
     ])
+  },
+  // PRODUCT 8
+  {
+    name: "Lucky Bamboo Plant 2 Layer",
+    slug: "lucky-bamboo-plant-2-layer",
+    description: "Luck lives here — and it's surprisingly low maintenance. The Lucky Bamboo 2 Layer is a Vastu-approved, desk-ready charm that grows beautifully in just water — no soil, no fuss, no excuses. A timeless symbol of prosperity and harmony for every Indian home.",
+    categoryName: "Vastu & Lucky Plants",
+    categorySlug: "vastu-lucky-plants",
+    price: 988,
+    salePrice: 449,
+    stock: 50,
+    isFeatured: true,
+    careLevel: "EASY",
+    lightReq: "BRIGHT_INDIRECT",
+    waterReq: "Change water completely every 7-10 days. Keep 2-3 inches of clean water in the vase at all times. Do not let roots dry out. Use filtered or room-temperature water — avoid direct tap chlorine water.",
+    petFriendly: false,
+    airPurifier: true,
+    images: JSON.stringify([
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-2.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-3.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-4.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-5.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-6.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-7.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-8.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-9.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-10.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Lucky-Bamboo-Plant-2-Layer-11.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/LuckyBambooPlantP-WPot_2_1800x1800.webp"
+    ]),
+    faqs: JSON.stringify([
+      { q: "What is a Lucky Bamboo 2 Layer plant?", a: "The Lucky Bamboo 2 Layer (Dracaena sanderiana) is a beautifully arranged two-tier bamboo stalk plant that grows in water rather than soil. The 2-layer arrangement specifically symbolises love, partnership, and double luck in both Vastu Shastra and Feng Shui. It is one of the most popular desk and home decor plants in India, prized equally for its cultural significance and near-zero maintenance needs." },
+      { q: "Is Lucky Bamboo good for home as per Vastu?", a: "Yes — the Lucky Bamboo is one of the most Vastu-auspicious plants you can keep in an Indian home. Each layer of bamboo stalks carries a specific meaning: 2 layers represent love and luck, 3 layers bring happiness and long life, and 7 layers attract good health and wealth. The 2-layer variety is particularly popular for couples, families, and anyone inviting positive relationship energy. Place it in the south-east corner for maximum Vastu benefit." },
+      { q: "How do I grow Lucky Bamboo in water?", a: "Place the Lucky Bamboo stalks in a clean glass vase or the self-watering pot included in your kit with 2-3 inches of clean water covering the roots. Use filtered or room-temperature water — tap water with high chlorine can cause leaf tips to turn brown. Change the water completely every 7-10 days. Add 2-3 drops of liquid fertiliser to the water once a month to keep the plant thriving." },
+      { q: "Can Lucky Bamboo survive in an Indian home?", a: "Yes — the Lucky Bamboo is extremely well-suited to Indian home conditions. It thrives in the warm temperatures (18-30C) typical of most Indian homes and apartments, tolerates AC-cooled rooms, handles low light conditions, and asks very little — just clean water every week and a spot away from harsh direct sunlight." },
+      { q: "How often should I water Lucky Bamboo?", a: "Lucky Bamboo does not need traditional watering — it grows in water. Simply change the water in its vase every 7-10 days. Keep 2-3 inches of water in the vase at all times and ensure the roots are always submerged. Never let the vase run completely dry and never let the water stagnate for more than 10 days." },
+      { q: "What does the 2 Layer Lucky Bamboo symbolise?", a: "The 2-layer Lucky Bamboo is a symbol of love, duality, and double luck. In Feng Shui tradition, two bamboo stalks represent a strong loving relationship between partners and bring harmonious energy to the home. It is one of the most popular Feng Shui gifts for couples, newlyweds, and anyone seeking to strengthen their relationships and invite balanced, loving energy." },
+      { q: "Where should I place Lucky Bamboo in my house?", a: "For maximum Vastu and Feng Shui benefit: place it in the south-east corner of your living room or office — this is the traditional wealth and prosperity direction. Alternatively, place it near the main entrance to welcome positive energy into your home. Keep it on your office desk to the left side. Avoid placing it near direct sunlight, televisions, or electronic devices, which can stress the plant." },
+      { q: "Does Lucky Bamboo need sunlight?", a: "Lucky Bamboo prefers bright indirect light — near a window that receives filtered sunlight is ideal. It can survive in low-light conditions and even under artificial office lighting, making it one of the most versatile indoor plants available. Never place it in direct harsh sunlight, which rapidly turns the leaves yellow and the stalks pale." },
+      { q: "Can I keep Lucky Bamboo in my office?", a: "The Lucky Bamboo is arguably the most popular office plant in India for a reason. It thrives under fluorescent lighting, grows in water so there is no soil mess, is compact enough for any desk, and carries positive Vastu energy that many Indians believe enhances focus, productivity, and financial success in the workplace." },
+      { q: "Is Lucky Bamboo safe for pets and children?", a: "Lucky Bamboo is mildly toxic to cats and dogs if the leaves or stalks are ingested, causing nausea and vomiting. Keep it on an elevated desk or shelf away from pets. It is generally safe around children as the primary concern is accidental ingestion, which is rare." },
+      { q: "How long does Lucky Bamboo live?", a: "With proper care — clean water changed weekly, indirect light, and monthly fertilising — Lucky Bamboo can live for 1-10 years indoors. Many well-cared-for Lucky Bamboo plants last a decade or more. The key factors are water quality (avoid chlorinated tap water) and consistent light. It is one of the longest-lasting desk plants you can own." },
+      { q: "Is Lucky Bamboo a good gift for housewarming or birthdays?", a: "Lucky Bamboo is India's most gifted auspicious plant for good reason. It carries universally positive cultural symbolism across Vastu, Feng Shui, and general Indian tradition — bringing luck, prosperity, and positive energy to any new home or celebration. The 2-layer arrangement specifically symbolises love and partnership, making it a deeply meaningful gift for couples, housewarmings, Diwali, and business openings. Combined with the premium self-watering pot and recyclable packaging, it arrives completely gift-ready." }
+    ])
   }
 ];
