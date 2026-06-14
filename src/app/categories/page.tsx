@@ -30,6 +30,34 @@ export default async function CategoriesPage() {
     orderBy: { name: 'asc' }
   });
 
+  // Explicitly requested categories
+  const targetCategories = [
+    { 
+      name: "Air Purifying", 
+      slug: "air-purifying-plants", 
+      colorClass: "bg-[#788c5d]", 
+      image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_1.webp" 
+    },
+    { 
+      name: "Low Maintenance", 
+      slug: "low-maintenance-plants", 
+      colorClass: "bg-[#6a9bcc]", 
+      image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_2.webp" 
+    },
+    { 
+      name: "Pet Safe", 
+      slug: "pet-friendly-plants", 
+      colorClass: "bg-[#d97757]", 
+      image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_3.webp" 
+    },
+    { 
+      name: "Bedroom Plants", 
+      slug: "bedroom-plants", 
+      colorClass: "bg-[#141413]", 
+      image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_4.webp" 
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-[#faf9f5]">
       {/* Hero Section */}
@@ -45,18 +73,20 @@ export default async function CategoriesPage() {
       {/* Single Section for Categories */}
       <section className="pb-24 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((cat, idx) => {
-            const colors = ["bg-[#788c5d]", "bg-[#6a9bcc]", "bg-[#d97757]", "bg-[#141413]", "bg-[#52B788]", "bg-[#2D6A4F]"];
-            const colorClass = colors[idx % colors.length];
+          {targetCategories.map((cat) => {
+            // Find matching category in DB to get real count, otherwise default to 0
+            // We do a loose match on the slug or name because DB might have 'air-purifying-plants'
+            const dbCat = categories.find(c => c.slug.includes(cat.slug) || c.slug === cat.slug);
+            const count = dbCat ? dbCat._count.products : 0;
             
             return (
               <CategoryCard
-                key={cat.id}
+                key={cat.slug}
                 name={cat.name}
-                count={cat._count.products}
+                count={count}
                 slug={cat.slug}
-                image={cat.image || undefined}
-                colorClass={colorClass}
+                image={cat.image}
+                colorClass={cat.colorClass}
               />
             );
           })}
