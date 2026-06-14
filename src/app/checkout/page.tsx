@@ -7,7 +7,7 @@ import * as z from 'zod';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useCartStore } from '@/store/useCartStore';
-import { ShieldCheck, ArrowLeft, Truck, CreditCard, ChevronRight, Check, MapPin, User, Plus, Eye, EyeOff } from 'lucide-react';
+import { ShieldCheck, ArrowLeft, Truck, CreditCard, ChevronRight, Check, MapPin, User, Plus, Eye, EyeOff, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import { FALLBACK_PLANT_IMAGE } from '@/lib/utils';
 
@@ -33,7 +33,7 @@ type CheckoutFormData = z.infer<typeof checkoutSchema>;
 export default function CheckoutPage() {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
-  const { items, subtotal, clearCart, updateQuantity } = useCartStore();
+  const { items, subtotal, clearCart, updateQuantity, removeItem } = useCartStore();
   const { data: session } = useSession();
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [shippingMethod, setShippingMethod] = useState<'standard' | 'express'>('standard');
@@ -530,7 +530,16 @@ export default function CheckoutPage() {
                       </button>
                     </div>
                   </div>
-                  <div className="font-bold text-sm">₹{item.price * item.quantity}</div>
+                  <div className="flex flex-col items-end gap-1.5 shrink-0">
+                    <div className="font-bold text-sm">₹{item.price * item.quantity}</div>
+                    <button 
+                      onClick={() => removeItem(item.id, item.potColor)}
+                      className="text-muted-foreground hover:text-red-500 bg-red-50 hover:bg-red-100 p-1.5 rounded-md transition-colors"
+                      title="Remove item"
+                    >
+                      <Trash2 className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
