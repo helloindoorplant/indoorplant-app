@@ -32,6 +32,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   // Format date for schema
   const publishDate = post.date === "June 15, 2026" ? "2026-06-15"
                     : post.date === "June 14, 2026" ? "2026-06-14"
+                    : post.date === "June 13, 2026" ? "2026-06-13"
                     : post.date === "June 10, 2026" ? "2026-06-10" 
                     : post.date === "June 08, 2026" ? "2026-06-08" 
                     : post.date === "June 05, 2026" ? "2026-06-05" 
@@ -39,7 +40,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   // Query database products mentioned in the article if it is the decorative plants article
   let featuredProducts: any[] = [];
-  if (post.slug === "decorative-plants-for-home-online-india" || post.slug === "best-indoor-plants-for-renters-india") {
+  if (
+    post.slug === "decorative-plants-for-home-online-india" ||
+    post.slug === "best-indoor-plants-for-renters-india" ||
+    post.slug === "indoor-plants-for-rented-apartments-india"
+  ) {
     featuredProducts = await prisma.product.findMany({
       where: {
         slug: {
