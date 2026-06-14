@@ -53,9 +53,12 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div className="relative h-[500px] rounded-2xl overflow-hidden bg-gray-100">
-              <div className="absolute inset-0 bg-primary/10 flex items-center justify-center">
-                <span className="text-primary font-medium">Brand Story Image Placeholder</span>
-              </div>
+              <Image 
+                src="https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/About_indoorplants2.webp"
+                alt="Our Story"
+                fill
+                className="object-cover"
+              />
             </div>
             <div>
               <h2 className="text-3xl font-bold text-gray-900 font-playfair mb-6">Our Story</h2>
