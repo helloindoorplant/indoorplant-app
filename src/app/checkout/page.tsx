@@ -241,7 +241,7 @@ export default function CheckoutPage() {
         </Link>
       </div>
 
-      <div className="grid lg:grid-cols-12 gap-10">
+      <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-10">
         
         {/* Main Checkout Area */}
         <div className="lg:col-span-7 space-y-6">
@@ -262,7 +262,20 @@ export default function CheckoutPage() {
                 {/* Saved Addresses Section */}
                 {savedAddresses.length > 0 && (
                   <div className="space-y-4 mb-8">
-                    <h3 className="font-bold text-slate-700 text-sm">Select a Saved Address</h3>
+                    <div className="flex items-center justify-between">
+                      <h3 className="font-bold text-slate-700 text-sm">Select a Saved Address</h3>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        onClick={() => {
+                          setUseNewAddress(true);
+                          setSelectedAddressId(null);
+                        }}
+                        className={`rounded-full border-2 font-bold ${useNewAddress ? 'border-primary bg-primary/5 text-primary' : 'hover:border-primary/50'}`}
+                      >
+                        <Plus className="w-4 h-4 mr-1" /> Add Address
+                      </Button>
+                    </div>
                     <div className="grid sm:grid-cols-2 gap-4">
                       {savedAddresses.map(addr => (
                         <div 
@@ -298,20 +311,6 @@ export default function CheckoutPage() {
                         </div>
                       ))}
                       
-                      <div 
-                        onClick={() => {
-                          setUseNewAddress(true);
-                          setSelectedAddressId(null);
-                        }}
-                        className={`cursor-pointer p-4 rounded-xl border-2 border-dashed flex flex-col items-center justify-center transition-all min-h-[120px] ${
-                          useNewAddress
-                            ? 'border-primary bg-primary/5 text-primary' 
-                            : 'border-gray-300 hover:border-primary/50 text-gray-500 bg-gray-50'
-                        }`}
-                      >
-                        <Plus className="w-6 h-6 mb-2" />
-                        <span className="font-semibold text-sm">Add New Address</span>
-                      </div>
                     </div>
                   </div>
                 )}
