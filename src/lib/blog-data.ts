@@ -951,5 +951,562 @@ export const BLOG_POSTS: BlogPost[] = [
   </div>
 </div>
 `
+  },
+  {
+    slug: "best-indoor-plants-for-renters-india",
+    title: "Best Indoor Plants for Renters — How to Make a Flat Feel Like Home",
+    excerpt: "The plants that actually work in a rented Indian apartment — no drilling, no landlord drama, no dead plants. Six picks with real prices, honest care notes. From Rs 299.",
+    category: "Renter Living + Plant Styling",
+    date: "June 14, 2026",
+    readTime: "8 min read",
+    image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/best-indoor-plants-for-renters-india.webp",
+    metaTitle: "Best Indoor Plants for Renters in India — 2026 Guide",
+    metaDescription: "The plants that actually work in a rented Indian apartment — no drilling, no landlord drama, no dead plants. Six picks with real prices, honest care notes. From Rs 299.",
+    keywords: [
+      "indoor plants for renters India",
+      "plants for rented apartment India",
+      "indoor plants for Indian flats",
+      "renter friendly plants India",
+      "low maintenance plants rented home",
+      "plants for Indian apartment decor"
+    ],
+    author: {
+      name: "Dr. Anjali Desai",
+      role: "Lead Horticulturist",
+      avatar: "AD"
+    },
+    content: `
+<p class="lead text-xl text-gray-655 mb-8 leading-relaxed font-light">
+  My first rented flat in Bangalore had beige walls, a north-facing window, and approximately zero personality. The landlord had forbidden nails. The flooring was cold stone. The kitchen was the colour of old newspaper.
+</p>
+
+<p class="mb-6 text-gray-700 leading-relaxed">
+  I put a Golden Money Plant on the kitchen counter in week one.
+</p>
+
+<p class="mb-6 text-gray-700 leading-relaxed">
+  By month two I had four plants and people were asking me where I found such a nice flat.
+</p>
+
+<p class="mb-6 text-gray-700 leading-relaxed">
+  That is the thing about plants in a rented apartment. They do not change the walls. They do not change the landlord's rules. They just quietly shift everything — the feel of morning light through a window, the way a corner reads, the sense that someone actually lives here and chose to be here.
+</p>
+
+<p class="mb-8 text-gray-700 leading-relaxed">
+  This is what six years of renting across Indian cities has taught me about plants. Not aspirational advice. What actually works in a 1BHK with one window, a co-living with shared balcony space, or a Pune flat that comes with white walls and someone else's furniture choices.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  🏢 The Renter's Reality in India
+</h2>
+
+<p class="mb-6 text-gray-700 leading-relaxed">
+  Before we get into plants, a word about what renting in India actually looks like for most people. These four constraints define what a renter's plant actually needs to be:
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
+  <div class="bg-gray-50 border border-gray-150 rounded-2xl p-6">
+    <strong class="block text-emerald-800 font-bold mb-2">🚫 No Permanent Changes</strong>
+    <span class="text-sm text-gray-650 leading-relaxed">You probably cannot paint or drill. Your landlord either explicitly said no or the deposit rules imply it. The walls stay as they are.</span>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-2xl p-6">
+    <strong class="block text-emerald-800 font-bold mb-2">📦 Must Be Moveable</strong>
+    <span class="text-sm text-gray-655 leading-relaxed">You might move in 12 to 18 months. Any investment you make in the space needs to be able to easily travel with you.</span>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-2xl p-6">
+    <strong class="block text-emerald-800 font-bold mb-2">☀️ Unpredictable Light</strong>
+    <span class="text-sm text-gray-655 leading-relaxed">You chose the flat for location or rent, not the plant-growing conditions. The light is whatever it is.</span>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-2xl p-6">
+    <strong class="block text-emerald-800 font-bold mb-2">⚙️ Low Maintenance</strong>
+    <span class="text-sm text-gray-655 leading-relaxed">You probably do not want to spend a lot of time thinking about plant care on top of everything else your day involves.</span>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  🌿 Six Plants That Work in Rented Indian Apartments
+</h2>
+<p class="mb-8 text-gray-750 leading-relaxed">
+  All available now at IndoorPlant.in, with live prices verified for June 2026.
+</p>
+
+<div class="space-y-8 my-8">
+  <!-- Plant 1: Golden Money Plant -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Highly Resilient</span>
+        <h3 class="text-2xl font-bold text-gray-950 mt-2 mb-0 font-playfair">Golden Money Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 309</span>
+        <span class="text-sm text-gray-400 line-through">Rs 680</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.4</span>
+        <span class="text-gray-400">(25 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
+        ✗ NOT PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/golden-money-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Start here if you are not sure where to start. I have put Golden Money Plants in five different rented flats across Bangalore, Mumbai, and Hyderabad under different conditions. Every single one survived. It grows in low light, bright indirect light, or anything in between. Water every 7-10 days and it mostly takes care of itself.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For Renters
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          It trails. Within a few months, the vines cascade over shelf edges, climb bookcases, or drape across windowsills. It fills vertical and horizontal space without taking up valuable floor space.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Note
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Kitchen counter, bookshelf, bathroom ledge, entry table — it works anywhere but is toxic if consumed by pets.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-755">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      This is the ultimate starter plant for a rented apartment. It tolerates light fluctuations and minor watering neglect beautifully.
+    </div>
+  </div>
+
+  <!-- Plant 2: N'Joy Money Plant -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-100 px-2.5 py-1 rounded-full">Graphic Variegation</span>
+        <h3 class="text-2xl font-bold text-gray-950 mt-2 mb-0 font-playfair">N'Joy Money Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 299</span>
+        <span class="text-sm text-gray-400 line-through">Rs 878</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.4</span>
+        <span class="text-gray-400">(21 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-red-655 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
+        ✗ NOT PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/njoy-money-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      The Golden Money Plant's more design-conscious sibling. Where the golden variety has warm green-and-gold leaves, the N'Joy has crisp white-and-deep-green variegation that looks almost graphic, like a deliberate design choice. It is compact and grows more contained than other money plants.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For Renters
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Compact growth makes it ideal for desks, shelves, and small tables. Placed against a white rental wall, it looks exceptionally high-end and designer.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Note
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Needs a bit more light than the golden variety to keep that white variegation looking clean. Fades in very dim spots, so give it a window-adjacent place.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-755">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      Ensure this sits within a meter or two of a window. If the room is too dim, the white patches will slowly decrease to gather more light.
+    </div>
+  </div>
+
+  <!-- Plant 3: Aglaonema Red Lipstick -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Low Light Friendly</span>
+        <h3 class="text-2xl font-bold text-gray-950 mt-2 mb-0 font-playfair">Aglaonema Red Lipstick</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 399</span>
+        <span class="text-sm text-gray-400 line-through">Rs 878</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.4</span>
+        <span class="text-gray-400">(23 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-green-700 bg-green-50 px-2.5 py-0.5 rounded text-xs font-semibold border border-green-200">
+        ✓ PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/aglaonema-red-lipstick-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Dark green leaves edged in bold cherry-red. Most colourful plants need strong light to keep their colour, but the Aglaonema Red Lipstick is an exception. It holds its striking red margins even in low-light north-facing rooms. Grows slowly and stays manageable.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For Renters
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Tolerates dim corners and north-facing rooms farthest from windows. Stays compact and neat, requiring very little attention or potting space.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Note
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Water once a week. It doesn't require complex watering calculations or misting.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-755">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      Highly recommended for apartments with minimal direct light. Genuinely low maintenance and looks very polished.
+    </div>
+  </div>
+
+  <!-- Plant 4: Aglaonema Snow White -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Quiet Contrast</span>
+        <h3 class="text-2xl font-bold text-gray-950 mt-2 mb-0 font-playfair">Aglaonema Snow White</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 349</span>
+        <span class="text-sm text-gray-400 line-through">Rs 768</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.3</span>
+        <span class="text-gray-400">(29 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-green-700 bg-green-50 px-2.5 py-0.5 rounded text-xs font-semibold border border-green-200">
+        ✓ PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/aglaonema-snow-white-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Same low-maintenance, low-light logic as the Red Lipstick, but with a quieter aesthetic. Broad leaves in cream and pale green. It reads as calm and clean rather than graphic. Better for minimalist rental interiors where you want greenery without visual clutter. Good for a bedroom side table or desk.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For Renters
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Pet safe and perfect for compact spots. Works well on bedroom tables, shelves, and study desks. Easy to transport when moving.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Note
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Transit stress can occasionally cause leaves to yellow. Stable indirect light near a window fixes this behavior within a week.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-755">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      Water once a week in low to medium indirect light. Do not overwater.
+    </div>
+  </div>
+
+  <!-- Plant 5: Lucky Jade Plant -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#2D6A4F] bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Succulent Hardiness</span>
+        <h3 class="text-2xl font-bold text-gray-955 mt-2 mb-0 font-playfair">Lucky Jade Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 299</span>
+        <span class="text-sm text-gray-400 line-through">Rs 649</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-605">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.5</span>
+        <span class="text-gray-400">(62 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-green-700 bg-green-50 px-2.5 py-0.5 rounded text-xs font-semibold border border-green-200">
+        ✓ PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      This plant is for the person who has killed every plant they have ever owned. A succulent that stores water in its thick trunk and fleshy leaves. It grows slowly into a small tree shape over years and is a common Vastu good-luck plant in Indian homes.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For Renters
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Unusually forgiving of forgetful watering (water once every 2-3 weeks). Highly compact and moves very well because of its small root ball.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Note
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Needs a sunny windowsill. Put it in a bright south or west-facing window. Do not put it in a dim corner as it will stretch awkwardly toward light.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-755">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      Lucky Jade Plant is the most forgiving for underwatering, but the least forgiving for incorrect lighting. Match it to a sunny ledge.
+    </div>
+  </div>
+
+  <!-- Plant 6: Bamboo Palm -->
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Corner Filler</span>
+        <h3 class="text-2xl font-bold text-gray-950 mt-2 mb-0 font-playfair">Bamboo Palm</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-2xl font-extrabold text-emerald-700">Rs 389</span>
+        <span class="text-sm text-gray-400 line-through">Rs 449</span>
+      </div>
+    </div>
+    
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+      <div class="flex items-center gap-1">
+        <span class="text-amber-500 font-bold">★ 4.3</span>
+        <span class="text-gray-400">(20 reviews)</span>
+      </div>
+      <span class="text-gray-300">•</span>
+      <div class="inline-flex items-center text-green-700 bg-green-50 px-2.5 py-0.5 rounded text-xs font-semibold border border-green-200">
+        ✓ PET SAFE
+      </div>
+      <span class="text-gray-300">•</span>
+      <a href="/product/bamboo-palm-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+    </div>
+
+    <p class="text-gray-700 leading-relaxed mb-6">
+      Every rented flat has a corner too small for furniture, but too large to ignore. The Bamboo Palm fills corners beautifully. It grows to 4 to 5 feet with tropical fronds that spread outward. It handles low to bright indirect light and needs water every 7 to 10 days.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <div class="bg-emerald-50/20 border border-emerald-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-emerald-800 mt-0 mb-1 flex items-center gap-1.5">
+          ✅ Good For Renters
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          Provides vertical greenery and presence to a room corner without needing permanent wall hooks. Moves easily on its side when packing.
+        </p>
+      </div>
+      <div class="bg-amber-50/20 border border-amber-100/50 rounded-xl p-4">
+        <h4 class="text-sm font-bold text-amber-800 mt-0 mb-1 flex items-center gap-1.5">
+          ⚠️ Note
+        </h4>
+        <p class="text-xs text-gray-655 m-0 leading-relaxed">
+          The nursery pot it arrives in is plain. A terracotta or ceramic floor planter is recommended to make it look fully designed.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 text-xs text-gray-755">
+      <span class="font-bold text-gray-900 block mb-1">📝 Horticulturist's Note:</span>
+      This palm is air-purifying (verified by the NASA Clean Air Study) and pet safe. Perfect for shared living rooms.
+    </div>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  📍 Where to Put Them — Real Placement Advice for Indian Flats
+</h2>
+
+<div class="space-y-4 my-6">
+  <div class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">The empty corner in the living room</strong>
+    <span class="text-sm text-gray-650">Bamboo Palm. Fills a floor corner with excellent presence. Combine with a Golden Money Plant on a nearby shelf for a layered vertical layout.</span>
+  </div>
+  <div class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">The kitchen counter or windowsill</strong>
+    <span class="text-sm text-gray-650">Golden Money Plant or N'Joy Money Plant. Compact enough to not take up prep space. Growing a money plant in water in a glass jar on the windowsill is extremely low effort.</span>
+  </div>
+  <div class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">The bedroom side table or desk</strong>
+    <span class="text-sm text-gray-650">Aglaonema Snow White. It is the right size, stays neat, and does not demand constant attention. Adds a personal touch to a rented room.</span>
+  </div>
+  <div class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">The bathroom shelf</strong>
+    <span class="text-sm text-gray-650">Golden Money Plant or Variegated Money Plant (Rs 299). Both handle bathroom humidity well and look great cascading over shelf edges.</span>
+  </div>
+  <div class="border-l-4 border-emerald-500 pl-4 py-1">
+    <strong class="text-gray-900 block font-bold">The north-facing room with difficult light</strong>
+    <span class="text-sm text-gray-650">Aglaonema Red Lipstick or Snow White. They will hold their colour and thrive where other plants would struggle.</span>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  📌 How to Make a Few Plants Look Intentional
+</h2>
+
+<ul class="list-disc pl-6 mb-8 space-y-2 text-gray-700">
+  <li><strong>Pick one pot style and use it consistently:</strong> All terracotta, all white ceramic, or all grey fiberstone. Matching pots make mismatched plants look like a cohesive collection.</li>
+  <li><strong>Three plants, three heights:</strong> One on the floor, one on a table, and one trailing. This looks designed rather than cluttered.</li>
+  <li><strong>One plant per room is enough to start:</strong> One well-chosen plant in the right spot does more for the room's character than five randomly distributed small pots.</li>
+  <li><strong>Let the trailing plants trail:</strong> Let money plant vines cascade over a high shelf edge rather than keeping them constantly clipped.</li>
+</ul>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  📦 When You Move — What Happens to the Plants
+</h2>
+
+<p class="mb-6 text-gray-700 leading-relaxed">
+  This is the question renters actually think about. Here is how you transport them safely:
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6 text-sm text-gray-700">
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-5">
+    <strong class="block text-emerald-800 mb-1 font-bold">Small Plants</strong>
+    Water 2 days before moving, not the day of (wet soil is heavy). Pack them upright in open cardboard boxes.
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-5">
+    <strong class="block text-emerald-800 mb-1 font-bold">Medium Plants</strong>
+    Set them on the car floor or boot with padding to prevent tipping. Most city traffic speeds are safe enough.
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-5">
+    <strong class="block text-emerald-800 mb-1 font-bold">Bamboo Palms</strong>
+    Lay them horizontally in a ventilated box with the root ball wrapped in a damp cloth. They recover quickly.
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  ✨ The Honest Bit About Renting and Plants
+</h2>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  The rented flat problem is not really about the walls or the landlord's rules. It is about the feeling of impermanence — the sense that investing in a space you are going to leave is somehow wasteful.
+</p>
+<p class="mb-6 text-gray-755 leading-relaxed font-semibold">
+  Plants are the most efficient way to prove that wrong. You spend Rs 299 on a Golden Money Plant. It is yours. It grows at your pace, in your home, on your shelf. When you move, it moves with you. Three rentals later, that plant is still there — taller, better, carrying the memory of every flat it has lived in.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  Browse what is available now at <a href="/shop" class="text-primary hover:underline font-bold">indoorplant.in/shop</a> or use the free AI Plant Advisor at <a href="/ai-advisor" class="text-primary hover:underline font-bold">indoorplant.in/ai-advisor</a> to get a recommendation matched to your specific room, light, and lifestyle. It takes less than a minute.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  📌 Quick Picks By Need
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 text-xs">
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Cannot decide where to start?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Golden Money Plant (Rs 309)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>North-facing room, need color?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Aglaonema Red Lipstick (Rs 399)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Have cats or dogs?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Aglaonema Snow White (Rs 349) / Jade (Rs 299)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Forget to water frequently?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Lucky Jade Plant (Rs 299)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>One large empty corner?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">Bamboo Palm (Rs 389)</strong>
+  </div>
+  <div class="bg-gray-50 border border-gray-150 rounded-xl p-4 flex justify-between items-center gap-2">
+    <span>Want a premium styled look?</span>
+    <strong class="text-[#2D6A4F] shrink-0 text-right">N'Joy Money Plant (Rs 299)</strong>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  ❓ FAQ
+</h2>
+
+<div class="space-y-6 my-8">
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: My landlord said no nails, no drilling. Does that rule out hanging plants?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: No. Macrame plant hangers can go over a curtain rod that is already installed — most Indian rental flats have curtain rods and these require zero new hardware. Leaning ladder plant stands or rolling trolleys also let you display plants without touching the walls.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: I keep killing plants. What am I most likely doing wrong?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Overwatering, almost certainly. In India, especially in monsoon months, plants need significantly less water than you think. Stick a finger 2cm deep into the soil; if it feels moist, do not water yet. The Lucky Jade Plant is specifically built for people with this problem because it stores water and needs to dry out completely.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: My flat only gets 2 hours of morning sunlight. Is that enough for any of these plants?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Yes, for most of them. The two aglaonemas, the golden money plant, and the bamboo palm all handle 2 hours of morning light plus ambient indoor light reasonably well. The N'Joy Money Plant and Monstera Broken Heart (Rs 349) can survive on 2 hours. The Lucky Jade Plant is the exception — it needs strong direct sunlight.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: What if the plant arrives looking sad?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Some drooping and leaf curl after transit is normal. Place it in its spot, check the soil, and give it 3-5 days before deciding anything. If the plant arrives visibly damaged — broken stems, root ball collapsed — photograph it and contact support@indoorplant.in within 12 hours of delivery with your order number and photos. That is the damage return window. Change-of-mind returns are not accepted.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: I am moving in 4 months. Is it worth getting plants now?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Yes. Four months of living in a flat that feels like home is better than four months in a flat that does not. These plants are not investments in the property — they are investments in your daily quality of life inside it. And when you leave, they come with you.
+    </p>
+  </div>
+</div>
+`
   }
 ];
