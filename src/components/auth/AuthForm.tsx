@@ -63,8 +63,7 @@ export function AuthForm({ initialMode }: AuthFormProps) {
           setError('Account created, but failed to automatically log in.');
           setLoading(false);
         } else {
-          router.push(callbackUrl);
-          router.refresh();
+          window.location.href = callbackUrl;
         }
 
       } else if (mode === 'login') {
@@ -74,8 +73,7 @@ export function AuthForm({ initialMode }: AuthFormProps) {
           setError('Invalid email or password.');
           setLoading(false);
         } else {
-          router.push(callbackUrl);
-          router.refresh();
+          window.location.href = callbackUrl;
         }
 
       } else if (mode === 'forgot-password') {
@@ -115,8 +113,7 @@ export function AuthForm({ initialMode }: AuthFormProps) {
             setSuccessMsg('Password reset successfully. Please log in.');
             setLoading(false);
           } else {
-            router.push(callbackUrl);
-            router.refresh();
+            window.location.href = callbackUrl;
           }
         }
       }
