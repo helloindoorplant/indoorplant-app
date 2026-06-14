@@ -1,35 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
-
-const ARTICLES = [
-  {
-    id: 1,
-    title: "The Ultimate Guide to Watering Indoor Plants",
-    category: "Care Guide",
-    date: "Jun 10, 2026",
-    image: "https://images.unsplash.com/photo-1416879598555-3850742518fa?q=80&w=800&auto=format&fit=crop",
-    slug: "watering-guide"
-  },
-  {
-    id: 2,
-    title: "5 Pet-Safe Plants That Actually Look Good",
-    category: "Lifestyles",
-    date: "Jun 05, 2026",
-    image: "https://images.unsplash.com/photo-1545241047-6083a36ee15f?q=80&w=800&auto=format&fit=crop",
-    slug: "pet-safe-plants"
-  },
-  {
-    id: 3,
-    title: "Why Your Monstera Isn't Getting Fenestrations",
-    category: "Troubleshooting",
-    date: "May 28, 2026",
-    image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=800&auto=format&fit=crop",
-    slug: "monstera-fenestrations"
-  }
-];
+import { BLOG_POSTS } from '@/lib/blog-data';
 
 export function BlogSection() {
+  const articles = BLOG_POSTS.slice(0, 3);
+
   return (
     <section className="py-16 lg:py-32 bg-white">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -47,8 +23,8 @@ export function BlogSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {ARTICLES.map((article) => (
-            <Link key={article.id} href={`/blog/${article.slug}`} className="group flex flex-col">
+          {articles.map((article) => (
+            <Link key={article.slug} href={`/blog/${article.slug}`} className="group flex flex-col">
               <div className="relative aspect-[4/3] rounded-[32px] overflow-hidden mb-6 bg-stone-100">
                 <Image 
                   src={article.image} 
