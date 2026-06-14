@@ -20,6 +20,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'lightgrey-nightingale-217677.hostingersite.com',
+      },
+      {
+        protocol: 'https',
         hostname: 'api.dicebear.com',
       },
       {
