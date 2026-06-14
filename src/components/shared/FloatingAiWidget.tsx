@@ -156,7 +156,7 @@ export function FloatingAiWidget() {
 
       {/* Chat Window */}
       {/* Chat Window */}
-      <div className={`fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 w-full sm:w-[400px] h-[100dvh] sm:h-[600px] sm:max-h-[calc(100vh-48px)] bg-white sm:rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border-0 sm:border border-border/50 flex flex-col z-[60] transition-all duration-300 sm:origin-bottom-right ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0 sm:scale-100' : 'opacity-0 pointer-events-none translate-y-full sm:translate-y-8 sm:scale-90'}`}>
+      <div className={`fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 w-full sm:w-[400px] h-[100dvh] sm:h-[600px] sm:max-h-[calc(100dvh-48px)] bg-white sm:rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border-0 sm:border border-border/50 flex flex-col z-[60] transition-all duration-300 sm:origin-bottom-right ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0 sm:scale-100' : 'opacity-0 pointer-events-none translate-y-full sm:translate-y-8 sm:scale-90'}`}>
         
         {/* Header */}
         <div className="bg-primary text-white p-5 sm:rounded-t-3xl flex items-center justify-between shrink-0 relative overflow-hidden pt-[max(20px,env(safe-area-inset-top))]">

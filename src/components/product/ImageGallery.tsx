@@ -31,12 +31,12 @@ export function ImageGallery({ images }: ImageGalleryProps) {
       </div>
 
       {/* Thumbnails */}
-      <div className="flex gap-4 overflow-x-auto pb-2 hide-scrollbar scroll-smooth">
+      <div className="flex gap-4 overflow-x-auto pb-2 hide-scrollbar scroll-smooth snap-x snap-mandatory touch-pan-x w-full">
         {displayImages.map((img, idx) => (
           <button 
             key={idx} 
             onClick={() => setActiveImage(img)}
-            className={`relative w-24 h-24 shrink-0 rounded-[20px] overflow-hidden border-2 transition-all duration-300 ${activeImage === img ? 'border-primary ring-4 ring-primary/10 scale-[0.98] shadow-sm' : 'border-transparent hover:border-primary/40 bg-secondary/20'}`}
+            className={`relative w-24 h-24 shrink-0 rounded-[20px] overflow-hidden border-2 transition-all duration-300 snap-center ${activeImage === img ? 'border-primary ring-4 ring-primary/10 scale-[0.98] shadow-sm' : 'border-transparent hover:border-primary/40 bg-secondary/20'}`}
           >
             <Image 
               src={img} 

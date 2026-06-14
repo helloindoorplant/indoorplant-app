@@ -40,7 +40,7 @@ export default function AiAdvisorPage() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-80px)] bg-[#F8FFF9] flex flex-col">
+    <div className="min-h-[calc(100dvh-80px)] bg-[#F8FFF9] flex flex-col">
       {/* Header */}
       <div className="bg-primary text-white py-8 md:py-10 shrink-0 relative overflow-hidden">
         <div className="absolute -right-20 -top-20 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
