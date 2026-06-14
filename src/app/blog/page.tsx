@@ -92,9 +92,6 @@ export default function BlogPage() {
                 <h3 className="text-xl font-bold text-gray-900 font-playfair mb-3 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-6 flex-1">
-                  {post.excerpt}
-                </p>
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
                   <div className="flex items-center text-xs text-gray-500">
                     <span>{post.date}</span>
