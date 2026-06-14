@@ -6,7 +6,7 @@ export function BalancedBeauty() {
       {/* Background Image with Parallax effect */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="https://images.unsplash.com/photo-1545241047-6083a36ee15f?q=80&w=2000&auto=format&fit=crop" 
+          src="https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Backgrounde-Image.webp" 
           alt="Lush green botanical room" 
           fill 
           className="object-cover"

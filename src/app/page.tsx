@@ -50,10 +50,10 @@ export default async function Home() {
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
             {[
-              { name: "Air Purifying", slug: "air-purifying", dbSlug: "air-purifying", colorClass: "bg-[#52B788]", image: "https://images.unsplash.com/photo-1597055181300-e3633a207517?q=80&w=800&auto=format&fit=crop" },
-              { name: "Low Maintenance", slug: "low-maintenance", dbSlug: "low-maintenance", colorClass: "bg-[#2D6A4F]", image: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?q=80&w=800&auto=format&fit=crop" },
-              { name: "Pet Safe", slug: "pet-safe", dbSlug: "pet-friendly", colorClass: "bg-[#B7E4C7]", image: "https://images.unsplash.com/photo-1599598425947-330026296906?q=80&w=800&auto=format&fit=crop" },
-              { name: "Bedroom Plants", slug: "bedroom", dbSlug: "bedroom-plants", colorClass: "bg-[#052E16]", image: "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=800&auto=format&fit=crop" }
+              { name: "Air Purifying", slug: "air-purifying", dbSlug: "air-purifying", colorClass: "bg-[#52B788]", image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_1.webp" },
+              { name: "Low Maintenance", slug: "low-maintenance", dbSlug: "low-maintenance", colorClass: "bg-[#2D6A4F]", image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_2.webp" },
+              { name: "Pet Safe", slug: "pet-safe", dbSlug: "pet-friendly", colorClass: "bg-[#B7E4C7]", image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_3.webp" },
+              { name: "Bedroom Plants", slug: "bedroom", dbSlug: "bedroom-plants", colorClass: "bg-[#052E16]", image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_4.webp" }
             ].map(cat => {
               const dbCat = categories.find(c => c.slug.includes(cat.dbSlug));
               return (

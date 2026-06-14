@@ -13,7 +13,7 @@ export function PlantersSection() {
           <div className="w-full lg:w-1/2 relative h-[500px] sm:h-[600px]">
             <div className="absolute top-0 left-0 w-3/4 h-[80%] rounded-[40px] overflow-hidden shadow-2xl z-10">
               <Image 
-                src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?q=80&w=800&auto=format&fit=crop" 
+                src="https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Planters-That-Redefine-Spaces_1.webp" 
                 alt="Ceramic Planter" 
                 fill 
                 className="object-cover"
@@ -21,7 +21,7 @@ export function PlantersSection() {
             </div>
             <div className="absolute bottom-0 right-0 w-1/2 h-[60%] rounded-[32px] overflow-hidden shadow-xl z-20 border-8 border-[#FAFAF9]">
               <Image 
-                src="https://images.unsplash.com/photo-1610630713745-fbcfecebaee5?q=80&w=600&auto=format&fit=crop" 
+                src="https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Planters-That-Redefine-Spaces_2.webp" 
                 alt="Terracotta Pot" 
                 fill 
                 className="object-cover"

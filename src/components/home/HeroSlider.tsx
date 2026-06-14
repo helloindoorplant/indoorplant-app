@@ -21,7 +21,7 @@ const SLIDES = [
     button2: "Shop Collection",
     button2Link: "/shop",
     badgeText: "Smart Plant Selection API Active",
-    image: "https://images.unsplash.com/photo-1416879598555-3850742518fa?q=80&w=1200&auto=format&fit=crop"
+    image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Home-Page-Slide1.webp"
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const SLIDES = [
     button2: "Learn More",
     button2Link: "/blog/air-purifying",
     badgeText: "Top Rated Air Purifiers",
-    image: "https://images.unsplash.com/photo-1597055181300-e3633a207517?q=80&w=1200&auto=format&fit=crop"
+    image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Home-Page-Slide2.webp"
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ const SLIDES = [
     button2: "View Care Guides",
     button2Link: "/guides",
     badgeText: "Perfect For Beginners",
-    image: "https://images.unsplash.com/photo-1600411833196-7c1f6b1a8b90?q=80&w=1200&auto=format&fit=crop"
+    image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Home-Page-Slide3.webp"
   }
 ];
 
