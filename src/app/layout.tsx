@@ -71,7 +71,7 @@ export default function RootLayout({
     "foundingLocation": "India",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91 9051939429",
+      "telephone": "+91 7003587996",
       "email": "helloindoorplant@gmail.com",
       "contactType": "customer service",
       "availableLanguage": ["English", "Hindi"]

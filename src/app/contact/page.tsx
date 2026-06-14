@@ -38,7 +38,7 @@ export default function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <p className="text-sm font-medium text-gray-900">Phone & WhatsApp</p>
-                    <p className="text-sm text-gray-600 mt-1">+91 9051939429</p>
+                    <p className="text-sm text-gray-600 mt-1">+91 7003587996</p>
                     <p className="text-xs text-gray-500 mt-0.5">Mon-Sat, 10 AM - 7 PM IST</p>
                   </div>
                 </div>
@@ -56,21 +56,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-primary" />
-                    </div>
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-900">Warehouse Headquarters</p>
-                    <p className="text-sm text-gray-600 mt-1">
-                      123 Green Valley Road,<br />
-                      HSR Layout, Bangalore<br />
-                      Karnataka, 560102
-                    </p>
-                  </div>
-                </div>
+
               </div>
             </div>
 
@@ -81,7 +67,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-bold mb-2">Need a quick reply?</h3>
               <p className="text-white/90 text-sm mb-6">Message us directly on WhatsApp for instant support regarding your orders.</p>
-              <a href="#" className="inline-block bg-white text-[#25D366] font-bold px-6 py-2 rounded-lg hover:bg-gray-50 transition-colors">
+              <a href="https://wa.me/917003587996" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-[#25D366] font-bold px-6 py-2 rounded-lg hover:bg-gray-50 transition-colors">
                 Chat on WhatsApp
               </a>
             </div>
@@ -111,7 +97,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="+91 9051939429" />
+                    <input type="tel" id="phone" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="+91 7003587996" />
                   </div>
                 </div>
 
@@ -137,7 +123,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="pt-2">
-                  <Button type="button" className="w-full md:w-auto px-8">
+                  <Button type="button" className="w-full md:w-auto px-8 py-3 h-auto bg-primary hover:bg-[#1B4332] text-white font-medium rounded-lg transition-colors">
                     Send Message
                   </Button>
                 </div>

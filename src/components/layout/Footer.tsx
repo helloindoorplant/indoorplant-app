@@ -11,10 +11,7 @@ export function Footer() {
           {/* Column 1: Brand */}
           <div className="space-y-6">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="bg-white/10 p-2 rounded-full transition-transform group-hover:scale-105">
-                <Leaf className="h-6 w-6" />
-              </div>
-              <span className="text-2xl font-bold tracking-tight">IndoorPlant<span className="opacity-70 font-normal">.in</span></span>
+              <img src="https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant-Logo-White.svg" alt="IndoorPlant.in Logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
             </Link>
             <p className="text-primary-foreground/80 text-[15px] leading-relaxed max-w-xs">
               Bring Nature Inside. AI-powered recommendations. Expert care guides. Delivered fresh to your door.

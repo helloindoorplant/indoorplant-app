@@ -139,12 +139,21 @@ export default function CareClient({ products }: CareClientProps) {
         
         {/* Progress Stepper Banner */}
         <div className="mb-10 max-w-xl mx-auto">
-          <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-slate-400">
-            <span className={step === 1 ? 'text-[#2D6A4F]' : 'text-slate-600'}>1. Choose Plant</span>
-            <ChevronRight className="w-4 h-4" />
-            <span className={step === 2 ? 'text-[#2D6A4F]' : step > 2 ? 'text-slate-600' : ''}>2. Environment Quiz</span>
-            <ChevronRight className="w-4 h-4" />
-            <span className={step === 3 ? 'text-[#2D6A4F]' : ''}>3. AI Assistant</span>
+          <div className="flex items-center justify-between text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400">
+            <span className={step === 1 ? 'text-[#2D6A4F]' : 'text-slate-600'}>
+              <span className="hidden sm:inline">1. Choose Plant</span>
+              <span className="sm:hidden">1. Plant</span>
+            </span>
+            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className={step === 2 ? 'text-[#2D6A4F]' : step > 2 ? 'text-slate-600' : ''}>
+              <span className="hidden sm:inline">2. Environment Quiz</span>
+              <span className="sm:hidden">2. Quiz</span>
+            </span>
+            <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
+            <span className={step === 3 ? 'text-[#2D6A4F]' : ''}>
+              <span className="hidden sm:inline">3. AI Assistant</span>
+              <span className="sm:hidden">3. AI Care</span>
+            </span>
           </div>
           <div className="h-1.5 bg-slate-200 rounded-full mt-2 relative overflow-hidden">
             <div 
@@ -265,7 +274,7 @@ export default function CareClient({ products }: CareClientProps) {
                 <label className="block text-sm font-bold text-slate-700 mb-3 flex items-center gap-2">
                   <Home className="w-4 h-4 text-[#2D6A4F]" /> Where will you keep the plant?
                 </label>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                   {['Living Room', 'Bedroom', 'Home Office', 'Balcony', 'Bathroom', 'Kitchen'].map((loc) => (
                     <button
                       key={loc}
@@ -341,13 +350,13 @@ export default function CareClient({ products }: CareClientProps) {
               <Button 
                 variant="outline" 
                 onClick={() => setStep(1)} 
-                className="w-1/3 py-6 rounded-xl border-slate-200 font-bold hover:bg-slate-50 text-slate-600"
+                className="w-1/3 py-5 sm:py-6 rounded-xl border-slate-200 font-bold hover:bg-slate-50 text-slate-600"
               >
                 Back
               </Button>
               <Button 
                 onClick={handleGenerate}
-                className="w-2/3 py-6 rounded-xl bg-primary hover:bg-[#1B4332] text-white font-bold shadow-md flex items-center justify-center gap-2 text-sm"
+                className="w-2/3 py-5 sm:py-6 rounded-xl bg-primary hover:bg-[#1B4332] text-white font-bold shadow-md flex items-center justify-center gap-2 text-xs sm:text-sm"
               >
                 <Sparkles className="w-4 h-4" /> Generate Care Guide
               </Button>
@@ -423,7 +432,7 @@ export default function CareClient({ products }: CareClientProps) {
             </div>
 
             {/* Right side: AI Guide Stream & Chat Dialog */}
-            <div className="w-full lg:col-span-2 bg-white rounded-3xl shadow-sm border border-slate-150/60 overflow-hidden flex flex-col h-[75vh] md:h-[80vh] lg:h-[700px] order-1 lg:order-2">
+            <div className="w-full lg:col-span-2 bg-white rounded-3xl shadow-sm border border-slate-150/60 overflow-hidden flex flex-col h-[85vh] sm:h-[80vh] lg:h-[700px] order-1 lg:order-2">
               
               {/* Header */}
               <div className="bg-[#FAF9F6] border-b border-slate-150/60 p-5 shrink-0 flex items-center justify-between">
