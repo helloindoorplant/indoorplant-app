@@ -45,7 +45,7 @@ export default async function Home() {
 
   const categories = await prisma.category.findMany({
     include: { _count: { select: { products: true } } },
-    where: { slug: { in: ['air-purifying-plants', 'low-maintenance-plants', 'pet-friendly-plants', 'bedroom-plants'] } }
+    orderBy: { name: 'asc' }
   });
 
   return (
@@ -69,21 +69,17 @@ export default async function Home() {
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
-            {[
-              { name: "Air Purifying", slug: "air-purifying", dbSlug: "air-purifying", colorClass: "bg-[#52B788]", image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_1.webp" },
-              { name: "Low Maintenance", slug: "low-maintenance", dbSlug: "low-maintenance", colorClass: "bg-[#2D6A4F]", image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_2.webp" },
-              { name: "Pet Safe", slug: "pet-safe", dbSlug: "pet-friendly", colorClass: "bg-[#B7E4C7]", image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_3.webp" },
-              { name: "Bedroom Plants", slug: "bedroom", dbSlug: "bedroom-plants", colorClass: "bg-[#052E16]", image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant_Category_4.webp" }
-            ].map(cat => {
-              const dbCat = categories.find(c => c.slug.includes(cat.dbSlug));
+            {categories.map((cat, idx) => {
+              const colors = ["bg-[#52B788]", "bg-[#2D6A4F]", "bg-[#B7E4C7]", "bg-[#052E16]", "bg-[#788c5d]", "bg-[#6a9bcc]"];
+              const colorClass = colors[idx % colors.length];
               return (
                 <CategoryCard 
-                  key={cat.name}
+                  key={cat.id}
                   name={cat.name} 
-                  count={dbCat ? dbCat._count.products : 0} 
-                  slug={dbCat ? dbCat.slug : cat.slug} 
-                  colorClass={cat.colorClass} 
-                  image={cat.image} 
+                  count={cat._count.products} 
+                  slug={cat.slug} 
+                  colorClass={colorClass} 
+                  image={cat.image || undefined} 
                 />
               );
             })}
