@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useUserStore } from "@/store/useUserStore";
 import { useCartStore } from "@/store/useCartStore";
 import { Heart, ShoppingBag, Trash2, ArrowRight } from "lucide-react";
@@ -25,10 +26,12 @@ export default function WishlistPage() {
           {wishlist.map((product) => (
             <div key={product.id} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group">
               <div className="relative aspect-square bg-gray-50 overflow-hidden">
-                <img 
+                <Image 
                   src={product.images[0]} 
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 300px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <button 
                   onClick={() => removeFromWishlist(product.id)}

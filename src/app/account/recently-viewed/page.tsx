@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useUserStore } from "@/store/useUserStore";
 import { useCartStore } from "@/store/useCartStore";
 import { Eye, ShoppingBag, ArrowRight } from "lucide-react";
@@ -24,13 +25,15 @@ export default function RecentlyViewedPage() {
           {recentlyViewed.map((product) => (
             <div key={product.id} className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden group">
               <div className="relative aspect-square bg-gray-50 overflow-hidden">
-                <Link href={`/product/${product.slug}`}>
-                  <img 
-                    src={product.images[0]} 
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </Link>
+                <Link href={`/product/${product.slug}`} className="block h-48 bg-gray-50 overflow-hidden relative">
+                <Image 
+                  src={product.images[0]} 
+                  alt={product.name} 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 300px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </Link>
               </div>
               
               <div className="p-4">

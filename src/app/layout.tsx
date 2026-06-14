@@ -2,8 +2,13 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
+import dynamic from "next/dynamic";
 import { Footer } from "@/components/layout/Footer";
-import { FloatingAiWidget } from "@/components/shared/FloatingAiWidget";
+
+const FloatingAiWidget = dynamic(
+  () => import("@/components/shared/FloatingAiWidget").then((mod) => mod.FloatingAiWidget),
+  { ssr: false }
+);
 import { AuthProvider } from "@/components/providers/AuthProvider";
 
 const poppins = Poppins({

@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Search, ShoppingBag, User, Heart, Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { CartDrawer } from '@/components/shop/CartDrawer';
@@ -47,7 +48,7 @@ export function Header() {
           
           {/* Logo */}
           <Link href="/" className="flex items-center z-50">
-            <img src="/Indoorplant-Logo.svg" alt="IndoorPlant.in" className="h-10 w-auto" />
+            <Image src="/Indoorplant-Logo.svg" alt="IndoorPlant.in" width={200} height={40} className="h-10 w-auto" priority />
           </Link>
 
           {/* Desktop Navigation */}
@@ -88,7 +89,7 @@ export function Header() {
             <Link href="/account/dashboard">
               <Button variant="ghost" size="icon" className="rounded-full hover:bg-secondary/50 transition-colors overflow-hidden">
                 {session?.user?.image ? (
-                  <img src={session.user.image} alt="Profile" className="h-full w-full object-cover" />
+                  <Image src={session.user.image} alt="Profile" width={40} height={40} className="h-full w-full object-cover" />
                 ) : (
                   <User className="h-5 w-5" />
                 )}
@@ -136,7 +137,7 @@ export function Header() {
               <Link href="/account/dashboard" onClick={() => setMobileMenuOpen(false)} className="flex-1">
                 <Button variant="outline" className="w-full rounded-xl h-14 border-2">
                   {session?.user?.image ? (
-                    <img src={session.user.image} alt="Profile" className="h-6 w-6 rounded-full mr-2" />
+                    <Image src={session.user.image} alt="Profile" width={24} height={24} className="h-6 w-6 rounded-full mr-2" />
                   ) : (
                     <User className="mr-2" />
                   )} 

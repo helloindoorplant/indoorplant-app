@@ -4,6 +4,7 @@ import { Trash2, ShoppingBag } from 'lucide-react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FALLBACK_PLANT_IMAGE } from '@/lib/utils';
 
 import { useCartStore } from '@/store/useCartStore';
@@ -45,11 +46,13 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
           ) : (
             items.map((item) => (
               <div key={`${item.id}-${item.potColor || 'none'}`} className="flex gap-4 bg-white p-4 rounded-2xl border border-border/50 shadow-sm">
-                <div className="w-20 h-20 bg-secondary/50 rounded-xl shrink-0 flex items-center justify-center overflow-hidden border border-border/50">
-                  <img 
+                <div className="w-20 h-20 bg-secondary/50 rounded-xl shrink-0 flex items-center justify-center overflow-hidden border border-border/50 relative">
+                  <Image 
                     src={item.image || FALLBACK_PLANT_IMAGE} 
                     alt={item.name} 
-                    className="w-full h-full object-cover" 
+                    fill
+                    sizes="80px"
+                    className="object-cover" 
                   />
                 </div>
                 <div className="flex-1 flex flex-col justify-between py-1">

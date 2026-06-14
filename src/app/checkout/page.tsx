@@ -6,9 +6,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
+import Link from 'next/link';
+import Image from 'next/image';
 import { useCartStore } from '@/store/useCartStore';
 import { ShieldCheck, ArrowLeft, Truck, CreditCard, ChevronRight, Check, MapPin, User, Plus, Eye, EyeOff, Trash2 } from 'lucide-react';
-import Link from 'next/link';
 import { FALLBACK_PLANT_IMAGE } from '@/lib/utils';
 
 // UI Components
@@ -505,8 +506,14 @@ export default function CheckoutPage() {
             <div className="space-y-4 mb-6 max-h-[300px] overflow-y-auto pr-2">
               {items.map(item => (
                 <div key={`${item.id}-${item.potColor || 'none'}`} className="flex gap-4 items-center">
-                  <div className="w-16 h-16 bg-secondary/50 rounded-xl overflow-hidden border border-border/50 shrink-0">
-                    <img src={item.image || FALLBACK_PLANT_IMAGE} alt={item.name} className="w-full h-full object-cover" />
+                  <div className="w-16 h-16 bg-secondary/50 rounded-xl overflow-hidden border border-border/50 shrink-0 relative">
+                    <Image 
+                      src={item.image || FALLBACK_PLANT_IMAGE} 
+                      alt={item.name} 
+                      fill
+                      sizes="64px"
+                      className="object-cover" 
+                    />
                   </div>
                   <div className="flex-1">
                     <h4 className="font-bold text-sm text-[#1B4332] line-clamp-1">{item.name}</h4>

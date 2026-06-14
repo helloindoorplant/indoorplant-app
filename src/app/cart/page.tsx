@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ShoppingBag, Trash2, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useCartStore } from '@/store/useCartStore';
@@ -60,11 +61,13 @@ export default function CartPage() {
               <div key={item.id} className="flex flex-col sm:grid sm:grid-cols-12 gap-4 sm:items-center bg-white sm:bg-transparent p-4 sm:p-0 rounded-2xl sm:rounded-none border sm:border-0 border-border/50 shadow-sm sm:shadow-none pb-6 sm:border-b sm:border-border/40">
                 {/* Product Info */}
                 <div className="col-span-6 flex items-center gap-4">
-                  <div className="w-24 h-24 bg-secondary/50 rounded-xl shrink-0 overflow-hidden border border-border/50">
-                    <img 
+                  <div className="w-24 h-24 bg-[#F8FFF9] rounded-xl flex items-center justify-center overflow-hidden border border-border/50 shrink-0 relative">
+                    <Image 
                       src={item.image || FALLBACK_PLANT_IMAGE} 
                       alt={item.name} 
-                      className="w-full h-full object-cover" 
+                      fill
+                      sizes="96px"
+                      className="object-cover" 
                     />
                   </div>
                   <div>
