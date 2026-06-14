@@ -121,11 +121,11 @@ export function HeroSlider() {
                   {SLIDES[current].subtitle}
                 </motion.p>
                 
-                <motion.div className="flex flex-col sm:flex-row gap-5">
-                  <Button size="lg" className="h-16 px-10 text-[16px] font-bold rounded-full shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 transition-all hover:-translate-y-1" render={<Link href={SLIDES[current].button1Link} />}>
+                <motion.div className="flex flex-row w-full sm:w-auto gap-3 sm:gap-5">
+                  <Button size="lg" className="flex-1 sm:flex-none h-14 sm:h-16 px-2 sm:px-10 text-[13px] sm:text-[16px] font-bold rounded-full shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 transition-all hover:-translate-y-1" render={<Link href={SLIDES[current].button1Link} />}>
                     {SLIDES[current].button1}
                   </Button>
-                  <Button size="lg" variant="outline" className="h-16 px-10 text-[16px] font-bold rounded-full border-2 hover:bg-primary/5 transition-all bg-transparent" render={<Link href={SLIDES[current].button2Link} />}>
+                  <Button size="lg" variant="outline" className="flex-1 sm:flex-none h-14 sm:h-16 px-2 sm:px-10 text-[13px] sm:text-[16px] font-bold rounded-full border-2 hover:bg-primary/5 transition-all bg-transparent" render={<Link href={SLIDES[current].button2Link} />}>
                     {SLIDES[current].button2}
                   </Button>
                 </motion.div>
