@@ -21,6 +21,11 @@ export const metadata: Metadata = {
   description: "AI-Powered Indoor Plant E-Commerce Platform. Discover the perfect plants for your home and office.",
   keywords: ["indoor plants", "buy plants online", "houseplants", "plant delivery India", "plant care", "AI plant advisor"],
   authors: [{ name: "IndoorPlant.in" }],
+  icons: {
+    icon: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant-Fav-Icon.webp",
+    shortcut: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant-Fav-Icon.webp",
+    apple: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant-Fav-Icon.webp",
+  },
   openGraph: {
     title: "IndoorPlant.in | Bring Nature Inside",
     description: "AI-Powered Indoor Plant E-Commerce Platform. Discover the perfect plants for your home and office.",
