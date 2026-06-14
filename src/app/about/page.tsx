@@ -29,11 +29,11 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-4xl font-bold text-primary mb-2">50K+</p>
+              <p className="text-4xl font-bold text-primary mb-2">200+</p>
               <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Happy Customers</p>
             </div>
             <div>
-              <p className="text-4xl font-bold text-primary mb-2">200+</p>
+              <p className="text-4xl font-bold text-primary mb-2">50+</p>
               <p className="text-sm font-medium text-gray-500 uppercase tracking-wide">Plant Varieties</p>
             </div>
             <div>
