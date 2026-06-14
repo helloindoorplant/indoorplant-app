@@ -61,7 +61,7 @@ export function Header() {
           </nav>
 
           {/* Icons & Actions */}
-          <div className="flex items-center gap-1 sm:gap-4 relative">
+          <div className="flex items-center gap-1 sm:gap-4 relative" suppressHydrationWarning>
             <div className="hidden md:flex relative items-center">
               {isSearchOpen && (
                 <>
