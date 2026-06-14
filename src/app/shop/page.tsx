@@ -56,9 +56,6 @@ export default async function ShopPage() {
           </Breadcrumb>
           <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight text-[#1B4332] mb-3">All Plants</h1>
           <p className="text-muted-foreground text-lg lg:text-xl font-medium max-w-2xl">Discover our collection of {products.length} premium indoor plants. Handpicked and delivered fresh.</p>
-          <p className="text-stone-600 mt-6 leading-relaxed max-w-4xl text-[15px] font-medium">
-            Indoor plants are a perfect addition to Indian homes, helping to clean the air, reduce indoor temperatures, and balance the dry air caused by air conditioning. Our selection of 24+ nursery-fresh houseplant varieties, including money plants, monsteras, peace lilies, and palms, is grown locally and selected specifically to thrive in Indian climates, from the dry heat of Delhi and Mumbai humidity to Bangalore's moderate temperatures. Every plant is shipped directly from our greenhouse in our secure, damage-protected transit packaging and includes a free nursery grower pot. Explore our air-purifying, low-maintenance, pet-safe, and bedroom-friendly collections and find your perfect plant parent companion today.
-          </p>
         </div>
       </div>
 
