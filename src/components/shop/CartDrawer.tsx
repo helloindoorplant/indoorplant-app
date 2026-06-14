@@ -1,6 +1,6 @@
 'use client';
 
-import { Trash2, ShoppingBag } from 'lucide-react';
+import { Trash2, ShoppingBag, X } from 'lucide-react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
@@ -20,14 +20,17 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="!w-full sm:!w-[400px] sm:max-w-md p-0 flex flex-col bg-[#F8FFF9] border-l-0 shadow-2xl">
-        <SheetHeader className="p-6 border-b border-border/40 bg-white shadow-sm z-10 relative">
+      <SheetContent side="right" showCloseButton={false} className="!w-full sm:!w-[400px] sm:max-w-md p-0 flex flex-col bg-[#F8FFF9] border-l-0 shadow-2xl">
+        <SheetHeader className="p-6 border-b border-border/40 bg-white shadow-sm z-10 relative flex flex-row items-center justify-between">
           <SheetTitle className="text-2xl font-extrabold text-[#1B4332] flex items-center gap-3">
             <div className="bg-primary/10 p-2 rounded-xl">
               <ShoppingBag className="h-6 w-6 text-primary" />
             </div>
             Your Cart
           </SheetTitle>
+          <button onClick={() => onOpenChange(false)} className="p-2 rounded-full hover:bg-secondary/80 bg-secondary/30 transition-colors text-muted-foreground hover:text-[#1B4332]">
+            <X className="h-5 w-5" />
+          </button>
         </SheetHeader>
 
         <div className="flex-1 overflow-y-auto p-6 space-y-6">
