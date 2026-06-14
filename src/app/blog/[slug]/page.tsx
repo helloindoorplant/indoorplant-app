@@ -3,9 +3,12 @@ import { notFound } from "next/navigation";
 import { Clock, Share2, Bookmark, Link as LinkIcon, ChevronLeft } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { Metadata } from "next";
+import prisma from "@/lib/prisma";
+import { ProductCardCarousel } from "@/components/blog/ProductCardCarousel";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
   if (!post) {
     return {
       title: "Article Not Found | IndoorPlant.in",
@@ -18,18 +21,66 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
   
   if (!post) {
     notFound();
   }
 
   // Format date for schema
-  const publishDate = post.date === "June 10, 2026" ? "2026-06-10" 
+  const publishDate = post.date === "June 15, 2026" ? "2026-06-15"
+                    : post.date === "June 10, 2026" ? "2026-06-10" 
                     : post.date === "June 08, 2026" ? "2026-06-08" 
                     : post.date === "June 05, 2026" ? "2026-06-05" 
                     : "2026-05-28";
+
+  // Query database products mentioned in the article if it is the decorative plants article
+  let featuredProducts: any[] = [];
+  if (post.slug === "decorative-plants-for-home-online-india") {
+    featuredProducts = await prisma.product.findMany({
+      where: {
+        slug: {
+          in: [
+            'golden-money-plant',
+            'njoy-money-plant',
+            'money-plant-variegated',
+            'aglaonema-red-lipstick-plant',
+            'aglaonema-snow-white-plant',
+            'monstera-broken-heart',
+            'lucky-jade-plant',
+            'bamboo-palm-plant'
+          ]
+        }
+      },
+      include: {
+        reviews: true
+      }
+    });
+    const orderMap: Record<string, number> = {
+      'golden-money-plant': 0,
+      'njoy-money-plant': 1,
+      'money-plant-variegated': 2,
+      'aglaonema-red-lipstick-plant': 3,
+      'aglaonema-snow-white-plant': 4,
+      'monstera-broken-heart': 5,
+      'lucky-jade-plant': 6,
+      'bamboo-palm-plant': 7
+    };
+    featuredProducts.sort((a, b) => (orderMap[a.slug] ?? 99) - (orderMap[b.slug] ?? 99));
+  } else {
+    // Show some default bestseller/featured products for other articles
+    featuredProducts = await prisma.product.findMany({
+      where: {
+        isFeatured: true
+      },
+      take: 6,
+      include: {
+        reviews: true
+      }
+    });
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -132,6 +183,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 prose prose-lg prose-green"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
+
+      {/* Featured Products Carousel */}
+      {featuredProducts.length > 0 && (
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+          <ProductCardCarousel products={featuredProducts} />
+        </div>
+      )}
       
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="bg-gray-50 rounded-xl p-8 flex items-center flex-col sm:flex-row gap-6">
