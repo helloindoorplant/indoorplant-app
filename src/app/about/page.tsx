@@ -119,15 +119,15 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-primary text-center">
+      <section className="py-20 bg-[#F8FFF9] text-center border-t border-b border-primary/10">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-white font-playfair mb-6">Ready to find your perfect plant?</h2>
-          <p className="text-primary-foreground/90 mb-8 text-lg">Chat with our AI Advisor or browse our curated collections.</p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#1B4332] font-playfair mb-6">Ready to find your perfect plant?</h2>
+          <p className="text-gray-600 mb-8 text-lg">Chat with our AI Advisor or browse our curated collections.</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/ai-advisor" className="px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-50 transition-colors">
+            <Link href="/ai-advisor" className="px-8 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors shadow-md">
               Talk to AI Advisor
             </Link>
-            <Link href="/shop" className="px-8 py-3 bg-primary-dark border border-white/30 text-white font-semibold rounded-lg hover:bg-white/10 transition-colors">
+            <Link href="/shop" className="px-8 py-3 bg-white border-2 border-primary/20 text-primary font-semibold rounded-lg hover:bg-primary/5 transition-colors shadow-sm">
               Shop All Plants
             </Link>
           </div>
