@@ -69,14 +69,6 @@ const FAQS = [
 
 export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState(FAQS[0].category);
-  const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
-
-  const toggleItem = (q: string) => {
-    setOpenItems(prev => ({
-      ...prev,
-      [q]: !prev[q]
-    }));
-  };
 
   return (
     <div className="bg-white min-h-screen">
@@ -136,29 +128,18 @@ export default function FAQPage() {
                 <h2 className="text-2xl font-bold text-gray-900 mb-6 font-playfair">{category.category}</h2>
                 <div className="space-y-4">
                   {category.questions.map((item, idx) => (
-                    <div 
+                    <details 
                       key={idx} 
-                      className="border border-gray-200 rounded-xl overflow-hidden bg-white"
+                      className="group border border-gray-200 rounded-xl overflow-hidden bg-white [&_summary::-webkit-details-marker]:hidden"
                     >
-                      <button
-                        onClick={() => toggleItem(item.q)}
-                        className="w-full text-left px-6 py-4 flex items-center justify-between focus:outline-none"
-                      >
+                      <summary className="w-full text-left px-6 py-4 flex items-center justify-between cursor-pointer focus:outline-none list-none select-none">
                         <span className="font-medium text-gray-900">{item.q}</span>
-                        <ChevronDown 
-                          className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
-                            openItems[item.q] ? "rotate-180" : ""
-                          }`} 
-                        />
-                      </button>
-                      <div 
-                        className={`px-6 pb-4 text-gray-600 text-sm leading-relaxed ${
-                          openItems[item.q] ? "block" : "hidden"
-                        }`}
-                      >
+                        <ChevronDown className="w-5 h-5 text-gray-400 transition-transform duration-200 group-open:rotate-180" />
+                      </summary>
+                      <div className="px-6 pb-4 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4 mt-2">
                         {item.a}
                       </div>
-                    </div>
+                    </details>
                   ))}
                 </div>
               </div>
