@@ -11,19 +11,19 @@ export async function POST(req: Request) {
       return new Response(JSON.stringify({ error: "A valid email is required" }), { status: 400 });
     }
 
-    // 1. Find or create the audience named "Registered Users"
+    // 1. Find or create the audience named "Newsletter Indoor Plants"
     let audienceId = null;
     const { data: audiences, error: listError } = await resend.audiences.list();
     
     if (listError) {
       console.error("Failed to list audiences:", listError);
     } else {
-      const existingAudience = audiences?.data?.find(a => a.name === 'Registered Users');
+      const existingAudience = audiences?.data?.find(a => a.name === 'Newsletter Indoor Plants');
       if (existingAudience) {
         audienceId = existingAudience.id;
       } else {
         const { data: newAudience, error: createError } = await resend.audiences.create({
-          name: 'Registered Users',
+          name: 'Newsletter Indoor Plants',
         });
         if (createError) {
           console.error("Failed to create audience:", createError);
