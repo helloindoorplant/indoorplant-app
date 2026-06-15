@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Search, Download, Package, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 interface OrderItem {
   name: string;
@@ -57,6 +59,77 @@ export default function OrdersPage() {
     }
   };
 
+  const generateInvoicePDF = (order: Order) => {
+    const doc = new jsPDF();
+    
+    // Add Brand Header (Text-based to act as logo)
+    doc.setFontSize(28);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(27, 67, 50); // Deep green
+    doc.text("INDOOR PLANT", 14, 25);
+    
+    doc.setFontSize(10);
+    doc.setFont("helvetica", "normal");
+    doc.setTextColor(100, 100, 100);
+    doc.text("Kolkata, India", 14, 32);
+    doc.text("support@indoorplant.in", 14, 37);
+
+    // Add Invoice Details
+    doc.setFontSize(16);
+    doc.setTextColor(0, 0, 0);
+    doc.text(`INVOICE`, 140, 25);
+    
+    doc.setFontSize(10);
+    doc.setTextColor(100, 100, 100);
+    doc.text(`Order ID: #${order.id}`, 140, 32);
+    doc.text(`Date: ${order.date}`, 140, 37);
+
+    // Line separator
+    doc.setDrawColor(230, 230, 230);
+    doc.line(14, 45, 196, 45);
+
+    // Prepare Table Data
+    const tableData = order.items.map(item => [
+      item.name,
+      item.quantity.toString(),
+      `Rs. ${item.price.toLocaleString("en-IN")}`,
+      `Rs. ${(item.price * item.quantity).toLocaleString("en-IN")}`
+    ]);
+
+    const subtotal = order.items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+    const shipping = order.total - subtotal;
+
+    // Add Table
+    autoTable(doc, {
+      startY: 55,
+      head: [['Item', 'Quantity', 'Price', 'Total']],
+      body: tableData,
+      theme: 'grid',
+      headStyles: { fillColor: [27, 67, 50], textColor: 255 },
+      styles: { fontSize: 10, cellPadding: 5 },
+      margin: { left: 14, right: 14 }
+    });
+
+    // Add Totals
+    const finalY = (doc as any).lastAutoTable.finalY + 10;
+    
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    doc.text("Subtotal:", 140, finalY);
+    doc.text(`Rs. ${subtotal.toLocaleString("en-IN")}`, 170, finalY);
+
+    doc.text("Shipping:", 140, finalY + 7);
+    doc.text(`Rs. ${shipping > 0 ? shipping.toLocaleString("en-IN") : "0"}`, 170, finalY + 7);
+
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "bold");
+    doc.text("Total:", 140, finalY + 17);
+    doc.text(`Rs. ${order.total.toLocaleString("en-IN")}`, 170, finalY + 17);
+
+    // Save PDF
+    doc.save(`Invoice_${order.id}.pdf`);
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -106,7 +179,7 @@ export default function OrdersPage() {
                     <p className="text-sm text-gray-500 mt-1">Placed on {order.date}</p>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Button variant="outline" size="sm" className="hidden sm:flex">
+                    <Button variant="outline" size="sm" className="hidden sm:flex" onClick={() => generateInvoicePDF(order)}>
                       <Download className="w-4 h-4 mr-2" /> Invoice
                     </Button>
                     <Button variant="default" size="sm">

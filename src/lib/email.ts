@@ -3,6 +3,7 @@ import { WelcomeTemplate } from '@/emails/WelcomeTemplate';
 import { OtpEmailTemplate } from '@/emails/OtpEmailTemplate';
 import { OrderPlacedTemplate } from '@/emails/OrderPlacedTemplate';
 import { OrderStatusTemplate } from '@/emails/OrderStatusTemplate';
+import { PaymentConfirmationEmail } from '@/emails/PaymentConfirmationEmail';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -97,6 +98,29 @@ export const sendOrderStatusUpdateEmail = async (
 
   if (error) {
     console.error('Failed to send order status update email:', error);
+    return { success: false, error };
+  }
+
+  return { success: true, data };
+};
+
+export const sendPaymentConfirmationEmail = async (
+  to: string,
+  userFirstname: string,
+  orderId: string,
+  orderTotal: number,
+  items: { name: string; quantity: number; price: number }[]
+) => {
+  const { data, error } = await resend.emails.send({
+    from: FROM_EMAIL,
+    to,
+    replyTo: REPLY_TO_EMAIL,
+    subject: `Payment Successful - Order #${orderId}`,
+    react: PaymentConfirmationEmail({ userFirstname, orderId, orderTotal, items }),
+  });
+
+  if (error) {
+    console.error('Failed to send payment confirmation email:', error);
     return { success: false, error };
   }
 

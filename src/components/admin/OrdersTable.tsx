@@ -49,6 +49,7 @@ export function OrdersTable({ orders }: { orders: any[] }) {
               <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Date</th>
               <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Status Workflow</th>
               <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Total</th>
+              <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Actions</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
@@ -79,6 +80,14 @@ export function OrdersTable({ orders }: { orders: any[] }) {
                         {item.potColor ? ` (${item.potColor})` : ''}
                       </div>
                     ))}
+                  </div>
+                </td>
+                <td className="px-6 py-4">
+                  <div className="flex items-center gap-2">
+                    <a href={`/admin/orders/${order.id}`} className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-primary bg-primary/10 hover:bg-primary/20 rounded-md transition-colors">
+                      <Eye className="w-3.5 h-3.5" />
+                      View
+                    </a>
                   </div>
                 </td>
               </tr>
