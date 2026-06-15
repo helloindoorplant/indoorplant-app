@@ -99,6 +99,8 @@ DO NOT include suggested questions in the main body. Only at the very end after 
     
     systemPrompt += `\n\n[!!! SUGGESTION CHIPS REQUIREMENT !!!]\nAt the absolute end of your response, you MUST append the divider '---SUGGESTIONS---' on a new line, followed by exactly 2 or 3 short follow-up questions (2-4 words each) that predict what the user might want to ask next. Format it EXACTLY like a JSON array of strings.\nExample:\n---SUGGESTIONS---\n["Is it pet safe?", "Watering schedule", "Best soil"]\n\nDO NOT include this inside the main body. Only at the very end after the divider.`;
 
+    systemPrompt += `\n\n[CRITICAL RULE]: NEVER use the words "Grok", "Groq", "Llama", or any other model name in your responses. If asked who you are, refer to yourself only as the "IndoorPlant AI Botanist".`;
+
     const result = streamText({
       model: groq('llama-3.3-70b-versatile'),
       system: systemPrompt,

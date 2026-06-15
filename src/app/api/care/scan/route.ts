@@ -1,33 +1,6 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import { createGroq } from '@ai-sdk/groq';
 import { generateText } from 'ai';
-
-// Clean up files older than 2 hours (120 minutes)
-const MAX_AGE_MS = 2 * 60 * 60 * 1000;
-
-function cleanupOldFiles(directory: string) {
-  try {
-    if (!fs.existsSync(directory)) return;
-    
-    const files = fs.readdirSync(directory);
-    const now = Date.now();
-
-    for (const file of files) {
-      const filePath = path.join(directory, file);
-      const stats = fs.statSync(filePath);
-      const fileAge = now - stats.mtimeMs;
-
-      if (fileAge > MAX_AGE_MS) {
-        fs.unlinkSync(filePath);
-        console.log(`[Auto-Cleanup] Deleted old scan: ${file}`);
-      }
-    }
-  } catch (error) {
-    console.error("Cleanup error:", error);
-  }
-}
 
 export async function POST(req: Request) {
   try {
@@ -38,26 +11,12 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'No image uploaded' }, { status: 400 });
     }
 
-    // 1. Ensure temp directory exists and clean up old files
-    const uploadDir = path.join(process.cwd(), 'public', 'temp-scans');
-    if (!fs.existsSync(uploadDir)) {
-      fs.mkdirSync(uploadDir, { recursive: true });
-    }
-    
-    // Automatically delete files older than 2 hours immediately
-    cleanupOldFiles(uploadDir);
-
-    // 2. Save the new image
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
     
-    const uniqueFilename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.]/g, '_')}`;
-    const filePath = path.join(uploadDir, uniqueFilename);
-    
-    fs.writeFileSync(filePath, buffer);
+    // We don't save the image to disk anymore. It's processed entirely in memory!
+    // This perfectly satisfies the "delete instantly" rule and bypasses Vercel's read-only filesystem.
 
-    // 3. Send to AI (Groq Vision)
-    // Format the image for AI consumption (base64)
     const base64Image = buffer.toString('base64');
     const mimeType = file.type || 'image/jpeg';
     const dataUrl = `data:${mimeType};base64,${base64Image}`;
@@ -72,7 +31,6 @@ export async function POST(req: Request) {
     };
 
     try {
-      // We use Groq's new Llama 4 Scout Vision model
       const { text } = await generateText({
         model: groq('meta-llama/llama-4-scout-17b-16e-instruct'),
         messages: [
@@ -95,7 +53,9 @@ export async function POST(req: Request) {
                   "plantName": "String",
                   "diagnosis": "String (The diagnosis and treatment plan, or the healthy message)",
                   "suggestedQuestions": ["Question 1", "Question 2", "Question 3"]
-                }`
+                }
+                
+                [CRITICAL RULE]: NEVER use the words "Grok", "Groq", "Llama", or any other model name in your responses. If asked who you are, refer to yourself only as the "IndoorPlant AI Botanist".`
               },
               { 
                 type: 'image', 
@@ -106,7 +66,6 @@ export async function POST(req: Request) {
         ]
       });
       
-      // Parse the JSON (assuming the model follows instructions)
       const jsonText = text.replace(/```json/g, '').replace(/```/g, '').trim();
       diagnosisData = JSON.parse(jsonText);
       
@@ -119,25 +78,22 @@ export async function POST(req: Request) {
     }
 
     if (!diagnosisData.isPlant) {
-      // Delete the image instantly if it's not a plant
-      try {
-        fs.unlinkSync(filePath);
-      } catch (e) {}
-      
+      // Instead of throwing an error, we return success: true but isPlant: false.
+      // This allows the frontend to show a friendly retake option instead of a red error.
       return NextResponse.json({ 
-        success: false, 
-        error: "Only plant-related images can be uploaded here." 
-      }, { status: 400 });
+        success: true, 
+        isPlant: false,
+        error: "Only plant images can be uploaded here. Other types of images are not accepted." 
+      });
     }
 
-    // Return the diagnosis and the temporary path to the image
+    // Return the diagnosis. We no longer return an imageUrl because the frontend uses a local blob URL.
     return NextResponse.json({ 
       success: true, 
       isPlant: diagnosisData.isPlant,
       plantName: diagnosisData.plantName,
       diagnosis: diagnosisData.diagnosis,
-      suggestedQuestions: diagnosisData.suggestedQuestions,
-      imageUrl: `/temp-scans/${uniqueFilename}` 
+      suggestedQuestions: diagnosisData.suggestedQuestions
     });
 
   } catch (error: any) {

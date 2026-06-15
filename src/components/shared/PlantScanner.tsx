@@ -9,7 +9,7 @@ import { Camera, ScanLine, Loader2, AlertTriangle, CheckCircle, X, Info, Send, B
 export function PlantScanner() {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
-  const [status, setStatus] = useState<"idle" | "scanning" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "scanning" | "success" | "error" | "not_plant">("idle");
   const [diagnosis, setDiagnosis] = useState<string | null>(null);
   const [plantName, setPlantName] = useState<string | null>(null);
   const [suggestedQuestions, setSuggestedQuestions] = useState<string[]>([]);
@@ -57,10 +57,15 @@ export function PlantScanner() {
 
       const data = await res.json();
       if (res.ok && data.success) {
-        setStatus("success");
-        setDiagnosis(data.diagnosis);
-        setPlantName(data.plantName);
-        setSuggestedQuestions(data.suggestedQuestions || []);
+        if (data.isPlant === false) {
+          setStatus("not_plant");
+          setDiagnosis(data.error);
+        } else {
+          setStatus("success");
+          setDiagnosis(data.diagnosis);
+          setPlantName(data.plantName);
+          setSuggestedQuestions(data.suggestedQuestions || []);
+        }
       } else {
         setStatus("error");
         setDiagnosis(data.error || "Failed to analyze the image.");
@@ -145,7 +150,7 @@ export function PlantScanner() {
               </button>
             )}
 
-            {(status === "scanning" || status === "success" || status === "error") && (
+            {(status === "scanning" || status === "success" || status === "error" || status === "not_plant") && (
               <button 
                 onClick={resetScanner}
                 className="w-full sm:w-auto flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-600 px-5 py-2.5 rounded-xl text-xs font-bold transition-all"
@@ -238,6 +243,24 @@ export function PlantScanner() {
                       <p className="text-sm text-slate-700 bg-white p-3 rounded-lg border border-rose-100 shadow-sm">
                         {diagnosis}
                       </p>
+                    </div>
+                  )}
+
+                  {status === "not_plant" && diagnosis && (
+                    <div className="h-full flex flex-col justify-center">
+                      <div className="flex items-center gap-2 text-orange-600 mb-2">
+                        <Info className="w-5 h-5 shrink-0" />
+                        <h4 className="font-bold text-base">Not a Plant</h4>
+                      </div>
+                      <p className="text-sm text-slate-700 bg-white p-3 rounded-lg border border-orange-100 shadow-sm mb-3">
+                        {diagnosis}
+                      </p>
+                      <button 
+                        onClick={() => fileInputRef.current?.click()}
+                        className="self-start px-4 py-2 bg-orange-100 hover:bg-orange-200 text-orange-700 font-bold text-xs rounded-lg transition-colors"
+                      >
+                        Retake Photo
+                      </button>
                     </div>
                   )}
                 </div>

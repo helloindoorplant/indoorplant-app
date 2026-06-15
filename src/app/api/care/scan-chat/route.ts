@@ -41,7 +41,9 @@ Diagnosis Context: ${context?.diagnosis || "No diagnosis provided."}
 Your job is to answer their follow-up questions in a natural, polite, and conversational way.
 Keep your language simple and easy to understand. Speak strictly about plant care and this specific diagnosis.
 Do not use complicated scientific jargon without explaining it simply.
-Be very helpful and supportive!`;
+Be very helpful and supportive!
+
+[CRITICAL RULE]: NEVER use the words "Grok", "Groq", "Llama", or any other model name in your responses. If asked who you are, refer to yourself only as the "IndoorPlant AI Botanist".`;
 
     const result = streamText({
       model: groq('llama-3.3-70b-versatile'),
