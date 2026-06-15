@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Leaf, Send } from 'lucide-react';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
+import { NewsletterForm } from './NewsletterForm';
 
 export function Footer() {
   return (
@@ -54,16 +55,7 @@ export function Footer() {
               <p className="flex items-center gap-3"><span className="text-white">Phone:</span> +91 70035 87996</p>
               <div className="pt-4 space-y-3">
                 <p className="text-white font-medium">Get Plant Care Tips & Offers</p>
-                <form className="flex group" action="/api/newsletter" method="POST">
-                  <input 
-                    type="email" 
-                    placeholder="Your email address" 
-                    className="bg-white/10 border border-white/20 rounded-l-lg px-4 py-3 text-sm w-full outline-none focus:border-white focus:bg-white/15 transition-all text-white placeholder:text-white/50"
-                  />
-                  <Button type="submit" variant="secondary" className="rounded-l-none px-4 h-auto hover:bg-white transition-colors">
-                    <Send className="h-4 w-4" />
-                  </Button>
-                </form>
+                <NewsletterForm />
                 <p className="text-[12px] opacity-60">No spam. Unsubscribe anytime.</p>
               </div>
             </address>
