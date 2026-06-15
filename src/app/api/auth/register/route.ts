@@ -1,12 +1,7 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
-import { Resend } from 'resend';
-import WelcomeTemplate from '@/emails/WelcomeTemplate';
-
-
-// We use a safe fallback so the server doesn't crash if RESEND_API_KEY is missing
-const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
+import { sendWelcomeEmail } from '@/lib/email';
 
 export async function POST(req: Request) {
   try {
@@ -31,15 +26,8 @@ export async function POST(req: Request) {
       }
     });
 
-    // Send Welcome Email
-    if (process.env.RESEND_API_KEY) {
-      resend.emails.send({
-        from: 'IndoorPlant <onboarding@resend.dev>',
-        to: email,
-        subject: 'Welcome to IndoorPlant! Here is your 5% gift 🌿',
-        react: WelcomeTemplate({ userFirstname: user.name as string }),
-      }).catch(err => console.error("Failed to send welcome email", err));
-    }
+    // Send Welcome Email using our centralized email service
+    await sendWelcomeEmail(email, user.name as string);
 
     return NextResponse.json({ message: 'User created successfully', userId: user.id }, { status: 201 });
   } catch (error) {

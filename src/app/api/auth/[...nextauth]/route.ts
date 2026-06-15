@@ -73,6 +73,18 @@ export const authOptions: NextAuthOptions = {
       return token;
     }
   },
+  events: {
+    async createUser({ user }) {
+      if (user.email) {
+        try {
+          const { sendWelcomeEmail } = await import("@/lib/email");
+          await sendWelcomeEmail(user.email, user.name || "Plant Lover");
+        } catch (e) {
+          console.error("Failed to send welcome email on Google signup", e);
+        }
+      }
+    }
+  },
   secret: process.env.NEXTAUTH_SECRET || "fallback_secret_for_development_only_12345",
 };
 

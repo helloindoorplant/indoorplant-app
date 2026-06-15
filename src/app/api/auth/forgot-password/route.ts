@@ -1,10 +1,6 @@
 import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
-import OtpEmailTemplate from '@/emails/OtpEmailTemplate';
-
-
-const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
+import { sendOtpEmail } from '@/lib/email';
 
 export async function POST(req: Request) {
   try {
@@ -31,15 +27,8 @@ export async function POST(req: Request) {
       create: { email, code: otpCode, expiresAt },
     });
 
-    // Send email
-    if (process.env.RESEND_API_KEY) {
-      await resend.emails.send({
-        from: 'IndoorPlant Security <onboarding@resend.dev>',
-        to: email,
-        subject: 'Your Password Reset Code',
-        react: OtpEmailTemplate({ otpCode }),
-      });
-    }
+    // Send email using centralized service
+    await sendOtpEmail(email, otpCode);
 
     return NextResponse.json({ message: 'OTP sent successfully' });
   } catch (error) {

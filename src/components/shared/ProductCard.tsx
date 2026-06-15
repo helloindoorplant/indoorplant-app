@@ -65,7 +65,7 @@ export function ProductCard({ id, name, tagline, price, originalPrice, rating, r
   };
 
   return (
-    <div className="group relative flex flex-col bg-white rounded-[24px] border border-border/40 p-4 transition-all duration-300 hover:shadow-[0_12px_40px_rgb(45,106,79,0.12)] hover:-translate-y-1">
+    <div suppressHydrationWarning className="group relative flex flex-col bg-white rounded-[24px] border border-border/40 p-4 transition-all duration-300 hover:shadow-[0_12px_40px_rgb(45,106,79,0.12)] hover:-translate-y-1">
       {/* Full Card Clickable Overlay */}
       <Link href={`/product/${id}`} className="absolute inset-0 z-0 rounded-[24px]" aria-label={`View ${name} details`} />
 
