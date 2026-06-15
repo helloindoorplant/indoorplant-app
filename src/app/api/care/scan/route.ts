@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { google } from '@ai-sdk/google';
+import { createGroq } from '@ai-sdk/groq';
 import { generateText } from 'ai';
 
 // Clean up files older than 2 hours (120 minutes)
@@ -56,10 +56,13 @@ export async function POST(req: Request) {
     
     fs.writeFileSync(filePath, buffer);
 
-    // 3. Send to AI (Google Gemini Vision)
+    // 3. Send to AI (Groq Vision)
+    // Format the image for AI consumption (base64)
     const base64Image = buffer.toString('base64');
     const mimeType = file.type || 'image/jpeg';
     const dataUrl = `data:${mimeType};base64,${base64Image}`;
+
+    const groq = createGroq({ apiKey: process.env.GROQ_API_KEY });
     
     let diagnosisData = {
       isPlant: true,
@@ -69,28 +72,28 @@ export async function POST(req: Request) {
     };
 
     try {
-      // We use Gemini 1.5 Flash for rapid and highly accurate vision tasks
+      // We use Groq's new Llama 4 Scout Vision model
       const { text } = await generateText({
-        model: google('gemini-1.5-flash'),
+        model: groq('meta-llama/llama-4-scout-17b-16e-instruct'),
         messages: [
           {
             role: 'user',
             content: [
               { 
                 type: 'text', 
-                text: `You are a master botanist and plant doctor. Analyze this image. 
-                1. Check if the image actually contains a plant. If it does not contain a plant, set "isPlant" to false and return immediately.
-                2. If it is a plant, identify the plant name with 100% accuracy. Be as specific as possible (e.g., "Aglaonema Silver Queen" or "Monstera Deliciosa").
-                3. Examine the plant's health. 
-                   - If the plant is completely healthy, your diagnosis must strictly say: "Your plant is fine, you don't need to do anything special. Just continue with normal care and maintenance."
-                   - If it is unhealthy, damaged, or facing problems, detect exactly what disease, pest, or deficiency is affecting it, and provide a strict, step-by-step treatment plan to fix the issue.
+                text: `You are a master botanist and plant doctor. Analyze this image carefully.
+                1. Check if the image actually contains a plant. If it does NOT contain a plant, set "isPlant" to false.
+                2. Identify the plant variety as accurately as possible (aim for 100% accurate plant name detection).
+                3. Evaluate the plant's health. 
+                   - If the plant condition is GOOD/HEALTHY, set the "diagnosis" to exactly this string: "Your plant is fine, you don't need to do anything special. Just continue with normal care and maintenance."
+                   - If the plant is DAMAGED, UNHEALTHY, or FACING PROBLEMS, provide a short diagnosis and a step-by-step treatment plan to fix the issue.
                 4. Provide 3 suggested follow-up questions the user can ask you in a chat.
                 
                 Respond ONLY with a JSON object in this exact format, with no markdown formatting around it:
                 {
                   "isPlant": true,
                   "plantName": "String",
-                  "diagnosis": "String (Diagnosis and Treatment Plan)",
+                  "diagnosis": "String (The diagnosis and treatment plan, or the healthy message)",
                   "suggestedQuestions": ["Question 1", "Question 2", "Question 3"]
                 }`
               },
@@ -103,12 +106,16 @@ export async function POST(req: Request) {
         ]
       });
       
-      // Parse the JSON (handling potential markdown code blocks)
-      const cleanJson = text.replace(/```json/g, '').replace(/```/g, '').trim();
-      diagnosisData = JSON.parse(cleanJson);
+      // Parse the JSON (assuming the model follows instructions)
+      const jsonText = text.replace(/```json/g, '').replace(/```/g, '').trim();
+      diagnosisData = JSON.parse(jsonText);
+      
     } catch (modelError: any) {
-      console.error("Gemini Vision API Error:", modelError);
-      return NextResponse.json({ error: "Vision AI service failed." }, { status: 500 });
+      console.error("Groq Vision API Error:", modelError);
+      return NextResponse.json({ 
+        success: false, 
+        error: "Failed to analyze the image. Please try again." 
+      }, { status: 500 });
     }
 
     if (!diagnosisData.isPlant) {
