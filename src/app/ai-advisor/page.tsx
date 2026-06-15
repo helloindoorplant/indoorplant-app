@@ -287,18 +287,18 @@ export default function AiAdvisorPage() {
                   <BugPlay className="h-4 w-4" />
                   Report Bug to Admin
                 </div>
-                <div className="flex gap-2">
+                <div className="flex flex-col sm:flex-row gap-2">
                   <input
                     value={bugReport}
                     onChange={(e) => setBugReport(e.target.value)}
                     placeholder="Describe the issue briefly..."
-                    className="flex-1 bg-white border border-red-200 rounded-xl px-4 py-3 text-[15px] focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 placeholder:text-red-300 transition-all text-slate-800"
+                    className="flex-1 w-full bg-white border border-red-200 rounded-xl px-4 py-3 text-[15px] focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 placeholder:text-red-300 transition-all text-slate-800"
                     disabled={bugReportStatus === 'sending' || bugReportStatus === 'sent'}
                   />
                   <Button 
                     type="submit" 
                     disabled={!bugReport.trim() || bugReportStatus === 'sending' || bugReportStatus === 'sent'}
-                    className={`shrink-0 h-12 px-5 rounded-xl text-sm font-bold transition-all shadow-sm ${bugReportStatus === 'sent' ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-red-500 hover:bg-red-600 text-white'}`}
+                    className={`shrink-0 w-full sm:w-auto h-12 px-5 rounded-xl text-sm font-bold transition-all shadow-sm ${bugReportStatus === 'sent' ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-red-500 hover:bg-red-600 text-white'}`}
                   >
                     {bugReportStatus === 'sent' ? 'Sent!' : bugReportStatus === 'sending' ? 'Sending...' : 'Send Report'}
                   </Button>
