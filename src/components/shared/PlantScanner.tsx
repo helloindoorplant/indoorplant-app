@@ -111,7 +111,7 @@ export function PlantScanner() {
                 
                 {/* Image Preview */}
                 {previewUrl && (
-                  <div className="w-full sm:w-32 h-32 rounded-xl overflow-hidden relative shrink-0 border border-slate-200 shadow-sm bg-white">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-xl overflow-hidden relative shrink-0 border border-slate-200 shadow-sm bg-white">
                     <img src={previewUrl} alt="Scanning" className="w-full h-full object-cover" />
                     
                     {status === "scanning" && (
