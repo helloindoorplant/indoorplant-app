@@ -95,9 +95,11 @@ export async function POST(req: Request) {
       systemPrompt = systemPrompt.replace(/recommendProducts/g, 'the search tool');
     }
     systemPrompt += `\n\n[!!! CRITICAL LANGUAGE OVERRIDE !!!]\nYOU MUST AUTO-DETECT THE USER'S LANGUAGE. If the user speaks Hindi, YOU MUST REPLY TO THE USER IN HINGLISH. If Bengali, REPLY IN BANGLISH. DO NOT use Devanagari or Bengali alphabets. DO NOT REPLY TO THE USER IN ENGLISH UNLESS THEY SPOKE IN ENGLISH. IMPORTANT: THIS ONLY APPLIES TO TEXT REPLIES TO THE USER. IF YOU NEED TO CALL A TOOL, YOU MUST STILL OUTPUT THE PROPER JSON TOOL CALL SYNTAX EXACTLY AS REQUESTED.`;
+    
+    systemPrompt += `\n\n[!!! SUGGESTION CHIPS REQUIREMENT !!!]\nAt the absolute end of your response, you MUST append the divider '---SUGGESTIONS---' on a new line, followed by exactly 2 or 3 short follow-up questions (2-4 words each) that predict what the user might want to ask next. Format it EXACTLY like a JSON array of strings.\nExample:\n---SUGGESTIONS---\n["Is it pet safe?", "Watering schedule", "Best soil"]\n\nDO NOT include this inside the main body. Only at the very end after the divider.`;
 
     const streamConfig: any = {
-      model: groq('llama-3.1-8b-instant'),
+      model: groq('llama-3.3-70b-versatile'),
       system: systemPrompt,
       messages: coreMessages,
       maxSteps: 2
@@ -110,7 +112,7 @@ export async function POST(req: Request) {
           method: 'POST',
           headers: { 'Authorization': `Bearer ${process.env.GROQ_API_KEY}`, 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            model: 'llama-3.1-8b-instant',
+            model: 'llama-3.3-70b-versatile',
             messages: [
               { role: 'system', content: 'Extract the user\'s name and phone number. Reply ONLY with a valid JSON object: {"name": "...", "phone": "..."}' },
               { role: 'user', content: lastUserMsg }
@@ -157,8 +159,10 @@ export async function POST(req: Request) {
       streamConfig.tools.recommendProducts = tool({
         description: 'Search the product database and show product cards to the user.',
         parameters: z.object({
-          query: z.string().optional().describe('The plant to search for, or "all"')
-        }),
+          query: z.string().optional().describe('The plant to search for, or "all"'),
+          name: z.any().optional(),
+          category: z.any().optional()
+        }).catchall(z.any()),
         // @ts-ignore
         execute: async (args: any) => {
           
@@ -168,7 +172,7 @@ export async function POST(req: Request) {
               method: 'POST',
               headers: { 'Authorization': `Bearer ${process.env.GROQ_API_KEY}`, 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                model: 'llama-3.1-8b-instant',
+                model: 'llama-3.3-70b-versatile',
                 messages: [
                   { role: 'system', content: 'Extract the specific plant name or category the user is looking for. Reply ONLY with a valid JSON object: {"query": "..."}. If they are asking generally, use "all".' },
                   { role: 'user', content: lastUserMsg }
@@ -265,7 +269,7 @@ export async function POST(req: Request) {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${process.env.GROQ_API_KEY}`, 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                  model: 'llama-3.1-8b-instant',
+                  model: 'llama-3.3-70b-versatile',
                   messages: [
                     { role: 'system', content: `You are an AI plant advisor representing IndoorPlant.in. Keep it to 1-2 sentences. Speak like you are talking to a 5-year-old child (ELI5) in extremely simple, friendly language. [!!! CRITICAL LANGUAGE OVERRIDE !!!]: YOU MUST REPLY IN THE EXACT SAME LANGUAGE AS THE USER. IF THE USER WRITES HINDI ('kaise ho'), REPLY IN HINGLISH (Hindi written in English letters). IF BENGALI ('kemon acho'), REPLY IN BANGLISH (Bengali written in English letters). DO NOT USE ACTUAL HINDI OR BENGALI ALPHABETS! DO NOT USE ENGLISH UNLESS THEY USED ENGLISH! Do not output anything else. If products were found, explain why they are the absolute best choice with extreme confidence. CRITICAL PIVOT RULE: If the user asked for a specific plant that is NOT in the list of returned products, you MUST NEVER say "we don't have it" or "out of stock". Instead, validate their idea warmly and immediately pivot to why the products you DID find are an even better choice for them.` },
                     { role: 'user', content: `The user asked: "${lastUserMsg}". We found ${products.length} plants: ${products.length > 0 ? products.map((p: any) => p.name).join(', ') : 'None'}. Write the ELI5 response.` }

@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { Bot, X, Send, AlertCircle, Mic, MicOff } from 'lucide-react';
+import { Bot, X, Send, AlertCircle, Mic, MicOff, BugPlay } from 'lucide-react';
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
 import { Button } from '@/components/ui/button';
 import { useChat } from '@ai-sdk/react';
@@ -15,6 +15,9 @@ export function FloatingAiWidget() {
   const { messages, sendMessage, status, error } = useChat();
   const [input, setInput] = useState('');
   const isLoading = status === 'submitted' || status === 'streaming';
+
+  const [bugReport, setBugReport] = useState('');
+  const [bugReportStatus, setBugReportStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
   const { isListening, isSupported, error: speechError, toggleListening } = useSpeechRecognition({
     onResult: (transcript) => {
@@ -49,9 +52,54 @@ export function FloatingAiWidget() {
     setInput('');
   };
 
-  // Robust message rendering — same logic as the AI Advisor page
-  const renderMessage = (m: any) => {
-    const messageText = (m as any).content || ((m as any).parts || []).map((p: any) => p.text || '').join('');
+  const handleBugReportSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!bugReport.trim()) return;
+    setBugReportStatus('sending');
+    try {
+      await fetch('/api/bug-report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: bugReport,
+          errorDetails: error?.message || speechError || 'Unknown connection error'
+        })
+      });
+      setBugReportStatus('sent');
+      setTimeout(() => setBugReportStatus('idle'), 5000);
+      setBugReport('');
+    } catch (err) {
+      setBugReportStatus('idle');
+      console.error('Failed to send bug report', err);
+    }
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    sendMessage({ role: 'user', parts: [{ type: 'text', text: suggestion }] });
+  };
+
+  // Robust message rendering
+  const renderMessage = (m: any, isLastMessage: boolean) => {
+    let messageText = (m as any).content || ((m as any).parts || []).map((p: any) => p.text || '').join('');
+    
+    // Parse Suggestions
+    let suggestions: string[] = [];
+    if (messageText.includes('---SUGGESTIONS---')) {
+      const parts = messageText.split('---SUGGESTIONS---');
+      messageText = parts[0].trim();
+      const rawSugg = parts[1].trim();
+      try {
+        const parsed = JSON.parse(rawSugg);
+        if (Array.isArray(parsed)) suggestions = parsed;
+      } catch (e) {
+        suggestions = rawSugg.split('\n').filter((l: string) => l.trim().length > 0).map((l: string) => l.replace(/^\d+\.\s*/, '').replace(/^- \s*/, '').replace(/["']/g, '').trim());
+      }
+    } else if (messageText.includes('---SUGGESTED_QUESTIONS---')) {
+       // Legacy fallback
+       const parts = messageText.split('---SUGGESTED_QUESTIONS---');
+       messageText = parts[0].trim();
+       suggestions = parts[1].trim().split('\n').filter((l: string) => l.trim().length > 0).map((l: string) => l.replace(/^\d+\.\s*/, '').trim());
+    }
     
     // Gather all tool invocations robustly
     const tools: any[] = [];
@@ -111,13 +159,30 @@ export function FloatingAiWidget() {
     if (!messageText && renderedTools.length === 0) return null;
 
     return (
-      <div className={`flex flex-col gap-2 max-w-[85%] p-4 rounded-2xl text-[15px] font-medium leading-relaxed ${m.role === 'user' ? 'bg-primary text-white rounded-br-sm shadow-md' : 'bg-white border border-border/60 text-foreground rounded-bl-sm shadow-sm'}`}>
-        {messageText && (
-          <span className="whitespace-pre-wrap">{messageText}</span>
-        )}
-        {renderedTools.length > 0 && (
-          <div className="flex flex-col gap-2">
-            {renderedTools}
+      <div className="flex flex-col gap-2 items-start w-full">
+        <div className={`flex flex-col gap-2 max-w-[85%] p-4 rounded-2xl text-[15px] font-medium leading-relaxed ${m.role === 'user' ? 'bg-primary text-white rounded-br-sm shadow-md self-end' : 'bg-white border border-border/60 text-foreground rounded-bl-sm shadow-sm'}`}>
+          {messageText && (
+            <span className="whitespace-pre-wrap">{messageText}</span>
+          )}
+          {renderedTools.length > 0 && (
+            <div className="flex flex-col gap-2">
+              {renderedTools}
+            </div>
+          )}
+        </div>
+        
+        {/* Render Suggestion Chips below the AI's message, ONLY for the very last message in the chat */}
+        {isLastMessage && m.role === 'assistant' && suggestions.length > 0 && !isLoading && (
+          <div className="flex flex-wrap gap-2 mt-1 px-1">
+            {suggestions.map((sug, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleSuggestionClick(sug)}
+                className="bg-primary/10 hover:bg-primary text-primary hover:text-white border border-primary/20 hover:border-primary px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm"
+              >
+                {sug}
+              </button>
+            ))}
           </div>
         )}
       </div>
@@ -155,7 +220,6 @@ export function FloatingAiWidget() {
       </div>
 
       {/* Chat Window */}
-      {/* Chat Window */}
       <div className={`fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 w-full sm:w-[400px] h-[100dvh] sm:h-[600px] sm:max-h-[calc(100dvh-48px)] bg-white sm:rounded-3xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] border-0 sm:border border-border/50 flex flex-col z-[60] transition-all duration-300 sm:origin-bottom-right ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0 sm:scale-100' : 'opacity-0 pointer-events-none translate-y-full sm:translate-y-8 sm:scale-90'}`}>
         
         {/* Header */}
@@ -187,9 +251,9 @@ export function FloatingAiWidget() {
               <p className="text-[15px] font-semibold text-[#1B4332]">Hi! I&apos;m your AI Plant Advisor. Need help finding a plant or keeping one alive?</p>
             </div>
           ) : (
-            messages.map(m => (
-              <div key={m.id} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                {renderMessage(m)}
+            messages.map((m, i) => (
+              <div key={m.id} className="w-full flex">
+                {renderMessage(m, i === messages.length - 1)}
               </div>
             ))
           )}
@@ -206,11 +270,37 @@ export function FloatingAiWidget() {
         </div>
 
         {/* Input */}
-        <div className="p-4 bg-white rounded-none sm:rounded-b-3xl border-t border-border/40 shrink-0 pb-[max(16px,env(safe-area-inset-bottom))] sm:pb-4">
+        <div className="p-4 bg-white rounded-none sm:rounded-b-3xl border-t border-border/40 shrink-0 pb-[max(16px,env(safe-area-inset-bottom))] sm:pb-4 flex flex-col gap-3">
            {(error || speechError) && (
-            <div className="mb-3 bg-red-50 text-red-600 p-3 rounded-xl flex items-center gap-2 border border-red-100 text-sm font-medium">
-              <AlertCircle className="h-5 w-5 shrink-0" />
-              <span>{speechError || 'Connection error. Please try again.'}</span>
+            <div className="bg-red-50 p-4 rounded-2xl border border-red-100 flex flex-col gap-3 animate-in fade-in slide-in-from-bottom-2">
+              <div className="flex items-center gap-2 text-red-600 text-sm font-bold">
+                <AlertCircle className="h-5 w-5 shrink-0" />
+                <span>{speechError || 'Connection Error'}</span>
+              </div>
+              <div className="text-xs text-red-500/80 mb-1">{error?.message || 'The server may be busy or rate-limited.'}</div>
+              
+              <form onSubmit={handleBugReportSubmit} className="flex flex-col gap-2">
+                <div className="text-xs font-bold text-red-600 uppercase tracking-wider flex items-center gap-1">
+                  <BugPlay className="h-3 w-3" />
+                  Report Bug to Admin
+                </div>
+                <div className="flex gap-2">
+                  <input
+                    value={bugReport}
+                    onChange={(e) => setBugReport(e.target.value)}
+                    placeholder="What happened?"
+                    className="flex-1 bg-white border border-red-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 placeholder:text-red-300 transition-all text-slate-800"
+                    disabled={bugReportStatus === 'sending' || bugReportStatus === 'sent'}
+                  />
+                  <Button 
+                    type="submit" 
+                    disabled={!bugReport.trim() || bugReportStatus === 'sending' || bugReportStatus === 'sent'}
+                    className={`shrink-0 h-[38px] px-3 rounded-xl text-xs font-bold transition-all ${bugReportStatus === 'sent' ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-red-500 hover:bg-red-600 text-white'}`}
+                  >
+                    {bugReportStatus === 'sent' ? 'Sent!' : bugReportStatus === 'sending' ? '...' : 'Send'}
+                  </Button>
+                </div>
+              </form>
             </div>
           )}
           <form onSubmit={handleCustomSubmit} className="flex gap-2 relative w-full items-center">

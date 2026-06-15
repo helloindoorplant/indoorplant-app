@@ -96,9 +96,11 @@ DO NOT include suggested questions in the main body. Only at the very end after 
 
     // Ensure system prompt rules are enforced in HINGLISH/BANGLISH if user starts in those languages
     systemPrompt += `\n\n[!!! CRITICAL LANGUAGE OVERRIDE !!!]\nAuto-detect the user's language. If the user speaks Hindi, write the response in HINGLISH (Hindi written using English alphabet). If Bengali, write in BANGLISH. DO NOT use Devanagari or Bengali scripts. Otherwise, respond in clear, beautiful, and simple English.`;
+    
+    systemPrompt += `\n\n[!!! SUGGESTION CHIPS REQUIREMENT !!!]\nAt the absolute end of your response, you MUST append the divider '---SUGGESTIONS---' on a new line, followed by exactly 2 or 3 short follow-up questions (2-4 words each) that predict what the user might want to ask next. Format it EXACTLY like a JSON array of strings.\nExample:\n---SUGGESTIONS---\n["Is it pet safe?", "Watering schedule", "Best soil"]\n\nDO NOT include this inside the main body. Only at the very end after the divider.`;
 
     const result = streamText({
-      model: groq('llama-3.1-8b-instant'),
+      model: groq('llama-3.3-70b-versatile'),
       system: systemPrompt,
       messages: coreMessages,
     });

@@ -1,7 +1,7 @@
 'use client';
 
 import { useChat } from '@ai-sdk/react';
-import { Leaf, Send, Sparkles, User, Bot, AlertCircle, Mic, MicOff } from 'lucide-react';
+import { Leaf, Send, Sparkles, User, Bot, AlertCircle, Mic, MicOff, BugPlay } from 'lucide-react';
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
 import { Button } from '@/components/ui/button';
 import { ChatProductCard } from '@/components/chat/ChatProductCard';
@@ -14,6 +14,9 @@ export default function AiAdvisorPage() {
   const isLoading = status === 'submitted' || status === 'streaming';
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const [bugReport, setBugReport] = useState('');
+  const [bugReportStatus, setBugReportStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
+
   const { isListening, isSupported, error: speechError, toggleListening } = useSpeechRecognition({
     onResult: (transcript) => {
       setInput(transcript);
@@ -23,6 +26,7 @@ export default function AiAdvisorPage() {
       }
     }
   });
+
   // Auto-scroll to bottom
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -37,6 +41,28 @@ export default function AiAdvisorPage() {
     if (!input.trim() || isLoading) return;
     sendMessage({ role: 'user', parts: [{ type: 'text', text: input.trim() }] });
     setInput('');
+  };
+
+  const handleBugReportSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!bugReport.trim()) return;
+    setBugReportStatus('sending');
+    try {
+      await fetch('/api/bug-report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          message: bugReport,
+          errorDetails: error?.message || speechError || 'Unknown connection error'
+        })
+      });
+      setBugReportStatus('sent');
+      setTimeout(() => setBugReportStatus('idle'), 5000);
+      setBugReport('');
+    } catch (err) {
+      setBugReportStatus('idle');
+      console.error('Failed to send bug report', err);
+    }
   };
 
   return (
@@ -81,122 +107,149 @@ export default function AiAdvisorPage() {
                 ))}
               </div>
 
-              <div className="bg-white border border-primary/10 p-6 rounded-2xl text-[14px] leading-relaxed text-stone-600 mt-8 text-center max-w-md shadow-sm font-medium">
-                IndoorPlant.in's AI Plant Advisor asks three questions: your room's natural light level, how often you remember to water, and whether you have pets at home. It then recommends the most suitable plant from a curated list of 24 varieties grown and delivered across India. The tool is free and takes under a minute.
-              </div>
+
             </motion.div>
           )}
 
           <AnimatePresence initial={false}>
-            {messages.map((m) => (
-              <motion.div 
-                key={m.id}
-                initial={{ opacity: 0, y: 10, scale: 0.98 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                className={`flex gap-4 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
-              >
-                {m.role === 'assistant' && (
-                  <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center shrink-0 shadow-md">
-                    <Bot className="h-6 w-6 text-white" />
-                  </div>
-                )}
-                
-                <div className="flex flex-col gap-3 max-w-[90%] md:max-w-[85%]">
-                  {/* Unified Bubble Container */}
-                  {(() => {
-                    const messageText = (m as any).content || ((m as any).parts || []).map((p: any) => p.text || '').join('');
-                    
-                    // Gather all tool invocations from m.toolInvocations or m.parts robustly
-                    const tools: any[] = [];
-                    if (Array.isArray((m as any).toolInvocations)) {
-                      tools.push(...(m as any).toolInvocations);
-                    }
-                    if (Array.isArray((m as any).parts)) {
-                      (m as any).parts.forEach((p: any) => {
-                        if (p.type === 'tool-invocation' && p.toolInvocation) tools.push(p.toolInvocation);
-                        else if (p.toolName) tools.push(p);
-                        else if (p.type === 'tool-recommendProducts') {
-                          tools.push({
-                            ...p,
-                            toolName: 'recommendProducts'
-                          });
-                        }
-                      });
-                    }
+            {messages.map((m, mIndex) => {
+              const isLastMessage = mIndex === messages.length - 1;
+              let messageText = (m as any).content || ((m as any).parts || []).map((p: any) => p.text || '').join('');
+              
+              // Parse Suggestions
+              let suggestions: string[] = [];
+              if (messageText.includes('---SUGGESTIONS---')) {
+                const parts = messageText.split('---SUGGESTIONS---');
+                messageText = parts[0].trim();
+                const rawSugg = parts[1].trim();
+                try {
+                  const parsed = JSON.parse(rawSugg);
+                  if (Array.isArray(parsed)) suggestions = parsed;
+                } catch (e) {
+                  suggestions = rawSugg.split('\n').filter((l: string) => l.trim().length > 0).map((l: string) => l.replace(/^\d+\.\s*/, '').replace(/^- \s*/, '').replace(/["']/g, '').trim());
+                }
+              } else if (messageText.includes('---SUGGESTED_QUESTIONS---')) {
+                const parts = messageText.split('---SUGGESTED_QUESTIONS---');
+                messageText = parts[0].trim();
+                suggestions = parts[1].trim().split('\n').filter((l: string) => l.trim().length > 0).map((l: string) => l.replace(/^\d+\.\s*/, '').trim());
+              }
 
-                    const uniqueTools = tools.filter((t, index, self) => 
-                      index === self.findIndex((obj) => (obj.toolCallId === t.toolCallId))
-                    );
+              // Gather all tool invocations from m.toolInvocations or m.parts robustly
+              const tools: any[] = [];
+              if (Array.isArray((m as any).toolInvocations)) {
+                tools.push(...(m as any).toolInvocations);
+              }
+              if (Array.isArray((m as any).parts)) {
+                (m as any).parts.forEach((p: any) => {
+                  if (p.type === 'tool-invocation' && p.toolInvocation) tools.push(p.toolInvocation);
+                  else if (p.toolName) tools.push(p);
+                  else if (p.type === 'tool-recommendProducts') {
+                    tools.push({
+                      ...p,
+                      toolName: 'recommendProducts'
+                    });
+                  }
+                });
+              }
 
-                    const renderedTools = uniqueTools.map((toolInv: any, i: number) => {
-                      if (toolInv.toolName && toolInv.toolName.toLowerCase().includes('recommend')) {
-                        const hasOutput = toolInv.state === 'output-available' || toolInv.state === 'result' || 'output' in toolInv || 'result' in toolInv;
-                        const outputData = toolInv.output || toolInv.result;
-                        
-                        if (toolInv.toolName.toLowerCase() === 'recommendproducts' && (toolInv.state === 'result' || toolInv.state === 'output-available')) {
-                          return (
-                            <div key={i} className="flex flex-col gap-3">
-                              {outputData?.explanation && (
-                                <div className="text-[15px] leading-relaxed text-muted-foreground font-medium mb-1">
-                                  {outputData.explanation}
-                                </div>
-                              )}
-                              {outputData.products && outputData.products.length > 0 && (
-                                <div className="flex gap-4 overflow-x-auto hide-scrollbar py-3 -mx-4 px-4 sm:-mx-2 sm:px-2 snap-x">
-                                  {outputData.products.map((product: any) => (
-                                    <div key={product.id} className="snap-start shrink-0">
-                                      <ChatProductCard product={product} />
-                                    </div>
-                                  ))}
-                                </div>
-                              )}
-                            </div>
-                          );
-                        } else if (hasOutput && outputData?.success === false) {
-                          return (
-                            <div key={i} className="p-3 bg-red-50/50 rounded-xl text-sm italic text-red-500">
-                              Error searching inventory: {outputData.error || 'Unknown error'}
-                            </div>
-                          );
-                        } else if (!hasOutput) {
-                          return (
-                            <div key={i} className="flex items-center gap-2 text-sm italic text-muted-foreground p-3 bg-muted/50 rounded-xl w-fit">
-                              <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-                              Searching our greenhouse...
-                            </div>
-                          );
-                        }
-                      }
-                      return null;
-                    }).filter(Boolean);
+              const uniqueTools = tools.filter((t, index, self) => 
+                index === self.findIndex((obj) => (obj.toolCallId === t.toolCallId))
+              );
 
-                    if (!messageText && renderedTools.length === 0) return null;
-
+              const renderedTools = uniqueTools.map((toolInv: any, i: number) => {
+                if (toolInv.toolName && toolInv.toolName.toLowerCase().includes('recommend')) {
+                  const hasOutput = toolInv.state === 'output-available' || toolInv.state === 'result' || 'output' in toolInv || 'result' in toolInv;
+                  const outputData = toolInv.output || toolInv.result;
+                  
+                  if (toolInv.toolName.toLowerCase() === 'recommendproducts' && (toolInv.state === 'result' || toolInv.state === 'output-available')) {
                     return (
-                      <div className={`p-5 md:p-6 rounded-[24px] shadow-sm ${m.role === 'user' ? 'bg-primary text-white rounded-tr-sm' : 'bg-white border border-border/60 text-foreground rounded-tl-sm flex flex-col gap-4'}`}>
-                        {messageText && (
-                          <div className={`prose prose-sm md:prose-base max-w-none font-medium leading-relaxed ${m.role === 'user' ? 'text-white' : 'text-muted-foreground'} prose-p:my-2 prose-ul:my-2 prose-li:my-0`}>
-                            <span className="whitespace-pre-wrap">{messageText}</span>
+                      <div key={i} className="flex flex-col gap-3">
+                        {outputData?.explanation && (
+                          <div className="text-[15px] leading-relaxed text-muted-foreground font-medium mb-1">
+                            {outputData.explanation}
                           </div>
                         )}
-                        
-                        {renderedTools.length > 0 && (
-                          <div className="flex flex-col gap-2">
-                            {renderedTools}
+                        {outputData.products && outputData.products.length > 0 && (
+                          <div className="flex gap-4 overflow-x-auto hide-scrollbar py-3 -mx-4 px-4 sm:-mx-2 sm:px-2 snap-x">
+                            {outputData.products.map((product: any) => (
+                              <div key={product.id} className="snap-start shrink-0">
+                                <ChatProductCard product={product} />
+                              </div>
+                            ))}
                           </div>
                         )}
                       </div>
                     );
-                  })()}
-                </div>
+                  } else if (hasOutput && outputData?.success === false) {
+                    return (
+                      <div key={i} className="p-3 bg-red-50/50 rounded-xl text-sm italic text-red-500">
+                        Error searching inventory: {outputData.error || 'Unknown error'}
+                      </div>
+                    );
+                  } else if (!hasOutput) {
+                    return (
+                      <div key={i} className="flex items-center gap-2 text-sm italic text-muted-foreground p-3 bg-muted/50 rounded-xl w-fit">
+                        <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+                        Searching our greenhouse...
+                      </div>
+                    );
+                  }
+                }
+                return null;
+              }).filter(Boolean);
 
-                {m.role === 'user' && (
-                  <div className="w-12 h-12 rounded-2xl bg-white border border-border/60 shadow-sm flex items-center justify-center shrink-0">
-                    <User className="h-6 w-6 text-primary" />
+              return (
+                <motion.div 
+                  key={m.id}
+                  initial={{ opacity: 0, y: 10, scale: 0.98 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  className={`flex gap-4 ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                >
+                  {m.role === 'assistant' && (
+                    <div className="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center shrink-0 shadow-md">
+                      <Bot className="h-6 w-6 text-white" />
+                    </div>
+                  )}
+                  
+                  <div className={`flex flex-col gap-3 max-w-[90%] md:max-w-[85%] ${m.role === 'user' ? 'items-end' : 'items-start'}`}>
+                    <div className={`p-5 md:p-6 rounded-[24px] shadow-sm w-full ${m.role === 'user' ? 'bg-primary text-white rounded-tr-sm' : 'bg-white border border-border/60 text-foreground rounded-tl-sm flex flex-col gap-4'}`}>
+                      {messageText && (
+                        <div className={`prose prose-sm md:prose-base max-w-none font-medium leading-relaxed ${m.role === 'user' ? 'text-white' : 'text-muted-foreground'} prose-p:my-2 prose-ul:my-2 prose-li:my-0`}>
+                          <span className="whitespace-pre-wrap">{messageText}</span>
+                        </div>
+                      )}
+                      
+                      {renderedTools.length > 0 && (
+                        <div className="flex flex-col gap-2">
+                          {renderedTools}
+                        </div>
+                      )}
+                    </div>
+                    
+                    {/* Render Suggestion Chips */}
+                    {isLastMessage && m.role === 'assistant' && suggestions.length > 0 && !isLoading && (
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        {suggestions.map((sug, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => handleSuggestion(sug)}
+                            className="bg-primary/5 hover:bg-primary text-primary hover:text-white border border-primary/20 hover:border-primary px-5 py-2.5 rounded-full text-[14px] font-bold transition-all shadow-sm"
+                          >
+                            {sug}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                )}
-              </motion.div>
-            ))}
+
+                  {m.role === 'user' && (
+                    <div className="w-12 h-12 rounded-2xl bg-white border border-border/60 shadow-sm flex items-center justify-center shrink-0">
+                      <User className="h-6 w-6 text-primary" />
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
           
           {isLoading && messages[messages.length - 1]?.role === 'user' && (
@@ -213,19 +266,44 @@ export default function AiAdvisorPage() {
           )}
 
           {error && (
-            <div className="bg-red-50 text-red-600 p-5 rounded-2xl flex items-start gap-3 border border-red-200 mx-auto max-w-lg shadow-sm my-4">
-              <AlertCircle className="h-6 w-6 shrink-0 mt-0.5" />
-              <div>
-                <p className="font-bold mb-1">API Error Encountered</p>
-                <p className="text-sm font-medium opacity-90 mb-2">
-                  {error.message || "Sorry, I couldn't connect to the server. Please check your API key or try again later."}
-                </p>
-                {error.message?.includes('429') || error.message?.includes('quota') || error.message?.includes('rate') ? (
-                  <p className="text-xs font-semibold bg-red-100 p-2 rounded">
-                    Tip: You have hit the API rate limit (too many requests in a short time). Please wait about 30-60 seconds and try again!
+            <div className="bg-red-50 text-red-600 p-5 rounded-2xl flex flex-col gap-4 border border-red-200 mx-auto max-w-lg shadow-sm my-4 animate-in fade-in slide-in-from-bottom-2">
+              <div className="flex gap-3">
+                <AlertCircle className="h-6 w-6 shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold mb-1">API Error Encountered</p>
+                  <p className="text-sm font-medium opacity-90 mb-2">
+                    {error.message || "Sorry, I couldn't connect to the server. Please check your API key or try again later."}
                   </p>
-                ) : null}
+                  {error.message?.includes('429') || error.message?.includes('quota') || error.message?.includes('rate') ? (
+                    <p className="text-xs font-semibold bg-red-100 p-2 rounded mb-2">
+                      Tip: You have hit the API rate limit (too many requests in a short time). Please wait about 30-60 seconds and try again!
+                    </p>
+                  ) : null}
+                </div>
               </div>
+              
+              <form onSubmit={handleBugReportSubmit} className="flex flex-col gap-2 mt-2 pt-4 border-t border-red-200/60">
+                <div className="text-xs font-bold text-red-600 uppercase tracking-wider flex items-center gap-1.5">
+                  <BugPlay className="h-4 w-4" />
+                  Report Bug to Admin
+                </div>
+                <div className="flex gap-2">
+                  <input
+                    value={bugReport}
+                    onChange={(e) => setBugReport(e.target.value)}
+                    placeholder="Describe the issue briefly..."
+                    className="flex-1 bg-white border border-red-200 rounded-xl px-4 py-3 text-[15px] focus:outline-none focus:border-red-400 focus:ring-1 focus:ring-red-400 placeholder:text-red-300 transition-all text-slate-800"
+                    disabled={bugReportStatus === 'sending' || bugReportStatus === 'sent'}
+                  />
+                  <Button 
+                    type="submit" 
+                    disabled={!bugReport.trim() || bugReportStatus === 'sending' || bugReportStatus === 'sent'}
+                    className={`shrink-0 h-12 px-5 rounded-xl text-sm font-bold transition-all shadow-sm ${bugReportStatus === 'sent' ? 'bg-green-500 hover:bg-green-600 text-white' : 'bg-red-500 hover:bg-red-600 text-white'}`}
+                  >
+                    {bugReportStatus === 'sent' ? 'Sent!' : bugReportStatus === 'sending' ? 'Sending...' : 'Send Report'}
+                  </Button>
+                </div>
+              </form>
             </div>
           )}
 
