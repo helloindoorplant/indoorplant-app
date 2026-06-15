@@ -23,6 +23,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { PlantScanner } from '@/components/shared/PlantScanner';
 
 interface Plant {
   id: string;
@@ -162,6 +163,9 @@ export default function CareClient({ products }: CareClientProps) {
             />
           </div>
         </div>
+
+        {/* AI Plant Scanner Card */}
+        <PlantScanner />
 
         {/* STEP 1: SELECT PLANT */}
         {step === 1 && (

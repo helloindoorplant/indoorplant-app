@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ContactForm } from "@/components/forms/ContactForm";
 
 export const metadata = {
   title: "Contact Us | IndoorPlant.in",
@@ -77,57 +77,7 @@ export default function ContactPage() {
           <div className="lg:col-span-2">
             <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-8 font-playfair">Send us a message</h3>
-              
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
-                    <input type="text" id="first-name" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="John" required />
-                  </div>
-                  <div>
-                    <label htmlFor="last-name" className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                    <input type="text" id="last-name" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="Doe" />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
-                    <input type="email" id="email" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="john@example.com" required />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="+91 7003587996" />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
-                  <select id="subject" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors bg-white">
-                    <option>Order Inquiry</option>
-                    <option>Plant Care Question</option>
-                    <option>Returns & Replacements</option>
-                    <option>Feedback / Suggestion</option>
-                    <option>Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="order-id" className="block text-sm font-medium text-gray-700 mb-2">Order ID (Optional)</label>
-                  <input type="text" id="order-id" className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors" placeholder="e.g. IN-12345" />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Your Message *</label>
-                  <textarea id="message" rows={6} className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors resize-none" placeholder="How can we help you?" required></textarea>
-                </div>
-
-                <div className="pt-2">
-                  <Button type="button" className="w-full md:w-auto px-8 py-3 h-auto bg-primary hover:bg-[#1B4332] text-white font-medium rounded-lg transition-colors">
-                    Send Message
-                  </Button>
-                </div>
-              </form>
+              <ContactForm />
             </div>
           </div>
         </div>
