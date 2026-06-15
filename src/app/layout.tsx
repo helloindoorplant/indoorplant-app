@@ -6,6 +6,7 @@ import dynamic from "next/dynamic";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingAiWidgetWrapper } from "@/components/shared/FloatingAiWidgetWrapper";
 import { AuthProvider } from "@/components/providers/AuthProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -101,6 +102,7 @@ export default function RootLayout({
           <FloatingAiWidgetWrapper />
           <Footer />
         </AuthProvider>
+        <Analytics />
       </body>
     </html>
   );
