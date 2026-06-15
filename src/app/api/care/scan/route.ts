@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
-import { createGroq } from '@ai-sdk/groq';
+import { google } from '@ai-sdk/google';
 import { generateText } from 'ai';
 
 // Clean up files older than 2 hours (120 minutes)
@@ -56,30 +56,43 @@ export async function POST(req: Request) {
     
     fs.writeFileSync(filePath, buffer);
 
-    // 3. Send to AI (Groq Vision)
-    // Format the image for AI consumption (base64)
+    // 3. Send to AI (Google Gemini Vision)
     const base64Image = buffer.toString('base64');
     const mimeType = file.type || 'image/jpeg';
     const dataUrl = `data:${mimeType};base64,${base64Image}`;
-
-    const groq = createGroq({ apiKey: process.env.GROQ_API_KEY });
     
-    let diagnosisText = "";
+    let diagnosisData = {
+      isPlant: true,
+      plantName: "Unknown Plant",
+      diagnosis: "",
+      suggestedQuestions: [] as string[]
+    };
+
     try {
-      // We use a powerful vision model
+      // We use Gemini 1.5 Flash for rapid and highly accurate vision tasks
       const { text } = await generateText({
-        model: groq('llama-3.2-90b-vision-preview'),
+        model: google('gemini-1.5-flash'),
         messages: [
           {
             role: 'user',
             content: [
               { 
                 type: 'text', 
-                text: `You are a master botanist and plant doctor. Analyze this image of a sick plant. 
-                1. Identify the plant if possible.
-                2. Detect exactly what disease, pest, or deficiency is affecting it.
-                3. Provide a strict, step-by-step treatment plan to fix the issue.
-                Format your response with a very short diagnosis at the top, then a "Treatment Plan" with clear numbered steps (e.g., "Do these steps and your plant problem will be solved."). Keep it under 200 words total.`
+                text: `You are a master botanist and plant doctor. Analyze this image. 
+                1. Check if the image actually contains a plant. If it does not contain a plant, set "isPlant" to false and return immediately.
+                2. If it is a plant, identify the plant name with 100% accuracy. Be as specific as possible (e.g., "Aglaonema Silver Queen" or "Monstera Deliciosa").
+                3. Examine the plant's health. 
+                   - If the plant is completely healthy, your diagnosis must strictly say: "Your plant is fine, you don't need to do anything special. Just continue with normal care and maintenance."
+                   - If it is unhealthy, damaged, or facing problems, detect exactly what disease, pest, or deficiency is affecting it, and provide a strict, step-by-step treatment plan to fix the issue.
+                4. Provide 3 suggested follow-up questions the user can ask you in a chat.
+                
+                Respond ONLY with a JSON object in this exact format, with no markdown formatting around it:
+                {
+                  "isPlant": true,
+                  "plantName": "String",
+                  "diagnosis": "String (Diagnosis and Treatment Plan)",
+                  "suggestedQuestions": ["Question 1", "Question 2", "Question 3"]
+                }`
               },
               { 
                 type: 'image', 
@@ -89,17 +102,34 @@ export async function POST(req: Request) {
           }
         ]
       });
-      diagnosisText = text;
+      
+      // Parse the JSON (handling potential markdown code blocks)
+      const cleanJson = text.replace(/```json/g, '').replace(/```/g, '').trim();
+      diagnosisData = JSON.parse(cleanJson);
     } catch (modelError: any) {
-      console.warn("Groq Vision API Error:", modelError);
-      // Fallback response because Groq decommissioned their vision models
-      diagnosisText = `**Diagnosis: Potential Overwatering / Leaf Spot** *(Demo Mode: Groq Vision API Offline)*\n\nIt appears your plant is suffering from early signs of root rot or a fungal leaf spot caused by excess moisture.\n\n**Treatment Plan**\nDo these steps and your plant problem will be solved:\n1. Stop watering immediately and allow the top 2 inches of soil to completely dry out.\n2. Ensure the pot has proper drainage holes; if it's sitting in a saucer of water, empty it.\n3. Carefully trim away any yellowed or mushy leaves using sterile scissors.\n4. Move the plant to a spot with brighter, indirect sunlight to help the soil dry faster.`;
+      console.error("Gemini Vision API Error:", modelError);
+      return NextResponse.json({ error: "Vision AI service failed." }, { status: 500 });
+    }
+
+    if (!diagnosisData.isPlant) {
+      // Delete the image instantly if it's not a plant
+      try {
+        fs.unlinkSync(filePath);
+      } catch (e) {}
+      
+      return NextResponse.json({ 
+        success: false, 
+        error: "Only plant-related images can be uploaded here." 
+      }, { status: 400 });
     }
 
     // Return the diagnosis and the temporary path to the image
     return NextResponse.json({ 
       success: true, 
-      diagnosis: diagnosisText,
+      isPlant: diagnosisData.isPlant,
+      plantName: diagnosisData.plantName,
+      diagnosis: diagnosisData.diagnosis,
+      suggestedQuestions: diagnosisData.suggestedQuestions,
       imageUrl: `/temp-scans/${uniqueFilename}` 
     });
 
