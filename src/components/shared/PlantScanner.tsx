@@ -133,7 +133,7 @@ export function PlantScanner() {
               capture="environment" 
               ref={fileInputRef} 
               onChange={handleFileChange} 
-              className="hidden" 
+              className="sr-only" 
             />
             
             {status === "idle" && (
