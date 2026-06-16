@@ -37,17 +37,52 @@ export async function POST(req: Request) {
     const lowerMsg = lastUserMsg.toLowerCase();
     
     // Product-related keywords that should trigger the tool
-    const productKeywords = ['suggest', 'recommend', 'buy', 'want', 'need', 'show', 'gift', 'desk', 'bedroom', 'office', 'balcony', 'bathroom', 'kitchen', 'living room', 'lucky', 'jade', 'money', 'snake', 'peace', 'lily', 'fern', 'spider', 'aloe', 'bamboo', 'pothos', 'philodendron', 'succulent', 'cactus', 'bonsai', 'zz', 'plant', 'tree', 'flower', 'product', 'price', 'cheap', 'affordable', 'expensive', 'sale', 'discount', 'available', 'stock', 'have', 'do you', 'is there', 'looking for', 'find', 'collection', 'catalog', 'pet safe', 'pet friendly', 'air purif', 'low maintenance', 'easy care', 'beginner', 'trending', 'popular', 'best sell'];
+    const productKeywords = [
+      // English recommendation intent
+      'suggest', 'recommend', 'buy', 'want', 'need', 'show', 'gift', 'best', 'which',
+      'choose', 'pick', 'select', 'top', 'perfect', 'ideal', 'order',
+      // Hindi / Hinglish shopping vocabulary
+      'plan', 'khareed', 'lena', 'chahiye', 'kaun', 'konsa', 'sabse', 'accha', 'acha',
+      'sasta', 'mehnga', 'dikhao', 'batao', 'kaunsa', 'pasand', 'lelo', 'manga',
+      // Room / location
+      'desk', 'bedroom', 'office', 'balcony', 'bathroom', 'kitchen', 'living room',
+      // Specific plant names
+      'lucky', 'jade', 'money', 'snake', 'peace', 'lily', 'fern', 'spider', 'aloe',
+      'bamboo', 'pothos', 'philodendron', 'succulent', 'cactus', 'bonsai', 'zz', 'tulsi',
+      // General product terms
+      'plant', 'tree', 'flower', 'product', 'price', 'cheap', 'affordable', 'expensive',
+      'sale', 'discount', 'available', 'stock', 'have', 'do you', 'is there',
+      'looking for', 'find', 'collection', 'catalog',
+      // Filters
+      'pet safe', 'pet friendly', 'air purif', 'low maintenance', 'easy care',
+      'beginner', 'trending', 'popular', 'best sell'
+    ];
     
-    // Care-related keywords that should NOT trigger the tool
-    const careKeywords = ['solution', 'fix', 'help', 'yellow', 'brown', 'wilting', 'drooping', 'dying', 'overwater', 'underwater', 'sunburn', 'root rot', 'fungus', 'pest', 'bug', 'insect', 'mold', 'repot', 'fertiliz', 'prune', 'propagat', 'how to', 'why is', 'what\'s wrong', 'help my', 'leaves', 'water', 'sunlight', 'humidity', 'temperature', 'soil'];
+    // Care-related keywords that should NOT trigger the tool (made more specific to avoid false positives)
+    const careKeywords = [
+      'solution', 'fix my', 'yellow leaves', 'brown leaves', 'brown tips', 'wilting',
+      'drooping', 'dying', 'overwater', 'underwater', 'sunburn', 'root rot', 'fungus',
+      'pest', 'bug', 'insect', 'mold', 'repot', 'fertiliz', 'prune', 'propagat',
+      'how to care', 'how to grow', 'how to water', 'why is my', 'what\'s wrong',
+      'help my plant', 'leaves turning', 'leaves falling', 'not growing'
+    ];
     
-    const isCareQuestion = careKeywords.some(kw => lowerMsg.includes(kw));
-    const isProductQuestion = productKeywords.some(kw => lowerMsg.includes(kw));
+    // Strong recommendation-intent phrases that ALWAYS override care keywords
+    const recommendationOverrides = [
+      'best plan', 'best plant', 'sabse accha', 'sabse acha', 'konsa plan', 'kaunsa plan',
+      'which plan', 'which plant', 'kaun sa plan', 'kaun sa plant', 'suggest me',
+      'recommend me', 'give me', 'show me plant', 'mujhe chahiye', 'kya lena chahiye',
+      'kya lu', 'konsa lu', 'kaunsa lu', 'best indoor', 'top plant', 'perfect plant',
+      'ideal plant', 'best for', 'sabse best'
+    ];
+    
+    const hasRecommendationOverride = recommendationOverrides.some(phrase => lowerMsg.includes(phrase));
+    const isCareQuestion = !hasRecommendationOverride && careKeywords.some(kw => lowerMsg.includes(kw));
+    const isProductQuestion = hasRecommendationOverride || productKeywords.some(kw => lowerMsg.includes(kw));
 
     // Only use tools if it's a new product question. If they already saw products, assume follow-up unless they use explicit new search verbs.
-    const isNewSearch = ['show me', 'search for', 'what about', 'find me', 'do you have', 'another', 'other'].some(kw => lowerMsg.includes(kw));
-    const shouldUseTool = isProductQuestion && !isCareQuestion && (!hasShownProducts || isNewSearch);
+    const isNewSearch = ['show me', 'search for', 'what about', 'find me', 'do you have', 'another', 'other', 'aur', 'dusra'].some(kw => lowerMsg.includes(kw));
+    const shouldUseTool = isProductQuestion && !isCareQuestion && (!hasShownProducts || isNewSearch || hasRecommendationOverride);
 
     // Manually map UI messages to Core messages to perfectly control tool history
     const coreMessages: any[] = [];
