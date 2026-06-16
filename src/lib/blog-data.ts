@@ -28,7 +28,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "June 15, 2026",
     readTime: "9 min read",
     image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/decorative-plants-for-home-online-india.webp",
-    featured: true,
+    featured: false,
     metaTitle: "Decorative Plants for Indian Homes — Buy Online Guide 2026",
     metaDescription: "Eight decorative plants you can buy online for Indian homes right now. Real prices, honest care notes, and only plants that actually survive Indian apartments. From Rs 299.",
     keywords: [
