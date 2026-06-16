@@ -30,7 +30,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   }
 
   // Format date for schema
-  const publishDate = post.date === "June 15, 2026" ? "2026-06-15"
+  const publishDate = post.date === "June 16, 2026" ? "2026-06-16"
+                    : post.date === "June 15, 2026" ? "2026-06-15"
                     : post.date === "June 14, 2026" ? "2026-06-14"
                     : post.date === "June 13, 2026" ? "2026-06-13"
                     : post.date === "June 10, 2026" ? "2026-06-10" 
@@ -43,7 +44,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (
     post.slug === "decorative-plants-for-home-online-india" ||
     post.slug === "best-indoor-plants-for-renters-india" ||
-    post.slug === "indoor-plants-for-rented-apartments-india"
+    post.slug === "indoor-plants-for-rented-apartments-india" ||
+    post.slug === "how-to-buy-indoor-plants-online-india"
   ) {
     featuredProducts = await prisma.product.findMany({
       where: {
@@ -126,6 +128,13 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* FAQPage Schema (if present) */}
+      {post.faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(post.faqSchema) }}
+        />
+      )}
 
       {/* Article Header */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8">

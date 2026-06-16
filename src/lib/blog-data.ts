@@ -16,6 +16,7 @@ export interface BlogPost {
     avatar: string;
   };
   content: string;
+  faqSchema?: any;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -1785,5 +1786,526 @@ export const BLOG_POSTS: BlogPost[] = [
   </div>
 </div>
 `
+  },
+  {
+    slug: "how-to-buy-indoor-plants-online-india",
+    title: "How to Buy Indoor Plants Online in India Without Getting It Wrong",
+    excerpt: "The practical guide to buying indoor plants online in India — what to check before ordering, how to read photos, what arrives vs what was shown, and what to do day one. From Rs 299.",
+    category: "Buying Guide",
+    date: "June 16, 2026",
+    readTime: "9 min read",
+    image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/how-to-buy-indoor-plants-online.webp",
+    featured: true,
+    metaTitle: "How to Buy Indoor Plants Online in India Without Getting It Wrong",
+    metaDescription: "The practical guide to buying indoor plants online in India — what to check before ordering, how to read photos, what arrives vs what was shown, and what to do day one. From Rs 299.",
+    keywords: [
+      "buy indoor plants online India",
+      "buy indoor plants online India safely",
+      "how to buy plants online India",
+      "indoor plants online delivery India",
+      "buying plants online tips India",
+      "best way to buy plants online India",
+      "online plant shopping India guide"
+    ],
+    author: {
+      name: "Dr. Anjali Desai",
+      role: "Lead Horticulturist",
+      avatar: "AD"
+    },
+    faqSchema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it safe to buy indoor plants online in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if you buy from a nursery that packs plants in breathable cardboard, waters them before dispatch, and ships within 1-2 days of ordering. The risks — wilting, root damage, leaf drop — come from bad packaging and slow transit, not from online buying itself. Check that the site shows real plant photos (not only styled product shots) and has a damage return policy before ordering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I check before buying a plant online in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check four things: the site's damage return policy and window (IndoorPlant.in accepts damage reports within 12 hours of delivery), whether product photos show real plants in real homes, what the delivery time is for your city, and whether the care guide tells you the watering frequency and light requirement specifically — not vague terms like 'occasionally' or 'bright conditions.'"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my plant look different from the product photo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Product photos are shot with professional lighting which makes leaves look more saturated, fuller, and larger than they appear in a home environment. This is not deception — it is photography. A healthy plant will look like the photo once it is settled in your home with good light. If the plant looks genuinely different in shape or species from what was shown, that is worth flagging to the seller."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My plant arrived drooping. Is it dead?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Almost certainly not. Drooping on arrival is transit stress — the plant has been in darkness, at varying temperatures, without light for 1-3 days. Place it in its intended spot, check the soil moisture, and give it 3-5 days before making any judgment. Most plants that arrive drooping recover fully within a week. True damage is physical: broken stems, collapsed root ball, severe bruising. That should be reported with photos within 12 hours of delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best time of year to buy plants online in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "October to February is the best window for most Indian cities. Plants survive transit better in cooler temperatures. Avoid ordering large plants during peak monsoon months (July-August) when packaging can get damp and fungal issues are more likely in transit. Small succulents like the Jade Plant can be ordered year-round because they handle temperature stress well."
+          }
+        }
+      ]
+    },
+    content: `
+<p class="lead text-xl text-gray-650 mb-8 leading-relaxed font-light">
+  Buying a plant online in India is not difficult. Getting it right — receiving something healthy, settling it into the right spot, keeping it alive past the first month — that is where most people go wrong, and it usually has nothing to do with the plant itself.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  This guide covers every step from deciding what to order to what to do on the day the package arrives. It is written for the Indian context specifically: Indian apartments, Indian transit conditions, Indian seasons, and the specific things that go wrong when buying plants online in this country.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  By the end of it, you will know exactly what to check before placing any order, what a good plant site looks like versus a bad one, and what to do if something goes wrong.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  Why Buying Plants Online in India Fails — The Real Reasons
+</h2>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  Most failed online plant purchases in India come down to one of three things. The wrong plant for the wrong spot. A site with bad packaging. Or a buyer who did not know what to expect when the box arrived.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  None of these are permanent problems. They are knowledge gaps, and this article fills them.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold text-emerald-800">
+  The plant you received is probably fine. What failed was the information around the purchase.
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs hover:shadow-md transition-shadow">
+    <div class="w-10 h-10 rounded-full bg-red-50 text-red-600 flex items-center justify-center mb-3 text-lg font-bold">1</div>
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2">Wrong Spot</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      The plant arrived healthy. You put it somewhere that looked good to you. Three weeks later it declined. You assumed it was a bad plant. It was not — it was a bad spot.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs hover:shadow-md transition-shadow">
+    <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-3 text-lg font-bold">2</div>
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2">Bad Packaging</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      Some sites ship plants in bags or thin boxes. The plant gets crushed, the soil spills, the root ball shifts. This is the seller's problem, not yours — and it is avoidable.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs hover:shadow-md transition-shadow">
+    <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-3 text-lg font-bold">3</div>
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2">Wrong Expectations</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      The plant looked incredible in the photo. It arrived looking different. This is normal — product photos use professional lighting. The plant is real. The shock is the expectation gap.
+    </p>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2 flex items-center gap-2">
+  <span>📍</span> Step 1 — Know the Spot Before You Choose the Plant
+</h2>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  This is the step most people skip and the reason most plants die. You should know the following about the exact spot you want to put the plant before you open any website.
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div class="bg-emerald-50/20 border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2 flex items-center gap-2">
+      <span class="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">💡</span>
+      How many hours of natural light?
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      Not the room — the specific spot. A room can have a bright window and a dim corner three metres away. They are completely different plant environments.
+    </p>
+  </div>
+  <div class="bg-emerald-50/20 border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2 flex items-center gap-2">
+      <span class="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">☀️</span>
+      Does direct sunlight hit that spot?
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      Or is it only ambient room light? Direct sun and indirect light are completely different for a plant. The Lucky Jade Plant needs direct sun. Most other plants do not.
+    </p>
+  </div>
+  <div class="bg-emerald-50/20 border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2 flex items-center gap-2">
+      <span class="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">🧭</span>
+      Which direction does the window face?
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      North-facing = consistent low light year-round. South/west-facing = stronger afternoon light. East-facing = good morning light that fades by afternoon.
+    </p>
+  </div>
+  <div class="bg-emerald-50/20 border border-emerald-100 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2 flex items-center gap-2">
+      <span class="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">❄️</span>
+      Does an AC run in that room?
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      Air conditioning reduces humidity. This matters for moisture-loving plants like the <a href="/product/monstera-broken-heart" class="text-[#2D6A4F] hover:underline font-bold">Monstera Broken Heart</a> more than for drought-tolerant plants like the <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a>.
+    </p>
+  </div>
+</div>
+
+<div class="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-6 my-8">
+  <h4 class="font-bold text-emerald-900 mt-0 mb-2 flex items-center gap-2">
+    🤖 Shortcut: Use the AI Plant Advisor
+  </h4>
+  <p class="text-xs text-gray-700 m-0 leading-relaxed">
+    If you know the answers to the four questions above, use the <a href="/ai-advisor" class="text-[#2D6A4F] hover:underline font-bold">AI Plant Advisor at indoorplant.in/ai-advisor</a>. It asks you exactly these questions and gives you a specific recommendation from IndoorPlant.in's catalogue. It is free and takes under a minute.
+  </p>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2 flex items-center gap-2">
+  <span>🔍</span> Step 2 — What to Check on Any Plant Website Before Ordering
+</h2>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  Not all online plant stores in India are the same. These are the six things that separate a trustworthy one from one that is going to send you something disappointing.
+</p>
+
+<div class="space-y-6 my-8">
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">1</span>
+      Real product photos — not only styled shots
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      A good plant site shows photographs of the actual plant in ordinary conditions — a pot on a kitchen counter, a shelf in someone's home, the root ball after unpotting. Styled studio photography with professional lighting makes every plant look extraordinary. It tells you almost nothing about what you will receive. IndoorPlant.in shows real plant images at multiple angles.
+    </p>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">2</span>
+      Specific care information — not vague terms
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      "Bright conditions" is not useful. "Bright indirect light, within a metre of a window" is. "Water occasionally" is not useful. "Water every 7-10 days in summer, every 12-15 days in monsoon" is. IndoorPlant.in includes specific watering frequency and light requirements on every product page.
+    </p>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">3</span>
+      A damage return policy with a specific time window
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      IndoorPlant.in accepts damage reports within 12 hours of delivery, for visibly damaged plants only. You photograph the damage and email <a href="mailto:support@indoorplant.in" class="text-[#2D6A4F] hover:underline font-bold">support@indoorplant.in</a> with your order number. That is a specific process. "We will take care of you" is not a policy.
+    </p>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">4</span>
+      Delivery time specific to your city
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      A plant sitting in a transit hub for four days is a plant that arrived in poor condition. IndoorPlant.in delivers to metro cities in 2-3 business days and most other cities in 3-5 days. If a site guarantees next-day delivery but ships from 1,500km away, question the logistics.
+    </p>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">5</span>
+      Current sale prices versus original prices
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      Many Indian plant sites show dramatically discounted "sale" prices. This is common retail — verify the price at checkout. The prices in this article are current sale prices verified on IndoorPlant.in product pages, June 2026.
+    </p>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3 flex items-center gap-2">
+      <span class="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 text-sm font-bold">6</span>
+      Social proof that is specific and real
+    </h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      On IndoorPlant.in, the <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> has 62 verified reviews averaging 4.5 stars. The <a href="/product/aglaonema-snow-white-plant" class="text-[#2D6A4F] hover:underline font-bold">Aglaonema Snow White</a> has 29 reviews at 4.3. A site with five five-star reviews across a hundred products is a different signal.
+    </p>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2 flex items-center gap-2">
+  <span>📄</span> Step 3 — How to Read a Product Page Properly
+</h2>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  Most people look at the photo, note the price, and add to cart. Three minutes of reading the product page first saves you from 90% of disappointment after delivery.
+</p>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2">🔬 The Botanical Name</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      "Money Plant" in Bangalore often means something different from "Money Plant" in Delhi. If you are searching for a specific plant you saw somewhere, search by botanical name. The <a href="/product/golden-money-plant" class="text-[#2D6A4F] hover:underline font-bold">Golden Money Plant</a> is <em>Epipremnum aureum</em>. The <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> is <em>Crassula ovata</em>.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2">📏 Pot Size and Plant Size</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      A plant that looks substantial in a product photo may arrive in an 8cm nursery pot. This is not a scam — it is just a size you did not research. Look for the pot size in centimetres or the plant height range on the product page.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2">🐾 Pet Safety Status</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      IndoorPlant.in marks pet safety on each product. Pet safe: <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a>, <a href="/product/aglaonema-red-lipstick-plant" class="text-[#2D6A4F] hover:underline font-bold">Aglaonema Red Lipstick</a>, <a href="/product/aglaonema-snow-white-plant" class="text-[#2D6A4F] hover:underline font-bold">Snow White</a>, <a href="/product/bamboo-palm-plant" class="text-[#2D6A4F] hover:underline font-bold">Bamboo Palm</a>. Not pet safe: money plants, monstera.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2">📦 Stock Status</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      A live product page does not always mean in stock. Check whether the Add to Cart button is active and whether a delivery date estimate is shown before committing.
+    </p>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  🌿 Step 4 — Which Plant for Which Situation
+</h2>
+<p class="mb-8 text-gray-750 leading-relaxed">
+  These are the plants currently available at IndoorPlant.in with honest notes on which situation each one suits.
+</p>
+
+<div class="space-y-6 my-8">
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Most Forgiving Start</span>
+        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Golden Money Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-xl font-extrabold text-emerald-700">Rs 309</span>
+        <span class="text-sm text-gray-400 line-through">Rs 680</span>
+      </div>
+    </div>
+    <p class="text-xs text-gray-700 leading-relaxed mb-3">
+      Water every 7-10 days. Low to bright indirect light. Adapts to almost any Indian apartment condition. The right first plant for anyone uncertain about their light or watering consistency.
+    </p>
+    <a href="/product/golden-money-plant" class="text-[#2D6A4F] hover:underline font-bold text-xs">View Product Details →</a>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-100 px-2.5 py-1 rounded-full">Best Value</span>
+        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-0 font-playfair">N'Joy Money Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-xl font-extrabold text-emerald-700">Rs 299</span>
+        <span class="text-sm text-gray-400 line-through">Rs 878</span>
+      </div>
+    </div>
+    <p class="text-xs text-gray-700 leading-relaxed mb-3">
+      For a shelf, desk, or pale wall. Crisp white-and-green variegated leaves. Best within a metre of a window. Looks considerably more expensive than Rs 299.
+    </p>
+    <a href="/product/njoy-money-plant" class="text-[#2D6A4F] hover:underline font-bold text-xs">View Product Details →</a>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Pet Safe & Colorful</span>
+        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Aglaonema Red Lipstick</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-xl font-extrabold text-emerald-700">Rs 399</span>
+        <span class="text-sm text-gray-400 line-through">Rs 878</span>
+      </div>
+    </div>
+    <p class="text-xs text-gray-700 leading-relaxed mb-3">
+      For a north-facing room or dim corner. One of the only genuinely colourful plants that holds its colour in low-light Indian rooms. Pet safe.
+    </p>
+    <a href="/product/aglaonema-red-lipstick-plant" class="text-[#2D6A4F] hover:underline font-bold text-xs">View Product Details →</a>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-[#2D6A4F] bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Top Rated & Hardy</span>
+        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Lucky Jade Plant</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-xl font-extrabold text-emerald-700">Rs 299</span>
+        <span class="text-sm text-gray-400 line-through">Rs 649</span>
+      </div>
+    </div>
+    <p class="text-xs text-gray-700 leading-relaxed mb-3">
+      For someone who travels frequently or forgets to water. A succulent that stores water in its tissues. Water every 2-3 weeks. Needs a sunny windowsill. Pet safe. 62 reviews, 4.5 stars.
+    </p>
+    <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold text-xs">View Product Details →</a>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">NASA Clean Air Study</span>
+        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Bamboo Palm</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-xl font-extrabold text-emerald-700">Rs 389</span>
+        <span class="text-sm text-gray-400 line-through">Rs 856</span>
+      </div>
+    </div>
+    <p class="text-xs text-gray-700 leading-relaxed mb-3">
+      For one large empty corner. Grows to 4-5 feet, fills floor space naturally. Air purifying. Pet safe. Budget Rs 300-500 extra for a terracotta floor planter.
+    </p>
+    <a href="/product/bamboo-palm-plant" class="text-[#2D6A4F] hover:underline font-bold text-xs">View Product Details →</a>
+  </div>
+
+  <div class="bg-white border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all duration-200">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-gray-100">
+      <div>
+        <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Statement Climber</span>
+        <h3 class="text-xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Monstera Broken Heart</h3>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="text-xl font-extrabold text-emerald-700">Rs 349</span>
+        <span class="text-sm text-gray-400 line-through">Rs 768</span>
+      </div>
+    </div>
+    <p class="text-xs text-gray-700 leading-relaxed mb-3">
+      For a bright corner with room for vertical growth. Split leaves, fast grower in Indian monsoon conditions. Not pet safe. Will need a moss pole within 6-8 months.
+    </p>
+    <a href="/product/monstera-broken-heart" class="text-[#2D6A4F] hover:underline font-bold text-xs">View Product Details →</a>
+  </div>
+</div>
+
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold">
+  Browse all plants at <a href="/shop" class="text-primary hover:underline font-bold">indoorplant.in/shop</a>.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  📦 Step 5 — What to Expect When the Package Arrives
+</h2>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+  <div class="border border-emerald-100 bg-emerald-50/10 rounded-2xl p-6">
+    <h3 class="text-lg font-bold text-emerald-900 mt-0 mb-2">📅 First 24 Hours</h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      Do not water immediately. Check the soil first — if it feels moist, leave it. If bone dry, give moderate watering. Place the plant in the spot you planned. Do not fertilise. Do not repot. Do not move it repeatedly.
+    </p>
+  </div>
+  <div class="border border-emerald-100 bg-emerald-50/10 rounded-2xl p-6">
+    <h3 class="text-lg font-bold text-emerald-900 mt-0 mb-2">🌿 First Week</h3>
+    <p class="text-xs text-gray-700 leading-relaxed m-0">
+      Watch it. Check the soil every 2-3 days by pressing a finger 2cm into the surface. Water when dry. Most plants that look poor on arrival look noticeably better by day 5. The leaves lift, the colour returns, the plant adjusts to the light.
+    </p>
+  </div>
+</div>
+
+<div class="bg-amber-50 border border-amber-200/80 rounded-2xl p-6 my-8">
+  <h4 class="font-bold text-amber-900 mt-0 mb-2 flex items-center gap-2">
+    ⚠️ When to Report a Problem
+  </h4>
+  <p class="text-xs text-gray-700 m-0 leading-relaxed">
+    Visible physical damage — broken stems, crushed leaves, root ball collapsed — photograph it and contact <a href="mailto:support@indoorplant.in" class="text-primary hover:underline font-bold">support@indoorplant.in</a> within 12 hours of delivery with your order number and photos. Transit stress (drooping, slight wilting, pale leaves) resolves on its own and is not a damage claim. Give it 5 days first.
+  </p>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  ⚠️ The Specific Mistakes That Cause Most Online Plant Failures
+</h2>
+
+<div class="space-y-6 my-8">
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2">Buying for the photo, not the light condition</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      The <a href="/product/monstera-broken-heart" class="text-[#2D6A4F] hover:underline font-bold">Monstera Broken Heart</a> looks extraordinary in product photos. In a north-facing room with no direct light, it produces plain un-split leaves and looks nothing like the photos. Match the plant to the light, not to the photo.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2">Watering on a schedule instead of checking the soil</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      "Water every seven days" is a guideline, not a rule. In Indian monsoon months when humidity is high, seven days may become twelve. In peak summer with AC running, seven days may become five. The only reliable signal is the soil. Finger two centimetres into the pot. If dry, water.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2">Putting the plant where it looks good instead of where it lives well</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      Choose the spot by light first. Style the pot and surrounding area to make the spot look good second. These are different decisions.
+    </p>
+  </div>
+  <div class="border border-gray-150 rounded-2xl p-6 bg-white shadow-xs">
+    <h3 class="text-base font-bold text-gray-900 mt-0 mb-2">Repotting immediately after arrival</h3>
+    <p class="text-xs text-gray-650 leading-relaxed m-0">
+      The plant just went through transit stress. Repotting adds another layer. Unless the plant is visibly root-bound with roots growing out of the drainage hole, wait at least 4-6 weeks after arrival before repotting.
+    </p>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  🏪 How to Choose Between IndoorPlant.in and Other Sites
+</h2>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  You do not have to buy from IndoorPlant.in. The advice in this article applies to any platform you choose to buy from.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  The reason IndoorPlant.in exists is a specific gap: every other Indian plant site is a generalist store selling seeds, fertiliser, grow bags, outdoor plants, and everything garden-related alongside indoor plants. IndoorPlant.in sells only indoor plants, curated for Indian urban apartments, with an <a href="/ai-advisor" class="text-[#2D6A4F] hover:underline font-bold">AI advisor</a> to match you to the right plant, and care guides written for Indian climates.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold">
+  If you know what you want, browse <a href="/shop" class="text-primary hover:underline font-bold">indoorplant.in/shop</a>. Eight plants. All verified in stock. All with live prices.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  ❓ FAQ — Honest Answers to What People Actually Ask
+</h2>
+
+<div class="space-y-6 my-8">
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Is it safe to buy indoor plants online in India?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Yes, with the right site and realistic expectations. The risks are transit stress (which is normal and temporary) and bad packaging (which is the site's responsibility). A site with breathable packaging, specific care instructions, and a clear damage policy eliminates most of the risk.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Why does the plant look different from the product photo?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Product photos use professional lighting that makes leaves look more saturated and fuller. This is photography, not misrepresentation. A healthy plant settles into its photo appearance within 2-3 weeks of arriving in good light conditions. If the plant is a different species from what was shown, that is a different issue worth raising with the seller.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: My plant arrived drooping. Is it dead?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Almost certainly not. Drooping on arrival is transit stress. Place it in its intended spot, check soil moisture, and give it 3-5 days. Most plants recover fully. True damage is physical — broken stems, collapsed root ball. Report that with photos within 12 hours.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: What is the best time to buy plants online in India?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: October to February is the safest window. Cooler temperatures mean less heat stress in transit. Avoid ordering large plants during peak monsoon (July-August). Succulents like the <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> can be ordered year-round.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Can I return a plant if I change my mind?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: At IndoorPlant.in — no. Returns are accepted only for plants that arrive visibly damaged, reported within 12 hours with a photo. Plants are living things and returning them through transit causes further damage.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: The soil arrived completely dry. Is the plant ruined?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: No. Plants are sometimes dispatched with drier soil to reduce weight and fungal risk in a sealed box. Water it moderately on arrival and the plant will recover. If the soil is bone dry AND the plant has significant physical damage, report both in your damage claim within 12 hours.
+    </p>
+  </div>
+
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: How do I know which plant is right for my home?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-xs">
+      A: Use the <a href="/ai-advisor" class="text-[#2D6A4F] hover:underline font-bold">AI Plant Advisor at indoorplant.in/ai-advisor</a>. It asks three questions — your room's light level, your watering habits, and whether you have pets — and gives a specific recommendation from the current catalogue. It takes under a minute and it is free.
+    </p>
+  </div>
+</div>
+`
   }
 ];
+
