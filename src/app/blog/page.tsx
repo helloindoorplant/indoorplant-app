@@ -47,11 +47,11 @@ export default function BlogPage() {
         {featuredPost && (
           <Link href={`/blog/${featuredPost.slug}`} className="group block">
             <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-150 flex flex-col md:flex-row hover:shadow-md transition-shadow duration-300">
-              <div className="md:w-3/5 h-64 md:h-[400px] relative overflow-hidden bg-gray-100">
+              <div className="md:w-3/5 h-64 md:h-auto relative overflow-hidden bg-gray-100">
                 <img
                   src={featuredPost.image}
                   alt={featuredPost.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
               <div className="md:w-2/5 p-8 md:p-12 flex flex-col justify-center">
