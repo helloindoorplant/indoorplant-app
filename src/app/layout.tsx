@@ -89,6 +89,9 @@ export default function RootLayout({
       className={`${poppins.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="d0470d23-781d-4dcd-a3c0-582b163f82c9"></script>
+      </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col selection:bg-primary/20 selection:text-primary">
         <script
           type="application/ld+json"
