@@ -204,6 +204,7 @@ export async function POST(req: Request) {
         execute: async (args: any) => {
           
           let searchText = 'all';
+          let isSpecificPlantQuery = false;
           try {
             const extractRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
               method: 'POST',
@@ -211,7 +212,7 @@ export async function POST(req: Request) {
               body: JSON.stringify({
                 model: 'llama-3.3-70b-versatile',
                 messages: [
-                  { role: 'system', content: 'Extract the specific plant name or category the user is looking for. Reply ONLY with a valid JSON object: {"query": "..."}. If they are asking generally, use "all".' },
+                  { role: 'system', content: 'Extract the specific plant name or category the user is looking for. Reply ONLY with a valid JSON object: {"query": "...", "isSpecificPlant": true/false}. Set "isSpecificPlant" to true ONLY if the user mentioned a specific plant species/variety name (e.g. "money plant", "snake plant", "peace lily", "jade plant"). Set it to false if they are asking generally (e.g. "best plant", "air purifying plant", "plant for bedroom"). If they are asking generally, use "all" for the query.' },
                   { role: 'user', content: lastUserMsg }
                 ],
                 response_format: { type: 'json_object' }
@@ -222,6 +223,7 @@ export async function POST(req: Request) {
             if (extracted.query) {
               searchText = extracted.query.toLowerCase();
             }
+            isSpecificPlantQuery = extracted.isSpecificPlant === true;
           } catch (e) {
             console.error("Query extraction sub-agent failed", e);
             searchText = (args && args.query) ? args.query.toLowerCase() : 'all';
@@ -273,9 +275,13 @@ export async function POST(req: Request) {
           try {
             let products = await prisma.product.findMany({
               where: whereClause,
-              take: 4,
+              take: isSpecificPlantQuery ? 1 : 4, // Show only 1 result for specific plant queries
               select: { id: true, name: true, slug: true, price: true, salePrice: true, images: true, petFriendly: true, careLevel: true }
             });
+
+            // Track if the specific plant was found (for honest messaging)
+            const specificPlantFound = isSpecificPlantQuery && products.length > 0;
+            const specificPlantNotFound = isSpecificPlantQuery && products.length === 0;
 
             // Smart Fallback 1: If no exact match but user wanted a category/filter, return best products in that category
             const hasSpecialFilters = wantsPetFriendly || wantsAirPurifier || wantsEasy || wantsFeatured;
@@ -290,28 +296,39 @@ export async function POST(req: Request) {
                }
             }
 
-            // Ultimate Fallback 2: If we still have 0 products, fetch 4 random/popular products so Priya has something to pivot to
+            // Fallback 2: If specific plant not found, get alternatives to suggest
             if (products.length === 0) {
               products = await prisma.product.findMany({
                 where: { stock: { gt: 0 } },
                 take: 4,
-                orderBy: { price: 'asc' }, // just a basic fallback
+                orderBy: { price: 'asc' },
                 select: { id: true, name: true, slug: true, price: true, salePrice: true, images: true, petFriendly: true, careLevel: true }
               });
             }
 
             let explanation = 'Here are some great plant options that match your needs!';
             try {
+              // Build the right explanation prompt based on whether specific plant was found or not
+              let explanationSystemPrompt = `You are an AI plant advisor representing IndoorPlant.in. Keep it to 1-2 sentences. Speak like you are talking to a 5-year-old child (ELI5) in extremely simple, friendly language.
+[CRITICAL RULE]: NEVER use the words "Grok", "Groq", "Llama", or any other model name in your responses. If asked who you are, refer to yourself only as the "IndoorPlant AI Advisor".
+[!!! CRITICAL LANGUAGE OVERRIDE !!!]: YOU MUST REPLY IN THE EXACT SAME LANGUAGE AS THE USER. IF THE USER WRITES HINDI ('kaise ho'), REPLY IN HINGLISH (Hindi written in English letters). IF BENGALI ('kemon acho'), REPLY IN BANGLISH (Bengali written in English letters). DO NOT USE ACTUAL HINDI OR BENGALI ALPHABETS! DO NOT USE ENGLISH UNLESS THEY USED ENGLISH!`;
+
+              if (specificPlantNotFound) {
+                explanationSystemPrompt += `\nIMPORTANT: The user asked for a SPECIFIC plant that we DO NOT have. You must HONESTLY tell them: "Sorry, we don't currently have [plant name] available." Then warmly suggest the alternative plants we DO have and explain why they are a great choice.`;
+              } else if (specificPlantFound) {
+                explanationSystemPrompt += `\nThe user asked for a specific plant and we HAVE it! Confidently recommend this exact plant. Explain why it's an amazing choice.`;
+              } else {
+                explanationSystemPrompt += `\nExplain why these plants are the absolute best choice with extreme confidence.`;
+              }
+
               const groqRes = await fetch('https://api.groq.com/openai/v1/chat/completions', {
                 method: 'POST',
                 headers: { 'Authorization': `Bearer ${process.env.GROQ_API_KEY}`, 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                   model: 'llama-3.3-70b-versatile',
                   messages: [
-                    { role: 'system', content: `You are an AI plant advisor representing IndoorPlant.in. Keep it to 1-2 sentences. Speak like you are talking to a 5-year-old child (ELI5) in extremely simple, friendly language. 
-[CRITICAL RULE]: NEVER use the words "Grok", "Groq", "Llama", or any other model name in your responses. If asked who you are, refer to yourself only as the "IndoorPlant AI Advisor".
-[!!! CRITICAL LANGUAGE OVERRIDE !!!]: YOU MUST REPLY IN THE EXACT SAME LANGUAGE AS THE USER. IF THE USER WRITES HINDI ('kaise ho'), REPLY IN HINGLISH (Hindi written in English letters). IF BENGALI ('kemon acho'), REPLY IN BANGLISH (Bengali written in English letters). DO NOT USE ACTUAL HINDI OR BENGALI ALPHABETS! DO NOT USE ENGLISH UNLESS THEY USED ENGLISH! Do not output anything else. If products were found, explain why they are the absolute best choice with extreme confidence. CRITICAL PIVOT RULE: If the user asked for a specific plant that is NOT in the list of returned products, you MUST NEVER say "we don't have it" or "out of stock". Instead, validate their idea warmly and immediately pivot to why the products you DID find are an even better choice for them.` },
-                    { role: 'user', content: `The user asked: "${lastUserMsg}". We found ${products.length} plants: ${products.length > 0 ? products.map((p: any) => p.name).join(', ') : 'None'}. Write the ELI5 response.` }
+                    { role: 'system', content: explanationSystemPrompt },
+                    { role: 'user', content: `The user asked: "${lastUserMsg}". ${specificPlantNotFound ? 'We DO NOT have the plant they asked for.' : ''} We are showing these ${products.length} plants: ${products.length > 0 ? products.map((p: any) => p.name).join(', ') : 'None'}. Write the ELI5 response.` }
                   ]
                 })
               });
@@ -321,7 +338,7 @@ export async function POST(req: Request) {
               console.error("Groq explanation fetch failed", e);
             }
 
-            return { success: true, products, explanation };
+            return { success: true, products, explanation, specificPlantNotFound };
           } catch (error: any) {
             
             return { success: false, error: error.message };
