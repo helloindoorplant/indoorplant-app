@@ -213,7 +213,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       </div>
 
       {/* Main Product Section Wrapper */}
-      <main className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-24">
+      <main className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ProductDetailsClient product={product} initialImages={images} />
       </main>
       {/* Reviews Section */}

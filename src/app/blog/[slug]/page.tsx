@@ -5,6 +5,7 @@ import { BLOG_POSTS } from "@/lib/blog-data";
 import { Metadata } from "next";
 import prisma from "@/lib/prisma";
 import { ProductCardCarousel } from "@/components/blog/ProductCardCarousel";
+import { RelatedBlogsCarousel } from "@/components/blog/RelatedBlogsCarousel";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -184,7 +185,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Hero Image */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="w-full h-[400px] md:h-[600px] relative overflow-hidden rounded-2xl bg-gray-100">
+        <div className="w-full h-[220px] sm:h-[360px] md:h-[560px] relative overflow-hidden rounded-2xl bg-gray-100">
           <img
             src={post.image}
             alt={post.title}
@@ -206,7 +207,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       )}
       
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
         <div className="bg-gray-50 rounded-xl p-8 flex items-center flex-col sm:flex-row gap-6">
           <div className="w-20 h-20 rounded-full bg-primary/10 text-primary shrink-0 flex items-center justify-center shadow-sm font-bold text-xl">
             {post.author.avatar}
@@ -219,6 +220,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </div>
       </div>
+
+      {/* Related Blogs Carousel */}
+      <RelatedBlogsCarousel posts={BLOG_POSTS} currentSlug={post.slug} />
     </div>
   );
 }
