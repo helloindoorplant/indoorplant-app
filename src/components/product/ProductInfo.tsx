@@ -185,9 +185,9 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
       <div className="hidden md:block space-y-4 mb-12">
         <div className="flex items-center gap-4">
           {/* Quantity */}
-          <div className="w-[170px] shrink-0 flex items-center border-2 border-border/50 rounded-[20px] bg-white h-[68px]">
+          <div className="w-[200px] shrink-0 flex items-center border-2 border-border/50 rounded-[20px] bg-white h-[68px]">
             <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">-</button>
-            <span className="w-10 text-center font-extrabold text-xl">{quantity}</span>
+            <span className="w-12 text-center font-extrabold text-xl">{quantity}</span>
             <button onClick={() => setQuantity(quantity + 1)} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">+</button>
           </div>
 
@@ -199,12 +199,11 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
           </div>
 
           {/* Heart / Wishlist */}
-          <div className="w-[84px] shrink-0">
+          <div className="w-[100px] shrink-0">
             <Button 
               variant="outline" 
-              size="icon" 
               onClick={handleToggleWishlist}
-              className={`w-[84px] h-[68px] rounded-[20px] border-2 transition-all ${isWished ? 'bg-rose-50 border-rose-200 text-rose-500' : 'hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200'}`}
+              className={`w-full h-[68px] rounded-[20px] border-2 transition-all ${isWished ? 'bg-rose-50 border-rose-200 text-rose-500' : 'hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200'}`}
             >
               <Heart className={`h-6 w-6 ${isWished ? 'fill-current' : ''}`} />
             </Button>
