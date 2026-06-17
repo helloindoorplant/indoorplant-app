@@ -181,16 +181,58 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
 
 
 
+      {/* Actions (Desktop Version) */}
+      <div className="hidden md:block space-y-4 mb-12">
+        <div className="flex items-center gap-4">
+          {/* Quantity */}
+          <div className="w-[170px] shrink-0 flex items-center border-2 border-border/50 rounded-[20px] bg-white h-[68px]">
+            <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">-</button>
+            <span className="w-10 text-center font-extrabold text-xl">{quantity}</span>
+            <button onClick={() => setQuantity(quantity + 1)} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">+</button>
+          </div>
+
+          {/* Add to Cart */}
+          <div className="flex-1">
+            <Button onClick={handleAddToCart} size="lg" className="w-full h-[68px] rounded-[20px] text-[18px] font-extrabold shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
+              Add to Cart - ₹{displayPrice * quantity}
+            </Button>
+          </div>
+
+          {/* Heart / Wishlist */}
+          <div className="w-[84px] shrink-0">
+            <Button 
+              variant="outline" 
+              size="icon" 
+              onClick={handleToggleWishlist}
+              className={`w-[84px] h-[68px] rounded-[20px] border-2 transition-all ${isWished ? 'bg-rose-50 border-rose-200 text-rose-500' : 'hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200'}`}
+            >
+              <Heart className={`h-6 w-6 ${isWished ? 'fill-current' : ''}`} />
+            </Button>
+          </div>
+        </div>
+
+        {/* Buy It Now */}
+        <div className="w-full">
+          <Button 
+            onClick={handleBuyNow}
+            size="lg" 
+            className="w-full h-[68px] rounded-[20px] text-[18px] font-extrabold bg-[#052E16] text-white hover:bg-[#064E3B] shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all"
+          >
+            Buy It Now
+          </Button>
+        </div>
+      </div>
+
       {/* Actions (Mobile Version) */}
-      <div className="grid grid-cols-12 gap-3 mb-12 md:hidden">
-        {/* Quantity (8 cols) */}
+      <div className="md:hidden grid grid-cols-12 gap-3 mb-12">
+        {/* Quantity */}
         <div className="col-span-8 flex items-center border-2 border-border/50 rounded-[20px] bg-white h-[68px]">
           <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">-</button>
           <span className="w-12 text-center font-extrabold text-xl">{quantity}</span>
           <button onClick={() => setQuantity(quantity + 1)} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">+</button>
         </div>
 
-        {/* Heart (4 cols) */}
+        {/* Heart */}
         <div className="col-span-4">
           <Button 
             variant="outline" 
@@ -202,54 +244,14 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
           </Button>
         </div>
 
-        {/* Add to Cart (12 cols) */}
+        {/* Add to Cart */}
         <div className="col-span-12">
           <Button onClick={handleAddToCart} size="lg" className="w-full h-[68px] rounded-[20px] text-[18px] font-extrabold shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
             Add to Cart - ₹{displayPrice * quantity}
           </Button>
         </div>
 
-        {/* Buy It Now (12 cols) */}
-        <div className="col-span-12">
-          <Button 
-            onClick={handleBuyNow}
-            size="lg" 
-            className="w-full h-[68px] rounded-[20px] text-[18px] font-extrabold bg-[#052E16] text-white hover:bg-[#064E3B] shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all"
-          >
-            Buy It Now
-          </Button>
-        </div>
-      </div>
-
-      {/* Actions (Desktop Version) */}
-      <div className="hidden md:grid grid-cols-12 gap-4 mb-12">
-        {/* Quantity (3 cols) */}
-        <div className="col-span-3 flex items-center border-2 border-border/50 rounded-[20px] bg-white h-[68px]">
-          <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">-</button>
-          <span className="w-12 text-center font-extrabold text-xl">{quantity}</span>
-          <button onClick={() => setQuantity(quantity + 1)} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">+</button>
-        </div>
-
-        {/* Add to Cart (7 cols) */}
-        <div className="col-span-7">
-          <Button onClick={handleAddToCart} size="lg" className="w-full h-[68px] rounded-[20px] text-[18px] font-extrabold shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
-            Add to Cart - ₹{displayPrice * quantity}
-          </Button>
-        </div>
-
-        {/* Heart (2 cols) */}
-        <div className="col-span-2">
-          <Button 
-            variant="outline" 
-            size="icon" 
-            onClick={handleToggleWishlist}
-            className={`w-full h-[68px] rounded-[20px] border-2 transition-all ${isWished ? 'bg-rose-50 border-rose-200 text-rose-500' : 'hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200'}`}
-          >
-            <Heart className={`h-7 w-7 ${isWished ? 'fill-current' : ''}`} />
-          </Button>
-        </div>
-
-        {/* Buy It Now (12 cols) */}
+        {/* Buy It Now */}
         <div className="col-span-12">
           <Button 
             onClick={handleBuyNow}
