@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Leaf } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { FALLBACK_PLANT_IMAGE } from '@/lib/utils';
 
@@ -37,12 +37,7 @@ export function ChatProductCard({ product }: ChatProductCardProps) {
           fill
           className="object-contain mix-blend-multiply"
         />
-        {product.petFriendly && (
-          <div className="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-[10px] font-bold text-green-700 flex items-center gap-1 shadow-sm">
-            <Leaf className="w-3 h-3" />
-            Pet Safe
-          </div>
-        )}
+
       </div>
       
       <div className="p-4 flex flex-col flex-1">
