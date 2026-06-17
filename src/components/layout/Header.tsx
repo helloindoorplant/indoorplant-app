@@ -135,8 +135,8 @@ export function Header() {
             <Link href="/free-plants" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold border-b border-border/50 pb-4 flex justify-between items-center">
               Free Plant <span style={{ backgroundColor: '#1B4332', color: 'white' }} className="text-xs px-2 py-1 rounded-full uppercase animate-pulse font-extrabold shadow-sm">Gift</span>
             </Link>
-            <Link href="/ai-advisor" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold border-b border-border/50 pb-4 flex justify-between">
-              AI Advisor <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full uppercase">New</span>
+            <Link href="/ai-advisor" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold border-b border-border/50 pb-4 flex justify-between items-center">
+              AI Advisor <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full uppercase font-extrabold shrink-0 shadow-sm">New</span>
             </Link>
             <Link href="/care" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold border-b border-border/50 pb-4">Plant Care</Link>
             
