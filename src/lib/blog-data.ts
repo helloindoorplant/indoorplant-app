@@ -1965,7 +1965,7 @@ export const BLOG_POSTS: BlogPost[] = [
   <span>🔍</span> Step 2 — What to Check on Any Plant Website Before Ordering
 </h2>
 <p class="mb-8 text-gray-700 leading-relaxed">
-  Not all online plant stores in India are the same. These are the six things that separate a trustworthy one from one that is going to send you something disappointing.
+  Not all online plant stores in India are the same. These are the six things that separate a trustworthy one from one that is going to send you something disappointing. The season you order in matters — read our <a href="/blog/best-time-buy-plants-online-india" class="text-[#2D6A4F] hover:underline font-bold">month-by-month guide</a>.
 </p>
 
 <div class="space-y-6 my-8">
@@ -2307,5 +2307,356 @@ export const BLOG_POSTS: BlogPost[] = [
 </div>
 `
   }
-];
+,
 
+  {
+    slug: "best-time-buy-plants-online-india",
+    title: "The Best Time of Year to Buy Indoor Plants Online in India",
+    excerpt: "The month you buy your plant matters more than the plant you pick. Why October–February wins, why monsoon is riskier than you think, and what to order in each Indian season.",
+    category: "Buying Guide + Seasonal Care",
+    date: "June 15, 2026",
+    readTime: "8 min read",
+    image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/best-time-buy-plants-online-india.webp",
+    featured: false,
+    metaTitle: "Best Time to Buy Indoor Plants Online in India — Month by Month",
+    metaDescription: "The month you buy your plant matters more than the plant you pick. Why October–February wins, why monsoon is riskier than you think, and what to order in each Indian season.",
+    keywords: [
+      "best time to buy indoor plants online India",
+      "when to buy plants online India",
+      "best season to buy indoor plants India",
+      "buy plants online India monsoon",
+      "indoor plants summer delivery India",
+      "plant delivery India season guide",
+      "ordering plants online India when"
+    ],
+    author: {
+      name: "Dr. Anjali Desai",
+      role: "Lead Horticulturist",
+      avatar: "AD"
+    },
+    faqSchema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the best time of year to buy indoor plants online in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "October to February is the best window for buying indoor plants online in India. Temperatures are cooler across the country, plants survive transit with less stress, and packaging stays dry. Avoid July and August for large tropical plants — monsoon humidity increases fungal risk inside packaging. Succulents like the Jade Plant can be ordered year-round."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to order plants online during monsoon in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is riskier than other months but not impossible. The main risks during monsoon are soggy packaging from rain during last-mile delivery and increased fungal growth in sealed, humid packaging. Ordering small succulents or air-dried plants (jade plant, aglaonemas) is safer than ordering large tropical plants during July and August. If you do order during monsoon, choose a site with breathable cardboard packaging and a damage return policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I order plants online during Indian summer (April–June)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, but with caution. The risk in Indian summer is heat stress during transit — temperatures inside a delivery vehicle parked in the sun can reach 50°C or more. Plants with succulent leaves (jade plant, cacti) handle this better than large tropical leafy plants. If ordering in May or June, choose sites with next-day or 2-day delivery rather than slower standard shipping."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which indoor plants are safe to order online year-round in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Lucky Jade Plant and both Aglaonemas (Red Lipstick and Snow White) are the safest year-round orders in India. The Jade Plant is a succulent and handles heat and dry transit well. Aglaonemas are resilient to temperature variation and their thick leaves retain moisture during transit. The money plant varieties are also reasonably resilient year-round. Large, moisture-sensitive plants like the Bamboo Palm and Monstera are best ordered between October and February."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the city I live in affect when I should buy plants online?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, significantly. Delhi buyers face the harshest summer heat (May–June) and the sharpest winter cold (December–January). Both extremes stress plants in transit. The safest window in Delhi is October–November and February–March. Chennai and Mumbai buyers face year-round humidity — monsoon risk is lower but fungal packaging issues are more likely even outside July–August. Bangalore has the most forgiving climate for year-round plant ordering."
+          }
+        }
+      ]
+    },
+    content: `
+<p class="lead text-xl text-gray-650 mb-8 leading-relaxed font-light">
+  Most plant buyers think about one thing when choosing what to order: the plant. Which variety, which size, which price. The month they are ordering rarely enters the calculation.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  It should. Because the same plant ordered in October and the same plant ordered in July are two completely different transit experiences. One arrives healthy and settles into your home within a week. The other spends three days inside a sealed box in monsoon humidity, arrives with yellowing leaves and a musty smell in the soil, and dies on a shelf before you figure out what went wrong.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold text-emerald-800">
+  The plant did not fail you. The timing did.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  This is the first guide written specifically for Indian buyers on when to order plants online — covering all five Indian climate seasons, what they each do to plants in transit, which plants handle each season best, and the month-by-month calendar you should actually be using before clicking Add to Cart.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  Why Timing Matters More Than You Think
+</h2>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  A plant in transit is a plant under stress. It is in a sealed box. It has no light. It is being moved at unpredictable speeds, loaded and unloaded multiple times, and sitting in a delivery vehicle that has no climate control.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  In ideal conditions — a cool, dry, quick transit — most plants handle this without lasting damage. Two or three days in a box at 20-22°C is uncomfortable but manageable for a healthy plant.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed font-semibold">
+  What changes the outcome entirely is what is happening outside the box.
+</p>
+
+<div class="space-y-6 my-8">
+  <div class="bg-amber-50/50 border border-amber-100 rounded-2xl p-6 shadow-sm">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2 flex items-center gap-2">
+      <span>🔥</span> Summer Heat Stress
+    </h3>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      40°C tarmac temperatures in May mean the inside of a delivery vehicle parked in direct sun can hit 50°C or higher. Tropical plants — moisture-loving, heat-sensitive — experience the equivalent of being placed in an oven for several hours.
+    </p>
+  </div>
+  <div class="bg-blue-50/50 border border-blue-100 rounded-2xl p-6 shadow-sm">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2 flex items-center gap-2">
+      <span>💧</span> Monsoon Humidity
+    </h3>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      95% humidity during monsoon means a sealed cardboard box becomes a damp, warm, enclosed environment within hours of the last-mile delivery starting. Fungal spores that live naturally in soil activate in those conditions. A plant that left the nursery healthy arrives with white fuzz on the soil surface and the early signs of root rot.
+    </p>
+  </div>
+  <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6 shadow-sm">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-2 flex items-center gap-2">
+      <span>❄️</span> Winter Cold Shock
+    </h3>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      Cold fog in Delhi in January means a tropical plant moving from a heated dispatch centre to an unheated vehicle to your door goes through three temperature transitions in under an hour. Cold shock causes leaf drop, especially in moisture-heavy plants like the <a href="/product/monstera-broken-heart" class="text-[#2D6A4F] hover:underline font-bold">Monstera Broken Heart</a>.
+    </p>
+  </div>
+</div>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  None of this is the delivery company's fault. It is physics. The question is which months minimise those risks — and which plants are worth ordering even in the difficult ones.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  The Indian Seasonal Calendar for Plant Ordering
+</h2>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  Here is the month-by-month guide covering all Indian cities.
+</p>
+
+<div class="space-y-8 my-8">
+  <div class="border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-gray-900 m-0">January</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Medium Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> North India is in peak winter. Temperatures drop below 10°C at night. Morning fog reduces visibility and delivery speed. South India is in the most pleasant season of the year with 18-24°C days and dry air.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> If in South India, order anything. If in North India, order succulents and compact plants like the <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> and <a href="/product/aglaonema-red-lipstick-plant" class="text-[#2D6A4F] hover:underline font-bold">Aglaonema Red Lipstick</a>. Avoid tropicals in the North.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-emerald-50 px-6 py-4 border-b border-emerald-100 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-emerald-900 m-0">February</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">Very Low Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> The cold is lifting across North India. South and West India are still in ideal conditions. Humidity is low nationally. Temperatures are in the 18-26°C range across most cities.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> Everything. February is the month to order the plants you have been hesitating on. The <a href="/product/bamboo-palm-plant" class="text-[#2D6A4F] hover:underline font-bold">Bamboo Palm</a> arrives at its best in February transit.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-gray-900 m-0">March</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-green-800 bg-green-100 px-3 py-1 rounded-full">Low Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> Pre-summer across India. Temperatures are rising to 28-34°C in most cities. Still dry and humidity remains low.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> All plants except those going to northern cities in the last week of March (where temperatures spike). The <a href="/product/golden-money-plant" class="text-[#2D6A4F] hover:underline font-bold">Golden Money Plant</a> is a solid choice.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-amber-50 px-6 py-4 border-b border-amber-100 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-amber-900 m-0">April</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Medium Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> Indian summer begins in earnest. 38-42°C in Delhi, Rajasthan, and central India. This is the first month where transit heat becomes a genuine risk for moisture-sensitive plants.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> Succulents and heat-resilient plants only. The <a href="/product/aglaonema-snow-white-plant" class="text-[#2D6A4F] hover:underline font-bold">Aglaonema Snow White</a> handles April well if your city has not hit extreme temperatures yet.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-red-200 rounded-2xl overflow-hidden shadow-sm">
+    <div class="bg-red-50 px-6 py-4 border-b border-red-200 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-red-900 m-0">May</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-white bg-red-600 px-3 py-1 rounded-full shadow-sm">High Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> Peak Indian summer. Delhi regularly reaches 44-46°C. The interior of a delivery vehicle in direct sunlight hits 50°C or above. This is the single highest-risk month.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> Only the <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> if you need something. Avoid all large leafy tropical plants entirely.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-amber-200 rounded-2xl overflow-hidden">
+    <div class="bg-amber-50 px-6 py-4 border-b border-amber-200 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-amber-900 m-0">June</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-200 px-3 py-1 rounded-full">Med-High Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> The transition month. North India is still in peak heat for the first two weeks, then temperatures drop sharply with the first monsoon arrival in coastal states.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> Very city dependent. Know your local monsoon arrival date before placing a large order.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-red-200 rounded-2xl overflow-hidden shadow-sm">
+    <div class="bg-red-50 px-6 py-4 border-b border-red-200 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-red-900 m-0">July & August</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-white bg-red-600 px-3 py-1 rounded-full shadow-sm">High Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> Active monsoon. The problem isn't just rain — it's sustained high humidity inside sealed packaging. Fungal spores activate, and last-mile delivery slows down significantly.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> Be conservative. The <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> and <a href="/product/aglaonema-red-lipstick-plant" class="text-[#2D6A4F] hover:underline font-bold">Aglaonema Red Lipstick</a> are the best choices as their structure handles humidity well.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-amber-200 rounded-2xl overflow-hidden">
+    <div class="bg-amber-50 px-6 py-4 border-b border-amber-200 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-amber-900 m-0">September</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-200 px-3 py-1 rounded-full">Medium Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> Monsoon begins withdrawing from North India. The country is in an in-between state. Humidity risk decreases through the month.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> Wait for late September (after the 20th). The last week of September through October is one of the best buying windows.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-emerald-200 rounded-2xl overflow-hidden shadow-md transform scale-[1.02]">
+    <div class="bg-emerald-100 px-6 py-4 border-b border-emerald-200 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-emerald-900 m-0">October & November</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-white bg-emerald-600 px-3 py-1 rounded-full shadow-sm">Best Months</span>
+    </div>
+    <div class="p-6 bg-emerald-50/30">
+      <p class="text-sm text-gray-800 leading-relaxed mb-4 font-medium">
+        <strong>What is happening:</strong> The single best window to buy indoor plants online in India. Monsoon has withdrawn, temperatures are comfortably warm (24-30°C), and humidity has reduced sharply. Delivery times are fast and consistent.
+      </p>
+      <p class="text-sm text-gray-800 leading-relaxed m-0">
+        <strong>What to order:</strong> Everything on the site. This is the month for large, sensitive plants like the <a href="/product/bamboo-palm-plant" class="text-[#2D6A4F] hover:underline font-bold">Bamboo Palm</a> and <a href="/product/monstera-broken-heart" class="text-[#2D6A4F] hover:underline font-bold">Monstera Broken Heart</a>. Order boldly.
+      </p>
+    </div>
+  </div>
+
+  <div class="border border-gray-200 rounded-2xl overflow-hidden">
+    <div class="bg-gray-50 px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+      <h3 class="text-lg font-bold text-gray-900 m-0">December</h3>
+      <span class="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-3 py-1 rounded-full">Low-Med Risk</span>
+    </div>
+    <div class="p-6">
+      <p class="text-sm text-gray-700 leading-relaxed mb-4">
+        <strong>What is happening:</strong> Ideal conditions in South India. North India temperatures drop below 10°C with fog. Cold transit stress becomes a factor for tropicals in the North.
+      </p>
+      <p class="text-sm text-gray-700 leading-relaxed m-0">
+        <strong>What to order:</strong> South India: order anything freely. North India: stick to Aglaonemas and Jade. Same pattern as January in reverse.
+      </p>
+    </div>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  The One Rule That Overrides All of This
+</h2>
+<p class="mb-6 text-gray-700 leading-relaxed font-semibold text-lg">
+  If you need to order during a difficult month, choose the fastest delivery option the site offers.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  Transit duration matters more than transit conditions. A plant in a well-packed box for 2 days in August humidity arrives better than the same plant in a well-packed box for 5 days in October.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  Slow standard delivery in a bad month is the worst combination. Fast delivery in a bad month is manageable.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  If your city is at the edge of a difficult transit period — late June, early September — waiting one week is often the difference between a plant that arrives stressed and one that arrives well.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  Browse what is available now at <a href="/shop" class="text-[#2D6A4F] hover:underline font-bold">indoorplant.in/shop</a> or use the free <a href="/ai-advisor" class="text-[#2D6A4F] hover:underline font-bold">AI Plant Advisor</a> to get a recommendation that matches both your room and your current ordering window.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  FAQ — Exact Questions People Actually Search
+</h2>
+<div class="space-y-4 mb-8">
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: What is the best time of year to buy indoor plants online in India?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: October and November are the single best months. Monsoon has withdrawn, temperatures are comfortable nationwide, delivery times are consistent, and every plant type travels well. February is the second-best window. Avoid May for large tropical plants and July–August for anything moisture-sensitive.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Is it safe to order plants online during monsoon in India?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: Riskier than other months, not impossible. The main problem during July–August is not rain itself but the humidity inside sealed packaging during last-mile delivery. Succulents (Lucky Jade Plant) and thick-leaved plants (Aglaonemas) handle this significantly better than large tropicals. If you order during monsoon, choose the fastest available delivery.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Can I order plants in May and June (Indian summer)?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: May is the highest-risk month. Interior temperatures in delivery vehicles can exceed 50°C in North India. Succulents are the only plants worth ordering in May without elevated risk. June improves through the month as monsoon arrives and cools coastal cities.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Which plants are safe to order online in India year-round?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: The <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a>, <a href="/product/aglaonema-red-lipstick-plant" class="text-[#2D6A4F] hover:underline font-bold">Aglaonema Red Lipstick</a>, and <a href="/product/aglaonema-snow-white-plant" class="text-[#2D6A4F] hover:underline font-bold">Aglaonema Snow White</a> are the most transit-resilient plants year-round. All three handle heat stress, humidity, and mild cold better than large tropical plants. Save the <a href="/product/bamboo-palm-plant" class="text-[#2D6A4F] hover:underline font-bold">Bamboo Palm</a> and <a href="/product/monstera-broken-heart" class="text-[#2D6A4F] hover:underline font-bold">Monstera Broken Heart</a> for the October–February window.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Does it matter what month I buy a plant if it is going to a city in South India?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: Yes, but less than for North India. Bangalore is the most forgiving city in India for plant ordering — year-round temperatures are moderate and extremes are rare. Chennai and coastal cities have year-round humidity concerns but avoid the temperature extremes of Delhi summers. For South India, the October–February window is still ideal.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: What should I do if I ordered during monsoon and my plant arrived with white mould on the soil?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: Surface soil mould from monsoon transit is usually cosmetic. Scrape off the top layer of affected soil (1-2cm), let the top surface dry completely before the next watering, and move the plant to a spot with good airflow. If mould is on the leaves or stems, wipe leaves with a dilute neem oil solution and report the damage to the seller if it was present on arrival.
+    </p>
+  </div>
+</div>
+`
+  }
+
+];
