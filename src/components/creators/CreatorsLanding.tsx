@@ -273,13 +273,13 @@ export function CreatorsLanding({ products }: CreatorsLandingProps) {
                 <div className="relative w-full max-w-[380px] sm:max-w-[420px] z-10">
                   
                   {/* Trust Badge Floating Top Center */}
-                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white px-4 sm:px-5 py-3 rounded-2xl shadow-xl shadow-[#1B4332]/5 border border-gray-100 flex items-center gap-3 z-30 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
-                    <div className="w-8 h-8 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4 text-[#2D6A4F]" />
+                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white px-3 sm:px-5 py-2 sm:py-3 rounded-xl sm:rounded-2xl shadow-xl shadow-[#1B4332]/5 border border-gray-100 flex items-center gap-2 sm:gap-3 z-30 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2D6A4F]" />
                     </div>
                     <div>
-                      <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Status</p>
-                      <p className="text-sm font-extrabold text-[#1B4332]">Verified Partner</p>
+                      <p className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-wider leading-none">Status</p>
+                      <p className="text-xs sm:text-sm font-extrabold text-[#1B4332] whitespace-nowrap leading-tight">Verified Partner</p>
                     </div>
                   </div>
 
