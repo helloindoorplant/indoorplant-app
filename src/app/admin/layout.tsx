@@ -10,7 +10,8 @@ import {
   Settings,
   Bot,
   LogOut,
-  Bell
+  Bell,
+  Sparkles
 } from "lucide-react";
 
 const adminNav = [
@@ -18,6 +19,7 @@ const adminNav = [
   { name: "Products", href: "/admin/products", icon: Leaf },
   { name: "Orders", href: "/admin/orders", icon: PackageSearch },
   { name: "Customers", href: "/admin/customers", icon: Users },
+  { name: "Creators", href: "/admin/creators", icon: Sparkles },
   { name: "AI Advisor", href: "/admin/ai", icon: Bot },
   { name: "Settings", href: "/admin/settings", icon: Settings },
 ];

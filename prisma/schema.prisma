@@ -160,6 +160,10 @@ model Order {
   orderId       String?     @unique
   signature     String?
   
+  // Creator program fields
+  isCreatorOrder Boolean   @default(false)
+  couponCode     String?
+  
   items         OrderItem[]
   shippingAddr  String      // Stored snapshot of address
   
@@ -237,4 +241,44 @@ model SiteSettings {
   aiEnabled       Boolean @default(true)
   aiTemperature   Float   @default(0.7)
   aiPromptContext String?
+}
+
+// ---------------------------------------------------------
+// Creator Program Models
+// ---------------------------------------------------------
+model CreatorApplication {
+  id            String   @id @default(cuid())
+  name          String
+  email         String
+  phone         String
+  instagram     String
+  facebook      String?
+  note          String?
+  
+  productId     String
+  productName   String   // Snapshot of product name at time of application
+  productImage  String?  // Snapshot of product image
+  
+  status        String   @default("PENDING") // PENDING, APPROVED, REJECTED
+  
+  coupon        Coupon?
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Coupon {
+  id                   String   @id @default(cuid())
+  code                 String   @unique
+  discountPercent      Int      @default(100) // 100% for creator coupons
+  
+  productId            String   // Only valid for this specific product
+  
+  creatorApplicationId String   @unique
+  creatorApplication   CreatorApplication @relation(fields: [creatorApplicationId], references: [id], onDelete: Cascade)
+  
+  isUsed               Boolean  @default(false)
+  usedAt               DateTime?
+  
+  createdAt            DateTime @default(now())
 }

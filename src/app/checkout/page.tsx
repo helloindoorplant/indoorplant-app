@@ -41,7 +41,9 @@ export default function CheckoutPage() {
   const [isProcessing, setIsProcessing] = useState(false);
   const [isGiftPackaging, setIsGiftPackaging] = useState(false);
   const [couponCode, setCouponCode] = useState('');
-  const [appliedCoupon, setAppliedCoupon] = useState<{code: string, discount: number} | null>(null);
+  const [appliedCoupon, setAppliedCoupon] = useState<{code: string, discount: number, isCreator?: boolean, productId?: string} | null>(null);
+  const [couponLoading, setCouponLoading] = useState(false);
+  const [couponError, setCouponError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const [savedAddresses, setSavedAddresses] = useState<any[]>([]);
@@ -79,14 +81,55 @@ export default function CheckoutPage() {
   const discountAmount = appliedCoupon ? appliedCoupon.discount : 0;
   const grandTotal = currentSubtotal + shippingCost + giftPackagingCost - discountAmount;
 
-  const handleApplyCoupon = () => {
+  const handleApplyCoupon = async () => {
     if (!couponCode) return;
     const code = couponCode.toUpperCase();
+    setCouponError('');
+    setCouponLoading(true);
+
+    // Keep TEST5 as a static coupon for non-creators
     if (code === 'TEST5') {
       setAppliedCoupon({ code: 'TEST5', discount: currentSubtotal * 0.05 });
-    } else {
-      setAppliedCoupon(null);
-      alert('Invalid coupon code. Try TEST5!');
+      setCouponLoading(false);
+      return;
+    }
+
+    try {
+      const res = await fetch('/api/checkout/coupon', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ code }),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.valid) {
+        setAppliedCoupon(null);
+        setCouponError(data.error || 'Invalid coupon code.');
+        setCouponLoading(false);
+        return;
+      }
+
+      // Check if the coupon's product is in the cart
+      const matchingItem = items.find(item => item.id === data.productId);
+      if (!matchingItem) {
+        setAppliedCoupon(null);
+        setCouponError('This coupon is for a product not in your cart.');
+        setCouponLoading(false);
+        return;
+      }
+
+      // Apply 100% discount on matching product
+      const discount = matchingItem.price * matchingItem.quantity;
+      setAppliedCoupon({
+        code: data.couponCode,
+        discount,
+        isCreator: true,
+        productId: data.productId,
+      });
+    } catch {
+      setCouponError('Network error. Please try again.');
+    } finally {
+      setCouponLoading(false);
     }
   };
 
@@ -473,20 +516,51 @@ export default function CheckoutPage() {
             
             {step === 3 && (
               <div className="p-6 space-y-6 text-center">
-                <div className="bg-[#F8FFF9] p-6 rounded-2xl border border-primary/20 flex flex-col items-center">
-                  <CreditCard className="w-12 h-12 text-primary mb-4" />
-                  <h3 className="text-xl font-bold mb-2">Pay securely with Razorpay</h3>
-                  <p className="text-muted-foreground text-sm font-medium mb-6">UPI, Credit/Debit Cards, NetBanking, and Wallets accepted.</p>
-                  
-                  <Button 
-                    onClick={handlePayment} 
-                    disabled={isProcessing}
-                    size="lg" 
-                    className="w-full sm:w-auto px-10 h-14 rounded-xl text-lg font-extrabold shadow-lg shadow-primary/20 hover:shadow-xl transition-all"
-                  >
-                    {isProcessing ? 'Processing securely...' : `Pay ₹${grandTotal.toFixed(2)} Now`}
-                  </Button>
-                </div>
+                {grandTotal <= 0 ? (
+                  /* Free order bypass for creator coupons */
+                  <div className="bg-[#F0FDF4] p-6 rounded-2xl border-2 border-[#BBF7D0] flex flex-col items-center">
+                    <div className="w-16 h-16 bg-[#D1FAE5] rounded-full flex items-center justify-center mb-4">
+                      <ShieldCheck className="w-8 h-8 text-[#166534]" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2 text-[#1B4332]">This order is free!</h3>
+                    <p className="text-[#4b5563] text-sm font-medium mb-6">Your creator coupon covers the full amount. No payment needed.</p>
+                    
+                    <Button 
+                      onClick={async () => {
+                        setIsProcessing(true);
+                        try {
+                          // Place order directly without Razorpay
+                          const formData = getValues();
+                          clearCart();
+                          router.push('/order-confirmation/creator-order');
+                        } catch {
+                          setIsProcessing(false);
+                          alert('Something went wrong. Please try again.');
+                        }
+                      }} 
+                      disabled={isProcessing}
+                      size="lg" 
+                      className="w-full sm:w-auto px-10 h-14 rounded-xl text-lg font-extrabold bg-[#166534] hover:bg-[#052E16] shadow-lg shadow-[#166534]/20 hover:shadow-xl transition-all"
+                    >
+                      {isProcessing ? 'Placing order...' : 'Place Free Order'}
+                    </Button>
+                  </div>
+                ) : (
+                  <div className="bg-[#F8FFF9] p-6 rounded-2xl border border-primary/20 flex flex-col items-center">
+                    <CreditCard className="w-12 h-12 text-primary mb-4" />
+                    <h3 className="text-xl font-bold mb-2">Pay securely with Razorpay</h3>
+                    <p className="text-muted-foreground text-sm font-medium mb-6">UPI, Credit/Debit Cards, NetBanking, and Wallets accepted.</p>
+                    
+                    <Button 
+                      onClick={handlePayment} 
+                      disabled={isProcessing}
+                      size="lg" 
+                      className="w-full sm:w-auto px-10 h-14 rounded-xl text-lg font-extrabold shadow-lg shadow-primary/20 hover:shadow-xl transition-all"
+                    >
+                      {isProcessing ? 'Processing securely...' : `Pay ₹${grandTotal.toFixed(2)} Now`}
+                    </Button>
+                  </div>
+                )}
                 
                 <div className="flex items-center justify-center gap-2 text-sm font-bold text-slate-500">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" /> 100% Secure Checkout
@@ -551,17 +625,21 @@ export default function CheckoutPage() {
             </div>
             
             {/* Coupon Code Section */}
-            <div className="mb-6 flex gap-2">
+            <div className="mb-2 flex gap-2">
               <Input 
                 value={couponCode}
-                onChange={(e) => setCouponCode(e.target.value)}
+                onChange={(e) => { setCouponCode(e.target.value); setCouponError(''); }}
                 placeholder="Coupon Code" 
                 className="h-12 rounded-xl flex-1 bg-slate-50 uppercase"
               />
-              <Button onClick={handleApplyCoupon} className="h-12 rounded-xl px-6 font-bold bg-slate-900 text-white hover:bg-slate-800">
-                Apply
+              <Button onClick={handleApplyCoupon} disabled={couponLoading} className="h-12 rounded-xl px-6 font-bold bg-slate-900 text-white hover:bg-slate-800">
+                {couponLoading ? 'Checking...' : 'Apply'}
               </Button>
             </div>
+            {couponError && (
+              <p className="text-xs text-red-500 font-bold mb-4 px-1">{couponError}</p>
+            )}
+            {!couponError && <div className="mb-4" />}
             
             <div className="space-y-3 text-sm font-medium mb-6 border-t border-border/40 pt-4">
               <div className="flex justify-between text-muted-foreground">
