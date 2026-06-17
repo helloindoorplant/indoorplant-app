@@ -272,8 +272,8 @@ export function CreatorsLanding({ products }: CreatorsLandingProps) {
                 {/* Main Card Container */}
                 <div className="relative w-full max-w-[380px] sm:max-w-[420px] z-10">
                   
-                  {/* Trust Badge Floating Top Left */}
-                  <div className="absolute -top-6 -left-2 sm:-left-6 bg-white px-4 sm:px-5 py-3 rounded-2xl shadow-xl shadow-[#1B4332]/5 border border-gray-100 flex items-center gap-3 z-30 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
+                  {/* Trust Badge Floating Top Center */}
+                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-white px-4 sm:px-5 py-3 rounded-2xl shadow-xl shadow-[#1B4332]/5 border border-gray-100 flex items-center gap-3 z-30 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
                     <div className="w-8 h-8 rounded-full bg-[#F0FDF4] flex items-center justify-center shrink-0">
                       <CheckCircle2 className="w-4 h-4 text-[#2D6A4F]" />
                     </div>
