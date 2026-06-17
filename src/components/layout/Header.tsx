@@ -33,6 +33,7 @@ export function Header() {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -55,6 +56,9 @@ export function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <Link href="/shop" className="text-[15px] font-bold text-foreground/80 hover:text-primary transition-colors">Shop Plants</Link>
             <Link href="/categories" className="text-[15px] font-bold text-foreground/80 hover:text-primary transition-colors">Categories</Link>
+            <Link href="/free-plants" className="text-[15px] font-bold text-foreground/80 hover:text-primary transition-colors relative">
+              Free Plant <span className="absolute -top-3 -right-6 text-[8px] bg-emerald-600 text-white px-1.5 py-0.5 rounded-full font-extrabold uppercase animate-pulse shadow-sm">Gift</span>
+            </Link>
             <Link href="/ai-advisor" className="text-[15px] font-bold text-foreground/80 hover:text-primary transition-colors relative">
               AI Advisor <span className="absolute -top-3 -right-4 text-[9px] bg-red-500 text-white px-1.5 py-0.5 rounded-full font-bold uppercase">New</span>
             </Link>
@@ -128,6 +132,9 @@ export function Header() {
           <div className="fixed inset-0 bg-white z-40 flex flex-col pt-24 px-6 gap-6 md:hidden">
             <Link href="/shop" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold border-b border-border/50 pb-4">Shop Plants</Link>
             <Link href="/categories" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold border-b border-border/50 pb-4">Categories</Link>
+            <Link href="/free-plants" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold border-b border-border/50 pb-4 flex justify-between items-center">
+              Free Plant <span className="bg-emerald-600 text-white text-xs px-2 py-1 rounded-full uppercase animate-pulse font-extrabold shadow-sm">Gift</span>
+            </Link>
             <Link href="/ai-advisor" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold border-b border-border/50 pb-4 flex justify-between">
               AI Advisor <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-full uppercase">New</span>
             </Link>
