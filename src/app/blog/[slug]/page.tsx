@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Clock, Share2, Bookmark, Link as LinkIcon, ChevronLeft } from "lucide-react";
+import { Clock, ChevronLeft } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { Metadata } from "next";
 import prisma from "@/lib/prisma";
 import { ProductCardCarousel } from "@/components/blog/ProductCardCarousel";
 import { RelatedBlogsCarousel } from "@/components/blog/RelatedBlogsCarousel";
+import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -169,17 +170,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </div>
           </div>
           
-          <div className="hidden sm:flex items-center gap-3">
-            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-primary hover:border-primary transition-colors">
-              <Share2 className="w-4 h-4" />
-            </button>
-            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-primary hover:border-primary transition-colors">
-              <Bookmark className="w-4 h-4" />
-            </button>
-            <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-primary hover:border-primary transition-colors">
-              <LinkIcon className="w-4 h-4" />
-            </button>
-          </div>
+          <BlogShareButtons
+            title={post.title}
+            url={`https://www.indoorplant.in/blog/${post.slug}`}
+          />
         </div>
       </div>
 
