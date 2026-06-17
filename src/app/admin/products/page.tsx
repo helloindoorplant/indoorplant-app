@@ -42,7 +42,7 @@ export default async function AdminProductsPage() {
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto hidden md:block">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-gray-50/50 border-b border-gray-100">
@@ -65,6 +65,7 @@ export default async function AdminProductsPage() {
                             src={images[0]} 
                             alt={product.name}
                             fill
+                            unoptimized
                             className="object-cover"
                           />
                         </div>
@@ -84,7 +85,7 @@ export default async function AdminProductsPage() {
                             {product.categories.length > 1 && (
                               <span 
                                 className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-gray-100 text-gray-600 border border-gray-200 cursor-help" 
-                                title={product.categories.slice(1).map((c: any) => c.name).join(', ')}
+                                title={product.categories.slice(1).map((c: { name: string }) => c.name).join(', ')}
                               >
                                 +{product.categories.length - 1}
                               </span>
@@ -121,6 +122,58 @@ export default async function AdminProductsPage() {
               })}
             </tbody>
           </table>
+        </div>
+
+        {/* Mobile View (Cards instead of table to prevent overflow) */}
+        <div className="md:hidden divide-y divide-gray-100">
+          {PRODUCTS.map((product) => {
+            const images = JSON.parse(product.images as string);
+            return (
+              <div key={product.id} className="p-4 space-y-4 hover:bg-gray-50/50 transition-colors">
+                <div className="flex items-start gap-3">
+                  <div className="h-14 w-14 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 relative border border-gray-100">
+                    <img 
+                      src={images[0]} 
+                      alt={product.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-sm font-bold text-gray-900 truncate">{product.name}</div>
+                    <div className="text-xs text-gray-500 truncate">{product.slug}</div>
+                    <div className="mt-2 flex items-center gap-2 flex-wrap">
+                      {product.categories && product.categories.length > 0 ? (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-primary/10 text-primary border border-primary/20">
+                          {product.categories[0].name}
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-gray-100 text-gray-600 border border-gray-200">
+                          Uncategorized
+                        </span>
+                      )}
+                      <div className="flex items-center gap-1">
+                        <div className={`h-1.5 w-1.5 rounded-full ${(product.stock ?? 0) > 10 ? 'bg-green-500' : (product.stock ?? 0) > 0 ? 'bg-amber-500' : 'bg-red-500'}`} />
+                        <span className="text-[10px] text-gray-600 font-medium">{product.stock} units</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-2">
+                  <div className="text-sm font-extrabold text-gray-900">₹{Number(product.price)}</div>
+                  <div className="flex items-center gap-2">
+                    <Link href={`/admin/products/${product.id}`}>
+                      <Button variant="outline" size="sm" className="h-8 px-3 text-xs text-gray-600 hover:text-primary border-gray-200">
+                        <Edit className="h-3.5 w-3.5 mr-1" />
+                        Edit
+                      </Button>
+                    </Link>
+                    <DeleteProductButton id={product.id} />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
         
         {/* Pagination */}

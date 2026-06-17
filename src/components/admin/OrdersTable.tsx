@@ -1,10 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { Search, Eye, Filter } from "lucide-react";
+import { Search, Eye } from "lucide-react";
 import { OrderStatusSelector } from "@/components/admin/OrderStatusSelector";
 
-export function OrdersTable({ orders }: { orders: any[] }) {
+interface OrderItem {
+  quantity: number;
+  price: number;
+  potColor?: string | null;
+  product?: {
+    name: string;
+  } | null;
+}
+
+interface Order {
+  id: string;
+  status: string;
+  totalAmount: number;
+  createdAt: string | Date;
+  user?: {
+    name: string | null;
+    email: string | null;
+  } | null;
+  items?: OrderItem[];
+}
+
+export function OrdersTable({ orders }: { orders: Order[] }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredOrders = orders.filter(o => 
@@ -39,8 +60,8 @@ export function OrdersTable({ orders }: { orders: any[] }) {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto">
+      {/* Table (Hidden on mobile) */}
+      <div className="overflow-x-auto hidden md:block">
         <table className="w-full text-left border-collapse min-w-[800px]">
           <thead>
             <tr className="bg-gray-50/50 border-b border-gray-100">
@@ -74,7 +95,7 @@ export function OrdersTable({ orders }: { orders: any[] }) {
                 <td className="px-6 py-4">
                   <p className="text-sm font-medium text-gray-900">₹{order.totalAmount}</p>
                   <div className="text-xs text-gray-500 mt-1 space-y-0.5">
-                    {order.items?.map((item: any, idx: number) => (
+                    {order.items?.map((item, idx: number) => (
                       <div key={idx}>
                         {item.quantity}x {item.product?.name || 'Item'} 
                         {item.potColor ? ` (${item.potColor})` : ''}
@@ -94,6 +115,56 @@ export function OrdersTable({ orders }: { orders: any[] }) {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile View (Cards instead of table to prevent overflow) */}
+      <div className="md:hidden divide-y divide-gray-100">
+        {filteredOrders.map((order) => (
+          <div key={order.id} className="p-4 space-y-4 hover:bg-gray-50/50 transition-colors">
+            <div className="flex items-center justify-between">
+              <span className="text-sm font-bold text-gray-900">#{order.id.slice(-6).toUpperCase()}</span>
+              <span className="text-xs text-gray-500">{new Date(order.createdAt).toLocaleDateString()}</span>
+            </div>
+
+            <div className="space-y-1">
+              <p className="text-sm font-semibold text-gray-900">{order.user?.name || "Guest"}</p>
+              <p className="text-xs text-gray-500">{order.user?.email}</p>
+            </div>
+
+            <div className="space-y-2 border-t border-b border-gray-100 py-3">
+              <div className="text-xs text-gray-500 space-y-1">
+                {order.items?.map((item, idx: number) => (
+                  <div key={idx} className="flex justify-between">
+                    <span>{item.quantity}x {item.product?.name || 'Item'} {item.potColor ? ` (${item.potColor})` : ''}</span>
+                    <span className="font-semibold text-gray-700">₹{item.price}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between pt-1 text-sm">
+                <span className="font-medium text-gray-500">Total Amount</span>
+                <span className="font-extrabold text-[#1B4332]">₹{order.totalAmount}</span>
+              </div>
+            </div>
+
+            <div className="space-y-3 pt-1">
+              <div className="flex items-center justify-between gap-3">
+                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${getStatusColor(order.status)}`}>
+                  {order.status}
+                </span>
+                <OrderStatusSelector orderId={order.id} currentStatus={order.status} />
+              </div>
+              <div>
+                <a 
+                  href={`/admin/orders/${order.id}`} 
+                  className="w-full text-center inline-flex items-center justify-center gap-1.5 px-4 py-2 text-xs font-bold text-primary bg-primary/10 hover:bg-primary/20 rounded-lg transition-colors border border-primary/10"
+                >
+                  <Eye className="w-4 h-4" />
+                  View Order Details
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
       
       {/* Pagination */}

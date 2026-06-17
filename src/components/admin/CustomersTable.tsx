@@ -1,9 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { Search, Mail, MoreVertical } from "lucide-react";
+import { Search } from "lucide-react";
 
-export function CustomersTable({ customers }: { customers: any[] }) {
+interface CustomerOrder {
+  status: string;
+  totalAmount: number;
+}
+
+interface Customer {
+  id: string;
+  name: string | null;
+  email: string | null;
+  createdAt: string | Date;
+  orders: CustomerOrder[];
+}
+
+export function CustomersTable({ customers }: { customers: Customer[] }) {
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredCustomers = customers.filter(c => 
@@ -27,8 +40,8 @@ export function CustomersTable({ customers }: { customers: any[] }) {
         </div>
       </div>
 
-      {/* Table */}
-      <div className="overflow-x-auto">
+      {/* Table (Hidden on mobile) */}
+      <div className="overflow-x-auto hidden md:block">
         <table className="w-full text-left border-collapse">
           <thead>
             <tr className="bg-gray-50/50 border-b border-gray-100">
@@ -41,7 +54,7 @@ export function CustomersTable({ customers }: { customers: any[] }) {
           <tbody className="divide-y divide-gray-100">
             {filteredCustomers.map((customer) => {
               const totalOrders = customer.orders?.length || 0;
-              const totalSpent = customer.orders?.reduce((sum: number, o: any) => sum + (o.status !== 'CANCELLED' ? o.totalAmount : 0), 0) || 0;
+              const totalSpent = customer.orders?.reduce((sum: number, o) => sum + (o.status !== 'CANCELLED' ? o.totalAmount : 0), 0) || 0;
               
               return (
                 <tr key={customer.id} className="hover:bg-gray-50/50 transition-colors">
@@ -62,6 +75,43 @@ export function CustomersTable({ customers }: { customers: any[] }) {
             })}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile View (Cards instead of table to prevent overflow) */}
+      <div className="md:hidden divide-y divide-gray-100">
+        {filteredCustomers.map((customer) => {
+          const totalOrders = customer.orders?.length || 0;
+          const totalSpent = customer.orders?.reduce((sum: number, o) => sum + (o.status !== 'CANCELLED' ? o.totalAmount : 0), 0) || 0;
+          
+          return (
+            <div key={customer.id} className="p-4 space-y-3 hover:bg-gray-50/50 transition-colors">
+              <div className="flex justify-between items-start">
+                <div className="space-y-0.5">
+                  <p className="text-sm font-bold text-gray-900">{customer.name || "Guest User"}</p>
+                  <p className="text-xs text-gray-500">{customer.email}</p>
+                </div>
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  Active
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4 py-2 border border-gray-100 bg-gray-50 rounded-lg px-3 text-xs">
+                <div>
+                  <span className="block text-gray-500 font-medium">Orders Placed</span>
+                  <span className="block font-bold text-gray-900 mt-0.5">{totalOrders} orders</span>
+                </div>
+                <div>
+                  <span className="block text-gray-500 font-medium">Total Spent</span>
+                  <span className="block font-bold text-[#1B4332] mt-0.5">₹{totalSpent.toLocaleString("en-IN")}</span>
+                </div>
+              </div>
+
+              <div className="flex justify-between items-center text-[10px] text-gray-400">
+                <span>Joined {new Date(customer.createdAt).toLocaleDateString()}</span>
+              </div>
+            </div>
+          );
+        })}
       </div>
       
       {/* Pagination */}

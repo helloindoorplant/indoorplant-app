@@ -10,8 +10,6 @@ import {
   Phone, 
   ExternalLink,
   Search,
-  Filter,
-  Ticket,
   Copy,
   Check,
   Loader2,
@@ -76,6 +74,7 @@ export default function AdminCreatorsPage() {
   };
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchApplications();
   }, []);
 
@@ -251,7 +250,8 @@ export default function AdminCreatorsPage() {
         </div>
       ) : (
         <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden">
-          <div className="overflow-x-auto">
+          {/* Table (Hidden on mobile) */}
+          <div className="overflow-x-auto hidden md:block">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-100 bg-gray-50/50">
@@ -387,7 +387,7 @@ export default function AdminCreatorsPage() {
                       <div className="flex items-center justify-end gap-2">
                         <select
                           value={selectedActions[app.id] || app.status}
-                          onChange={(e) => setSelectedActions(prev => ({ ...prev, [app.id]: e.target.value as any }))}
+                          onChange={(e) => setSelectedActions(prev => ({ ...prev, [app.id]: e.target.value as 'APPROVED' | 'REJECTED' | 'PENDING' }))}
                           disabled={processingId === app.id}
                           className="px-2.5 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-bold text-gray-700 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/10 cursor-pointer"
                         >
@@ -397,7 +397,7 @@ export default function AdminCreatorsPage() {
                         </select>
 
                         <button
-                          onClick={() => handleAction(app.id, selectedActions[app.id] || (app.status as any))}
+                          onClick={() => handleAction(app.id, selectedActions[app.id] || (app.status as 'APPROVED' | 'REJECTED' | 'PENDING'))}
                           disabled={processingId === app.id || (selectedActions[app.id] || app.status) === app.status}
                           style={{ backgroundColor: '#1B4332', color: 'white' }}
                           className="px-3 py-1.5 text-xs font-bold rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 shadow-sm hover:opacity-90"
@@ -428,6 +428,165 @@ export default function AdminCreatorsPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile View (Cards instead of table to prevent overflow) */}
+          <div className="md:hidden divide-y divide-gray-100">
+            {filtered.map((app) => (
+              <div key={app.id} className="p-4 space-y-4 hover:bg-gray-50/50 transition-colors">
+                {/* Creator name & Date */}
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-sm font-bold text-gray-900">{app.name}</span>
+                    <span className="block text-[10px] text-gray-400 mt-0.5">
+                      Applied {new Date(app.createdAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
+                    </span>
+                  </div>
+                  {statusBadge(app.status)}
+                </div>
+
+                {/* Plant Requested */}
+                <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl border border-gray-100">
+                  {app.productImage && (
+                    <div className="w-10 h-10 rounded-lg overflow-hidden bg-white border border-gray-200 shrink-0">
+                      <img
+                        src={app.productImage}
+                        alt={app.productName}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  )}
+                  <div className="min-w-0">
+                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Plant Requested</p>
+                    <p className="font-semibold text-gray-800 text-xs truncate">{app.productName}</p>
+                  </div>
+                </div>
+
+                {/* Contacts & Social Handles */}
+                <div className="grid grid-cols-2 gap-3 text-xs">
+                  <div className="space-y-1">
+                    <span className="block text-gray-500 font-medium text-[10px] uppercase">Social Handles</span>
+                    <div className="flex flex-col gap-1">
+                      <a
+                        href={`https://instagram.com/${app.instagram}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-xs text-pink-600 hover:text-pink-700 font-medium"
+                      >
+                        <InstagramIcon className="w-3.5 h-3.5" />
+                        @{app.instagram}
+                      </a>
+                      {app.facebook && (
+                        <a
+                          href={`https://facebook.com/${app.facebook}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs text-blue-600 hover:text-blue-700 font-medium"
+                        >
+                          <span className="font-bold text-[8px] bg-blue-100 text-blue-700 px-1 py-0.5 rounded leading-none shrink-0">FB</span>
+                          {app.facebook}
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <span className="block text-gray-500 font-medium text-[10px] uppercase">Contact Details</span>
+                    <div className="space-y-1 text-gray-600">
+                      <div className="flex items-center gap-1 text-[11px] truncate">
+                        <Mail className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                        {app.email}
+                      </div>
+                      <div className="flex items-center gap-1 text-[11px]">
+                        <Phone className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+                        {app.phone}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Note if exists */}
+                {app.note && (
+                  <div className="p-2.5 bg-amber-50/50 rounded-lg border border-amber-100/50 text-xs text-gray-600">
+                    <span className="font-semibold text-gray-700 block text-[10px] uppercase mb-0.5">Creator Note:</span>
+                    {app.note}
+                  </div>
+                )}
+
+                {/* Coupon Code Display */}
+                {app.coupon && (
+                  <div className="flex items-center justify-between p-2.5 bg-emerald-50/30 border border-emerald-100/50 rounded-lg text-xs">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[10px] text-gray-500 font-bold uppercase">Coupon</span>
+                      <code className="bg-white px-2 py-0.5 border border-gray-200 rounded text-xs font-mono font-bold text-gray-800">
+                        {app.coupon.code}
+                      </code>
+                      <button 
+                        onClick={() => handleCopyCode(app.coupon!.code)}
+                        className="p-1 hover:bg-white border border-transparent hover:border-gray-200 rounded transition-colors"
+                      >
+                        {copiedCode === app.coupon.code ? (
+                          <Check className="w-3.5 h-3.5 text-emerald-600" />
+                        ) : (
+                          <Copy className="w-3.5 h-3.5 text-gray-400" />
+                        )}
+                      </button>
+                    </div>
+                    {app.coupon.isUsed ? (
+                      <span className="text-[10px] text-emerald-600 font-bold">
+                        ✓ Used
+                      </span>
+                    ) : (
+                      <span className="text-[10px] text-amber-600 font-medium">
+                        Not used
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                {/* Status Workflow Action Selectors & Delete */}
+                <div className="flex items-center justify-between gap-3 pt-2 border-t border-gray-100">
+                  <div className="flex items-center gap-2 flex-1">
+                    <select
+                      value={selectedActions[app.id] || app.status}
+                      onChange={(e) => setSelectedActions(prev => ({ ...prev, [app.id]: e.target.value as 'APPROVED' | 'REJECTED' | 'PENDING' }))}
+                      disabled={processingId === app.id}
+                      className="w-full px-2.5 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-bold text-gray-700 focus:outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/10 cursor-pointer"
+                    >
+                      <option value="PENDING">Pending</option>
+                      <option value="APPROVED">Approve</option>
+                      <option value="REJECTED">Reject</option>
+                    </select>
+
+                    <button
+                      onClick={() => handleAction(app.id, selectedActions[app.id] || (app.status as 'APPROVED' | 'REJECTED' | 'PENDING'))}
+                      disabled={processingId === app.id || (selectedActions[app.id] || app.status) === app.status}
+                      style={{ backgroundColor: '#1B4332', color: 'white' }}
+                      className="px-3 py-1.5 text-xs font-bold rounded-lg transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 shadow-sm hover:opacity-90 shrink-0"
+                    >
+                      {processingId === app.id ? (
+                        <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                      ) : (
+                        <Check className="w-3.5 h-3.5" />
+                      )}
+                      Submit
+                    </button>
+                  </div>
+
+                  <button
+                    onClick={() => handleDelete(app.id)}
+                    disabled={processingId === app.id}
+                    title="Delete application"
+                    className="px-2.5 py-1.5 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 transition-colors disabled:opacity-40 flex items-center justify-center border border-red-100 shadow-sm shrink-0"
+                  >
+                    {processingId === app.id ? (
+                      <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    ) : (
+                      <Trash2 className="w-3.5 h-3.5" />
+                    )}
+                  </button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}
