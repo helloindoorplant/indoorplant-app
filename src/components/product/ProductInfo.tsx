@@ -1,15 +1,31 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Heart, Star, ShieldCheck, Truck, Droplet, Sun, Dog } from 'lucide-react';
+import { Heart, Star, Truck, Droplet, Sun, Dog } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Product } from '@/lib/data';
 import { useCartStore } from '@/store/useCartStore';
 import { useUserStore } from '@/store/useUserStore';
 
+interface ProductPayload {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  salePrice: number | null;
+  images: string | string[];
+  potColorImages?: string | null;
+  badge?: string | null;
+  careLevel?: string;
+  lightReq?: string;
+  waterReq?: string;
+  petFriendly?: boolean;
+  reviews?: { rating: number }[];
+}
+
 interface ProductInfoProps {
-  product: any; // Using any for now to avoid strict typing issues with Prisma payload
+  product: ProductPayload;
   onPotColorChange?: (image: string | null) => void;
 }
 
@@ -25,7 +41,7 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
   const [selectedColor, setSelectedColor] = useState<string>('White');
   const router = useRouter();
   const { addItem, setDrawerOpen } = useCartStore();
-  const { wishlist, addToWishlist, removeFromWishlist, isInWishlist } = useUserStore();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useUserStore();
 
   const isWished = isInWishlist(product.id);
   const displayPrice = product.salePrice || product.price;
@@ -38,13 +54,13 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
         if (explicitImages[color]) {
           return explicitImages[color];
         }
-      } catch (e) {}
+      } catch {}
     }
 
     // 2. Fallback to index-based mapping
     let parsedImages: string[] = [];
     if (typeof product.images === 'string') {
-      try { parsedImages = JSON.parse(product.images); } catch(e) {}
+      try { parsedImages = JSON.parse(product.images); } catch {}
     } else if (Array.isArray(product.images)) {
       parsedImages = product.images;
     }
@@ -95,7 +111,7 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
     if (isWished) {
       removeFromWishlist(product.id);
     } else {
-      addToWishlist(product);
+      addToWishlist(product as unknown as Product);
     }
   };
 
@@ -110,10 +126,10 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
         )}
         <div className="flex items-center gap-1.5 text-amber-500">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} className={`h-4 w-4 ${i < Math.floor(product.reviews?.length ? product.reviews.reduce((acc: number, r: any) => acc + r.rating, 0) / product.reviews.length : 5) ? 'fill-current' : 'text-muted/30'}`} />
+            <Star key={i} className={`h-4 w-4 ${i < Math.floor(product.reviews?.length ? product.reviews.reduce((acc: number, r: { rating: number }) => acc + r.rating, 0) / product.reviews.length : 5) ? 'fill-current' : 'text-muted/30'}`} />
           ))}
           <span className="text-foreground font-bold text-[15px] ml-1">
-            {product.reviews?.length ? (product.reviews.reduce((acc: number, r: any) => acc + r.rating, 0) / product.reviews.length).toFixed(1) : "5.0"}
+            {product.reviews?.length ? (product.reviews.reduce((acc: number, r: { rating: number }) => acc + r.rating, 0) / product.reviews.length).toFixed(1) : "5.0"}
           </span>
           <span 
             className="text-muted-foreground text-[14px] font-medium underline decoration-muted-foreground/30 underline-offset-4 cursor-pointer hover:text-foreground transition-colors"
@@ -165,17 +181,17 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
 
 
 
-      {/* Actions */}
-      <div className="grid grid-cols-12 gap-3 sm:gap-4 mb-12">
-        {/* Quantity */}
-        <div className="col-span-8 sm:col-span-3 flex items-center border-2 border-border/50 rounded-[20px] bg-white h-[68px]">
+      {/* Actions (Mobile Version) */}
+      <div className="grid grid-cols-12 gap-3 mb-12 md:hidden">
+        {/* Quantity (8 cols) */}
+        <div className="col-span-8 flex items-center border-2 border-border/50 rounded-[20px] bg-white h-[68px]">
           <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">-</button>
           <span className="w-12 text-center font-extrabold text-xl">{quantity}</span>
           <button onClick={() => setQuantity(quantity + 1)} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">+</button>
         </div>
 
-        {/* Heart */}
-        <div className="col-span-4 sm:col-span-2 sm:order-last">
+        {/* Heart (4 cols) */}
+        <div className="col-span-4">
           <Button 
             variant="outline" 
             size="icon" 
@@ -186,14 +202,54 @@ export function ProductInfo({ product, onPotColorChange }: ProductInfoProps) {
           </Button>
         </div>
 
-        {/* Add to Cart */}
-        <div className="col-span-12 sm:col-span-7">
+        {/* Add to Cart (12 cols) */}
+        <div className="col-span-12">
           <Button onClick={handleAddToCart} size="lg" className="w-full h-[68px] rounded-[20px] text-[18px] font-extrabold shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
             Add to Cart - ₹{displayPrice * quantity}
           </Button>
         </div>
 
-        {/* Buy It Now */}
+        {/* Buy It Now (12 cols) */}
+        <div className="col-span-12">
+          <Button 
+            onClick={handleBuyNow}
+            size="lg" 
+            className="w-full h-[68px] rounded-[20px] text-[18px] font-extrabold bg-[#052E16] text-white hover:bg-[#064E3B] shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all"
+          >
+            Buy It Now
+          </Button>
+        </div>
+      </div>
+
+      {/* Actions (Desktop Version) */}
+      <div className="hidden md:grid grid-cols-12 gap-4 mb-12">
+        {/* Quantity (3 cols) */}
+        <div className="col-span-3 flex items-center border-2 border-border/50 rounded-[20px] bg-white h-[68px]">
+          <button onClick={() => setQuantity(Math.max(1, quantity - 1))} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">-</button>
+          <span className="w-12 text-center font-extrabold text-xl">{quantity}</span>
+          <button onClick={() => setQuantity(quantity + 1)} className="flex-1 flex justify-center items-center font-bold text-2xl text-muted-foreground hover:text-primary transition-colors">+</button>
+        </div>
+
+        {/* Add to Cart (7 cols) */}
+        <div className="col-span-7">
+          <Button onClick={handleAddToCart} size="lg" className="w-full h-[68px] rounded-[20px] text-[18px] font-extrabold shadow-xl shadow-primary/20 hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-1 transition-all">
+            Add to Cart - ₹{displayPrice * quantity}
+          </Button>
+        </div>
+
+        {/* Heart (2 cols) */}
+        <div className="col-span-2">
+          <Button 
+            variant="outline" 
+            size="icon" 
+            onClick={handleToggleWishlist}
+            className={`w-full h-[68px] rounded-[20px] border-2 transition-all ${isWished ? 'bg-rose-50 border-rose-200 text-rose-500' : 'hover:bg-rose-50 hover:text-rose-500 hover:border-rose-200'}`}
+          >
+            <Heart className={`h-7 w-7 ${isWished ? 'fill-current' : ''}`} />
+          </Button>
+        </div>
+
+        {/* Buy It Now (12 cols) */}
         <div className="col-span-12">
           <Button 
             onClick={handleBuyNow}
