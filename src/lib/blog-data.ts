@@ -2508,7 +2508,7 @@ export const BLOG_POSTS: BlogPost[] = [
   <div class="border border-red-200 rounded-2xl overflow-hidden shadow-sm">
     <div class="bg-red-50 px-6 py-4 border-b border-red-200 flex justify-between items-center">
       <h3 class="text-lg font-bold text-red-900 m-0">May</h3>
-      <span class="text-xs font-bold uppercase tracking-wider text-white bg-red-600 px-3 py-1 rounded-full shadow-sm">High Risk</span>
+      <span class="text-xs font-bold uppercase tracking-wider text-white bg-red-500 px-3 py-1 rounded-full shadow-sm">High Risk</span>
     </div>
     <div class="p-6">
       <p class="text-sm text-gray-700 leading-relaxed mb-4">
@@ -2538,7 +2538,7 @@ export const BLOG_POSTS: BlogPost[] = [
   <div class="border border-red-200 rounded-2xl overflow-hidden shadow-sm">
     <div class="bg-red-50 px-6 py-4 border-b border-red-200 flex justify-between items-center">
       <h3 class="text-lg font-bold text-red-900 m-0">July & August</h3>
-      <span class="text-xs font-bold uppercase tracking-wider text-white bg-red-600 px-3 py-1 rounded-full shadow-sm">High Risk</span>
+      <span class="text-xs font-bold uppercase tracking-wider text-white bg-red-500 px-3 py-1 rounded-full shadow-sm">High Risk</span>
     </div>
     <div class="p-6">
       <p class="text-sm text-gray-700 leading-relaxed mb-4">
@@ -2568,7 +2568,7 @@ export const BLOG_POSTS: BlogPost[] = [
   <div class="border border-emerald-200 rounded-2xl overflow-hidden shadow-md transform scale-[1.02]">
     <div class="bg-emerald-100 px-6 py-4 border-b border-emerald-200 flex justify-between items-center">
       <h3 class="text-lg font-bold text-emerald-900 m-0">October & November</h3>
-      <span class="text-xs font-bold uppercase tracking-wider text-white bg-emerald-600 px-3 py-1 rounded-full shadow-sm">Best Months</span>
+      <span class="text-xs font-bold uppercase tracking-wider text-white bg-[#1B4332] px-3 py-1 rounded-full shadow-sm">Best Months</span>
     </div>
     <div class="p-6 bg-emerald-50/30">
       <p class="text-sm text-gray-800 leading-relaxed mb-4 font-medium">
