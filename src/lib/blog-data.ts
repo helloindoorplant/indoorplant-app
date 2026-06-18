@@ -2314,7 +2314,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "The Best Time of Year to Buy Indoor Plants Online in India",
     excerpt: "The month you buy your plant matters more than the plant you pick. Why October–February wins, why monsoon is riskier than you think, and what to order in each Indian season.",
     category: "Buying Guide + Seasonal Care",
-    date: "June 15, 2026",
+    date: "June 17, 2026",
     readTime: "8 min read",
     image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/best-time-buy-plants-online-india.webp",
     featured: false,
