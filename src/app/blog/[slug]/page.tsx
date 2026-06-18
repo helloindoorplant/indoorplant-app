@@ -155,17 +155,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           {post.title}
         </h1>
         
-        <div className="flex items-center justify-between py-6 border-y border-gray-100">
-          <div className="flex items-center">
-            <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-4 font-bold text-sm">
+        <div className="flex items-center justify-between py-4 sm:py-6 border-y border-gray-100">
+          <div className="flex items-center min-w-0 pr-2">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center mr-3 sm:mr-4 font-bold text-xs sm:text-sm">
               {post.author.avatar}
             </div>
-            <div>
-              <p className="font-medium text-gray-900">{post.author.name}</p>
-              <div className="flex items-center text-sm text-gray-500">
-                <span>{post.date}</span>
-                <span className="mx-2">•</span>
-                <span className="flex items-center"><Clock className="w-3.5 h-3.5 mr-1" /> {post.readTime}</span>
+            <div className="min-w-0">
+              <p className="font-medium text-gray-900 text-sm sm:text-base truncate">{post.author.name}</p>
+              <div className="flex items-center text-[11px] sm:text-sm text-gray-500 whitespace-nowrap">
+                <span className="truncate">{post.date}</span>
+                <span className="mx-1.5 sm:mx-2 shrink-0">•</span>
+                <span className="flex items-center shrink-0"><Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1" /> {post.readTime}</span>
               </div>
             </div>
           </div>
