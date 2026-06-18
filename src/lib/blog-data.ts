@@ -54,6 +54,9 @@ export const BLOG_POSTS: BlogPost[] = [
 <p class="mb-8 text-gray-700 leading-relaxed">
   Every plant mentioned below is available right now on <a href="/shop" class="text-[#2D6A4F] hover:text-[#1B4332] underline font-bold">indoorplant.in/shop</a>, with the current price verified today. The care notes are honest. The "not ideal for" sections are real. No plant is described as perfect because no plant is perfect for every home.
 </p>
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold">
+  If budget is the priority, read our guide to the <a href="/blog/cheap-indoor-plants-online-india-under-500" class="text-[#2D6A4F] hover:underline font-bold">best cheap indoor plants online in India under Rs 299</a>.
+</p>
 
 <h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2 flex items-center gap-2">
   <span>💡</span> Before You Buy — The 4 Questions That Actually Matter
@@ -798,6 +801,9 @@ export const BLOG_POSTS: BlogPost[] = [
 
 <p class="mb-8 text-gray-700 leading-relaxed">
   This is what six years of renting across Indian cities has taught me about plants. Not aspirational advice. What actually works in a 1BHK with one window, a co-living with shared balcony space, or a Pune flat that comes with white walls and someone else's furniture choices.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold">
+  If budget is the priority, read our guide to the <a href="/blog/cheap-indoor-plants-online-india-under-500" class="text-[#2D6A4F] hover:underline font-bold">best cheap indoor plants online in India under Rs 299</a>.
 </p>
 
 <h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
@@ -2653,6 +2659,464 @@ export const BLOG_POSTS: BlogPost[] = [
     <strong class="block text-gray-900 font-bold mb-2">Q: What should I do if I ordered during monsoon and my plant arrived with white mould on the soil?</strong>
     <p class="text-gray-705 leading-relaxed m-0 text-sm">
       A: Surface soil mould from monsoon transit is usually cosmetic. Scrape off the top layer of affected soil (1-2cm), let the top surface dry completely before the next watering, and move the plant to a spot with good airflow. If mould is on the leaves or stems, wipe leaves with a dilute neem oil solution and report the damage to the seller if it was present on arrival.
+    </p>
+  </div>
+</div>
+`
+  }
+
+,
+
+  {
+    slug: "cheap-indoor-plants-online-india-under-500",
+    title: "Cheap Indoor Plants Online India — Under Rs 500 That Actually Look Good",
+    excerpt: "Three indoor plants under Rs 299 that actually look good and stay alive. Real prices, honest notes on what you get, and which one is still alive 8 months later.",
+    category: "Buying Guide + Budget Plants",
+    date: "June 18, 2026",
+    readTime: "7 min read",
+    image: "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/cheap-indoor-plants-online-india-under-500.webp",
+    featured: false,
+    metaTitle: "Cheap Indoor Plants Online India Under Rs 500 — 2026 Guide",
+    metaDescription: "Three indoor plants under Rs 299 that actually look good and stay alive. Real prices, honest notes on what you get, and which one is still alive 8 months later. No upselling.",
+    keywords: [
+      "cheap indoor plants online India",
+      "indoor plants under 500 India",
+      "affordable indoor plants India",
+      "cheap plants online India",
+      "budget indoor plants India",
+      "indoor plants under 300 India",
+      "cheap indoor plants that look good India",
+      "low cost indoor plants India"
+    ],
+    author: {
+      name: "Dr. Anjali Desai",
+      role: "Lead Horticulturist",
+      avatar: "AD"
+    },
+    faqSchema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are the cheapest indoor plants available online in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The N'Joy Money Plant, Money Plant Variegated, and Lucky Jade Plant are all available at Rs 299 each at IndoorPlant.in. All three are genuine decorative indoor plants — not seedlings or cuttings. Free delivery is included. At Rs 299, the Lucky Jade Plant is the most forgiving of the three and the hardest to kill."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are cheap plants online in India actually good quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the site. At Rs 299, you are typically getting a plant in a small nursery pot (8-12cm) that is healthy but not large. What you should not get at any price is a plant that was poorly cared for before dispatch or packed in a way that damages it in transit. The quality difference between a Rs 299 plant from a well-run nursery and a Rs 299 plant from a random marketplace seller is significant — research the site's packaging and damage policy before ordering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long do cheap Rs 299 indoor plants actually live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Lucky Jade Plant lives for decades with minimal care — it is a succulent and the price has nothing to do with its longevity. Money plant varieties are also long-lived, often surviving 5-10 years indoors with basic care. Cheapness in Indian plant pricing usually reflects the size of the plant at time of sale, not its lifespan or quality."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best indoor plant under Rs 300 in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For someone who wants something that will definitely survive: Lucky Jade Plant at Rs 299. It is a succulent, waters every 2-3 weeks, and handles neglect better than any other plant at this price point. For someone who wants something that looks the most visually interesting: N'Joy Money Plant at Rs 299. The white-and-green variegated leaves look considerably more expensive than Rs 299."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Rs 299 too cheap for a real indoor plant in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Indian plant pricing reflects the size of the plant at time of sale, not the quality or species. A Rs 299 Lucky Jade Plant is the same species as a Rs 1,500 Jade Plant — just smaller. It will grow to the same size over time. The N'Joy Money Plant at Rs 299 is a genuine Epipremnum aureum 'N'Joy' — a real variety, not a cheap substitute. Price at point of sale does not predict the plant's value or lifespan."
+          }
+        }
+      ]
+    },
+    content: `
+<p class="lead text-xl text-gray-650 mb-8 leading-relaxed font-light">
+  Rs 299 is what a cup of coffee costs at most Indian cafes.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  It is also what you pay for a <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> at IndoorPlant.in. Eight months after buying one, that plant is sitting on a windowsill in a Chennai flat looking exactly as it did when it arrived — except slightly bigger and considerably more confident in its spot.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed font-semibold text-emerald-800">
+  That is the thing about cheap indoor plants in India that most plant sites will not tell you. The Rs 299 price has nothing to do with the plant's quality, species, or lifespan. It reflects one thing: the size of the plant at the time of sale.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  The same species sold by a garden centre in a large terracotta pot costs Rs 1,200. Same plant. Bigger pot. Three more years of growing time in a nursery.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  When you buy a Rs 299 plant online, you are buying that plant at an earlier stage of its life. You are not buying an inferior version of it.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  This article covers three plants available at Rs 299 on IndoorPlant.in right now — what you actually get at that price, how each one looks at 6 months and at 1 year, which one is hardest to kill, and how to choose between them without getting it wrong.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold">
+  No upselling. No "for just Rs 200 more, consider..." Three plants. Rs 299 each. Honest.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2 flex items-center gap-2">
+  <span>💡</span> What Rs 299 Actually Gets You
+</h2>
+<p class="mb-8 text-gray-700 leading-relaxed italic">
+  (Before we talk about which plant — this matters)
+</p>
+
+<div class="space-y-6 my-8">
+  <div class="bg-gray-50 border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3">
+      A plant in a nursery pot, typically 8-12cm diameter.
+    </h3>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      Not a seedling, not a cutting — a genuine plant with an established root system that has been growing for 3-6 months before dispatch. It is not large. It is not the plant in the lifestyle photo on the product page, which has been growing in ideal conditions for 2 years. It is a healthy young plant.
+    </p>
+  </div>
+
+  <div class="bg-gray-50 border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3">
+      A pot that is functional, not decorative.
+    </h3>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      Standard black or dark green nursery plastic. It does the job. It is not what you display the plant in. Budget another Rs 150-250 for a small ceramic or terracotta pot if aesthetics matter to you. The plant is the value. The pot is a vessel.
+    </p>
+  </div>
+
+  <div class="bg-gray-50 border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3">
+      Soil that may arrive slightly dry.
+    </h3>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      Not a problem. Plants are sometimes dispatched with drier soil to reduce weight and lower the risk of fungal growth in sealed packaging during transit. Water it moderately on arrival and it is fine.
+    </p>
+  </div>
+
+  <div class="bg-gray-50 border border-gray-150 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow">
+    <h3 class="text-lg font-bold text-gray-900 mt-0 mb-3">
+      A plant that will look small for the first 4-8 weeks.
+    </h3>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      This is the part that surprises people. A Rs 299 plant arrives looking modest. The same plant at 6 months — if it is in the right light and watered correctly — is often the thing in the room that people ask about.
+    </p>
+  </div>
+</div>
+<p class="mb-8 text-gray-700 leading-relaxed font-semibold text-emerald-800">
+  The gap between what arrives and what the plant becomes is not a deception. It is time. Give it time.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  THE THREE Rs 299 PLANTS AT INDOORPLANT.IN
+</h2>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  Real notes. No padding.
+</p>
+
+<!-- PLANT 1 -->
+<div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200 mb-8">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+    <div>
+      <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-100 px-2.5 py-1 rounded-full">Visual Choice</span>
+      <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">N'Joy Money Plant</h3>
+    </div>
+    <div class="flex items-baseline gap-2">
+      <span class="text-2xl font-extrabold text-emerald-700">Rs 299</span>
+    </div>
+  </div>
+  
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+    <div class="flex items-center gap-1">
+      <span class="text-amber-500 font-bold">★ 4.4</span>
+      <span class="text-gray-400">(21 reviews)</span>
+    </div>
+    <span class="text-gray-300">•</span>
+    <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
+      ✗ NOT PET SAFE
+    </div>
+    <span class="text-gray-300">•</span>
+    <a href="/product/njoy-money-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+  </div>
+
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it is:</strong> A compact variety of Epipremnum aureum with leaves that are crisply divided between pure white and deep green. Not the classic trailing money plant most people grew up seeing on Indian balconies — this one looks like it was designed, not just planted. The white variegation is clean and deliberate.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What you actually receive at Rs 299:</strong> A small potted plant, typically 4-6 leaves, in a nursery pot. The leaves on arrival may be slightly smaller than in the product photo. The white variegation is real from day one — it does not develop over time, which means what you receive is what you chose.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it looks like at 6 months:</strong> If you have given it a spot within a metre of a window with reasonable indirect light — it trails. The vines grow downward from a shelf edge or outward across a desk surface. By 6 months, a well-placed <a href="/product/njoy-money-plant" class="text-[#2D6A4F] hover:underline font-bold">N'Joy Money Plant</a> is producing new leaves that are larger than the ones that arrived, and the white-and-green pattern has more contrast because the leaves are better developed. It looks like something from a plant shop that charges Rs 800 for it.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it looks like at 1 year:</strong> Significantly different from what arrived. Long trailing vines, multiple growth points, fuller canopy. It is the same plant but it has become a presence rather than just a pot on a shelf.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Light requirement:</strong> Bright indirect light. Within a metre of a window. In very dim rooms the white variegation reduces over time — the plant becomes more green and less interesting. This is the one honest limitation at Rs 299. It is not a plant for a north-facing room with no real light.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Watering:</strong> Once a week. Check the soil first — stick a finger 2cm in. Water when dry. Do not water when still moist.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Who this plant is for:</strong> Someone who wants a Rs 299 plant that looks like a styling decision rather than a plant they picked up because it was affordable. It works on desks, shelves, kitchen windowsills, and any surface near a reasonable light source. Against a white wall it looks like an interior design choice.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-0">
+    <strong>Who this plant is not for:</strong> Dim rooms. North-facing rooms. Pet owners — not pet safe.
+  </p>
+</div>
+
+<!-- PLANT 2 -->
+<div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200 mb-8">
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100">
+    <div>
+      <span class="text-[10px] font-bold uppercase tracking-wider text-blue-800 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-full">Water Growing Option</span>
+      <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Money Plant Variegated</h3>
+    </div>
+    <div class="flex items-baseline gap-2">
+      <span class="text-2xl font-extrabold text-emerald-700">Rs 299</span>
+    </div>
+  </div>
+  
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+    <div class="flex items-center gap-1">
+      <span class="text-amber-500 font-bold">★ 4.4</span>
+      <span class="text-gray-400">(20 reviews)</span>
+    </div>
+    <span class="text-gray-300">•</span>
+    <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
+      ✗ NOT PET SAFE
+    </div>
+    <span class="text-gray-300">•</span>
+    <a href="/product/money-plant-variegated" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+  </div>
+
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it is:</strong> The variegated version of India's most common indoor plant — Epipremnum aureum. Heart-shaped leaves in a mix of creamy white, pale yellow, and deep green. The colours vary per leaf. Some leaves are mostly white. Some are mostly green. Some are split down the middle. No two leaves are identical.
+  </p>
+  <div class="bg-emerald-50/50 border border-emerald-100 rounded-xl p-4 my-4">
+    <strong class="block text-emerald-900 mb-1">It grows in soil or in water.</strong>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      That second part is worth slowing down on. This is one of the few plants you can remove from its nursery pot, place the roots in a clean glass of water, put it on a kitchen counter, and it will continue to grow. No soil. No pot. Just water, changed every 10-14 days.
+    </p>
+  </div>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What you actually receive at Rs 299:</strong> A young plant with 5-8 leaves in a nursery pot. The variegation is visible from the first leaf. If you receive one that is mostly green, put it in more light — variegation develops better in brighter conditions.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it looks like at 6 months:</strong> If kept in soil: trailing vines, 12-18 leaves typically, spreading across a shelf or cascading from a high surface. If kept in water: slower growth but visible roots developing in the jar, which is its own kind of attractive — the root system is visible and the plant looks entirely different from a soil-potted plant. At 6 months in a bright kitchen, the <a href="/product/money-plant-variegated" class="text-[#2D6A4F] hover:underline font-bold">Money Plant Variegated</a> in a glass jar is the thing every visitor asks about. Not because it is expensive-looking. Because it is unexpected.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it looks like at 1 year:</strong> Long trailing vines in soil. Or a dense root system visible in water. Both are good. In soil with good light it needs trimming by month 8-9, which is a good problem — it means the plant is thriving.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Light requirement:</strong> Low to medium indirect light. More tolerant of dim conditions than the N'Joy Money Plant because the green portions of the leaf can photosynthesise with less light. In very dim rooms the white and yellow fade and it becomes greener — still a healthy plant, just a less colourful one.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Watering:</strong> Once a week in soil. In water: change the water every 10-14 days and clean the jar once a month.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Who this plant is for:</strong> Anyone who wants something unusual at Rs 299. The water-growing option makes it genuinely unlike anything else at this price point. Kitchen windowsill, bathroom counter, desk with a glass jar — this plant looks different from every other plant in those spots because you do not see roots and water-growing plants in most Indian homes.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-0">
+    <strong>Who this plant is not for:</strong> Pet owners — not pet safe. Anyone who wants guaranteed bold colour in a dim room — the variegation fades in low light.
+  </p>
+</div>
+
+<!-- PLANT 3 -->
+<div class="bg-white border border-gray-150 rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-all duration-200 mb-8 relative overflow-hidden">
+  <div class="absolute top-0 right-0 bg-emerald-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider">Most Forgiving</div>
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 pb-4 border-b border-gray-100 mt-2">
+    <div>
+      <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-full">Top Rated</span>
+      <h3 class="text-2xl font-bold text-gray-900 mt-2 mb-0 font-playfair">Lucky Jade Plant</h3>
+    </div>
+    <div class="flex items-baseline gap-2">
+      <span class="text-2xl font-extrabold text-emerald-700">Rs 299</span>
+    </div>
+  </div>
+  
+  <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 text-xs text-gray-600">
+    <div class="flex items-center gap-1">
+      <span class="text-amber-500 font-bold">★ 4.5</span>
+      <span class="text-gray-400">(62 reviews)</span>
+    </div>
+    <span class="text-gray-300">•</span>
+    <div class="inline-flex items-center text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded text-xs font-semibold">
+      ✓ PET SAFE
+    </div>
+    <span class="text-gray-300">•</span>
+    <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
+  </div>
+
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it is:</strong> Crassula ovata. A succulent. One of the longest-lived indoor plants available in India. Known as the Lucky Plant, Money Tree, or Friendship Plant. Common Vastu plant in Indian homes. Grows slowly into a small tree shape over years — not a vine, not a trailing plant, not a spreading ground cover. A tree. That is genuinely what it becomes with time. At Rs 299 you are buying the first few chapters of that tree.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What you actually receive at Rs 299:</strong> A small, compact succulent typically 10-15cm tall with a visible trunk beginning to form and 15-25 leaves in the characteristic oval shape. It looks like a miniature tree from the first day. The trunk is the feature — even at this early stage it has more structure than a money plant or an aglaonema.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it looks like at 6 months:</strong> Marginally larger. The Jade Plant grows slowly — that is not a flaw, it is the species. At 6 months it may have added 3-5cm of height and a few new leaf clusters. The trunk will be slightly thicker. It is not dramatic growth. What it does at 6 months is simply look good — the same way it looked on arrival, except more settled and more confident in its pot.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>What it looks like at 1 year:</strong> More defined trunk structure. New branches beginning to form at 12 months if the light has been good. The plant looks like it has been there for years even though it has only been there for one. This is the Jade Plant's particular quality — it looks established long before it actually is. At 3 years, a <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> bought at Rs 299 looks like something from a specialty plant nursery charging Rs 1,800 for it.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Light requirement:</strong> This is the one critical condition. The Lucky Jade Plant needs a sunny spot. A south or west-facing windowsill with a few hours of direct or strong indirect light. In good light it grows slowly and looks exactly like the plant you chose. In a dim corner it stretches — the stems elongate as the plant reaches toward whatever light it can find and the compact tree shape collapses. It stays alive but stops looking good. One bright windowsill. That is the whole requirement.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Watering:</strong> Every 2-3 weeks. In winter or an AC room, once a month. This is not a plant that needs attention. It is a plant that needs to be left alone in a good light spot. More plants in India are killed by overwatering than by any other cause. The Jade Plant, being a succulent, makes overwatering almost impossible — it stores water internally and shows obvious signs of stress if given too much before showing signs of too little.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-4">
+    <strong>Who this plant is for:</strong> The person who has killed every plant they have ever owned. The person who travels for work and cannot commit to weekly watering. The person who wants a plant that looks intentional on a sunny windowsill without thinking about it. The person who wants something pet safe at Rs 299. This is the plant you buy when you want a plant that will still be there in three years.
+  </p>
+  <p class="text-sm text-gray-700 leading-relaxed mb-0">
+    <strong>Who this plant is not for:</strong> Anyone with no direct light or no strong indirect light. The Jade Plant in a dim room is a plant that gradually stops looking like itself.
+  </p>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  Which One Should You Buy — The Honest Answer
+</h2>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  Most articles end with "all three are great, pick what suits your style." That is not useful. Here is the actual decision:
+</p>
+
+<div class="space-y-4 my-8">
+  <div class="border-l-4 border-emerald-600 bg-gray-50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Buy the Lucky Jade Plant (Rs 299) if:</strong>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      You have a sunny windowsill and any of the following are true: you have a cat or dog at home, you forget to water plants, you travel regularly, you want something that will still be there and still look good in three years, you have killed other plants before and do not know why. At Rs 299 with 62 reviews at 4.5 stars — the highest-rated plant on the site — this is the safest purchase of the three. The sunlight requirement is real and non-negotiable. Everything else is forgiving.
+    </p>
+  </div>
+  <div class="border-l-4 border-emerald-400 bg-gray-50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Buy the N'Joy Money Plant (Rs 299) if:</strong>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      You have a good indirect light spot — a shelf or desk within a metre of a window — and you want something that looks like a styling decision rather than just a plant. No pets. Comfortable with once-a-week watering. Want something that changes and grows visibly over 6 months.
+    </p>
+  </div>
+  <div class="border-l-4 border-blue-400 bg-gray-50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Buy the Money Plant Variegated (Rs 299) if:</strong>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      You want to try the water-growing option. A glass jar on a kitchen counter or bathroom shelf with this plant in it is one of the most low-effort and genuinely interesting plant displays possible in an Indian home. No soil, no pot, no watering schedule. Change the water every two weeks. Not pet safe. Handles dim light better than the N'Joy.
+    </p>
+  </div>
+  <div class="border-l-4 border-amber-400 bg-amber-50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Buy all three for under Rs 900 if:</strong>
+    <p class="text-sm text-gray-700 leading-relaxed m-0">
+      You have different spots in your home with different light conditions and you want to start building a collection without spending significant money to test what works. At Rs 299 each, buying all three and seeing which ones settle best is less than the cost of one mid-range restaurant meal.
+    </p>
+  </div>
+</div>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  What to Do When Any of These Arrive
+</h2>
+
+<ul class="space-y-4 mb-8 text-gray-700 leading-relaxed">
+  <li class="flex gap-3">
+    <span class="text-emerald-600 mt-1">📦</span>
+    <div>
+      <strong class="text-gray-900">Open the box on the day it arrives.</strong><br>
+      <span class="text-sm">Plants shipped online need light. Every day in a sealed box is a day without photosynthesis. Open it, check the soil, and place the plant in its spot on day one.</span>
+    </div>
+  </li>
+  <li class="flex gap-3">
+    <span class="text-emerald-600 mt-1">💧</span>
+    <div>
+      <strong class="text-gray-900">Do not water immediately unless the soil is bone dry.</strong><br>
+      <span class="text-sm">Press a finger 2cm into the soil. If it is moist — leave it. If it is dry — moderate watering only, not a full soak.</span>
+    </div>
+  </li>
+  <li class="flex gap-3">
+    <span class="text-emerald-600 mt-1">🪴</span>
+    <div>
+      <strong class="text-gray-900">Do not repot immediately.</strong><br>
+      <span class="text-sm">The plant has already been through transit stress. Repotting adds another layer of stress. Wait 4-6 weeks before moving it to a decorative pot.</span>
+    </div>
+  </li>
+  <li class="flex gap-3">
+    <span class="text-emerald-600 mt-1">💡</span>
+    <div>
+      <strong class="text-gray-900">Do not put it in a dark spot to "let it adjust."</strong><br>
+      <span class="text-sm">Plants adjust to a new environment through light, not through darkness. Put it in the spot you intend to keep it from day one.</span>
+    </div>
+  </li>
+  <li class="flex gap-3">
+    <span class="text-emerald-600 mt-1">⏳</span>
+    <div>
+      <strong class="text-gray-900">Give it two weeks before making any judgement.</strong><br>
+      <span class="text-sm">A plant that looks slightly wilted or pale on arrival will look like a different plant by day 10 if the light is right. The adjustment period is real. Two weeks is the minimum.</span>
+    </div>
+  </li>
+  <li class="flex gap-3">
+    <span class="text-red-500 mt-1">📸</span>
+    <div>
+      <strong class="text-gray-900">If the plant arrives with visible physical damage...</strong><br>
+      <span class="text-sm">Broken stems, root ball collapsed, leaves crushed — photograph it and email support@indoorplant.in within 12 hours of delivery with your order number. That is IndoorPlant.in's damage return window for damaged arrivals.</span>
+    </div>
+  </li>
+</ul>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  The Honest Thing About Budget Plant Buying in India
+</h2>
+<p class="mb-6 text-gray-700 leading-relaxed font-semibold text-lg text-emerald-800">
+  The cheapest plant you will ever buy is the one you do not have to replace.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  A Rs 299 <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> bought once, placed in the right spot, watered correctly — that is a one-time Rs 299 expenditure.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed">
+  A Rs 299 plant bought from a poorly run site, packed badly, arriving damaged, dying within six weeks, being replaced, dying again — that is Rs 899 and you still do not have a plant.
+</p>
+<p class="mb-6 text-gray-700 leading-relaxed font-semibold">
+  The budget decision is not just which plant to buy. It is which site to trust with a living thing.
+</p>
+<p class="mb-8 text-gray-700 leading-relaxed">
+  IndoorPlant.in ships in breathable cardboard. Plants are watered before dispatch. Damage reports are accepted within 12 hours of delivery for visibly damaged plants. These are specific commitments, not vague reassurances. See what is currently available at <a href="/shop" class="text-[#2D6A4F] hover:underline font-bold">indoorplant.in/shop</a>.
+</p>
+
+<h2 class="text-2xl md:text-3xl font-extrabold text-[#1B4332] font-playfair mt-12 mb-6 border-b border-gray-150 pb-2">
+  FAQ
+</h2>
+<div class="space-y-4 mb-8">
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: What is the best cheap indoor plant under Rs 300 in India?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: The <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> at Rs 299 from IndoorPlant.in is the strongest recommendation at this price. It is a succulent with 62 verified reviews at 4.5 stars — the highest-rated plant on the site. It needs watering only every 2-3 weeks, is pet safe, and survives near-total neglect as long as it has a sunny windowsill. At Rs 299 it is the most forgiving plant available at any price point in the Indian online plant market.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Are plants for Rs 299 online in India actually any good?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: Yes, from a proper nursery. At Rs 299 you are buying a real, established plant in a small nursery pot. The size is modest on arrival — typically 10-20cm — but the plant is healthy and will grow. Price at point of sale in the Indian plant market reflects size, not quality. The same species in a larger pot at a garden centre costs Rs 800-1,500. You are buying time, not a different plant.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: What is the difference between a Rs 299 and a Rs 500 indoor plant online in India?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: Usually pot size and plant maturity, not species quality. A Rs 500 plant has typically been growing in the nursery for longer and arrives in a slightly larger pot. Both plants of the same species will reach the same eventual size. The Rs 299 plant gets there more slowly because it started smaller. There are exceptions — rare varieties command higher prices at any size — but for the common Indian indoor plants, price difference at the lower end reflects size only.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Can I grow a money plant from a cutting instead of buying?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: Yes. A single node cutting from an existing money plant in water will grow roots in 2-3 weeks. If you know someone with a money plant, ask for a cutting. The Rs 299 option at IndoorPlant.in is worthwhile if you do not have access to a cutting source — it arrives as an established plant rather than a cutting that needs 6-8 weeks to establish roots and begin visible growth.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: Which Rs 299 plant needs the least water?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: The <a href="/product/lucky-jade-plant" class="text-[#2D6A4F] hover:underline font-bold">Lucky Jade Plant</a> by a large margin. Water every 2-3 weeks in summer. Once a month in winter or an AC room. The N'Joy Money Plant and Money Plant Variegated both need once-a-week watering in soil. The Variegated in water needs a water change every 10-14 days but no actual watering schedule in the traditional sense.
+    </p>
+  </div>
+  <div class="border-l-4 border-[#2D6A4F] bg-gray-50/50 p-5 rounded-r-xl">
+    <strong class="block text-gray-900 font-bold mb-2">Q: My Rs 299 plant arrived smaller than I expected. Is that normal?</strong>
+    <p class="text-gray-705 leading-relaxed m-0 text-sm">
+      A: Yes. Product photos are taken with plants that have been growing in optimal nursery conditions for 1-3 years. What arrives at Rs 299 is the same species at an earlier stage of life — typically 3-6 months old. The plant you received is healthy and will grow toward what the photo shows. The gap is time, not quality.
     </p>
   </div>
 </div>
