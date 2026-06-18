@@ -2834,10 +2834,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <span class="text-amber-500 font-bold">★ 4.4</span>
       <span class="text-gray-400">(21 reviews)</span>
     </div>
-    <span class="text-gray-300">•</span>
-    <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
-      ✗ NOT PET SAFE
-    </div>
+
     <span class="text-gray-300">•</span>
     <a href="/product/njoy-money-plant" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
   </div>
@@ -2885,10 +2882,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <span class="text-amber-500 font-bold">★ 4.4</span>
       <span class="text-gray-400">(20 reviews)</span>
     </div>
-    <span class="text-gray-300">•</span>
-    <div class="inline-flex items-center text-red-650 bg-red-50/50 px-2.5 py-0.5 rounded text-xs font-semibold">
-      ✗ NOT PET SAFE
-    </div>
+
     <span class="text-gray-300">•</span>
     <a href="/product/money-plant-variegated" class="text-[#2D6A4F] hover:underline font-bold">View Product Details →</a>
   </div>
