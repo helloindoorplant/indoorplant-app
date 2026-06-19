@@ -8,8 +8,11 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-  const featuredPost = BLOG_POSTS.find(p => p.featured);
-  const regularPosts = BLOG_POSTS.filter(p => !p.featured);
+  const featuredPosts = BLOG_POSTS.filter(p => p.featured);
+  // Pick the most recently added featured post (last in the array)
+  const featuredPost = featuredPosts.length > 0 ? featuredPosts[featuredPosts.length - 1] : BLOG_POSTS[0];
+  // All other posts go to the grid
+  const regularPosts = BLOG_POSTS.filter(p => p.slug !== featuredPost?.slug);
 
   return (
     <div className="bg-gray-50 min-h-screen pb-20">
