@@ -30,17 +30,15 @@ export function DeleteProductButton({ id }: { id: string }) {
 
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
-      <AlertDialogTrigger 
-        render={
-          <Button 
-            disabled={isPending}
-            variant="ghost" 
-            size="icon" 
-            className="h-8 w-8 text-gray-500 hover:text-red-600 hover:bg-red-50"
-          />
-        }
-      >
-        <Trash2 className="h-4 w-4" />
+      <AlertDialogTrigger asChild>
+        <Button 
+          disabled={isPending}
+          variant="ghost" 
+          size="icon" 
+          className="h-8 w-8 text-gray-500 hover:text-red-600 hover:bg-red-50"
+        >
+          <Trash2 className="h-4 w-4" />
+        </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>

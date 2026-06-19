@@ -15,8 +15,8 @@ export interface CartItem {
 interface CartState {
   items: CartItem[];
   addItem: (item: CartItem) => void;
-  removeItem: (id: string, potColor?: string) => void;
-  updateQuantity: (id: string, potColor: string | undefined, quantity: number) => void;
+  removeItem: (id: string, size?: string, potType?: string, potColor?: string) => void;
+  updateQuantity: (id: string, size: string | undefined, potType: string | undefined, potColor: string | undefined, quantity: number) => void;
   clearCart: () => void;
   
   // Computed values that we will evaluate inside components or as part of the state
@@ -47,12 +47,12 @@ export const useCartStore = create<CartState>()(
           return { items: [...state.items, newItem] };
         }
       }),
-      removeItem: (id, potColor) => set((state) => ({
-        items: state.items.filter(item => !(item.id === id && item.potColor === potColor))
+      removeItem: (id, size, potType, potColor) => set((state) => ({
+        items: state.items.filter(item => !(item.id === id && item.size === size && item.potType === potType && item.potColor === potColor))
       })),
-      updateQuantity: (id, potColor, quantity) => set((state) => ({
+      updateQuantity: (id, size, potType, potColor, quantity) => set((state) => ({
         items: state.items.map(item => 
-          (item.id === id && item.potColor === potColor) 
+          (item.id === id && item.size === size && item.potType === potType && item.potColor === potColor) 
             ? { ...item, quantity: Math.max(1, quantity) } 
             : item
         )

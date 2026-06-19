@@ -1,12 +1,24 @@
 import Link from 'next/link';
 import { CheckCircle2, Package, Truck, ArrowRight, Share2, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import prisma from '@/lib/prisma';
+import { notFound } from 'next/navigation';
 
-export default function OrderConfirmationPage({ params }: { params: { id: string } }) {
+export default async function OrderConfirmationPage({ params }: { params: { id: string } }) {
   const { id } = params;
 
-  // Mock Date for Delivery
-  const deliveryDate = new Date();
+  let order = null;
+  if (id !== 'creator-order') {
+    order = await prisma.order.findUnique({
+      where: { id }
+    });
+  }
+
+  // If order is not found, we can either 404 or just show generic. We'll show generic if 'creator-order' fallback
+  const isGeneric = !order;
+
+  // Mock Date for Delivery (3 days from createdAt or now)
+  const deliveryDate = order ? new Date(order.createdAt) : new Date();
   deliveryDate.setDate(deliveryDate.getDate() + 3);
   const formattedDate = deliveryDate.toLocaleDateString('en-IN', { weekday: 'short', month: 'short', day: 'numeric' });
 
@@ -26,7 +38,7 @@ export default function OrderConfirmationPage({ params }: { params: { id: string
         </p>
         <div className="bg-primary/5 border border-primary/20 px-6 py-3 rounded-2xl flex items-center gap-4">
           <span className="text-muted-foreground font-medium">Order ID:</span>
-          <span className="text-2xl font-extrabold text-primary tracking-wider">{id}</span>
+          <span className="text-2xl font-extrabold text-primary tracking-wider">{id === 'creator-order' ? 'FREE-GIFT' : id}</span>
         </div>
       </div>
 
@@ -108,10 +120,7 @@ export default function OrderConfirmationPage({ params }: { params: { id: string
                 <div>
                   <h4 className="font-bold text-slate-700">Delivery Address</h4>
                   <p className="text-muted-foreground font-medium leading-relaxed mt-1">
-                    John Doe<br/>
-                    123 Green Avenue, Floor 4<br/>
-                    Bandra West, Mumbai<br/>
-                    Maharashtra - 400050
+                    {order ? order.shippingAddr : 'Your shipping address has been securely saved.'}
                   </p>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -55,6 +55,13 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+};
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1, // Crucial for preventing iOS input zoom
+  userScalable: false,
+  themeColor: "#2D6A4F",
 };
 
 export default function RootLayout({

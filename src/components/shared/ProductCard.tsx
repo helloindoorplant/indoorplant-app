@@ -97,6 +97,7 @@ export function ProductCard({ id, name, tagline, price, originalPrice, rating, r
             src={image} 
             alt={name}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
@@ -104,6 +105,7 @@ export function ProductCard({ id, name, tagline, price, originalPrice, rating, r
             src={FALLBACK_PLANT_IMAGE} 
             alt={name}
             fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 mix-blend-multiply"
           />
         )}

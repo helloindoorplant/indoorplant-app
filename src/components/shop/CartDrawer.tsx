@@ -62,7 +62,7 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
                   <div>
                     <div className="flex justify-between items-start">
                       <h4 className="font-bold text-[#1B4332] leading-tight line-clamp-1">{item.name}</h4>
-                      <button onClick={() => removeItem(item.id, item.potColor)} className="text-muted-foreground hover:text-red-500 transition-colors ml-2 bg-red-50 p-1.5 rounded-lg sm:opacity-100">
+                      <button onClick={() => removeItem(item.id, item.size, item.potType, item.potColor)} className="text-muted-foreground hover:text-red-500 transition-colors ml-2 bg-red-50 p-1.5 rounded-lg sm:opacity-100">
                         <Trash2 className="h-4 w-4" />
                       </button>
                     </div>
@@ -73,9 +73,9 @@ export function CartDrawer({ open, onOpenChange }: CartDrawerProps) {
                   </div>
                   <div className="flex items-center justify-between mt-3">
                     <div className="flex items-center gap-3 bg-secondary/40 rounded-lg px-2 py-1 border border-border/40">
-                      <button onClick={() => updateQuantity(item.id, item.potColor, item.quantity - 1)} className="w-6 h-6 flex items-center justify-center font-bold text-muted-foreground hover:text-primary transition-colors">-</button>
-                      <span className="text-sm font-bold w-4 text-center">{item.quantity}</span>
-                      <button onClick={() => updateQuantity(item.id, item.potColor, item.quantity + 1)} className="w-6 h-6 flex items-center justify-center font-bold text-muted-foreground hover:text-primary transition-colors">+</button>
+                      <button onClick={() => updateQuantity(item.id, item.size, item.potType, item.potColor, item.quantity - 1)} className="w-6 h-6 flex items-center justify-center font-bold text-muted-foreground hover:text-primary transition-colors">-</button>
+                      <span className="w-6 text-center text-sm font-bold text-foreground">{item.quantity}</span>
+                      <button onClick={() => updateQuantity(item.id, item.size, item.potType, item.potColor, item.quantity + 1)} className="w-6 h-6 flex items-center justify-center font-bold text-muted-foreground hover:text-primary transition-colors">+</button>
                     </div>
                     <span className="font-extrabold text-primary text-lg">₹{item.price * item.quantity}</span>
                   </div>

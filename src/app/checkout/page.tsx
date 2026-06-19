@@ -241,11 +241,41 @@ export default function CheckoutPage() {
         description: 'Plant Purchase Transaction',
         image: 'https://cdn-icons-png.flaticon.com/512/628/628283.png', // Temporary generic plant icon
         order_id: orderData.id, 
-        handler: function (response: any) {
+        handler: async function (response: any) {
           // Payment successful
           console.log('Payment Success:', response.razorpay_payment_id);
-          clearCart();
-          router.push(`/order-confirmation/${orderData.id}`);
+          
+          try {
+            // Save order to database
+            const saveRes = await fetch('/api/orders', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                items,
+                shippingAddr: formData,
+                totalAmount: grandTotal,
+                paymentId: response.razorpay_payment_id,
+                razorpayOrderId: response.razorpay_order_id,
+                signature: response.razorpay_signature,
+                email: formData.email,
+                name: formData.fullName,
+                isCreatorOrder: false,
+                couponCode: appliedCoupon?.code || null
+              })
+            });
+            const saveData = await saveRes.json();
+            
+            clearCart();
+            if (saveData.success && saveData.orderId) {
+              router.push(`/order-confirmation/${saveData.orderId}`);
+            } else {
+              router.push(`/order-confirmation/${orderData.id}`); // fallback
+            }
+          } catch (e) {
+            console.error("Failed to save order to db", e);
+            clearCart();
+            router.push(`/order-confirmation/${orderData.id}`); // fallback
+          }
         },
         prefill: {
           name: formData.fullName,
@@ -425,12 +455,12 @@ export default function CheckoutPage() {
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-bold text-slate-700">City / District *</label>
-                        <Input {...register('city')} className="h-12 rounded-xl bg-slate-50 cursor-not-allowed" placeholder="Auto-filled via PIN" readOnly />
+                        <Input {...register('city')} className="h-12 rounded-xl bg-slate-50" placeholder="e.g. Mumbai" />
                         {errors.city && <p className="text-red-500 text-xs font-bold">{errors.city.message}</p>}
                       </div>
                       <div className="space-y-2">
                         <label className="text-sm font-bold text-slate-700">State *</label>
-                        <Input {...register('state')} className="h-12 rounded-xl bg-slate-50 cursor-not-allowed" placeholder="Auto-filled via PIN" readOnly />
+                        <Input {...register('state')} className="h-12 rounded-xl bg-slate-50" placeholder="e.g. Maharashtra" />
                         {errors.state && <p className="text-red-500 text-xs font-bold">{errors.state.message}</p>}
                       </div>
                     </div>
@@ -529,10 +559,30 @@ export default function CheckoutPage() {
                       onClick={async () => {
                         setIsProcessing(true);
                         try {
-                          // Place order directly without Razorpay
                           const formData = getValues();
+                          
+                          // Save creator order to database
+                          const saveRes = await fetch('/api/orders', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                              items,
+                              shippingAddr: formData,
+                              totalAmount: 0,
+                              email: formData.email,
+                              name: formData.fullName,
+                              isCreatorOrder: true,
+                              couponCode: appliedCoupon?.code
+                            })
+                          });
+                          const saveData = await saveRes.json();
+                          
                           clearCart();
-                          router.push('/order-confirmation/creator-order');
+                          if (saveData.success && saveData.orderId) {
+                            router.push(`/order-confirmation/${saveData.orderId}`);
+                          } else {
+                            router.push('/order-confirmation/creator-order');
+                          }
                         } catch {
                           setIsProcessing(false);
                           alert('Something went wrong. Please try again.');
@@ -596,14 +646,14 @@ export default function CheckoutPage() {
                     )}
                     <div className="flex items-center gap-2 mt-1 bg-secondary/30 w-fit rounded-lg border border-border/50">
                       <button 
-                        onClick={() => updateQuantity(item.id, item.potColor, Math.max(1, item.quantity - 1))} 
+                        onClick={() => updateQuantity(item.id, item.size, item.potType, item.potColor, Math.max(1, item.quantity - 1))} 
                         className="px-2 py-0.5 text-xs font-bold text-muted-foreground hover:text-primary"
                       >
                         -
                       </button>
                       <span className="text-xs font-bold w-4 text-center">{item.quantity}</span>
                       <button 
-                        onClick={() => updateQuantity(item.id, item.potColor, item.quantity + 1)} 
+                        onClick={() => updateQuantity(item.id, item.size, item.potType, item.potColor, item.quantity + 1)} 
                         className="px-2 py-0.5 text-xs font-bold text-muted-foreground hover:text-primary"
                       >
                         +
@@ -613,7 +663,7 @@ export default function CheckoutPage() {
                   <div className="flex flex-col items-end gap-1.5 shrink-0">
                     <div className="font-bold text-sm">₹{item.price * item.quantity}</div>
                     <button 
-                      onClick={() => removeItem(item.id, item.potColor)}
+                      onClick={() => removeItem(item.id, item.size, item.potType, item.potColor)}
                       className="text-muted-foreground hover:text-red-500 bg-red-50 hover:bg-red-100 p-1.5 rounded-md transition-colors"
                       title="Remove item"
                     >

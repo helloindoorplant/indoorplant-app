@@ -74,7 +74,7 @@ export default function CartPage() {
                     <h3 className="font-bold text-lg text-[#1B4332] line-clamp-2">{item.name}</h3>
                     <p className="text-sm text-muted-foreground mt-1">{item.size || 'Standard'}</p>
                     <button 
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => removeItem(item.id, item.size, item.potType, item.potColor)}
                       className="text-sm text-red-500 font-medium hover:text-red-600 mt-2 flex items-center gap-1 transition-colors"
                     >
                       <Trash2 className="w-3 h-3" /> Remove
@@ -90,9 +90,9 @@ export default function CartPage() {
                 {/* Quantity */}
                 <div className="col-span-2 flex justify-start sm:justify-center">
                   <div className="flex items-center gap-3 bg-secondary/30 rounded-lg px-2 py-1 border border-border/40">
-                    <button onClick={() => updateQuantity(item.id, item.potColor, item.quantity - 1)} className="w-8 h-8 flex items-center justify-center font-bold text-muted-foreground hover:text-primary transition-colors">-</button>
-                    <span className="font-bold w-6 text-center">{item.quantity}</span>
-                    <button onClick={() => updateQuantity(item.id, item.potColor, item.quantity + 1)} className="w-8 h-8 flex items-center justify-center font-bold text-muted-foreground hover:text-primary transition-colors">+</button>
+                    <button onClick={() => updateQuantity(item.id, item.size, item.potType, item.potColor, item.quantity - 1)} className="w-8 h-8 flex items-center justify-center font-bold text-muted-foreground hover:text-primary transition-colors">-</button>
+                    <span className="w-8 text-center text-sm font-bold text-foreground">{item.quantity}</span>
+                    <button onClick={() => updateQuantity(item.id, item.size, item.potType, item.potColor, item.quantity + 1)} className="w-8 h-8 flex items-center justify-center font-bold text-muted-foreground hover:text-primary transition-colors">+</button>
                   </div>
                 </div>
                 
