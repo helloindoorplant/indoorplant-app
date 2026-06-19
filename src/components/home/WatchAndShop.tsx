@@ -61,7 +61,7 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
   return (
     <section style={{ backgroundColor: '#FAF8F5' }} className="py-16 md:py-24 relative overflow-hidden">
       <style>{`.watch-scroll::-webkit-scrollbar { display: none; }`}</style>
-      <div className="container mx-auto px-4 max-w-[1400px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold" style={{ color: '#1B4332' }}>
