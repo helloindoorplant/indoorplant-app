@@ -6,11 +6,12 @@ import { ProductCard } from '@/components/shared/ProductCard';
 import { CategoryCard } from '@/components/shared/CategoryCard';
 import { HeroSlider } from '@/components/home/HeroSlider';
 import { AiTeaser } from '@/components/home/AiTeaser';
-import { PlantersSection } from '@/components/home/PlantersSection';
+import { WatchAndShop } from '@/components/home/WatchAndShop';
 import { BalancedBeauty } from '@/components/home/BalancedBeauty';
 import { UspSection } from '@/components/home/UspSection';
 import { TestimonialSlider } from '@/components/home/TestimonialSlider';
 import { BlogSection } from '@/components/home/BlogSection';
+import { PromoGrid } from '@/components/home/PromoGrid';
 
 export const dynamic = 'force-dynamic';
 
@@ -41,6 +42,21 @@ export default async function Home() {
     take: 4,
     orderBy: { createdAt: 'desc' },
     include: { reviews: true }
+  });
+
+  // Fetch products for Watch & Shop carousel (5 products)
+  const watchShopProducts = await prisma.product.findMany({
+    take: 5,
+    orderBy: { createdAt: 'desc' },
+    select: {
+      id: true,
+      name: true,
+      slug: true,
+      price: true,
+      salePrice: true,
+      stock: true,
+      images: true,
+    }
   });
 
   const categories = await prisma.category.findMany({
@@ -131,11 +147,14 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Planters Section */}
-      <PlantersSection />
+      {/* Watch and Shop Section */}
+      <WatchAndShop products={watchShopProducts} />
 
       {/* Balanced Beauty Banner */}
-      <BalancedBeauty />
+      {/* <BalancedBeauty /> */}
+
+      {/* Promotional Grid */}
+      <PromoGrid />
 
       {/* USP Section */}
       <UspSection />

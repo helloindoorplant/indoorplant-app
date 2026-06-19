@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import dynamic from "next/dynamic";
 import { Footer } from "@/components/layout/Footer";
+import Script from "next/script";
 import { FloatingAiWidgetWrapper } from "@/components/shared/FloatingAiWidgetWrapper";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import { Analytics } from "@vercel/analytics/next";
@@ -97,7 +98,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="d0470d23-781d-4dcd-a3c0-582b163f82c9"></script>
+        <Script defer src="https://cloud.umami.is/script.js" data-website-id="d0470d23-781d-4dcd-a3c0-582b163f82c9" strategy="afterInteractive" />
       </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col selection:bg-primary/20 selection:text-primary">
         <script
