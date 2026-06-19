@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Resolve User ID
-    let userId = session?.user?.id;
+    let userId = (session?.user as any)?.id;
 
     if (!userId && email) {
       // Guest Checkout: Find or create user
