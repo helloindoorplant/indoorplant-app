@@ -36,10 +36,12 @@ async function main() {
     ])
   };
 
+  const { categoryId, ...dataToSave } = productData as any;
+
   const product = await prisma.product.upsert({
-    where: { slug: productData.slug },
-    update: productData,
-    create: productData,
+    where: { slug: dataToSave.slug },
+    update: { ...dataToSave, categories: { set: [{ id: category.id }] } },
+    create: { ...dataToSave, categories: { connect: [{ id: category.id }] } },
   });
 
   console.log('Successfully inserted product: ', product.name);
