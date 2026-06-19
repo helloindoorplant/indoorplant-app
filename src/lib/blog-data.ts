@@ -3271,13 +3271,9 @@ export const BLOG_POSTS: BlogPost[] = [
 
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
   <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-    <h3 class="font-bold text-lg text-gray-900 mb-2"><a href="/product/njoy-money-plant" class="hover:text-[#2D6A4F] transition-colors">N'Joy Money Plant</a> — Rs 299</h3>
-    <div class="flex flex-wrap items-center gap-2 mb-4">
-      <div class="flex items-center gap-1 bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md border border-emerald-100 font-semibold text-xs tracking-wide">
-        <span class="text-amber-500 text-sm">★</span> 4.4 from 21 verified reviews
-      </div>
-      <span class="text-gray-300">&bull;</span>
-      <span class="text-gray-500 text-xs font-medium">Not pet safe</span>
+    <h3 class="font-bold text-lg text-gray-900 mb-1"><a href="/product/njoy-money-plant" class="hover:text-[#2D6A4F] transition-colors">N'Joy Money Plant</a> — Rs 299</h3>
+    <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+      <span class="text-amber-400">★</span> 4.4 from 21 verified reviews &bull; Not pet safe
     </div>
     <p class="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
       Compact, white-and-green variegated leaves. One reviewer wrote that it grew so fast it was "almost needing a repotting soon." Another specifically called out the packaging as the reason they trusted ordering a plant online again after bad experiences elsewhere. This is the plant I would point a first-time online plant buyer toward if they want something that looks more expensive than its price tag.
@@ -3288,13 +3284,9 @@ export const BLOG_POSTS: BlogPost[] = [
   </div>
 
   <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-    <h3 class="font-bold text-lg text-gray-900 mb-2"><a href="/product/aglaonema-red-lipstick-plant" class="hover:text-[#2D6A4F] transition-colors">Aglaonema Red Lipstick</a> — Rs 399</h3>
-    <div class="flex flex-wrap items-center gap-2 mb-4">
-      <div class="flex items-center gap-1 bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md border border-emerald-100 font-semibold text-xs tracking-wide">
-        <span class="text-amber-500 text-sm">★</span> 4.4 from 23 verified reviews
-      </div>
-      <span class="text-gray-300">&bull;</span>
-      <span class="text-gray-500 text-xs font-medium">Pet safe</span>
+    <h3 class="font-bold text-lg text-gray-900 mb-1"><a href="/product/aglaonema-red-lipstick-plant" class="hover:text-[#2D6A4F] transition-colors">Aglaonema Red Lipstick</a> — Rs 399</h3>
+    <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+      <span class="text-amber-400">★</span> 4.4 from 23 verified reviews &bull; Pet safe
     </div>
     <p class="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
       Dark green leaves with vivid cherry-red edges. A reviewer named Anjali Desai (no relation to me, a genuine separate customer) specifically praised the packaging and noted the self-watering pot was useful because she travels frequently for work. This is the plant for a low-light room where you still want visible colour.
@@ -3305,13 +3297,9 @@ export const BLOG_POSTS: BlogPost[] = [
   </div>
 
   <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-    <h3 class="font-bold text-lg text-gray-900 mb-2"><a href="/product/lucky-jade-plant" class="hover:text-[#2D6A4F] transition-colors">Lucky Jade Plant</a> — Rs 299</h3>
-    <div class="flex flex-wrap items-center gap-2 mb-4">
-      <div class="flex items-center gap-1 bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md border border-emerald-100 font-semibold text-xs tracking-wide">
-        <span class="text-amber-500 text-sm">★</span> 4.5 from 62 verified reviews
-      </div>
-      <span class="text-gray-300">&bull;</span>
-      <span class="text-gray-500 text-xs font-medium">Pet safe</span>
+    <h3 class="font-bold text-lg text-gray-900 mb-1"><a href="/product/lucky-jade-plant" class="hover:text-[#2D6A4F] transition-colors">Lucky Jade Plant</a> — Rs 299</h3>
+    <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+      <span class="text-amber-400">★</span> 4.5 from 62 verified reviews &bull; Pet safe
     </div>
     <p class="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
       A succulent that genuinely tolerates neglect. One review reads simply: "It died after two weeks, probably my fault" — and that honesty is worth noting, because most review pages only show five-star praise. This page shows the full range, including a customer who openly attributes a failure to their own care, not the plant. That is a level of reviewer transparency rare on Indian ecommerce sites.
@@ -3322,13 +3310,9 @@ export const BLOG_POSTS: BlogPost[] = [
   </div>
 
   <div class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm flex flex-col h-full hover:shadow-md transition-shadow">
-    <h3 class="font-bold text-lg text-gray-900 mb-2"><a href="/product/bamboo-palm-plant" class="hover:text-[#2D6A4F] transition-colors">Bamboo Palm</a> — Rs 449</h3>
-    <div class="flex flex-wrap items-center gap-2 mb-4">
-      <div class="flex items-center gap-1 bg-emerald-50 text-emerald-800 px-2.5 py-1 rounded-md border border-emerald-100 font-semibold text-xs tracking-wide">
-        <span class="text-amber-500 text-sm">★</span> 4.3 from 10 verified reviews
-      </div>
-      <span class="text-gray-300">&bull;</span>
-      <span class="text-gray-500 text-xs font-medium">Pet safe</span>
+    <h3 class="font-bold text-lg text-gray-900 mb-1"><a href="/product/bamboo-palm-plant" class="hover:text-[#2D6A4F] transition-colors">Bamboo Palm</a> — Rs 449</h3>
+    <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+      <span class="text-amber-400">★</span> 4.3 from 10 verified reviews &bull; Pet safe
     </div>
     <div class="bg-gray-50 p-3 rounded-lg mb-4 border border-gray-100">
       <p class="text-xs text-gray-600 font-medium">Important honesty note: this plant was priced at Rs 389 on sale during an earlier check this year. As of June 19, 2026, it is listed at its regular price of Rs 449 with no active discount. Prices on ecommerce sites change — this is one of the only places online that will tell you that plainly instead of leaving an old screenshot to mislead you.</p>
