@@ -16,12 +16,12 @@ export const plants2 = [
     petFriendly: false,
     airPurifier: true,
     images: JSON.stringify([
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-1.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-3.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-4.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-5.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-6.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-7.webp"
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-1.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-3.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-4.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-5.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-6.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Golden-Money-Plant-7.webp"
     ]),
     faqs: JSON.stringify([
       { q: "What is a Golden Money Plant?", a: "The Golden Money Plant (Epipremnum aureum, also called Golden Pothos) is a tropical vine native to Southeast Asia, characterised by its heart-shaped golden-green leaves. In India, it is one of the most popular indoor plants, traditionally associated with prosperity, good luck, and positive Vastu energy. It is also one of the most forgiving plants for beginners." },
@@ -55,12 +55,12 @@ export const plants2 = [
     petFriendly: false,
     airPurifier: true,
     images: JSON.stringify([
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-2.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-3.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-4.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-5.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-6.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-7.webp"
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-2.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-3.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-4.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-5.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-6.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Money-Plant-Variegated-7.webp"
     ]),
     faqs: JSON.stringify([
       { q: "What is a Variegated Money Plant?", a: "The Variegated Money Plant (Epipremnum aureum variegated) is a more ornamental variety of the classic Money Plant. Its heart-shaped leaves are splashed with cream, white, and pale yellow — giving each leaf a unique, painterly pattern. More visually dramatic than the standard golden-green variety, it is one of the most decorative indoor plants in India." },
@@ -94,12 +94,12 @@ export const plants2 = [
     petFriendly: false,
     airPurifier: true,
     images: JSON.stringify([
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-2.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-3.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-4.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-5.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-6.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-7.webp"
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-2.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-3.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-4.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-5.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-6.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/05/Monstera-Broken-Heart-7.webp"
     ]),
     faqs: JSON.stringify([
       { q: "What is a Monstera Broken Heart plant?", a: "The Monstera Broken Heart is a compact climbing plant from the Araceae family with small, heart-shaped leaves featuring natural splits (fenestrations). It is currently one of the most searched and desired rare indoor plants in India for its architectural, sculptural appearance that sets it apart from common foliage plants." },

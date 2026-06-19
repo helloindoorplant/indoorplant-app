@@ -20,12 +20,12 @@ const plants = [
     petFriendly: false,
     airPurifier: true,
     images: JSON.stringify([
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-2.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-4.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-5.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-6.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-7.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-8.webp"
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-2.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-4.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-5.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-6.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-7.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Red-Lipstick-Plant-8.webp"
     ]),
     faqs: JSON.stringify([
       { q: "What is the Aglaonema Red Lipstick plant?", a: "The Aglaonema Red Lipstick is a tropical foliage plant known for its deep green leaves dramatically edged in vivid cherry-red. It belongs to the Chinese Evergreen family (Aglaonema spp.) and is one of the most sought-after indoor plants in India for its bold colour contrast and near-zero maintenance needs." },
@@ -59,12 +59,12 @@ const plants = [
     petFriendly: false,
     airPurifier: true,
     images: JSON.stringify([
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-2.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-3.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-5.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-6.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-7.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-9.webp"
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-2.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-3.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-5.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-6.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-7.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Aglaonema-Snow-White-Plant-9.webp"
     ]),
     faqs: JSON.stringify([
       { q: "What is the Aglaonema Snow White plant?", a: "The Aglaonema Snow White is a tropical foliage plant prized for its broad, creamy-white and soft-green variegated leaves. Part of the Chinese Evergreen family, it is one of the most elegant low-maintenance indoor plants available in India — combining striking visual beauty with exceptional adaptability to indoor conditions." },
@@ -98,12 +98,12 @@ const plants = [
     petFriendly: true,
     airPurifier: true,
     images: JSON.stringify([
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-2.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant3.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-4.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-5.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-6.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-7.webp"
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-2.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant3.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-4.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-5.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-6.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-7.webp"
     ]),
     faqs: JSON.stringify([
       { q: "What is a Bamboo Palm plant?", a: "The Bamboo Palm (Chamaedorea seifrizii) is a tropical palm native to Central America, named for its slender bamboo-like cane stems. Indoors, it grows as a multi-stemmed, lush plant with arching feathery fronds. It is one of NASA's highest-rated air-purifying houseplants and one of the few palms that thrives in low-light indoor conditions." },
@@ -137,12 +137,12 @@ const plants = [
     petFriendly: true,
     airPurifier: true,
     images: JSON.stringify([
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-10.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-2.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant3.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-4.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-5.webp",
-      "https://lightblue-parrot-226040.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-6.webp"
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-10.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-2.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant3.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-4.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-5.webp",
+      "https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/04/Bamboo-Palm-Plant-6.webp"
     ]),
     faqs: JSON.stringify([
       { q: "What is a Bamboo Palm plant?", a: "The Bamboo Palm (Chamaedorea seifrizii) is a multi-stemmed tropical palm prized for its slender cane-like stems and arching feathery fronds. It is one of NASA's top-rated air-purifying houseplants, completely safe for pets, and thrives in the low-light conditions of Indian homes and offices." },
