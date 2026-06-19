@@ -1,8 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
-import { ChevronRight, ChevronLeft, Play } from 'lucide-react';
+import { ChevronRight, ChevronLeft, Play, Pause } from 'lucide-react';
 import { useCartStore } from '@/store/useCartStore';
 import { useRouter } from 'next/navigation';
 import { FALLBACK_PLANT_IMAGE } from '@/lib/utils';
@@ -20,6 +20,58 @@ interface WatchAndShopProduct {
 interface WatchAndShopProps {
   products: WatchAndShopProduct[];
 }
+
+const VideoPlayer = ({ videoUrl, discountPercent }: { videoUrl: string, discountPercent: number }) => {
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const togglePlay = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  return (
+    <div className="block relative overflow-hidden bg-black cursor-pointer group/video" style={{ aspectRatio: '9/16' }} onClick={togglePlay}>
+      <video
+        ref={videoRef}
+        src={videoUrl}
+        className="absolute inset-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+      />
+      
+      {/* Discount Badge */}
+      {discountPercent > 0 && (
+        <span 
+          className="absolute top-3 left-3 text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10 shadow-lg pointer-events-none"
+          style={{ backgroundColor: '#1B4332' }}
+        >
+          {discountPercent}% discount
+        </span>
+      )}
+
+      {/* Play/Pause Icon */}
+      <div className={`absolute inset-0 flex items-center justify-center z-10 pointer-events-none transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover/video:opacity-100' : 'opacity-100'}`}>
+        <div 
+          className="w-12 h-12 rounded-full flex items-center justify-center text-white bg-black/35 backdrop-blur-sm transition-transform duration-300 scale-90 group-hover/video:scale-100"
+        >
+          {isPlaying ? <Pause className="w-5 h-5 fill-white" /> : <Play className="w-5 h-5 fill-white ml-0.5" />}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export function WatchAndShop({ products }: WatchAndShopProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -67,20 +119,20 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
           <h2 className="text-3xl md:text-4xl font-extrabold" style={{ color: '#1B4332' }}>
             Watch and Shop
           </h2>
-          <div className="hidden md:flex items-center gap-3">
+          <div className="flex items-center gap-2 md:gap-3">
             <button 
               onClick={() => scroll('left')}
-              className="w-12 h-12 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center hover:bg-gray-50 active:scale-95 transition-all text-slate-700"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center hover:bg-gray-50 active:scale-95 transition-all text-slate-700"
               aria-label="Scroll left"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button 
               onClick={() => scroll('right')}
-              className="w-12 h-12 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center hover:bg-gray-50 active:scale-95 transition-all text-slate-700"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center hover:bg-gray-50 active:scale-95 transition-all text-slate-700"
               aria-label="Scroll right"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>
@@ -88,7 +140,7 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
         {/* Carousel */}
         <div 
           ref={scrollContainerRef}
-          className="watch-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-6 md:mx-0 md:px-0"
+          className="watch-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
         >
           {products.map((product, index) => {
@@ -115,40 +167,8 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
                 className="group bg-white rounded-[20px] overflow-hidden transition-all duration-300 shrink-0 snap-start border border-gray-100"
                 style={{ width: 'calc((100% - 48px) / 4)', minWidth: '240px' }}
               >
-                {/* Video Area — 9:16 ratio, all cards identical */}
-                <div className="block relative overflow-hidden bg-black" style={{ aspectRatio: '9/16' }}>
-                  <video
-                    src={videoUrl}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                  />
-                  
-                  {/* Discount Badge */}
-                  {discountPercent > 0 && (
-                    <span 
-                      className="absolute top-3 left-3 text-white text-[10px] font-bold px-2.5 py-1 rounded-full z-10 shadow-lg"
-                      style={{ backgroundColor: '#1B4332' }}
-                    >
-                      {discountPercent}% discount
-                    </span>
-                  )}
-
-                  {/* Play Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                    <div 
-                      className="w-12 h-12 rounded-full flex items-center justify-center text-white opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"
-                      style={{ backgroundColor: 'rgba(0,0,0,0.35)', backdropFilter: 'blur(4px)' }}
-                    >
-                      <Play className="w-5 h-5 fill-white ml-0.5" />
-                    </div>
-                  </div>
-
-
-                </div>
+                {/* Video Area */}
+                <VideoPlayer videoUrl={videoUrl} discountPercent={discountPercent} />
 
                 {/* Product Info */}
                 <div className="p-3 sm:p-4 flex flex-col gap-3">
