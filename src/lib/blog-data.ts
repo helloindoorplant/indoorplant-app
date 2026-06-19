@@ -3278,7 +3278,7 @@ export const BLOG_POSTS: BlogPost[] = [
     <p class="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
       Compact, white-and-green variegated leaves. One reviewer wrote that it grew so fast it was "almost needing a repotting soon." Another specifically called out the packaging as the reason they trusted ordering a plant online again after bad experiences elsewhere. This is the plant I would point a first-time online plant buyer toward if they want something that looks more expensive than its price tag.
     </p>
-    <a href="/product/njoy-money-plant" class="inline-block text-center w-full py-2.5 px-4 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-[#d97757] transition-colors mt-auto">
+    <a href="/product/njoy-money-plant" class="inline-block text-center w-full py-2.5 px-4 bg-[#2D6A4F] text-white rounded-lg text-sm font-medium hover:bg-[#1B4332] transition-colors mt-auto">
       View Details
     </a>
   </div>
@@ -3291,7 +3291,7 @@ export const BLOG_POSTS: BlogPost[] = [
     <p class="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
       Dark green leaves with vivid cherry-red edges. A reviewer named Anjali Desai (no relation to me, a genuine separate customer) specifically praised the packaging and noted the self-watering pot was useful because she travels frequently for work. This is the plant for a low-light room where you still want visible colour.
     </p>
-    <a href="/product/aglaonema-red-lipstick-plant" class="inline-block text-center w-full py-2.5 px-4 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-[#d97757] transition-colors mt-auto">
+    <a href="/product/aglaonema-red-lipstick-plant" class="inline-block text-center w-full py-2.5 px-4 bg-[#2D6A4F] text-white rounded-lg text-sm font-medium hover:bg-[#1B4332] transition-colors mt-auto">
       View Details
     </a>
   </div>
@@ -3304,7 +3304,7 @@ export const BLOG_POSTS: BlogPost[] = [
     <p class="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
       A succulent that genuinely tolerates neglect. One review reads simply: "It died after two weeks, probably my fault" — and that honesty is worth noting, because most review pages only show five-star praise. This page shows the full range, including a customer who openly attributes a failure to their own care, not the plant. That is a level of reviewer transparency rare on Indian ecommerce sites.
     </p>
-    <a href="/product/lucky-jade-plant" class="inline-block text-center w-full py-2.5 px-4 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-[#d97757] transition-colors mt-auto">
+    <a href="/product/lucky-jade-plant" class="inline-block text-center w-full py-2.5 px-4 bg-[#2D6A4F] text-white rounded-lg text-sm font-medium hover:bg-[#1B4332] transition-colors mt-auto">
       View Details
     </a>
   </div>
@@ -3320,7 +3320,7 @@ export const BLOG_POSTS: BlogPost[] = [
     <p class="text-gray-700 text-sm leading-relaxed mb-6 flex-grow">
       At 4-5 feet with arching fronds, it remains the strongest option in the catalogue for filling a large empty corner.
     </p>
-    <a href="/product/bamboo-palm-plant" class="inline-block text-center w-full py-2.5 px-4 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-[#d97757] transition-colors mt-auto">
+    <a href="/product/bamboo-palm-plant" class="inline-block text-center w-full py-2.5 px-4 bg-[#2D6A4F] text-white rounded-lg text-sm font-medium hover:bg-[#1B4332] transition-colors mt-auto">
       View Details
     </a>
   </div>
