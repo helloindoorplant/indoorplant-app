@@ -88,7 +88,7 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
         {/* Carousel */}
         <div 
           ref={scrollContainerRef}
-          className="watch-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0"
+          className="watch-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory -mx-4 px-6 md:mx-0 md:px-0"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
         >
           {products.map((product, index) => {
@@ -113,10 +113,10 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
               <div 
                 key={product.id}
                 className="group bg-white rounded-[20px] overflow-hidden transition-all duration-300 shrink-0 snap-start border border-gray-100"
-                style={{ width: 'calc((100% - 48px) / 4)', minWidth: '200px' }}
+                style={{ width: 'calc((100% - 48px) / 4)', minWidth: '240px' }}
               >
                 {/* Video Area — 9:16 ratio, all cards identical */}
-                <Link href={`/product/${product.slug}`} className="block relative overflow-hidden" style={{ aspectRatio: '9/16' }}>
+                <div className="block relative overflow-hidden bg-black" style={{ aspectRatio: '9/16' }}>
                   <video
                     src={videoUrl}
                     className="absolute inset-0 w-full h-full object-cover"
@@ -148,10 +148,10 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
                   </div>
 
 
-                </Link>
+                </div>
 
-                {/* Product Info — fixed height bottom section */}
-                <div className="p-3 sm:p-4" style={{ height: '140px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                {/* Product Info */}
+                <div className="p-3 sm:p-4 flex flex-col gap-3">
                   <div className="flex items-start gap-2.5">
                     <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden shrink-0 border border-slate-200">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
