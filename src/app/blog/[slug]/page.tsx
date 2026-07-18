@@ -7,6 +7,7 @@ import prisma from "@/lib/prisma";
 import { ProductCardCarousel } from "@/components/blog/ProductCardCarousel";
 import { RelatedBlogsCarousel } from "@/components/blog/RelatedBlogsCarousel";
 import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
+import { autoLinkContent } from "@/lib/blog/auto-linker";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
@@ -25,10 +26,19 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
+  let post = await prisma.article.findUnique({
+    where: { slug: resolvedParams.slug },
+    include: { author: true, category: true }
+  }).catch(() => null) as any;
   
   if (!post) {
-    notFound();
+    const staticPost = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
+    if (!staticPost) notFound();
+    post = {
+      ...staticPost,
+      author: staticPost.author,
+      category: { name: staticPost.category },
+    };
   }
 
   // Format date for schema
@@ -147,7 +157,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         
         <div className="mb-6">
           <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-full">
-            {post.category}
+            {post.category?.name || post.category}
           </span>
         </div>
         
@@ -163,7 +173,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="min-w-0">
               <p className="font-medium text-gray-900 text-sm sm:text-base truncate">{post.author.name}</p>
               <div className="flex items-center text-[11px] sm:text-sm text-gray-500 whitespace-nowrap">
-                <span className="truncate">{post.date}</span>
+                <span className="truncate">{post.date || (post.createdAt ? new Date(post.createdAt).toLocaleDateString() : '')}</span>
                 <span className="mx-1.5 sm:mx-2 shrink-0">•</span>
                 <span className="flex items-center shrink-0"><Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5 mr-1" /> {post.readTime}</span>
               </div>
@@ -191,7 +201,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Article Body */}
       <article 
         className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 prose prose-lg prose-green"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{ __html: autoLinkContent(post.content) }}
       />
 
       {/* Featured Products Carousel */}

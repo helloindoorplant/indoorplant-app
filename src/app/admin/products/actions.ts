@@ -1,6 +1,6 @@
 "use server";
 import prisma from '@/lib/prisma';
-
+import { onProductSaved } from '@/lib/seo/auto-seed';
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -58,8 +58,9 @@ export async function saveProduct(formData: FormData) {
     potColorImages: Object.keys(potColorImagesObj).length > 0 ? JSON.stringify(potColorImagesObj) : null,
   };
 
+  let savedProduct;
   if (id) {
-    await prisma.product.update({
+    savedProduct = await prisma.product.update({
       where: { id },
       data: {
         ...baseData,
@@ -67,13 +68,16 @@ export async function saveProduct(formData: FormData) {
       }
     });
   } else {
-    await prisma.product.create({
+    savedProduct = await prisma.product.create({
       data: {
         ...baseData,
         categories: { connect: categoryIds.map(id => ({ id })) }
       }
     });
   }
+
+  // Auto-seed Product × City pages for approved products
+  await onProductSaved(savedProduct);
 
   revalidatePath("/admin/products");
   revalidatePath("/shop");

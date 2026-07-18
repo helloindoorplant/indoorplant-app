@@ -14,7 +14,8 @@ import {
   Bell,
   Sparkles,
   Menu,
-  X
+  X,
+  Search
 } from "lucide-react";
 
 const adminNav = [
@@ -24,6 +25,7 @@ const adminNav = [
   { name: "Customers", href: "/admin/customers", icon: Users },
   { name: "Creators", href: "/admin/creators", icon: Sparkles },
   { name: "AI Advisor", href: "/admin/ai", icon: Bot },
+  { name: "SEO & GEO", href: "/admin/seo", icon: Search },
   { name: "Settings", href: "/admin/settings", icon: Settings },
 ];
 

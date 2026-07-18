@@ -1,18 +1,30 @@
 import Link from "next/link";
 import { Clock, ArrowRight } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog-data";
+import prisma from "@/lib/prisma";
 
 export const metadata = {
   title: "Indoor Plant Care Guides for Indian Homes | IndoorPlant.in Journal",
   description: "Plant care guides written for Indian homes — watering in hot climates, monsoon care, low-light apartment solutions, and pet-safe plant lists. Updated regularly.",
 };
 
-export default function BlogPage() {
-  const featuredPosts = BLOG_POSTS.filter(p => p.featured);
-  // Pick the most recently added featured post (last in the array)
-  const featuredPost = featuredPosts.length > 0 ? featuredPosts[featuredPosts.length - 1] : BLOG_POSTS[0];
+export default async function BlogPage() {
+  let dbPosts = await prisma.article.findMany({
+    include: { category: true },
+    orderBy: { createdAt: 'desc' }
+  }).catch(() => []) as any[];
+
+  // Fallback to static posts if DB is not seeded
+  let posts = dbPosts.length > 0 ? dbPosts : BLOG_POSTS.map(p => ({
+    ...p,
+    category: { name: p.category }
+  }));
+
+  const featuredPosts = posts.filter(p => p.featured);
+  // Pick the most recently added featured post (last in the array if static, first if db)
+  const featuredPost = featuredPosts.length > 0 ? (dbPosts.length > 0 ? featuredPosts[0] : featuredPosts[featuredPosts.length - 1]) : posts[0];
   // All other posts go to the grid
-  const regularPosts = BLOG_POSTS.filter(p => p.slug !== featuredPost?.slug);
+  const regularPosts = posts.filter(p => p.slug !== featuredPost?.slug);
 
   return (
     <div className="bg-gray-50 min-h-screen pb-20">
@@ -59,7 +71,7 @@ export default function BlogPage() {
               </div>
               <div className="md:w-2/5 p-8 md:p-12 flex flex-col justify-center">
                 <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-full w-max mb-4">
-                  {featuredPost.category}
+                  {featuredPost.category?.name || featuredPost.category}
                 </span>
                 <h2 className="text-3xl font-bold text-gray-900 font-playfair mb-4 group-hover:text-primary transition-colors">
                   {featuredPost.title}
@@ -68,7 +80,7 @@ export default function BlogPage() {
                   {featuredPost.excerpt}
                 </p>
                 <div className="flex items-center text-sm text-gray-500 mt-auto">
-                  <span>{featuredPost.date}</span>
+                  <span>{featuredPost.date || (featuredPost.createdAt ? new Date(featuredPost.createdAt).toLocaleDateString() : '')}</span>
                   <span className="mx-2">•</span>
                   <span className="flex items-center"><Clock className="w-4 h-4 mr-1" /> {featuredPost.readTime}</span>
                 </div>
@@ -90,14 +102,14 @@ export default function BlogPage() {
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <span className="text-xs font-bold text-primary uppercase tracking-wider mb-2">
-                  {post.category}
+                  {post.category?.name || post.category}
                 </span>
                 <h3 className="text-xl font-bold text-gray-900 font-playfair mb-3 group-hover:text-primary transition-colors">
                   {post.title}
                 </h3>
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
                   <div className="flex items-center text-xs text-gray-500">
-                    <span>{post.date}</span>
+                    <span>{post.date || (post.createdAt ? new Date(post.createdAt).toLocaleDateString() : '')}</span>
                     <span className="mx-2">•</span>
                     <span>{post.readTime}</span>
                   </div>

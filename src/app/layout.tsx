@@ -8,6 +8,8 @@ import Script from "next/script";
 import { FloatingAiWidgetWrapper } from "@/components/shared/FloatingAiWidgetWrapper";
 import { AuthProvider } from "@/components/providers/AuthProvider";
 import { Analytics } from "@vercel/analytics/next";
+import { genOrgSchema, genWebSiteSchema } from "@/lib/seo/schema-generator";
+import { APPROVED_CITIES } from "@/lib/seo/city-data";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -70,26 +72,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const orgJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "IndoorPlant.in",
-    "url": "https://www.indoorplant.in",
-    "logo": "https://www.indoorplant.in/Indoorplant-Logo.svg",
-    "description": "IndoorPlant.in is an online plant store that delivers fresh indoor plants across India with AI-powered plant recommendations and expert care guides.",
-    "foundingLocation": "India",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91 7003587996",
-      "email": "helloindoorplant@gmail.com",
-      "contactType": "customer service",
-      "availableLanguage": ["English", "Hindi"]
-    },
-    "sameAs": [
-      "https://www.instagram.com/indoorplant.in",
-      "https://www.facebook.com/indoorplant.in"
-    ]
-  };
+  const servedCityNames = APPROVED_CITIES.map((c) => c.cityName);
+  const orgJsonLd = genOrgSchema(servedCityNames);
+  const websiteJsonLd = genWebSiteSchema();
 
   return (
     <html
@@ -104,6 +89,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
         <AuthProvider>
           <Header />

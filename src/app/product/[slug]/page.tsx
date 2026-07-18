@@ -215,7 +215,32 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       {/* Main Product Section Wrapper */}
       <main className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <ProductDetailsClient product={product} initialImages={images} />
+        
+        {/* Delivery in your city block */}
+        <div className="mt-16 mb-12 bg-green-50/50 rounded-3xl p-8 lg:p-12 text-center max-w-4xl mx-auto border border-green-100">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-6">Delivery in your city</h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto text-lg">
+            We deliver {product.name} to major cities across India. Fast shipping, expert packing, and guaranteed healthy arrival.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {['bengaluru', 'delhi', 'mumbai', 'pune', 'chennai'].map(city => (
+              <Link 
+                key={city}
+                href={`/plants/${city}`} 
+                className="bg-white hover:bg-green-50 border border-green-200 text-green-800 px-6 py-3 rounded-full font-semibold transition-colors shadow-sm hover:shadow-md"
+              >
+                {city.charAt(0).toUpperCase() + city.slice(1)}
+              </Link>
+            ))}
+          </div>
+          <div className="mt-8">
+            <Link href="/plants" className="text-green-700 font-medium hover:underline inline-flex items-center gap-1">
+              View all delivery cities <span className="translate-y-[1px]">→</span>
+            </Link>
+          </div>
+        </div>
       </main>
+      
       {/* Reviews Section */}
       <ProductReviews 
         productId={product.id} 

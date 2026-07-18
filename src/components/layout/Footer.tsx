@@ -8,9 +8,9 @@ export function Footer() {
   return (
     <footer suppressHydrationWarning className="bg-primary text-primary-foreground pt-16 pb-8 border-t-8 border-primary/20">
       <div suppressHydrationWarning className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-16">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-12 mb-16">
           {/* Column 1: Brand */}
-          <div className="space-y-6">
+          <div className="space-y-6 sm:col-span-2 lg:col-span-3">
             <Link href="/" className="flex items-center gap-2 group">
               <img src="https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Indoorplant-Logo-White.svg" alt="IndoorPlant.in Logo" className="h-10 w-auto transition-transform group-hover:scale-105" />
             </Link>
@@ -24,7 +24,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Quick Links */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-bold mb-6 tracking-wide">Quick Links</h3>
             <ul className="space-y-4 text-[15px] text-primary-foreground/80">
               <li><Link href="/" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Home</Link></li>
@@ -36,7 +36,7 @@ export function Footer() {
           </div>
 
           {/* Column 3: Customer Service */}
-          <div>
+          <div className="lg:col-span-2">
             <h3 className="text-lg font-bold mb-6 tracking-wide">Customer Service</h3>
             <ul className="space-y-4 text-[15px] text-primary-foreground/80">
               <li><Link href="/account" className="hover:text-white hover:translate-x-1 inline-block transition-transform">My Account</Link></li>
@@ -47,8 +47,25 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Contact & Newsletter */}
-          <div>
+          {/* Column 4: Delivery Cities */}
+          <div className="lg:col-span-2">
+            <h3 className="text-lg font-bold mb-6 tracking-wide">Delivery Cities</h3>
+            <ul className="space-y-4 text-[15px] text-primary-foreground/80">
+              <li><Link href="/plants/bengaluru" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Plants in Bengaluru</Link></li>
+              <li><Link href="/plants/delhi" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Plants in Delhi</Link></li>
+              <li><Link href="/plants/mumbai" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Plants in Mumbai</Link></li>
+              <li><Link href="/plants/pune" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Plants in Pune</Link></li>
+              <li><Link href="/plants/chennai" className="hover:text-white hover:translate-x-1 inline-block transition-transform">Plants in Chennai</Link></li>
+              <li className="pt-2">
+                <Link href="/plants" className="text-white font-medium hover:underline inline-flex items-center gap-1 group">
+                  View All Locations <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 5: Contact & Newsletter */}
+          <div className="sm:col-span-2 lg:col-span-3">
             <h3 className="text-lg font-bold mb-6 tracking-wide">Contact & Newsletter</h3>
             <address className="not-italic text-[15px] text-primary-foreground/80 space-y-4">
               <p className="flex items-center gap-3"><span className="text-white">Email:</span> helloindoorplant@gmail.com</p>
