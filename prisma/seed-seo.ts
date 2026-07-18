@@ -156,9 +156,10 @@ async function main() {
         stateName: approved.stateName,
         metaTitle: `Buy Indoor Plants in ${approved.stateName} | Free Plant Delivery`,
         metaDesc: `Order premium indoor plants across ${approved.stateName}. We offer fast, damage-free plant delivery to ${approved.citySlugs.slice(0, 2).map((s: string) => s.charAt(0).toUpperCase() + s.slice(1)).join(', ')} & more. Shop our fresh collection today.`,
+        introPara: `IndoorPlant.in delivers fresh, healthy indoor plants across ${approved.stateName}. Find the perfect plant for your home or office and get it delivered fast.`,
         citySlugs: JSON.stringify(approved.citySlugs),
-        isActive: true, // User requested all active
-        isIndexed: true, // User requested all indexed
+        isActive: true,
+        isIndexed: true,
       });
     }
   }

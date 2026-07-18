@@ -1,5 +1,6 @@
 import prisma from '@/lib/prisma';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { ProductCard } from '@/components/shared/ProductCard';
 import { ProductDetailsClient } from '@/components/product/ProductDetailsClient';
