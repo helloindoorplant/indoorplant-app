@@ -59,7 +59,7 @@ export default async function PlantsLocationPage({
   if (!hub || !hub.isActive) notFound();
 
     const products = await prisma.product.findMany({
-      take: 6,
+      take: 8,
       orderBy: [{ isFeatured: 'desc' }, { createdAt: 'desc' }],
       select: { id: true, name: true, slug: true, price: true, salePrice: true, images: true, description: true, isFeatured: true },
     });
@@ -118,7 +118,7 @@ export default async function PlantsLocationPage({
 
               {/* Product Grid — shown directly in hero */}
               {products.length > 0 && (
-                <div className="grid grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-10">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-10">
                   {products.map((p) => {
                     const imgs = JSON.parse(p.images as string) as string[];
                     // Generate stable fallback ratings based on ID to avoid hydration mismatch
