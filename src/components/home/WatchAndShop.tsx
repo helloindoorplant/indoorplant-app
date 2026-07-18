@@ -1,10 +1,8 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import Link from 'next/link';
-import { ChevronRight, ChevronLeft, Play, Pause } from 'lucide-react';
+import { Play, Pause } from 'lucide-react';
 import { useCartStore } from '@/store/useCartStore';
-import { useRouter } from 'next/navigation';
 import { FALLBACK_PLANT_IMAGE } from '@/lib/utils';
 
 interface WatchAndShopProduct {
@@ -74,9 +72,7 @@ const VideoPlayer = ({ videoUrl, discountPercent }: { videoUrl: string, discount
 };
 
 export function WatchAndShop({ products }: WatchAndShopProps) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
   const { addItem, setDrawerOpen } = useCartStore();
-  const router = useRouter();
 
   // Video URLs mapped to each product slot
   const videoUrls = [
@@ -86,17 +82,6 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
     'https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Shop-Video-3.mp4',
     'https://lightgrey-nightingale-217677.hostingersite.com/wp-content/uploads/2026/06/Shop-Video-4.mp4',
   ];
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      const scrollAmount = container.clientWidth * 0.75;
-      container.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
-    }
-  };
 
   const handleAddToCart = (product: WatchAndShopProduct, coverImage: string) => {
     const currentPrice = product.salePrice || product.price;
@@ -112,37 +97,16 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
 
   return (
     <section style={{ backgroundColor: '#FAF8F5' }} className="py-16 md:py-24 relative overflow-hidden">
-      <style>{`.watch-scroll::-webkit-scrollbar { display: none; }`}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-8 md:mb-12">
+        <div className="mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold" style={{ color: '#1B4332' }}>
             Watch and Shop
           </h2>
-          <div className="flex items-center gap-2 md:gap-3">
-            <button 
-              onClick={() => scroll('left')}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center hover:bg-gray-50 active:scale-95 transition-all text-slate-700"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
-            <button 
-              onClick={() => scroll('right')}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center hover:bg-gray-50 active:scale-95 transition-all text-slate-700"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
-            </button>
-          </div>
         </div>
 
-        {/* Carousel */}
-        <div 
-          ref={scrollContainerRef}
-          className="watch-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}
-        >
+        {/* 4-Column Responsive Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
           {products.map((product, index) => {
             let productImages: string[] = [];
             try {
@@ -164,8 +128,7 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
             return (
               <div 
                 key={product.id}
-                className="group bg-white rounded-[20px] overflow-hidden transition-all duration-300 shrink-0 snap-start border border-gray-100"
-                style={{ width: 'calc((100% - 48px) / 4)', minWidth: '240px' }}
+                className="group bg-white rounded-[20px] overflow-hidden transition-all duration-300 border border-gray-100"
               >
                 {/* Video Area */}
                 <VideoPlayer videoUrl={videoUrl} discountPercent={discountPercent} />
@@ -197,7 +160,7 @@ export function WatchAndShop({ products }: WatchAndShopProps) {
                     </div>
                   </div>
 
-                  {/* Buy Now */}
+                  {/* Add to Cart */}
                   {inStock ? (
                     <button 
                       onClick={() => handleAddToCart(product, coverImage)}
