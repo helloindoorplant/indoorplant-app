@@ -6,6 +6,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from '@/co
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { ProductCard } from '@/components/shared/ProductCard';
 import { FilterSidebar } from '@/components/shop/FilterSidebar';
+import { genBreadcrumbSchema } from '@/lib/seo/schema-generator';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,8 +36,18 @@ export default async function ShopPage() {
     orderBy: { isFeatured: 'desc' },
     include: { reviews: true }
   });
+
+  const breadcrumbJsonLd = genBreadcrumbSchema([
+    { name: 'Home', url: 'https://www.indoorplant.in' },
+    { name: 'Shop All Plants', url: 'https://www.indoorplant.in/shop' }
+  ]);
+
   return (
     <div className="bg-[#F8FFF9] min-h-screen pb-32">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Page Header */}
       <div className="bg-white border-b border-border/30 pt-10 pb-8 shadow-sm relative overflow-hidden">
         {/* Decorative background blur */}

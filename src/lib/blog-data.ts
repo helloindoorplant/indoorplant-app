@@ -40,9 +40,9 @@ export const BLOG_POSTS: BlogPost[] = [
       "indoor plants buy online India"
     ],
     author: {
-      name: "Dr. Anjali Desai",
+      name: "Subho Mondal",
       role: "Lead Horticulturist",
-      avatar: "AD"
+      avatar: "SM"
     },
     content: `
 <p class="lead text-xl text-gray-650 mb-8 leading-relaxed font-light">
@@ -778,9 +778,9 @@ export const BLOG_POSTS: BlogPost[] = [
       "plants for Indian apartment decor"
     ],
     author: {
-      name: "Dr. Anjali Desai",
+      name: "Subho Mondal",
       role: "Lead Horticulturist",
-      avatar: "AD"
+      avatar: "SM"
     },
     content: `
 <p class="lead text-xl text-gray-655 mb-8 leading-relaxed font-light">
@@ -1338,9 +1338,9 @@ export const BLOG_POSTS: BlogPost[] = [
       "best plants for 1BHK India"
     ],
     author: {
-      name: "Dr. Anjali Desai",
+      name: "Subho Mondal",
       role: "Lead Horticulturist",
-      avatar: "AD"
+      avatar: "SM"
     },
     content: `
 <p class="lead text-xl text-gray-655 mb-8 leading-relaxed font-light">
@@ -1814,9 +1814,9 @@ export const BLOG_POSTS: BlogPost[] = [
       "online plant shopping India guide"
     ],
     author: {
-      name: "Dr. Anjali Desai",
+      name: "Subho Mondal",
       role: "Lead Horticulturist",
-      avatar: "AD"
+      avatar: "SM"
     },
     faqSchema: {
       "@context": "https://schema.org",
@@ -2336,9 +2336,9 @@ export const BLOG_POSTS: BlogPost[] = [
       "ordering plants online India when"
     ],
     author: {
-      name: "Dr. Anjali Desai",
+      name: "Subho Mondal",
       role: "Lead Horticulturist",
-      avatar: "AD"
+      avatar: "SM"
     },
     faqSchema: {
       "@context": "https://schema.org",
@@ -2689,9 +2689,9 @@ export const BLOG_POSTS: BlogPost[] = [
       "low cost indoor plants India"
     ],
     author: {
-      name: "Dr. Anjali Desai",
+      name: "Subho Mondal",
       role: "Lead Horticulturist",
-      avatar: "AD"
+      avatar: "SM"
     },
     faqSchema: {
       "@context": "https://schema.org",
@@ -3137,9 +3137,9 @@ export const BLOG_POSTS: BlogPost[] = [
       "where to buy plants online India"
     ],
     author: {
-      name: "Dr Anjali Desai",
+      name: "Subho Mondal",
       role: "Lead Horticulturist",
-      avatar: "AD"
+      avatar: "SM"
     },
     faqSchema: {
       "@context": "https://schema.org",

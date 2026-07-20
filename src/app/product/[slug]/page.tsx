@@ -8,6 +8,7 @@ import { ProductReviews } from '@/components/product/ProductReviews';
 import { FaqSection } from '@/components/shared/FaqSection';
 import { RecentlyViewedTracker } from '@/components/product/RecentlyViewedTracker';
 import { Metadata } from 'next';
+import { genBreadcrumbSchema } from '@/lib/seo/schema-generator';
 
 const PRODUCT_METADATA_MAP: Record<string, { description: string, keywords: string[] }> = {
   "njoy-money-plant": {
@@ -59,25 +60,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (mapped) {
     return {
-      title: `Buy ${product.name} Online India — Rs ${price} | IndoorPlant.in`,
+      title: `Buy ${product.name} Online India — ₹${price} | IndoorPlant.in`,
       description: mapped.description,
       keywords: mapped.keywords,
       openGraph: {
-        title: `${product.name} — Rs ${price} | IndoorPlant.in`,
+        title: `${product.name} — ₹${price} | IndoorPlant.in`,
         description: mapped.description,
         url: `https://www.indoorplant.in/product/${product.slug}`
       }
     };
   }
 
-  const generatedDesc = `${product.name} is a beautiful indoor plant suited for Indian homes. Light requirement: ${product.lightReq.toLowerCase().replace('_', ' ')}. Water requirement: ${product.waterReq ? product.waterReq.toLowerCase() : 'when dry'}. Rs ${price}, free delivery.`;
+  const generatedDesc = `${product.name} is a beautiful indoor plant suited for Indian homes. Light requirement: ${product.lightReq.toLowerCase().replace('_', ' ')}. Water requirement: ${product.waterReq ? product.waterReq.toLowerCase() : 'when dry'}. ₹${price}, free delivery.`;
 
   return {
-    title: `Buy ${product.name} Online India — Rs ${price} | IndoorPlant.in`,
+    title: `Buy ${product.name} Online India — ₹${price} | IndoorPlant.in`,
     description: generatedDesc,
     keywords: [`buy ${product.name} online`, `${product.name} India`, `indoor plant ${product.name}`],
     openGraph: {
-      title: `Buy ${product.name} Online India — Rs ${price} | IndoorPlant.in`,
+      title: `Buy ${product.name} Online India — ₹${price} | IndoorPlant.in`,
       description: generatedDesc,
       url: `https://www.indoorplant.in/product/${product.slug}`
     }
@@ -153,7 +154,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const ratingValue = reviewsCount > 0 ? rating : 4.5;
   const ratingCount = reviewsCount > 0 ? reviewsCount : 1;
 
-  const jsonLd = {
+  const jsonLd: any = {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": product.name,
@@ -176,21 +177,34 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
         "@type": "Organization",
         "name": "IndoorPlant.in"
       }
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": ratingValue.toString(),
-      "reviewCount": ratingCount.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
     }
   };
+
+  if (reviewsCount > 0) {
+    jsonLd.aggregateRating = {
+      "@type": "AggregateRating",
+      "ratingValue": rating.toString(),
+      "reviewCount": reviewsCount.toString(),
+      "bestRating": "5",
+      "worstRating": "1"
+    };
+  }
+
+  const breadcrumbJsonLd = genBreadcrumbSchema([
+    { name: 'Home', url: 'https://www.indoorplant.in' },
+    { name: 'Shop', url: 'https://www.indoorplant.in/shop' },
+    { name: product.name, url: `https://www.indoorplant.in/product/${product.slug}` }
+  ]);
 
   return (
     <div className="min-h-screen bg-[#FDFDF9]">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <RecentlyViewedTracker product={product} />
       

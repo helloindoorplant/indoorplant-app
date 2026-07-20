@@ -8,19 +8,60 @@ import { ProductCardCarousel } from "@/components/blog/ProductCardCarousel";
 import { RelatedBlogsCarousel } from "@/components/blog/RelatedBlogsCarousel";
 import { BlogShareButtons } from "@/components/blog/BlogShareButtons";
 import { autoLinkContent } from "@/lib/blog/auto-linker";
+import { genBreadcrumbSchema } from '@/lib/seo/schema-generator';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const resolvedParams = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
+  
+  // Try fetching from database first, then fallback to static data
+  let post = await prisma.article.findUnique({
+    where: { slug: resolvedParams.slug },
+  }).catch(() => null) as any;
+
+  if (!post) {
+    post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
+  }
+
   if (!post) {
     return {
       title: "Article Not Found | IndoorPlant.in",
     };
   }
+  
+  const title = post.metaTitle || post.title;
+  const description = post.metaDescription || post.excerpt;
+  const url = `https://www.indoorplant.in/blog/${post.slug}`;
+  // WhatsApp requires absolute URLs for og:image
+  const image = post.image ? (post.image.startsWith('http') ? post.image : `https://www.indoorplant.in${post.image}`) : 'https://www.indoorplant.in/og-default.jpg';
+
   return {
-    title: post.metaTitle,
-    description: post.metaDescription,
+    title,
+    description,
     keywords: post.keywords,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      siteName: "IndoorPlant.in",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
   };
 }
 
@@ -114,6 +155,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       "@type": "Person",
       "name": post.author.name,
       "jobTitle": post.author.role,
+      "sameAs": [
+        "https://www.linkedin.com/in/subho-mondal/"
+      ],
       "worksFor": {
         "@type": "Organization",
         "name": "IndoorPlant.in"
@@ -133,12 +177,23 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     }
   };
 
+  const breadcrumbJsonLd = genBreadcrumbSchema([
+    { name: 'Home', url: 'https://www.indoorplant.in' },
+    { name: 'Journal', url: 'https://www.indoorplant.in/blog' },
+    { name: post.title, url: `https://www.indoorplant.in/blog/${post.slug}` }
+  ]);
+
   return (
     <div className="bg-white min-h-screen">
       {/* Schema.org Article tag */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       {/* FAQPage Schema (if present) */}
       {post.faqSchema && (
@@ -217,9 +272,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {post.author.avatar}
           </div>
           <div>
-            <h3 className="font-bold text-gray-900 text-lg mb-1">About the Author</h3>
+            <div className="flex items-center gap-2 mb-1">
+              <h3 className="font-bold text-gray-900 text-lg">About the Author</h3>
+              <a 
+                href="https://www.linkedin.com/in/subho-mondal/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-[#0a66c2] transition-colors"
+                title="Connect on LinkedIn"
+              >
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </a>
+            </div>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Dr. Anjali Desai is the Lead Horticulturist at IndoorPlant.in with over 15 years of experience in interior landscaping and plant pathology. She specializes in creating healthy indoor ecosystems for urban homes.
+              Subho Mondal is the plant enthusiast and curator behind IndoorPlant.in. With a deep passion for urban gardening, he specializes in bringing nature indoors and helping modern homes thrive with green ecosystems.
             </p>
           </div>
         </div>

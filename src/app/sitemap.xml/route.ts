@@ -6,7 +6,7 @@ const CHILD_SITEMAPS = [
   `${BASE}/sitemap-core.xml`,
   `${BASE}/sitemap-products.xml`,
   `${BASE}/sitemap-locations.xml`,
-  `${BASE}/sitemap-product-city.xml`,
+  `${BASE}/sitemap-posts.xml`,
 ];
 
 /**

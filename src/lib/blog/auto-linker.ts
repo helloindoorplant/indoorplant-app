@@ -1,18 +1,12 @@
 import { APPROVED_CITIES } from '../seo/city-data';
 
-// Map of common plant names to their slugs
+// Map of plant keywords → real canonical product URLs
 const PRODUCT_LINKS: Record<string, string> = {
-  'snake plant': '/shop/indoor/snake-plant',
-  'monstera': '/shop/indoor/monstera-deliciosa',
-  'pothos': '/shop/indoor/golden-pothos',
-  'zz plant': '/shop/indoor/zz-plant',
-  'peace lily': '/shop/indoor/peace-lily',
-  'spider plant': '/shop/indoor/spider-plant',
-  'aloe vera': '/shop/succulents/aloe-vera',
-  'rubber plant': '/shop/indoor/rubber-plant',
-  'jade plant': '/shop/succulents/jade-plant',
-  'money plant': '/shop/indoor/golden-pothos',
-  'areca palm': '/shop/indoor/areca-palm',
+  'monstera':    '/product/monstera-broken-heart',
+  'pothos':      '/product/golden-money-plant',
+  'jade plant':  '/product/lucky-jade-plant',
+  'money plant': '/product/golden-money-plant',
+  'areca palm':  '/product/bamboo-palm-plant',
 };
 
 /**

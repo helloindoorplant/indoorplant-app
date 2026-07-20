@@ -17,48 +17,59 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | IndoorPlant.in',
-    default: 'IndoorPlant.in | Bring Nature Inside',
-  },
-  description: "AI-Powered Indoor Plant E-Commerce Platform. Discover the perfect plants for your home and office.",
-  keywords: ["indoor plants", "buy plants online", "houseplants", "plant delivery India", "plant care", "AI plant advisor"],
-  authors: [{ name: "IndoorPlant.in" }],
-  openGraph: {
-    title: "IndoorPlant.in | Bring Nature Inside",
+import { headers } from 'next/headers';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const pathname = headersList.get('x-pathname') || '';
+
+  return {
+    metadataBase: new URL('https://www.indoorplant.in'),
+    alternates: {
+      canonical: pathname,
+    },
+    title: {
+      template: '%s | IndoorPlant.in',
+      default: 'IndoorPlant.in | Bring Nature Inside',
+    },
     description: "AI-Powered Indoor Plant E-Commerce Platform. Discover the perfect plants for your home and office.",
-    url: "https://indoorplant.in",
-    siteName: "IndoorPlant.in",
-    images: [
-      {
-        url: "https://images.unsplash.com/photo-1545241047-6083a36cb15f?auto=format&fit=crop&w=1200&q=80",
-        width: 1200,
-        height: 630,
-        alt: "IndoorPlant.in Hero",
-      },
-    ],
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "IndoorPlant.in | Bring Nature Inside",
-    description: "AI-Powered Indoor Plant E-Commerce Platform. Discover the perfect plants for your home and office.",
-    images: ["https://images.unsplash.com/photo-1545241047-6083a36cb15f?auto=format&fit=crop&w=1200&q=80"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    keywords: ["indoor plants", "buy plants online", "houseplants", "plant delivery India", "plant care", "AI plant advisor"],
+    authors: [{ name: "IndoorPlant.in" }],
+    openGraph: {
+      title: "IndoorPlant.in | Bring Nature Inside",
+      description: "AI-Powered Indoor Plant E-Commerce Platform. Discover the perfect plants for your home and office.",
+      url: "https://www.indoorplant.in",
+      siteName: "IndoorPlant.in",
+      images: [
+        {
+          url: "https://images.unsplash.com/photo-1545241047-6083a36cb15f?auto=format&fit=crop&w=1200&q=80",
+          width: 1200,
+          height: 630,
+          alt: "IndoorPlant.in Hero",
+        },
+      ],
+      locale: "en_IN",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "IndoorPlant.in | Bring Nature Inside",
+      description: "AI-Powered Indoor Plant E-Commerce Platform. Discover the perfect plants for your home and office.",
+      images: ["https://images.unsplash.com/photo-1545241047-6083a36cb15f?auto=format&fit=crop&w=1200&q=80"],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-};
+  };
+}
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
